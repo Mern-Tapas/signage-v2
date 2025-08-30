@@ -1,5 +1,8 @@
 import Container from '@/components/layout/Container';
+import { Caption, Typography } from '@/components/typography/typography';
+import Avatar from '@/components/ui/custome/Avatar';
 import ProductCard from '@/components/ui/custome/ProductCard';
+import { ProfileCard } from '@/components/ui/custome/ProfileCard';
 import { Metadata } from 'next';
 import React from 'react'
 
@@ -12,14 +15,10 @@ export const metadata: Metadata = {
 
 function page() {
   return (
-    <Container className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-      <ProductCard
-        image="https://i.pinimg.com/1200x/49/fe/06/49fe0694b2c87169b43c638bb89ae557.jpg"
-        title="Minimal Modern Chair"
-        description="A sleek, comfortable chair designed for modern interiors. Built with premium materials for durability."
-        price="$129"
-        
-      />
+    <Container className='flex justify-end items-center'>
+
+      <ProfileCard variant='right' />
+      <ProfileCard variant='left'/>
     </Container>
   )
 }

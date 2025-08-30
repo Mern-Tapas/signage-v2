@@ -20,9 +20,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <Container
             variant="primary"
             radius="2xl"
-            shadow="lg"
+            shadow="none"
             padding="md"
-            className="max-w-sm w-full flex flex-col items-center gap-4"
+            className="max-w-sm w-full flex flex-col items-center gap-4 hover:shadow-lg transition-shadow"
         >
             {/* Image */}
             <Container radius="md" variant="secondary" className="bg-black w-full h-48  overflow-hidden">
@@ -59,7 +59,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             </Typography>
 
             {/* Button */}
-            <button className="mt-4 w-full rounded-xl bg-blue-600 text-white font-medium py-2 hover:bg-blue-700 transition-colors">
+            <button className="mt-4 w-full rounded-lg bg-blue-600 text-white font-medium py-2 hover:bg-blue-700 transition-colors">
                 Add to Cart
             </button>
         </Container>

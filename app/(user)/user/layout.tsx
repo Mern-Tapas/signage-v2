@@ -10,9 +10,8 @@ function layout({ children }: { children: React.ReactNode }) {
             <div className='w-full '>
                 <div className='max-w-screen-2xl mx-auto'>
                     <Container padding='md' className='grid gap-4'>
-                        <Container className='flex justify-end items-center'>
-                            Header
-                        </Container>
+                        {/* <Container className='flex justify-end items-center'>
+                        </Container> */}
                         {children}
                     </Container>
                 </div>
