@@ -14,7 +14,7 @@ function page() {
   return (
     <Container className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
       <ProductCard
-        image="https://via.placeholder.com/400x300"
+        image="https://i.pinimg.com/1200x/49/fe/06/49fe0694b2c87169b43c638bb89ae557.jpg"
         title="Minimal Modern Chair"
         description="A sleek, comfortable chair designed for modern interiors. Built with premium materials for durability."
         price="$129"
