@@ -37,7 +37,7 @@ const Avatar: React.FC<AvatarProps> = ({
   return (
     <div
       className={clsx(
-        "overflow-hidden bg-gray-200 flex items-center justify-center",
+        "overflow-hidden bg-gray-200 flex items-center justify-center shrink-0",
         sizeStyles[size],
         radiusStyles[radius],
         className

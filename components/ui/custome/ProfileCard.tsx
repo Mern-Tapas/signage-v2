@@ -18,16 +18,16 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({ variant = "left" }) =>
                 }`}
         >
             {/* Status dot placeholder */}
-            <Container className="w-2">
+            <Container className="w-2 lg:block hidden">
                 <span></span>
             </Container>
 
             {/* User info */}
             <Container
-                className={`flex flex-col ${isLeft ? "justify-center items-end text-end" : "justify-center items-start text-start"
+                className={`lg:flex flex-col hidden  ${isLeft ? "justify-center items-end text-end" : "justify-center items-start text-start"
                     }`}
             >
-                <Caption weight="medium" color="primary">
+                <Caption weight="medium" color="primary" className="text-xs">
                     Tapas Gharami
                 </Caption>
                 <Caption color="muted" className="text-xs">

@@ -1,4 +1,5 @@
 import Container from '@/components/layout/Container'
+import { Caption, Typography } from '@/components/typography/typography'
 import { ProfileCard } from '@/components/ui/custome/ProfileCard'
 import React from 'react'
 
@@ -11,8 +12,15 @@ function layout({ children }: { children: React.ReactNode }) {
             <div className='w-full '>
                 <div className='max-w-screen-2xl mx-auto'>
                     <Container padding='md' className='grid gap-4'>
-                        <Container className='flex justify-end items-center'>
-                            <ProfileCard variant='right' />
+                        <Container className='flex justify-between items-center'>
+                            <Container>
+                                <Typography variant='h3'>Dashboard</Typography>
+                                <Typography variant='body2' color='muted'>Welcome to your dashboard</Typography>
+                            </Container>
+                            <Container className='flex gap-2 items-center'>
+                                <Container variant='primary' padding='md'>d</Container>
+                                <ProfileCard variant='right' />
+                            </Container>
                         </Container>
                         {children}
                     </Container>
