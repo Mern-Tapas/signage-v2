@@ -15,11 +15,9 @@ export const metadata: Metadata = {
 
 function page() {
   return (
-    <Container className='flex justify-end items-center'>
-
-      <ProfileCard variant='right' />
-      <ProfileCard variant='left'/>
-    </Container>
+    <div>
+      
+    </div>
   )
 }
 

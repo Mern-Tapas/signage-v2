@@ -1,4 +1,5 @@
 import Container from '@/components/layout/Container'
+import { ProfileCard } from '@/components/ui/custome/ProfileCard'
 import React from 'react'
 
 function layout({ children }: { children: React.ReactNode }) {
@@ -10,8 +11,9 @@ function layout({ children }: { children: React.ReactNode }) {
             <div className='w-full '>
                 <div className='max-w-screen-2xl mx-auto'>
                     <Container padding='md' className='grid gap-4'>
-                        {/* <Container className='flex justify-end items-center'>
-                        </Container> */}
+                        <Container className='flex justify-end items-center'>
+                            <ProfileCard variant='right' />
+                        </Container>
                         {children}
                     </Container>
                 </div>
