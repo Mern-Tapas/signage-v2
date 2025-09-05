@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import clsx from "clsx";
 
-type Variant = "default" | "primary" | "secondary";
+type Variant = "default" | "primary" | "secondary" | "outline";
 type Radius ="none"| "sm" | "md" | "xl" | "2xl" | "3xl";
 type Shadow = "none" | "sm" | "md" | "lg";
 type Padding = "none" | "sm" | "md" | "lg" | "xl";
@@ -26,6 +26,7 @@ const Container: React.FC<ContainerProps> = ({
     const variantStyles: Record<Variant, string> = {
         default: "bg-transparent",
         primary: "bg-white",
+        outline: "bg-white border border-gray-300",
         secondary: "bg-[#f8f9fa]", // offwhite
     };
 
