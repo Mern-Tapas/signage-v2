@@ -12,8 +12,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({ variant = "left" }) =>
 
     return (
         <Container
-            variant="primary"
-            padding="sm"
+            variant="default"
             className={`rounded-full flex gap-3 items-center ${isLeft ? "flex-row" : "flex-row-reverse"
                 }`}
         >
