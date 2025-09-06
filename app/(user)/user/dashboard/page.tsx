@@ -2,9 +2,10 @@ import Container from '@/components/layout/Container';
 import { Caption, Typography } from '@/components/typography/typography';
 import AnalyticsCard from '@/components/ui/custome/AnalyticsCard';
 import Avatar from '@/components/ui/custome/Avatar';
+import IconBox from '@/components/ui/custome/IconBox';
 import ProductCard from '@/components/ui/custome/ProductCard';
 import { ProfileCard } from '@/components/ui/custome/ProfileCard';
-import { Users } from 'lucide-react';
+import { File, ScreenShare, Users } from 'lucide-react';
 import { Metadata } from 'next';
 import React from 'react'
 
@@ -19,36 +20,49 @@ function page() {
   return (
     <Container>
       <Container className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4'>
-        <Container padding='md' variant='primary' radius='xl'>
-          <Typography variant='h3' weight='extrabold'>2567</Typography>
-          <Typography variant='h6'>Users</Typography>
-          <Typography variant='overline'>New Users</Typography>
-        </Container>
-        
-        <Container padding='md' variant='primary' radius='xl'>
-          <Typography variant='h3' weight='extrabold'>2567</Typography>
-          <Typography variant='h6'>Users</Typography>
-          <Typography variant='caption'>New Users</Typography>
-        </Container>
-        
-        <Container padding='md' variant='primary' radius='xl'>
-          <Typography variant='h3' weight='extrabold'>2567</Typography>
-          <Typography variant='h6'>Users</Typography>
-          <Typography variant='caption'>New Users</Typography>
-        </Container>
-        
-        <Container padding='md' variant='primary' radius='xl'>
-          <Typography variant='h3' weight='extrabold'>2567</Typography>
-          <Typography variant='h6'>Users</Typography>
-          <Typography variant='caption'>New Users</Typography>
-        </Container>
-        
-        <Container padding='md' variant='primary' radius='xl'>
-          <Typography variant='h3' weight='extrabold'>2567</Typography>
-          <Typography variant='h6'>Users</Typography>
-          <Typography variant='caption'>New Users</Typography>
-        </Container>
-        
+
+        <AnalyticsCard
+          title="Screen"
+          value="2,567"
+          subtitle="New Users"
+          icon={ScreenShare}
+          iconVariant="transparant"
+          iconColor="primary"
+
+        />
+        <AnalyticsCard
+          title="Files"
+          value="267"
+          subtitle="2 New Uploads"
+          icon={File}
+          iconVariant="transparant"
+          iconColor="primary"
+        />
+        <AnalyticsCard
+          title="Playlists"
+          value="2,567"
+          subtitle="New Users"
+          icon={Users}
+          iconVariant="transparant"
+          iconColor="primary"
+        />
+        <AnalyticsCard
+          title="Shared Playlists"
+          value="2,567"
+          subtitle="New Users"
+          icon={Users}
+          iconVariant="transparant"
+          iconColor="primary"
+        />
+        <AnalyticsCard
+          title="Users"
+          value="2,567"
+          subtitle="New Users"
+          icon={Users}
+          iconVariant="transparant"
+          iconColor="primary"
+        />
+
       </Container>
     </Container>
   )

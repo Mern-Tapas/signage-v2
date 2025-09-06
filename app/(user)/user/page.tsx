@@ -5,13 +5,7 @@ import React from 'react'
 function page() {
   return (
     <Container>
-      <AnalyticsCard
-        title="Active Users"
-        value="12,540"
-        change="+8.4%"
-        changeType="increase"
-        icon={Users}
-      />
+     
     </Container>
   )
 }

@@ -75,7 +75,7 @@ const LinkIconButton: React.FC<LinkIconButtonProps> = ({
       )}
       {...props}
     >
-      <Icon className={clsx("w-5 h-5", iconColorStyles[iconColor])} />
+      <Icon strokeWidth={1.5} className={clsx("w-5 h-5", iconColorStyles[iconColor])} />
     </a>
   );
 };

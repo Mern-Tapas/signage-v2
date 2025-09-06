@@ -1,15 +1,20 @@
 import Container from '@/components/layout/Container'
 import { Caption, Typography } from '@/components/typography/typography'
+import IconBox from '@/components/ui/custome/IconBox'
 import LinkIconButton from '@/components/ui/custome/LinkIconButton'
 import { ProfileCard } from '@/components/ui/custome/ProfileCard'
-import { Bell, Github, Linkedin } from 'lucide-react'
+import { Bell, ScreenShare } from 'lucide-react'
 import React from 'react'
 
 function layout({ children }: { children: React.ReactNode }) {
     return (
-        <div className='h-screen bg-[#f8f9fc] flex overflow-hidden dashboard'>
-            <div className="sidebar h-full p-4 bg-black w-[240px] ">
-                Sidebar
+        <div className='h-screen bg-[#f5f7fb] flex overflow-hidden dashboard'>
+            <div className="sidebar h-full p-4 bg-white w-[240px] lg:block hidden">
+                <Container className='flex items-center justify-center mb-8'>
+                    <IconBox size='md' variant='transparant' icon={ScreenShare} />
+                    <Typography variant='h4' weight='extrabold'>Screen </Typography>
+                </Container>
+                <Typography variant='overline' >OVERVIEW</Typography>
             </div>
             <div className='w-full '>
                 <div className='max-w-screen-2xl mx-auto'>
