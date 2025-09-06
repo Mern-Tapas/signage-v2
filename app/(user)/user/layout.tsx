@@ -3,22 +3,17 @@ import { Caption, Typography } from '@/components/typography/typography'
 import IconBox from '@/components/ui/custome/IconBox'
 import LinkIconButton from '@/components/ui/custome/LinkIconButton'
 import { ProfileCard } from '@/components/ui/custome/ProfileCard'
-import { Bell, ScreenShare } from 'lucide-react'
+import { Bell, } from 'lucide-react'
+import Sidebar from '@/components/ui/custome/Sidebar'
 import React from 'react'
 
 function layout({ children }: { children: React.ReactNode }) {
     return (
         <div className='h-screen bg-[#f5f7fb] flex overflow-hidden dashboard'>
-            <div className="sidebar h-full p-4 bg-white w-[240px] lg:block hidden">
-                <Container className='flex items-center justify-center mb-8'>
-                    <IconBox size='md' variant='transparant' icon={ScreenShare} />
-                    <Typography variant='h4' weight='extrabold'>Screen </Typography>
-                </Container>
-                <Typography variant='overline' >OVERVIEW</Typography>
-            </div>
-            <div className='w-full '>
+            <Sidebar/>
+            <div className='w-full overflow-y-scroll'>
                 <div className='max-w-screen-2xl mx-auto'>
-                    <Container padding='md' className='grid gap-4'>
+                    <Container padding='md' className='grid gap-8'>
                         <Container className='flex justify-between items-center'>
                             <Container>
                                 <Typography variant='h3'>Dashboard</Typography>
