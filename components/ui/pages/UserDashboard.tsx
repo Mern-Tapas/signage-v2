@@ -5,7 +5,7 @@ import Avatar from '@/components/ui/custome/Avatar';
 import IconBox from '@/components/ui/custome/IconBox';
 import ProductCard from '@/components/ui/custome/ProductCard';
 import { ProfileCard } from '@/components/ui/custome/ProfileCard';
-import { File, ScreenShare, Users } from 'lucide-react';
+import { File, PlayIcon, PlaySquare, ScreenShare, Users } from 'lucide-react';
 import { Metadata } from 'next';
 import React from 'react'
 
@@ -21,7 +21,7 @@ function UserDashboard() {
           subtitle="New Users"
           icon={ScreenShare}
           iconVariant="transparant"
-          iconColor="primary"
+          iconColor="secondary"
 
         />
         <AnalyticsCard
@@ -36,7 +36,7 @@ function UserDashboard() {
           title="Playlists"
           value="2,567"
           subtitle="New Users"
-          icon={Users}
+          icon={PlaySquare}
           iconVariant="transparant"
           iconColor="primary"
         />

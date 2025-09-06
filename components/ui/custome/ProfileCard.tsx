@@ -36,7 +36,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({ variant = "left" }) =>
 
             {/* Avatar */}
             <Avatar
-                src="https://i.pinimg.com/1200x/49/fe/06/49fe0694b2c87169b43c638bb89ae557.jpg"
+                src="https://i.pinimg.com/736x/6f/a3/6a/6fa36aa2c367da06b2a4c8ae1cf9ee02.jpg"
                 alt="User Avatar"
                 size="sm"
                 radius="full"

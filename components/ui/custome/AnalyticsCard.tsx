@@ -39,10 +39,10 @@ const AnalyticsCard: React.FC<AnalyticsCardProps> = ({
             iconColor={iconColor} 
           />
         )}
-        <Typography variant="h6" >{title}</Typography>
+        <Typography variant="h6"  color="secondary">{title}</Typography>
       </Container>
 
-      <Typography variant="metric-md" weight="extrabold">
+      <Typography variant="metric-md" weight="bold">
         {value}
       </Typography>
 
