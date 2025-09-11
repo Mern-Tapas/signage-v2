@@ -5,11 +5,12 @@ import { Typography } from "@/components/typography/typography";
 import { CalendarClock, CreditCard, Files, FolderOpen, Grid, LayoutGrid, LifeBuoy, ListVideo, PlaySquare, ScreenShare, Settings, Settings2 } from "lucide-react";
 import ImageBox from "./ImageBox";
 import Link from "next/link";
+import logo from '@/assets/images/brand/LOGO.jpg'
 
 export default function Sidebar() {
     return <Container className=" h-full bg-white w-[270px] xl:flex flex-col hidden gap-10" padding="md">
         <Container className='flex items-center justify-center gap-2 my-4'>
-            <ImageBox src="https://cdn.dribbble.com/userupload/14906809/file/original-2a2a97fb303244180a928ecbe40b4e7a.png?resize=1024x768&vertical=center" size="xs" radius="lg" />
+            <ImageBox height={400} width={400} src={logo} size="xs" radius="none"  />
             <Typography variant='h5' weight='extrabold'>Nova Signage</Typography>
         </Container>
         <Container className="flex flex-col">
@@ -41,7 +42,7 @@ export default function Sidebar() {
                 </Link>
             </Container>
         </Container>
-        <Container className="flex flex-col">
+        <Container className="flex flex-col ">
             <Typography variant='overline' weight='medium' className="mb-4">Others</Typography>
             <Container className="flex flex-col gap-2">
                 <Link href={'/user/dashboard'} className="flex items-center cursor-pointer gap-1 hover:bg-gray-100 rounded-md transition-bg">

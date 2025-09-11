@@ -1,12 +1,15 @@
 import React from "react";
 import clsx from "clsx";
+import Image, { StaticImageData } from "next/image";
 
 type ImageBoxSize = "xs" | "sm" | "md" | "lg" | "xl";
 type ImageBoxRadius = "none" | "sm" | "md" | "lg" | "xl" | "2xl" | "full";
 type ImageBoxVariant = "default" | "primary" | "secondary" | "transparent";
 
 interface ImageBoxProps {
-    src: string;
+    height?: number;
+    width?: number;
+    src: string | StaticImageData;
     alt?: string;
     size?: ImageBoxSize;
     radius?: ImageBoxRadius;
@@ -41,6 +44,8 @@ const variantClasses: Record<ImageBoxVariant, string> = {
 
 const ImageBox: React.FC<ImageBoxProps> = ({
     src,
+    height = 200,
+    width = 200,
     alt = "image",
     size = "md",
     radius = "md",
@@ -50,17 +55,19 @@ const ImageBox: React.FC<ImageBoxProps> = ({
     return (
         <div
             className={clsx(
-                "flex items-center justify-center overflow-hidden",
+                "flex items-center justify-center overflow-hidden border ",
                 sizeClasses[size],
                 radiusClasses[radius],
                 variantClasses[variant],
                 className
             )}
         >
-            <img
+            <Image
+                height={height}
+                width={width}
                 src={src}
                 alt={alt}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-content "
             />
         </div>
     );
