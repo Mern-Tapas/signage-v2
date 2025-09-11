@@ -6,27 +6,58 @@ import Avatar from '@/components/ui/custome/Avatar';
 import IconBox from '@/components/ui/custome/IconBox';
 import ProductCard from '@/components/ui/custome/ProductCard';
 import { ProfileCard } from '@/components/ui/custome/ProfileCard';
-import { File, PlayIcon, PlaySquare, Plus, ScreenShare, Users } from 'lucide-react';
+import { Database, File, PlayIcon, PlaySquare, Plus, ScreenShare, Timer, Users, WatchIcon } from 'lucide-react';
 import { Metadata } from 'next';
 import React from 'react'
 import DeviceTable from '../custome/DeviceTable';
 import { Button } from '../custome/Button';
-
+import {
+  AlertBox,
+  AlertBoxHeader,
+  AlertBoxDescription,
+  AlertBoxFooter,
+  useAlertBox,
+} from '@/components/ui/custome/AlertBox';  
 
 function UserDashboard() {
+  const alert = useAlertBox();
+
   return (
     <Container className='grid gap-4'>
+      <Container>
+        <Typography variant='h4' weight='bold'>Dashboard</Typography>
+        <Typography variant='body2'>Welcome to your dashboard</Typography>
+
+      </Container>
       <Container className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4'>
 
         <AnalyticsCard
-          title="Screen"
+          title="Total Screens"
           value="2,567"
-          subtitle="New Users"
+          subtitle="45 online currently"
           icon={ScreenShare}
           iconVariant="transparant"
           iconColor="secondary"
 
         />
+        <AnalyticsCard
+          title="Active Playlists"
+          value="2,567"
+          subtitle="New Users"
+          icon={PlaySquare}
+          iconVariant="transparant"
+          iconColor="primary"
+        />
+
+        <AnalyticsCard
+          title="Scheduled Events"
+          value="2,567"
+          subtitle="New Users"
+          icon={Timer}
+          iconVariant="transparant"
+          iconColor="primary"
+        />
+
         <AnalyticsCard
           title="Files"
           value="267"
@@ -35,27 +66,12 @@ function UserDashboard() {
           iconVariant="transparant"
           iconColor="primary"
         />
+
         <AnalyticsCard
-          title="Playlists"
+          title="Storage Used"
           value="2,567"
           subtitle="New Users"
-          icon={PlaySquare}
-          iconVariant="transparant"
-          iconColor="primary"
-        />
-        <AnalyticsCard
-          title="Shared Playlists"
-          value="2,567"
-          subtitle="New Users"
-          icon={Users}
-          iconVariant="transparant"
-          iconColor="primary"
-        />
-        <AnalyticsCard
-          title="Users"
-          value="2,567"
-          subtitle="New Users"
-          icon={Users}
+          icon={Database}
           iconVariant="transparant"
           iconColor="primary"
         />
@@ -76,7 +92,31 @@ function UserDashboard() {
 
         <Button size="sm">Small</Button>
         <Button size="md">Medium</Button>
-        <Button size="lg" icon={<Plus/>}>Large</Button>
+        <Button size="lg" icon={<Plus />}>Large</Button>
+      </Container>
+
+      <Container>
+
+        <Button variant="danger" onClick={alert.onOpen}>
+          Revoke access
+        </Button>
+        
+        <AlertBox open={alert.open} onClose={alert.onClose} maxWidth="450px">
+          <AlertBoxHeader>Revoke access</AlertBoxHeader>
+          <AlertBoxDescription>
+            Are you sure? This application will no longer be accessible and any
+            existing sessions will be expired.
+          </AlertBoxDescription>
+
+          <AlertBoxFooter>
+            <Button variant="outline" onClick={alert.onClose}>
+              Cancel
+            </Button>
+            <Button variant="danger" onClick={alert.onClose}>
+              Revoke
+            </Button>
+          </AlertBoxFooter>
+        </AlertBox>
       </Container>
     </Container>
   )

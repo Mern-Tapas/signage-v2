@@ -11,13 +11,13 @@ import { Button } from '@/components/ui/custome/Button'
 function layout({ children }: { children: React.ReactNode }) {
     return (
         <div className='h-screen bg-[#f5f7fb] flex overflow-hidden dashboard'>
-            <Sidebar/>
+            <Sidebar />
             <div className='w-full overflow-y-scroll'>
                 <div className='max-w-screen-2xl mx-auto'>
-                    <Container padding='md' className='grid gap-8'>
-                        <Container className='flex justify-between items-center'>
+                    <Container padding='md' className='grid gap-8 relative'>
+                        <Container className='flex justify-between items-center sticky top-0 bg-[#f5f7fb] left-o'>
                             <Container>
-                               <Button size='icon'  icon={<Menu/>}/>
+                                <Button size='icon' icon={<Menu />} />
                             </Container>
                             <Container className='flex gap-2 items-center' >
                                 {/* <Container variant='primary' padding='sm' className='rounded-full' > */}

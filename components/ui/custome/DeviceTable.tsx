@@ -11,7 +11,8 @@ function DeviceTable() {
         <Card>
             <CardHeader>
                 <Typography variant='h6'>Devices</Typography>
-                <Typography variant='body2'>Recently active Devices</Typography>
+                <Typography variant='body2' color='muted'>Recently active Devices</Typography>
+
             </CardHeader >
             <CardBody >
                 <Table variant="default" size="md">
