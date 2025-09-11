@@ -3,9 +3,10 @@ import { Caption, Typography } from '@/components/typography/typography'
 import IconBox from '@/components/ui/custome/IconBox'
 import LinkIconButton from '@/components/ui/custome/LinkIconButton'
 import { ProfileCard } from '@/components/ui/custome/ProfileCard'
-import { Bell, } from 'lucide-react'
+import { Bell, Menu, } from 'lucide-react'
 import Sidebar from '@/components/ui/custome/Sidebar'
 import React from 'react'
+import { Button } from '@/components/ui/custome/Button'
 
 function layout({ children }: { children: React.ReactNode }) {
     return (
@@ -16,8 +17,7 @@ function layout({ children }: { children: React.ReactNode }) {
                     <Container padding='md' className='grid gap-8'>
                         <Container className='flex justify-between items-center'>
                             <Container>
-                                <Typography variant='h3'>Dashboard</Typography>
-                                <Typography variant='body2' color='muted'>Welcome to your dashboard</Typography>
+                               <Button size='icon'  icon={<Menu/>}/>
                             </Container>
                             <Container className='flex gap-2 items-center' >
                                 {/* <Container variant='primary' padding='sm' className='rounded-full' > */}

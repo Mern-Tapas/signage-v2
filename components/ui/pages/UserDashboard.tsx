@@ -1,3 +1,4 @@
+'use client'
 import Container from '@/components/layout/Container';
 import { Caption, Typography } from '@/components/typography/typography';
 import AnalyticsCard from '@/components/ui/custome/AnalyticsCard';
@@ -5,9 +6,11 @@ import Avatar from '@/components/ui/custome/Avatar';
 import IconBox from '@/components/ui/custome/IconBox';
 import ProductCard from '@/components/ui/custome/ProductCard';
 import { ProfileCard } from '@/components/ui/custome/ProfileCard';
-import { File, PlayIcon, PlaySquare, ScreenShare, Users } from 'lucide-react';
+import { File, PlayIcon, PlaySquare, Plus, ScreenShare, Users } from 'lucide-react';
 import { Metadata } from 'next';
 import React from 'react'
+import DeviceTable from '../custome/DeviceTable';
+import { Button } from '../custome/Button';
 
 
 function UserDashboard() {
@@ -59,18 +62,21 @@ function UserDashboard() {
 
       </Container>
       <Container className='grid gap-4 xl:grid-cols-2' >
-        <Container variant='primary' padding='md' radius='xl'>
-          <Container >
-            <Typography variant="h5" >Recent Files</Typography>
-            <Typography variant="body2" color='muted'>Recent Files</Typography>
-          </Container>
-        </Container>
-        <Container variant='primary' padding='md' radius='xl'>
-          <Container >
-            <Typography variant="h5" >Recent Files</Typography>
-            <Typography variant="body2" color='muted'>Recent Files</Typography>
-          </Container>
-        </Container>
+        <DeviceTable />
+        <DeviceTable />
+        <DeviceTable />
+        <DeviceTable />
+      </Container>
+      <Container className='flex items-center gap-2'>
+        <Button variant="primary">Primary</Button>
+        <Button variant="secondary">Secondary</Button>
+        <Button variant="outline">Outline</Button>
+        <Button variant="ghost">Ghost</Button>
+        <Button variant="danger">Delete</Button>
+
+        <Button size="sm">Small</Button>
+        <Button size="md">Medium</Button>
+        <Button size="lg" icon={<Plus/>}>Large</Button>
       </Container>
     </Container>
   )

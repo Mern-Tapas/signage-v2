@@ -55,7 +55,7 @@ const ImageBox: React.FC<ImageBoxProps> = ({
     return (
         <div
             className={clsx(
-                "flex items-center justify-center overflow-hidden border ",
+                "flex items-center justify-center overflow-hidden ",
                 sizeClasses[size],
                 radiusClasses[radius],
                 variantClasses[variant],
@@ -67,7 +67,7 @@ const ImageBox: React.FC<ImageBoxProps> = ({
                 width={width}
                 src={src}
                 alt={alt}
-                className="w-full h-full object-content "
+                className="w-full h-full object-contain "
             />
         </div>
     );
