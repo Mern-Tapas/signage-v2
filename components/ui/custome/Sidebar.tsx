@@ -1,4 +1,5 @@
-import React from "react";
+'use client'
+import React, { useEffect, useState } from "react";
 import Container from "@/components/layout/Container";
 import IconBox from "./IconBox";
 import { Typography } from "@/components/typography/typography";
@@ -8,9 +9,16 @@ import Link from "next/link";
 import logo from '@/assets/images/brand/LOGO.jpg'
 
 export default function Sidebar() {
+
+
+
+   
+
+
+
     return <Container className=" h-full bg-white w-[270px] xl:flex flex-col hidden gap-10" padding="md">
         <Container className='flex items-center justify-center gap-2 my-4'>
-            <ImageBox height={400} width={400} src={logo} size="xs" radius="none" variant="transparent"  />
+            <ImageBox height={400} width={400} src={logo} size="xs" radius="none" variant="transparent" />
             <Typography variant='h5' weight='extrabold'>Nova Signage</Typography>
         </Container>
         <Container className="flex flex-col">
@@ -53,8 +61,8 @@ export default function Sidebar() {
                     <IconBox size='md' variant='transparant' icon={LifeBuoy} />
                     <Typography variant='body2' className="">Help</Typography>
                 </Link>
-               
-               
+
+
             </Container>
         </Container>
     </Container>
