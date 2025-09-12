@@ -43,7 +43,7 @@ function DashboardHeader() {
                     iconColor="primary"
                 />
                 {/* </Container> */}
-                <Container variant='primary' padding='sm' className='rounded-full' >
+                <Container variant='primary' padding='sm' radius='xl'  >
                     <ProfileCard variant='right' />
                 </Container>
             </Container>
