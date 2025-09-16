@@ -28,7 +28,7 @@ function DashboardHeader() {
     }, []);
 
     return (
-        <Container padding='md' className={`flex  justify-between items-center sticky top-0 bg-[#f5f7fb] transition-all  ${scrollPosition > 10 ? 'bg-white/50 backdrop-blur-sm' : ''}  z-10    `}>
+        <Container padding='md' className={`flex  justify-between items-center sticky top-0 bg-[#f5f7fb] transition-all  ${scrollPosition > 10 ? 'bg-black/50 backdrop-blur-sm ' : ''}  z-10    `}>
             <Container>
                 <Button size='icon' icon={<Menu />} />
             </Container>
