@@ -38,7 +38,7 @@ export default function Sidebar() {
                 </Link>
                 <Link href={'/user/dashboard'} className="flex items-center cursor-pointer gap-1 hover:bg-gray-100 rounded-md transition-bg">
                     <IconBox size='md' variant='transparant' icon={CalendarClock} />
-                    <Typography variant='body2' className="">Sheduler</Typography>
+                    <Typography variant='body2' className="">Scheduler</Typography>
                 </Link>
                 <Link href={'/user/dashboard'} className="flex items-center cursor-pointer gap-1 hover:bg-gray-100 rounded-md transition-bg">
                     <IconBox size='md' variant='transparant' icon={FolderOpen} />

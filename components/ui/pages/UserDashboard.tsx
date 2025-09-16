@@ -11,16 +11,33 @@ import { Metadata } from 'next';
 import React from 'react'
 import DeviceTable from '../custome/DeviceTable';
 import { Button } from '../custome/Button';
-import {
-  AlertBox,
-  AlertBoxHeader,
-  AlertBoxDescription,
-  AlertBoxFooter,
-  useAlertBox,
-} from '@/components/ui/custome/AlertBox';  
 
+
+import {
+  AlertDialog,
+  AlertDialogTrigger,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogCancel,
+  AlertDialogAction,
+} from '@/components/ui/custome/AlertDialog';
+
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogBody,
+  DialogFooter,
+  DialogClose,
+} from "@/components/ui/custome/Dialog";
 function UserDashboard() {
-  const alert = useAlertBox();
+
 
   return (
     <Container className='grid gap-4'>
@@ -41,7 +58,7 @@ function UserDashboard() {
 
         />
         <AnalyticsCard
-          title="Active Playlists"
+          title="Playlists"
           value="2,567"
           subtitle="New Users"
           icon={PlaySquare}
@@ -68,7 +85,7 @@ function UserDashboard() {
         />
 
         <AnalyticsCard
-          title="Storage Used"
+          title="Used Storage"
           value="2,567"
           subtitle="New Users"
           icon={Database}
@@ -97,26 +114,64 @@ function UserDashboard() {
 
       <Container>
 
-        <Button variant="danger" onClick={alert.onOpen}>
-          Revoke access
-        </Button>
-        
-        <AlertBox open={alert.open} onClose={alert.onClose} maxWidth="450px">
-          <AlertBoxHeader>Revoke access</AlertBoxHeader>
-          <AlertBoxDescription>
-            Are you sure? This application will no longer be accessible and any
-            existing sessions will be expired.
-          </AlertBoxDescription>
 
-          <AlertBoxFooter>
-            <Button variant="outline" onClick={alert.onClose}>
-              Cancel
-            </Button>
-            <Button variant="danger" onClick={alert.onClose}>
-              Revoke
-            </Button>
-          </AlertBoxFooter>
-        </AlertBox>
+
+        <AlertDialog>
+          <AlertDialogTrigger>
+            <Button variant="danger">Revoke New</Button>
+          </AlertDialogTrigger>
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle>Revoke access</AlertDialogTitle>
+              <AlertDialogDescription>
+                Are you sure? This application will no longer be accessible and any
+                existing sessions will be expired.
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogCancel>Cancel</AlertDialogCancel>
+              <AlertDialogAction >Revoke</AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
+
+        <Dialog>
+          <DialogTrigger>
+            <Button variant="primary">Open Form</Button>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Create User</DialogTitle>
+              <DialogDescription>
+                Fill in the details below to create a new user.
+              </DialogDescription>
+            </DialogHeader>
+
+            <DialogBody>
+              <form className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium">Name</label>
+                  <input
+                    type="text"
+                    className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-700 bg-transparent px-3 py-2"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium">Email</label>
+                  <input
+                    type="email"
+                    className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-700 bg-transparent px-3 py-2"
+                  />
+                </div>
+              </form>
+            </DialogBody>
+
+            <DialogFooter>
+              <DialogClose>Cancel</DialogClose>
+              <Button variant="primary">Save</Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
       </Container>
     </Container>
   )
