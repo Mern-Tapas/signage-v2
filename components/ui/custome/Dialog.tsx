@@ -7,6 +7,7 @@ import React, {
 } from "react";
 import clsx from "clsx";
 import { Button } from "./Button";
+import { Caption, Typography } from "@/components/typography/typography";
 
 type DialogContextType = {
   open: boolean;
@@ -105,7 +106,7 @@ export const DialogTitle = ({ children }: { children: React.ReactNode }) => (
 
 // Description
 export const DialogDescription = ({ children }: { children: React.ReactNode }) => (
-  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">{children}</p>
+  <Typography variant="body2" className="">{children}</Typography >
 );
 
 // Body

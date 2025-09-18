@@ -12,13 +12,13 @@ export default function Sidebar() {
 
 
 
-   
+
 
 
 
     return <Container className=" h-full bg-white w-[270px] xl:flex flex-col hidden gap-10" padding="md">
-        <Container className='flex items-center justify-center gap-2 my-4'>
-            <ImageBox height={400} width={400} src={logo} size="xs" radius="none" variant="transparent" />
+        <Container className='flex items-center justify-center gap-2 '>
+            <ImageBox height={400} width={400} src={"https://i.pinimg.com/736x/f6/26/47/f62647f23f4eb78d1b9d267c92ee1521.jpg"} size="xs" radius="none" className="" variant="transparent" />
             <Typography variant='h5' weight='extrabold'>Nova Signage</Typography>
         </Container>
         <Container className="flex flex-col">

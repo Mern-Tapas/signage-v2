@@ -100,79 +100,8 @@ function UserDashboard() {
         <DeviceTable />
         <DeviceTable />
       </Container>
-      <Container className='flex items-center gap-2'>
-        <Button variant="primary">Primary</Button>
-        <Button variant="secondary">Secondary</Button>
-        <Button variant="outline">Outline</Button>
-        <Button variant="ghost">Ghost</Button>
-        <Button variant="danger">Delete</Button>
+    
 
-        <Button size="sm">Small</Button>
-        <Button size="md">Medium</Button>
-        <Button size="lg" icon={<Plus />}>Large</Button>
-      </Container>
-
-      <Container>
-
-
-
-        <AlertDialog>
-          <AlertDialogTrigger>
-            <Button variant="danger">Revoke New</Button>
-          </AlertDialogTrigger>
-          <AlertDialogContent>
-            <AlertDialogHeader>
-              <AlertDialogTitle>Revoke access</AlertDialogTitle>
-              <AlertDialogDescription>
-                Are you sure? This application will no longer be accessible and any
-                existing sessions will be expired.
-              </AlertDialogDescription>
-            </AlertDialogHeader>
-            <AlertDialogFooter>
-              <AlertDialogCancel>Cancel</AlertDialogCancel>
-              <AlertDialogAction >Revoke</AlertDialogAction>
-            </AlertDialogFooter>
-          </AlertDialogContent>
-        </AlertDialog>
-
-        <Dialog>
-          <DialogTrigger>
-            <Button variant="primary">Open Form</Button>
-          </DialogTrigger>
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle>Create User</DialogTitle>
-              <DialogDescription>
-                Fill in the details below to create a new user.
-              </DialogDescription>
-            </DialogHeader>
-
-            <DialogBody>
-              <form className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium">Name</label>
-                  <input
-                    type="text"
-                    className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-700 bg-transparent px-3 py-2"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium">Email</label>
-                  <input
-                    type="email"
-                    className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-700 bg-transparent px-3 py-2"
-                  />
-                </div>
-              </form>
-            </DialogBody>
-
-            <DialogFooter>
-              <DialogClose>Cancel</DialogClose>
-              <Button variant="primary">Save</Button>
-            </DialogFooter>
-          </DialogContent>
-        </Dialog>
-      </Container>
     </Container>
   )
 }

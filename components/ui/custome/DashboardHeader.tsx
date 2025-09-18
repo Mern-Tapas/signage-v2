@@ -2,16 +2,18 @@
 import React from 'react'
 import Container from '@/components/layout/Container'
 import { Button } from '@/components/ui/custome/Button'
-import { Menu, Bell, User, Settings, LogOut } from 'lucide-react'
+import { Menu, Bell, User, Settings, LogOut, Search } from 'lucide-react'
 import { ProfileCard } from '@/components/ui/custome/ProfileCard'
 import LinkIconButton from '@/components/ui/custome/LinkIconButton'
 import { useEffect, useState } from 'react'
 import { Dropdown, DropdownContent, DropdownItem, DropdownTrigger } from './Dropdown'
 import Link from 'next/link'
+import { Input } from './Input'
 
 function DashboardHeader() {
 
     const [scrollPosition, setScrollPosition] = useState<number>(0);
+
 
     useEffect(() => {
         const container = document.getElementById("scrollable-container");
@@ -30,9 +32,10 @@ function DashboardHeader() {
     }, []);
 
     return (
-        <Container padding='md' className={`flex  justify-between items-center sticky top-0 bg-[#f5f7fb] transition-all  ${scrollPosition > 10 ? 'bg-white shadow-md ' : ''}  z-10    `}>
-            <Container>
-                <Button size='icon' icon={<Menu />} />
+        <Container padding='md' className={`flex  justify-between items-center sticky top-0 bg-[#f5f7fb] transition-all  ${scrollPosition > 10 ? 'bg-white shadow-sm ' : ''}  z-10    `}>
+            <Container className='flex gap-2 items-center' >
+                <Button size='icon' icon={<Menu strokeWidth={1.5} radius={'md'} />} />
+                <Input variant='filled' placeholder='Search' icon={<Search strokeWidth={1.5} className='' radius={'md'}/>} />
             </Container>
             <Container className='flex gap-2 items-center' >
                 {/* <Container variant='primary' padding='sm' className='rounded-full' > */}
@@ -59,7 +62,7 @@ function DashboardHeader() {
                         <DropdownContent align="right">
                             <DropdownItem>
                                 <Link href={'/user'}>
-                                <User size={16} className="inline mr-2" /> Profile
+                                    <User size={16} className="inline mr-2" /> Profile
                                 </Link>
                             </DropdownItem>
                             <DropdownItem>
