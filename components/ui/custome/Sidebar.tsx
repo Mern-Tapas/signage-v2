@@ -28,7 +28,7 @@ export default function Sidebar() {
                     <IconBox size='md' variant='transparant' icon={LayoutGrid} />
                     <Typography variant='body2' className="">Dashboard</Typography>
                 </Link>
-                <Link href={'/user/dashboard'} className="flex items-center cursor-pointer gap-1 hover:bg-gray-100 rounded-md transition-bg">
+                <Link href={'/user/screens'} className="flex items-center cursor-pointer gap-1 hover:bg-gray-100 rounded-md transition-bg">
                     <IconBox size='md' variant='transparant' icon={ScreenShare} />
                     <Typography variant='body2' className="">Screens</Typography>
                 </Link>

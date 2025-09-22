@@ -7,7 +7,7 @@ import Avatar from '@/components/ui/custome/Avatar';
 import IconBox from '@/components/ui/custome/IconBox';
 import ProductCard from '@/components/ui/custome/ProductCard';
 import { ProfileCard } from '@/components/ui/custome/ProfileCard';
-import { Database, File, PlayIcon, PlaySquare, Plus, ScreenShare, Timer, Users, WatchIcon } from 'lucide-react';
+import { Database, File, Loader, Lock, PlayIcon, PlaySquare, Plus, ScreenShare, Timer, Users, WatchIcon } from 'lucide-react';
 import { Metadata } from 'next';
 import DeviceTable from '@/components/ui/custome/DeviceTable';
 import { Button } from '@/components/ui/custome/Button';
@@ -110,7 +110,7 @@ function page() {
             </Container>
 
             <Container className='flex items-center gap-2'>
-                <Button variant="primary">Primary</Button>
+                <Button variant="primary" icon={<Loader size={16}/>}>Primary</Button>
                 <Button variant="secondary">Secondary</Button>
                 <Button variant="outline">Outline</Button>
                 <Button variant="ghost">Ghost</Button>
@@ -137,6 +137,7 @@ function page() {
                 />
 
                 <Input
+                    icon={<Lock size={16} />}
                     label="Input with Error"
                     placeholder="Enter password"
                     type="password"
