@@ -72,7 +72,7 @@ const IconBox: React.FC<IconBoxProps> = ({
         className
       )}
     >
-      <Icon strokeWidth={1.5} className={clsx("w-5 h-5", iconColorStyles[iconColor])} />
+      <Icon  strokeWidth={1.5} className={clsx("w-5 h-5", iconColorStyles[iconColor])} />
     </div>
   );
 };

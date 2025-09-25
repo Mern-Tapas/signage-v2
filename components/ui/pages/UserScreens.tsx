@@ -6,24 +6,11 @@ import Avatar from '@/components/ui/custome/Avatar';
 import IconBox from '@/components/ui/custome/IconBox';
 import ProductCard from '@/components/ui/custome/ProductCard';
 import { ProfileCard } from '@/components/ui/custome/ProfileCard';
-import { Database, File, PlayIcon, PlaySquare, Plus, PlusIcon, ScreenShare, ScreenShareIcon, Timer, Users, WatchIcon } from 'lucide-react';
+import { Database, File, Grid, Grid2X2, LayoutGrid, PlayIcon, PlaySquare, Plus, PlusIcon, ScreenShare, ScreenShareIcon, Search, Timer, TvMinimal, Users, WatchIcon } from 'lucide-react';
 import { Metadata } from 'next';
 import React from 'react'
-import DeviceTable from '../custome/DeviceTable';
 import { Button } from '../custome/Button';
 
-
-import {
-    AlertDialog,
-    AlertDialogTrigger,
-    AlertDialogContent,
-    AlertDialogHeader,
-    AlertDialogTitle,
-    AlertDialogDescription,
-    AlertDialogFooter,
-    AlertDialogCancel,
-    AlertDialogAction,
-} from '@/components/ui/custome/AlertDialog';
 
 import {
     Dialog,
@@ -37,6 +24,8 @@ import {
     DialogClose,
 } from "@/components/ui/custome/Dialog";
 import DeviceCard from '../custome/DeviceCard';
+import Link from 'next/link';
+import { Input } from '../custome/Input';
 function UserScreen() {
 
 
@@ -45,14 +34,24 @@ function UserScreen() {
             <Container className='flex items-center justify-between'>
                 <Container>
                     <Typography variant='h4' weight='bold'>Screen Manager</Typography>
-                    <Typography variant='body2' color='secondary'>Manage your Digital Signages</Typography>
+                    <Typography variant='body2' color='secondary'>Manage your digital signage devices</Typography>
+
 
                 </Container>
-                <Container>
+
+            </Container>
+            <Container className='flex items-center justify-between'>
+                <Container className='flex gap-4'>
+                    <Input variant='filled' placeholder='Search' icon={<Search strokeWidth={1.5} className='' radius={'md'} />} />
+
+                </Container>
+                <Container className='flex gap-2'>
+
+                    <Button size='icon' icon={<LayoutGrid strokeWidth={1.3} radius={'md'} />} />
 
                     <Dialog>
                         <DialogTrigger>
-                            <Button variant="primary" icon={<PlusIcon size={16} strokeWidth={1.5} />}>Add Device</Button>
+                            <Button variant="primary" size='md' icon={<PlusIcon strokeWidth={1.5} />}>Add Device</Button>
                         </DialogTrigger>
                         <DialogContent>
                             <DialogHeader>
@@ -90,7 +89,6 @@ function UserScreen() {
 
                 </Container>
             </Container>
-
             <Container className='grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'  >
                 <DeviceCard />
                 <DeviceCard />
