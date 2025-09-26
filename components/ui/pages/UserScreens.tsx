@@ -26,7 +26,7 @@ import {
 import DeviceCard from '../custome/DeviceCard';
 import Link from 'next/link';
 import { Input } from '../custome/Input';
-function UserScreen() {
+function UserScreens() {
 
 
     return (
@@ -115,17 +115,6 @@ function UserScreen() {
                 <DeviceCard />
                 <DeviceCard />
                 <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
             </Container>
 
 
@@ -133,4 +122,4 @@ function UserScreen() {
     )
 }
 
-export default UserScreen
+export default UserScreens

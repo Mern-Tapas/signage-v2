@@ -10,7 +10,7 @@ function DeviceCard() {
             <IconBox className='shrink-0' size='lg' icon={TvMinimal} />
             <Container className='w-[70%]'>
                 <Typography variant='h6' weight='medium' className='truncate m-0'>Shalimar Towshipt kanadia road</Typography>
-                <Caption color='secondary' className='truncate p-0 m-0'>Active - 3 Devices</Caption>
+                <Typography variant='caption' weight='light' className='truncate m-0'>Shalimar Towshipt kanadia road</Typography>
             </Container>
         </Container>
     )
