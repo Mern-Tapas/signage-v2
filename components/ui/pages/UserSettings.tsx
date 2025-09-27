@@ -18,31 +18,46 @@ function UserSettings() {
                 </Container>
 
             </Container>
-            <Container className='grid gap-4 grid-cols-[1fr_3.5fr]'>
-                <Container padding='lg' variant='primary' className='grid gap-2 self-start' radius='xl'>
-                    <Typography variant='overline' weight='medium' className="">Menu</Typography>
-
-                    <Container className='grid gap-2'>
-                        <Link href={'/user/components'} className="p-2 flex items-center cursor-pointer gap-1 hover:bg-gray-100 rounded-md transition-bg">
-                            {/* <IconBox size='md' variant='transparant' icon={Settings} /> */}
-                            <Typography variant='body2' color='secondary' className="">General</Typography>
-                        </Link>
-                        <Link href={'/user/components'} className="p-2 flex items-center cursor-pointer gap-1 hover:bg-gray-100 rounded-md transition-bg">
-                            {/* <IconBox size='md' variant='transparant' icon={Settings} /> */}
-                            <Typography variant='body2' color='secondary' className="">Access & User</Typography>
-                        </Link>
-                        <Link href={'/user/components'} className="p-2 flex items-center cursor-pointer gap-1 hover:bg-gray-100 rounded-md transition-bg">
-                            {/* <IconBox size='md' variant='transparant' icon={Settings} /> */}
-                            <Typography variant='body2' color='secondary' className="">Privacy & Security</Typography>
-                        </Link>
-                        <Link href={'/user/components'} className="p-2 flex items-center cursor-pointer gap-1 hover:bg-gray-100 rounded-md transition-bg">
-                            {/* <IconBox size='md' variant='transparant' icon={Settings} /> */}
-                            <Typography variant='body2' color='secondary' className="">Branding</Typography>
-                        </Link>
-                        <Link href={'/user/components'} className="p-2 flex items-center cursor-pointer gap-1 hover:bg-gray-100 rounded-md transition-bg">
-                            {/* <IconBox size='md' variant='transparant' icon={Settings} /> */}
-                            <Typography variant='body2' color='secondary' className="">Billing</Typography>
-                        </Link>
+            <Container className='grid gap-4 lg:grid-cols-[1fr_3.5fr]'>
+                <Container padding='lg' variant='primary' className='grid gap-8 self-start' radius='xl'>
+                    <Container className='grid gap-4'>
+                        <Typography variant='overline' weight='medium' className="">YOUR ACCOUNT</Typography>
+                        <Container className='grid gap-2'>
+                            <Link href={'/user/components'} className="p-2 flex items-center cursor-pointer gap-1 hover:bg-gray-100 rounded-md transition-bg">
+                                {/* <IconBox size='md' variant='transparant' icon={Settings} /> */}
+                                <Typography variant='body2' color='secondary' className="">General</Typography>
+                            </Link>
+                            <Link href={'/user/components'} className="p-2 flex items-center cursor-pointer gap-1 hover:bg-gray-100 rounded-md transition-bg">
+                                {/* <IconBox size='md' variant='transparant' icon={Settings} /> */}
+                                <Typography variant='body2' color='secondary' className="">Access & User</Typography>
+                            </Link>
+                            <Link href={'/user/components'} className="p-2 flex items-center cursor-pointer gap-1 hover:bg-gray-100 rounded-md transition-bg">
+                                {/* <IconBox size='md' variant='transparant' icon={Settings} /> */}
+                                <Typography variant='body2' color='secondary' className="">Privacy & Security</Typography>
+                            </Link>
+                            <Link href={'/user/components'} className="p-2 flex items-center cursor-pointer gap-1 hover:bg-gray-100 rounded-md transition-bg">
+                                {/* <IconBox size='md' variant='transparant' icon={Settings} /> */}
+                                <Typography variant='body2' color='secondary' className="">Branding</Typography>
+                            </Link>
+                            <Link href={'/user/components'} className="p-2 flex items-center cursor-pointer gap-1 hover:bg-gray-100 rounded-md transition-bg">
+                                {/* <IconBox size='md' variant='transparant' icon={Settings} /> */}
+                                <Typography variant='body2' color='secondary' className="">Billing</Typography>
+                            </Link>
+                        </Container>
+                    </Container>
+                    <Container className='grid gap-4'>
+                        <Typography variant='overline' weight='medium' className="">YOUR ACCOUNT</Typography>
+                        <Container className='grid gap-2'>
+                            <Link href={'/user/components'} className="p-2 flex items-center cursor-pointer gap-1 hover:bg-gray-100 rounded-md transition-bg">
+                                {/* <IconBox size='md' variant='transparant' icon={Settings} /> */}
+                                <Typography variant='body2' color='secondary' className="">General</Typography>
+                            </Link>
+                            <Link href={'/user/components'} className="p-2 flex items-center cursor-pointer gap-1 hover:bg-gray-100 rounded-md transition-bg">
+                                {/* <IconBox size='md' variant='transparant' icon={Settings} /> */}
+                                <Typography variant='body2' color='secondary' className="">Access & User</Typography>
+                            </Link>
+                           
+                        </Container>
                     </Container>
                 </Container>
                 <Container padding='lg' variant='primary' className='flex flex-col gap-4' radius='xl'>
