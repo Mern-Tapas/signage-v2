@@ -26,7 +26,7 @@ const Container: React.FC<ContainerProps> = ({
     const variantStyles: Record<Variant, string> = {
         default: "bg-transparent",
         primary: "bg-white",
-        outline: "bg-white border border-gray-300",
+        outline: "bg-white border border-gray-200",
         secondary: "bg-[#f8f9fa]", // offwhite
     };
 

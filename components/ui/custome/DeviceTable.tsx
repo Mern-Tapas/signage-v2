@@ -16,7 +16,7 @@ function DeviceTable() {
             </CardHeader >
             <CardBody >
                 <Table variant="default" size="md">
-                    <TableHeader>
+                    <TableHeader >
                         <TableRow>
                             <TableHead>Device Name</TableHead>
                             <TableHead>Device Id</TableHead>
