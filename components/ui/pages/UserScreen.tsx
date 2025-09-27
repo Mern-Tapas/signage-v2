@@ -17,7 +17,7 @@ function UserScreen() {
 
             </Container>
 
-            <Container className='grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'  >
+            <Container className='grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' variant='primary' padding='md' radius='xl' >
                 body
             </Container>
 

@@ -115,6 +115,7 @@ function page() {
                 <Button variant="outline">Outline</Button>
                 <Button variant="ghost">Ghost</Button>
                 <Button variant="danger">Delete</Button>
+                <Button variant="danger" >Delete</Button>
 
                 <Button size="sm">Small</Button>
                 <Button size="md">Medium</Button>

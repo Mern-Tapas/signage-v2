@@ -48,6 +48,10 @@ export default function Sidebar() {
                     <IconBox size='md' variant='transparant' icon={Settings} />
                     <Typography variant='body2' className="">Settings</Typography>
                 </Link>
+                <Link href={'/user/components'} className="flex items-center cursor-pointer gap-1 hover:bg-gray-100 rounded-md transition-bg">
+                    <IconBox size='md' variant='transparant' icon={Settings} />
+                    <Typography variant='body2' className="">Components</Typography>
+                </Link>
             </Container>
         </Container>
         <Container className="flex flex-col ">

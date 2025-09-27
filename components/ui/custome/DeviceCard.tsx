@@ -2,15 +2,21 @@ import React from 'react'
 import Container from '@/components/layout/Container'
 import IconBox from './IconBox'
 import { Caption, Typography } from '@/components/typography/typography'
-import {  TvMinimal } from 'lucide-react'
+import { TvMinimal } from 'lucide-react'
+import MarqueeText from './MarqueeText'
+import { Badge } from './Badge'
 
 function DeviceCard() {
     return (
         <Container variant='primary' padding='sm' radius='xl' className='flex gap-2 items-center'>
-            <IconBox className='shrink-0' size='lg' icon={TvMinimal} />
+            <IconBox className='shrink-0 border border-gray-200' size='lg' icon={TvMinimal} />
             <Container className='w-[70%]'>
-                <Typography variant='h6' weight='medium' className='truncate m-0'>Shalimar Towshipt kanadia road</Typography>
-                <Typography variant='caption' weight='light' className='truncate m-0'>Shalimar Towshipt kanadia road</Typography>
+                <Typography variant='h6' weight='medium' className='truncate '>Shalimar Towshipt kanadia road</Typography>
+                {/* <Typography variant='caption' weight='medium'  className='truncate '>Please type here short description mk</Typography> */}
+                <Container className='flex gap-2'>
+                    <Caption color='success'>Online</Caption>
+                    <Caption color='muted'>10 Videos</Caption>
+                </Container>
             </Container>
         </Container>
     )

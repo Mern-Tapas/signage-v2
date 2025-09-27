@@ -42,7 +42,7 @@ function UserScreens() {
             </Container>
             <Container className='flex items-center justify-between'>
                 <Container className='flex gap-4'>
-                    <Input variant='filled' placeholder='Search' icon={<Search strokeWidth={1.5} className='' radius={'md'} />} />
+                    <Input variant='filled' placeholder='Search'radius='xl' icon={<Search strokeWidth={1.5} size={20} className='' />} />
 
                 </Container>
                 <Container className='flex gap-2'>

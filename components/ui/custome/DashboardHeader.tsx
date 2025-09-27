@@ -35,21 +35,12 @@ function DashboardHeader() {
         <Container padding='md' className={`flex  justify-between items-center sticky top-0 bg-[#f5f7fb] transition-all  ${scrollPosition > 10 ? 'bg-white shadow-sm ' : ''}  z-10    `}>
             <Container className='flex gap-2 items-center' >
                 <Button size='icon' icon={<Menu strokeWidth={1.5} radius={'md'} />} />
+
             </Container>
             <Container className='flex gap-2 items-center' >
-                {/* <Container variant='primary' padding='sm' className='rounded-full' > */}
-                <LinkIconButton
-                    href="https://github.com"
-                    icon={Bell}
-                    variant="primary"
-                    size="md"
-                    radius="full"
-                    iconColor="primary"
-                />
-                {/* </Container> */}
-                {/* <Container variant='primary' padding='sm' radius='xl'  >
-                    <ProfileCard variant='right' />
-                </Container> */}
+              
+                <Button icon={<Bell strokeWidth={1.5}/>} size='icon'/>
+               
                 <Container>
                     <Dropdown>
                         <DropdownTrigger>
