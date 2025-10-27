@@ -3,6 +3,8 @@ import Container from '@/components/layout/Container'
 import { Button } from '../custome/Button'
 import { Caption, Typography } from '@/components/typography/typography'
 import { Input } from '../custome/Input'
+import IconBox from '../custome/IconBox'
+import { TvMinimal } from 'lucide-react'
 
 function UserScreen() {
     return (
@@ -17,8 +19,24 @@ function UserScreen() {
 
             </Container>
 
-            <Container className='grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' variant='primary' padding='md' radius='xl' >
-                body
+            <Container className='flex' variant='default' padding='none'>
+
+                <Container className='md:w-100 w-full gap-4 grid' variant='primary' padding='md' radius='xl' >
+                    <div className='flex gap-4 '>
+                        <div>
+                            <IconBox className='shrink-0 border border-gray-200' size='lg' icon={TvMinimal} />
+                        </div>
+                        <div>
+                            <Typography variant='h4'>Shalimar Township</Typography>
+                            <Typography variant='caption'>Lorem ipsum dolor sit amet.</Typography>
+                        </div>
+                    </div>
+
+                    <Container className='' variant='outline' padding='md' radius='md'>
+                        d
+                    </Container>
+                </Container>
+
             </Container>
 
 

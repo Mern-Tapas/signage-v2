@@ -47,7 +47,7 @@ function UserScreens() {
                 </Container>
                 <Container className='flex gap-2'>
 
-                    <Button size='icon' icon={<LayoutGrid strokeWidth={1.3} radius={'md'} />} />
+                    <Button size='icon' icon={<LayoutGrid strokeWidth={1.2} radius={'md'} />} />
 
                     <Dialog>
                         <DialogTrigger>
