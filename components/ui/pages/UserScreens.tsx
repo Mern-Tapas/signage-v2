@@ -6,9 +6,9 @@ import Avatar from '@/components/ui/custome/Avatar';
 import IconBox from '@/components/ui/custome/IconBox';
 import ProductCard from '@/components/ui/custome/ProductCard';
 import { ProfileCard } from '@/components/ui/custome/ProfileCard';
-import { Database, File, Grid, Grid2X2, LayoutGrid, PlayIcon, PlaySquare, Plus, PlusIcon, ScreenShare, ScreenShareIcon, Search, Timer, TvMinimal, Users, WatchIcon } from 'lucide-react';
+import { Database, File, Grid, Grid2X2, LayoutGrid, PlayIcon, PlaySquare, Plus, PlusIcon, Radio, ScreenShare, ScreenShareIcon, Search, Timer, TvMinimal, Users, WatchIcon } from 'lucide-react';
 import { Metadata } from 'next';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button } from '../custome/Button';
 
 
@@ -26,28 +26,56 @@ import {
 import DeviceCard from '../custome/DeviceCard';
 import Link from 'next/link';
 import { Input } from '../custome/Input';
+import DeviceList from '../custome/DeviceList';
+import Checkbox from '../custome/Checkbox';
 function UserScreens() {
 
 
+
+
+    const [deviceLayout, setLayout] = useState<boolean>(false)
+    const [mounted, setMounted] = useState<boolean>(false)
+
+    const changeLayout = (layout: boolean) => {
+        setLayout(layout)
+        localStorage.setItem("deviceLayout", JSON.stringify(layout))
+    }
+
+
+    useEffect(() => {
+
+        const layout = localStorage.getItem("deviceLayout")
+
+        if (layout != null) {
+            setLayout(JSON.parse(layout))
+        }
+        setMounted(true)
+
+
+
+    }, [])
+
+
     return (
-        <Container className='grid gap-4'>
+        mounted ? <Container className='grid gap-4'>
             <Container className='flex items-center justify-between'>
                 <Container>
-                    <Typography variant='h4' weight='bold'>Screen Manager</Typography>
+                    <Typography variant='h4' weight='medium'>Screen Manager</Typography>
                     <Typography variant='body2' color='secondary'>Manage your digital signage devices</Typography>
 
 
                 </Container>
 
             </Container>
+
             <Container className='flex items-center justify-between'>
                 <Container className='flex gap-4'>
-                    <Input variant='filled' placeholder='Search'radius='xl' icon={<Search strokeWidth={1.5} size={20} className='' />} />
+                    <Input variant='filled' placeholder='Search' radius='xl' icon={<Search strokeWidth={1.5} size={20} className='' />} />
 
                 </Container>
                 <Container className='flex gap-2'>
 
-                    <Button size='icon' icon={<LayoutGrid strokeWidth={1.2} radius={'md'} />} />
+                    <Button size='icon' icon={<LayoutGrid strokeWidth={1.2} radius={'md'} />} onClick={() => changeLayout(!deviceLayout)} />
 
                     <Dialog>
                         <DialogTrigger>
@@ -89,36 +117,75 @@ function UserScreens() {
 
                 </Container>
             </Container>
-            <Container className='grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'  >
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-                <DeviceCard />
-            </Container>
 
 
-        </Container>
+            {deviceLayout ?
+                <Container className='grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'  >
+                    <DeviceCard />
+                    <DeviceCard />
+                    <DeviceCard />
+                    <DeviceCard />
+                    <DeviceCard />
+                    <DeviceCard />
+                    <DeviceCard />
+                    <DeviceCard />
+                    <DeviceCard />
+                    <DeviceCard />
+                    <DeviceCard />
+                    <DeviceCard />
+                    <DeviceCard />
+                    <DeviceCard />
+                    <DeviceCard />
+                    <DeviceCard />
+                    <DeviceCard />
+                    <DeviceCard />
+                    <DeviceCard />
+                    <DeviceCard />
+                    <DeviceCard />
+                    <DeviceCard />
+                    <DeviceCard />
+                    <DeviceCard />
+                    <DeviceCard />
+                </Container> :
+
+                <Container className='grid gap-4'>
+                    <Container className='grid grid-cols-[350px_auto] lg:grid-cols-[350px_auto_auto_auto] gap-4 px-4' variant='default' padding='sm' radius='xl'>
+                        <div className='flex gap-4 items-center'>
+                            <Checkbox
+                                checked={false}
+                                onChange={() => { }}
+                                color="primary"
+                                size="md"
+                            />
+                            <Typography variant='caption'>All Device</Typography>
+                        </div>
+                        <div className="hidden lg:flex ">
+                            <Typography variant='caption'>Status</Typography>
+                        </div>
+                        <div className="hidden lg:flex">
+                            <Typography variant='caption'>Status</Typography>
+                        </div>
+                        <div className="flex justify-end">
+                            <Typography variant='caption' >Status</Typography>
+                        </div>
+                        
+                    </Container>
+                    <DeviceList />
+                    <DeviceList />
+                    <DeviceList />
+                    <DeviceList />
+                    <DeviceList />
+                    <DeviceList />
+                    <DeviceList />
+                    <DeviceList />
+                    <DeviceList />
+                    <DeviceList />
+                </Container>
+
+            }
+
+
+        </Container> : ""
     )
 }
 

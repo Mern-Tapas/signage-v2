@@ -4,24 +4,25 @@ import { Button } from '../custome/Button'
 import { Caption, Typography } from '@/components/typography/typography'
 import { Input } from '../custome/Input'
 import IconBox from '../custome/IconBox'
-import { Database, Icon, Info, Maximize, TvMinimal } from 'lucide-react'
+import { Database, Icon, Info, Maximize, ScreenShare, TvMinimal } from 'lucide-react'
 import { Badge } from '../custome/Badge'
+import AnalyticsCard from '../custome/AnalyticsCard'
 
 function UserScreen() {
     return (
         <Container className='grid gap-4'>
             <Container className='flex items-center justify-between'>
                 <Container>
-                    <Typography variant='h4' weight='bold'>Screen Details</Typography>
+                    <Typography variant='h4' weight='medium'>Screen Details</Typography>
                     <Typography variant='body2' color='secondary'>Connect playlist and manage your ads</Typography>
                 </Container>
 
             </Container>
 
-            <Container className='flex' variant='default' padding='none'>
+            <Container className='flex gap-4 flex-col lg:flex-row' variant='default' padding='none'>
 
                 {/* Device Details */}
-                <Container className='md:w-100 w-full gap-4 grid relative' variant='primary' padding='md' radius='xl' >
+                <Container className='lg:w-100 w-full gap-4 grid relative shrink-0' variant='primary' padding='md' radius='xl' >
                     <Badge size='sm' variant='filled' color='success' className='absolute top-4 right-4'>Online</Badge>
 
 
@@ -35,7 +36,7 @@ function UserScreen() {
                         </div>
                     </div>
 
-                    <Container className='grid gap-6 md:grid-cols-2 sm:grid-cols-4 grid-cols-2' variant='outline' padding='md' radius='md'>
+                    <Container className='grid gap-6 lg:grid-cols-2 sm:grid-cols-4 grid-cols-2' variant='outline' padding='md' radius='md'>
                         {/* section 1 */}
                         <div className='flex gap-2  items-center'>
                             <Info size={24} strokeWidth={1.5} className='shrink-0 h-10 w-10 p-2' />
@@ -72,6 +73,46 @@ function UserScreen() {
                     </Container>
 
                 </Container>
+
+                <div className='grid grid-cols-2 gap-4 w-full'>
+                    
+                    <AnalyticsCard
+                        title="Total Screens"
+                        value="2,567"
+                        subtitle="45 online currently"
+                        icon={ScreenShare}
+                        iconVariant="transparant"
+                        iconColor="secondary"
+
+                    />
+                    <AnalyticsCard
+                        title="Total Screens"
+                        value="2,567"
+                        subtitle="45 online currently"
+                        icon={ScreenShare}
+                        iconVariant="transparant"
+                        iconColor="secondary"
+
+                    />
+                    <AnalyticsCard
+                        title="Total Screens"
+                        value="2,567"
+                        subtitle="45 online currently"
+                        icon={ScreenShare}
+                        iconVariant="transparant"
+                        iconColor="secondary"
+
+                    />
+                    <AnalyticsCard
+                        title="Total Screens"
+                        value="2,567"
+                        subtitle="45 online currently"
+                        icon={ScreenShare}
+                        iconVariant="transparant"
+                        iconColor="secondary"
+
+                    />
+                </div>
 
             </Container>
 
