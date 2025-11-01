@@ -149,8 +149,10 @@ function UserScreens() {
                 </Container> :
 
                 <Container className='grid gap-4'>
-                    <Container className='grid grid-cols-[350px_auto] lg:grid-cols-[350px_auto_auto_auto] gap-4 px-4' variant='default' padding='sm' radius='xl'>
-                        <div className='flex gap-4 items-center'>
+                    {/* <Container className='grid grid-cols-[350px_auto] lg:grid-cols-[350px_auto_auto_auto] gap-4 px-4' variant='default' padding='sm' radius='xl'> */}
+                    {/* <Container variant='primary' padding='sm' radius='xl' className='grid grid-cols-[350px_auto] gap-4 lg:grid-cols-[350px_auto_auto_auto] items-center px-4'>
+
+                        <div className='flex gap-4 items-center border'>
                             <Checkbox
                                 checked={false}
                                 onChange={() => { }}
@@ -159,17 +161,46 @@ function UserScreens() {
                             />
                             <Typography variant='caption'>All Device</Typography>
                         </div>
-                        <div className="hidden lg:flex ">
+                        <div className="hidden lg:flex border">
                             <Typography variant='caption'>Status</Typography>
                         </div>
-                        <div className="hidden lg:flex">
-                            <Typography variant='caption'>Status</Typography>
+                        <div className="hidden lg:flex border">
+                            <Typography variant='caption'>Device Id</Typography>
                         </div>
                         <div className="flex justify-end">
-                            <Typography variant='caption' >Status</Typography>
+                            <Typography variant='caption' >Actions</Typography>
                         </div>
-                        
+
+                    </Container> */}
+
+                    <Container variant='default' padding='sm' radius='xl' className='grid grid-cols-[350px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr] items-center px-4'>
+
+
+                        <div className='flex gap-4 items-center '>
+                            <Checkbox
+                                checked={false}
+                                onChange={() => { }}
+                                color="primary"
+                                size="md"
+                            />
+                            <Container className=''>
+
+                                <Typography variant='body2' weight='normal' className='truncate '>All Devices</Typography>
+
+                            </Container>
+                        </div>
+                        <div className='hidden lg:flex '>
+                            <Typography variant='body2' weight='normal' className='truncate '>Devices Id</Typography>
+                        </div>
+                        <div className='hidden lg:flex '>
+                            <Typography variant='body2' weight='normal' className='truncate '>Status</Typography>
+                        </div>
+                        <div className="ms-auto flex items-center">
+                            <Typography variant='body2' weight='normal' className='truncate '>Action</Typography>
+
+                        </div>
                     </Container>
+
                     <DeviceList />
                     <DeviceList />
                     <DeviceList />

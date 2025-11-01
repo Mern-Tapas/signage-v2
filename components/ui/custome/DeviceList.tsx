@@ -12,9 +12,10 @@ import { Dropdown, DropdownContent, DropdownItem, DropdownTrigger } from './Drop
 function DeviceList() {
     const [checked, setChecked] = React.useState(false);
     return (
-        <Container variant='primary' padding='sm' radius='xl' className='grid grid-cols-[350px_auto] gap-4 lg:grid-cols-[350px_auto_auto_auto] items-center px-4'>
+        <Container variant='primary' padding='sm' radius='xl' className='grid grid-cols-[350px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr] items-center px-4'>
 
-            <div className='flex gap-4 items-center'>
+
+            <div className='flex gap-4 items-center '>
                 <Checkbox
                     checked={checked}
                     onChange={setChecked}
@@ -34,11 +35,11 @@ function DeviceList() {
                     </Container>
                 </Container>
             </div>
-            <div className='hidden lg:flex'>
-                <Badge size='sm' color='success'>Online</Badge>
+            <div className='hidden lg:flex '>
+                <Typography variant='caption'>WS123840</Typography>
             </div>
-            <div className='hidden lg:flex'>
-
+            <div className='hidden lg:flex '>
+                <Badge size='sm' color='success'>Online</Badge>
             </div>
             <div className="ms-auto flex items-center">
                 <Dropdown >
