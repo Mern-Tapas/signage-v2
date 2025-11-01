@@ -2,7 +2,7 @@ import React from 'react'
 import Container from '@/components/layout/Container'
 import IconBox from './IconBox'
 import { Caption, Typography } from '@/components/typography/typography'
-import { Delete, EllipsisVertical, Menu, TvMinimal } from 'lucide-react'
+import { Delete, EllipsisVertical, Eye, Menu, Trash, TvMinimal } from 'lucide-react'
 import MarqueeText from './MarqueeText'
 import { Badge } from './Badge'
 import Link from 'next/link'
@@ -49,11 +49,12 @@ function DeviceList() {
                         </Container>
                     </DropdownTrigger>
 
-                    <DropdownContent align="right" className='p-0 rounded-xl'>
+                    <DropdownContent align="right" className='p-1 rounded-xl'>
                         <DropdownItem>
-                            <Link href={'/user'}>
-                                Profile
-                            </Link>
+                           <div className='flex gap-2 items-center'><Eye size={16}/> View</div>
+                        </DropdownItem>
+                        <DropdownItem>
+                           <div className='flex gap-2 items-center'><Trash size={16}/> Remove</div>
                         </DropdownItem>
 
                     </DropdownContent>

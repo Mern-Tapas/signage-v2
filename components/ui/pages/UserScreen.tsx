@@ -75,7 +75,7 @@ function UserScreen() {
                 </Container>
 
                 <div className='grid grid-cols-2 gap-4 w-full'>
-                    
+
                     <AnalyticsCard
                         title="Total Screens"
                         value="2,567"
@@ -116,6 +116,9 @@ function UserScreen() {
 
             </Container>
 
+            <Container>
+                <Typography variant='body1'>Device Playlists</Typography>
+            </Container>
 
         </Container>
     )
