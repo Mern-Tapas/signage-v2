@@ -2,7 +2,7 @@
 import React from 'react'
 import Container from '@/components/layout/Container'
 import { Button } from '@/components/ui/custome/Button'
-import { Menu, Bell, User, Settings, LogOut, Search } from 'lucide-react'
+import { Menu, Bell, User, Settings, LogOut, Search, X } from 'lucide-react'
 import { ProfileCard } from '@/components/ui/custome/ProfileCard'
 import LinkIconButton from '@/components/ui/custome/LinkIconButton'
 import { useEffect, useState } from 'react'
@@ -10,7 +10,13 @@ import { Dropdown, DropdownContent, DropdownItem, DropdownTrigger } from './Drop
 import Link from 'next/link'
 import { Input } from './Input'
 
-function DashboardHeader() {
+
+interface DashboardHeaderProps {
+    sidebarController: () => void,
+    isSidebarOpen: Boolean
+}
+
+function DashboardHeader({ sidebarController, isSidebarOpen }: DashboardHeaderProps) {
 
     const [scrollPosition, setScrollPosition] = useState<number>(0);
 
@@ -34,13 +40,13 @@ function DashboardHeader() {
     return (
         <Container padding='md' className={`flex  justify-between items-center sticky top-0 bg-[#f5f7fb] transition-all  ${scrollPosition > 10 ? 'bg-white/60 backdrop-blur-xl' : ''}  z-10    `}>
             <Container className='flex gap-2 items-center' >
-                <Button size='icon' icon={<Menu strokeWidth={1.5} radius={'md'} />} />
+                <Button size='icon' icon={isSidebarOpen ? <Menu strokeWidth={1.5} radius={'md'} /> : <X strokeWidth={1.5} radius={'md'} />} onClick={sidebarController} />
 
             </Container>
             <Container className='flex gap-2 items-center' >
-              
-                <Button icon={<Bell strokeWidth={1}/>} size='icon'/>
-               
+
+                <Button icon={<Bell strokeWidth={1} />} size='icon' />
+
                 <Container>
                     <Dropdown >
                         <DropdownTrigger>

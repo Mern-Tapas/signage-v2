@@ -49,8 +49,8 @@ function DeviceList() {
                         </Container>
                     </DropdownTrigger>
 
-                    <DropdownContent align="right" className='p-1 rounded-xl'>
-                        <DropdownItem>
+                    <DropdownContent align="right" className='p-1 rounded-lg'>
+                        <DropdownItem > 
                            <div className='flex gap-2 items-center'><Eye size={16}/> View</div>
                         </DropdownItem>
                         <DropdownItem>

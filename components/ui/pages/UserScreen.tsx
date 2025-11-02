@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Container from '@/components/layout/Container'
 import { Button } from '../custome/Button'
@@ -7,6 +8,7 @@ import IconBox from '../custome/IconBox'
 import { Database, Icon, Info, Maximize, ScreenShare, TvMinimal } from 'lucide-react'
 import { Badge } from '../custome/Badge'
 import AnalyticsCard from '../custome/AnalyticsCard'
+import DeviceList from '../custome/DeviceList'
 
 function UserScreen() {
     return (
@@ -117,7 +119,13 @@ function UserScreen() {
             </Container>
 
             <Container>
-                <Typography variant='body1'>Device Playlists</Typography>
+                <Typography variant='body1'>Playlists</Typography>
+            </Container>
+
+            <Container variant='primary' padding='md' radius='xl' className=''>
+                <DeviceList/>
+                <DeviceList/>
+                <DeviceList/>
             </Container>
 
         </Container>

@@ -8,18 +8,17 @@ import ImageBox from "./ImageBox";
 import Link from "next/link";
 import logo from '@/assets/images/brand/LOGO.jpg'
 
-export default function Sidebar() {
 
+interface SidebarProps{
+    isOpen:Boolean
+}
 
-
-
-
-
+export default function Sidebar({isOpen}:SidebarProps) {
 
     return <Container className=" h-full bg-white w-[270px] xl:flex flex-col hidden gap-10" padding="md">
         <Container className='flex items-center justify-center gap-2 '>
             <ImageBox height={400} width={400} src={"https://i.pinimg.com/736x/f6/26/47/f62647f23f4eb78d1b9d267c92ee1521.jpg"} size="xs" radius="none" className="" variant="transparent" />
-            <Typography variant='h5' weight='extrabold'>Signage V2</Typography>
+            <Typography variant='h5' weight='extrabold'>Signage V2 {`${isOpen}`}</Typography>
         </Container>
         <Container className="flex flex-col">
             <Typography variant='overline' weight='medium' className="mb-4">Menu</Typography>
