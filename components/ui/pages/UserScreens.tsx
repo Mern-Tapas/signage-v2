@@ -6,7 +6,7 @@ import Avatar from '@/components/ui/custome/Avatar';
 import IconBox from '@/components/ui/custome/IconBox';
 import ProductCard from '@/components/ui/custome/ProductCard';
 import { ProfileCard } from '@/components/ui/custome/ProfileCard';
-import { Database, File, Grid, Grid2X2, LayoutGrid, PlayIcon, PlaySquare, Plus, PlusIcon, Radio, ScreenShare, ScreenShareIcon, Search, Timer, TvMinimal, Users, WatchIcon } from 'lucide-react';
+import { Database, Download, File, Grid, Grid2X2, LayoutGrid, PlayIcon, PlaySquare, Plus, PlusIcon, Radio, ScreenShare, ScreenShareIcon, Search, Timer, Trash, TvMinimal, Users, WatchIcon } from 'lucide-react';
 import { Metadata } from 'next';
 import React, { useEffect, useState } from 'react'
 import { Button } from '../custome/Button';
@@ -75,11 +75,12 @@ function UserScreens() {
                 </Container>
                 <Container className='flex gap-2'>
 
-                    <Button size='icon' icon={<LayoutGrid strokeWidth={1.2} radius={'md'} />} onClick={() => changeLayout(!deviceLayout)} />
+                    <Button variant="outline" size='md' icon={<Download size={18} strokeWidth={1.5} />}>Export</Button>
+                    <Button variant="danger" size='md' icon={<Trash size={18} strokeWidth={1.5} />}>Delete</Button>
 
                     <Dialog>
                         <DialogTrigger>
-                            <Button variant="primary" size='md' icon={<PlusIcon strokeWidth={1.5} />}>Add Device</Button>
+                            <Button variant="primary" className='h-full' size='md' icon={<PlusIcon size={18} strokeWidth={1.5} />}>Add Device</Button>
                         </DialogTrigger>
                         <DialogContent>
                             <DialogHeader>
@@ -115,6 +116,8 @@ function UserScreens() {
                         </DialogContent>
                     </Dialog>
 
+                    <Button size='icon' icon={<LayoutGrid strokeWidth={1.2} radius={'md'} />} onClick={() => changeLayout(!deviceLayout)} />
+
                 </Container>
             </Container>
 
@@ -149,29 +152,6 @@ function UserScreens() {
                 </Container> :
 
                 <Container className='grid gap-4'>
-                    {/* <Container className='grid grid-cols-[350px_auto] lg:grid-cols-[350px_auto_auto_auto] gap-4 px-4' variant='default' padding='sm' radius='xl'> */}
-                    {/* <Container variant='primary' padding='sm' radius='xl' className='grid grid-cols-[350px_auto] gap-4 lg:grid-cols-[350px_auto_auto_auto] items-center px-4'>
-
-                        <div className='flex gap-4 items-center border'>
-                            <Checkbox
-                                checked={false}
-                                onChange={() => { }}
-                                color="primary"
-                                size="md"
-                            />
-                            <Typography variant='caption'>All Device</Typography>
-                        </div>
-                        <div className="hidden lg:flex border">
-                            <Typography variant='caption'>Status</Typography>
-                        </div>
-                        <div className="hidden lg:flex border">
-                            <Typography variant='caption'>Device Id</Typography>
-                        </div>
-                        <div className="flex justify-end">
-                            <Typography variant='caption' >Actions</Typography>
-                        </div>
-
-                    </Container> */}
 
                     <Container variant='default' padding='sm' radius='xl' className='grid grid-cols-[350px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr] items-center px-4'>
 
@@ -200,17 +180,52 @@ function UserScreens() {
 
                         </div>
                     </Container>
+                    <Container className='flex px-4 gap-2' radius='xl' variant='primary' >
+                        <Checkbox
+                            checked={false}
+                            onChange={() => { }}
+                            color="primary"
+                            size="md"
+                        />
+                        <DeviceList />
+                    </Container>
+                    <Container className='flex px-4 gap-2' radius='xl' variant='primary' >
+                        <Checkbox
+                            checked={false}
+                            onChange={() => { }}
+                            color="primary"
+                            size="md"
+                        />
+                        <DeviceList />
+                    </Container>
+                    <Container className='flex px-4 gap-2' radius='xl' variant='primary' >
+                        <Checkbox
+                            checked={false}
+                            onChange={() => { }}
+                            color="primary"
+                            size="md"
+                        />
+                        <DeviceList />
+                    </Container>
+                    <Container className='flex px-4 gap-2' radius='xl' variant='primary' >
+                        <Checkbox
+                            checked={false}
+                            onChange={() => { }}
+                            color="primary"
+                            size="md"
+                        />
+                        <DeviceList />
+                    </Container>
+                    <Container className='flex px-4 gap-2' radius='xl' variant='primary' >
+                        <Checkbox
+                            checked={false}
+                            onChange={() => { }}
+                            color="primary"
+                            size="md"
+                        />
+                        <DeviceList />
+                    </Container>
 
-                    <DeviceList />
-                    <DeviceList />
-                    <DeviceList />
-                    <DeviceList />
-                    <DeviceList />
-                    <DeviceList />
-                    <DeviceList />
-                    <DeviceList />
-                    <DeviceList />
-                    <DeviceList />
                 </Container>
 
             }

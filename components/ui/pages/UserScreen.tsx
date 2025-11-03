@@ -9,6 +9,8 @@ import { Database, Icon, Info, Maximize, ScreenShare, TvMinimal } from 'lucide-r
 import { Badge } from '../custome/Badge'
 import AnalyticsCard from '../custome/AnalyticsCard'
 import DeviceList from '../custome/DeviceList'
+import Checkbox from '../custome/Checkbox'
+import { Separator } from '../custome/Seprator'
 
 function UserScreen() {
     return (
@@ -118,14 +120,45 @@ function UserScreen() {
 
             </Container>
 
-            <Container>
-                <Typography variant='body1'>Playlists</Typography>
-            </Container>
 
-            <Container variant='primary' padding='md' radius='xl' className=''>
-                <DeviceList/>
-                <DeviceList/>
-                <DeviceList/>
+
+            <Container variant='default'  radius='xl' className='flex flex-col gap-2'>
+
+               
+
+                <Container variant='default' padding='sm' radius='xl' className='grid grid-cols-[350px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr] items-center px-4'>
+
+
+                    <div className='flex gap-4 items-center '>
+                        {/* <Checkbox
+                            checked={false}
+                            onChange={() => { }}
+                            color="primary"
+                            size="md"
+                        /> */}
+                        <Container className=''>
+
+                            <Typography variant='body2' weight='normal' className='truncate '>All Devices</Typography>
+
+                        </Container>
+                    </div>
+                    <div className='hidden lg:flex '>
+                        <Typography variant='body2' weight='normal' className='truncate '>Devices Id</Typography>
+                    </div>
+                    <div className='hidden lg:flex '>
+                        <Typography variant='body2' weight='normal' className='truncate '>Status</Typography>
+                    </div>
+                    <div className="ms-auto flex items-center">
+                        <Typography variant='body2' weight='normal' className='truncate '>Action</Typography>
+
+                    </div>
+                </Container>
+
+                <DeviceList />
+                <DeviceList />
+                <DeviceList />
+                <DeviceList />
+                <DeviceList />
             </Container>
 
         </Container>

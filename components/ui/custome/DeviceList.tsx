@@ -12,16 +12,11 @@ import { Dropdown, DropdownContent, DropdownItem, DropdownTrigger } from './Drop
 function DeviceList() {
     const [checked, setChecked] = React.useState(false);
     return (
-        <Container variant='primary' padding='sm' radius='xl' className='grid grid-cols-[350px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr] items-center px-4'>
+        <Container variant='primary' padding='sm' radius='xl' className='grid grid-cols-[350px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr] items-center w-full'>
 
 
             <div className='flex gap-4 items-center '>
-                <Checkbox
-                    checked={checked}
-                    onChange={setChecked}
-                    color="primary"
-                    size="md"
-                />
+
                 <IconBox className='shrink-0 border border-gray-200' size='lg' icon={TvMinimal} />
                 <Container className=''>
 
@@ -50,11 +45,11 @@ function DeviceList() {
                     </DropdownTrigger>
 
                     <DropdownContent align="right" className='p-1 rounded-lg'>
-                        <DropdownItem > 
-                           <div className='flex gap-2 items-center'><Eye size={16}/> View</div>
+                        <DropdownItem >
+                            <div className='flex gap-2 items-center'><Eye size={16} /> View</div>
                         </DropdownItem>
                         <DropdownItem>
-                           <div className='flex gap-2 items-center'><Trash size={16}/> Remove</div>
+                            <div className='flex gap-2 items-center'><Trash size={16} /> Remove</div>
                         </DropdownItem>
 
                     </DropdownContent>
