@@ -153,33 +153,35 @@ function UserScreens() {
 
                 <Container className='grid gap-4'>
 
-                    <Container variant='default' padding='sm' radius='xl' className='grid grid-cols-[350px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr] items-center px-4'>
+                    <Container className='px-4 flex gap-2'>
+                        <Checkbox
+                            checked={false}
+                            onChange={() => { }}
+                            color="primary"
+                            size="md"
+                        />
 
+                        <Container variant='default' padding='sm' radius='xl' className='w-full grid grid-cols-[350px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr] items-center '>
 
-                        <div className='flex gap-4 items-center '>
-                            <Checkbox
-                                checked={false}
-                                onChange={() => { }}
-                                color="primary"
-                                size="md"
-                            />
-                            <Container className=''>
-
+                            <div className='flex gap-4 items-center '>
                                 <Typography variant='body2' weight='normal' className='truncate '>All Devices</Typography>
+                            </div>
+                            <div className='hidden lg:flex '>
+                                <Typography variant='body2' weight='normal' className='truncate '>Devices Id</Typography>
+                            </div>
+                            <div className='hidden lg:flex '>
+                                <Typography variant='body2' weight='normal' className='truncate '>Status</Typography>
+                            </div>
+                            <div className="ms-auto flex items-center">
+                                <Typography variant='body2' weight='normal' className='truncate '>Action</Typography>
 
-                            </Container>
-                        </div>
-                        <div className='hidden lg:flex '>
-                            <Typography variant='body2' weight='normal' className='truncate '>Devices Id</Typography>
-                        </div>
-                        <div className='hidden lg:flex '>
-                            <Typography variant='body2' weight='normal' className='truncate '>Status</Typography>
-                        </div>
-                        <div className="ms-auto flex items-center">
-                            <Typography variant='body2' weight='normal' className='truncate '>Action</Typography>
+                            </div>
+                        </Container>
 
-                        </div>
                     </Container>
+
+
+
                     <Container className='flex px-4 gap-2' radius='xl' variant='primary' >
                         <Checkbox
                             checked={false}

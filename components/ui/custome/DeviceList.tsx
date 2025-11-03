@@ -9,10 +9,10 @@ import Link from 'next/link'
 import Checkbox from './Checkbox'
 import { Dropdown, DropdownContent, DropdownItem, DropdownTrigger } from './Dropdown'
 
-function DeviceList() {
+function DeviceList({className}:{className?:String,}) {
     const [checked, setChecked] = React.useState(false);
     return (
-        <Container variant='primary' padding='sm' radius='xl' className='grid grid-cols-[350px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr] items-center w-full'>
+        <Container padding='sm' radius='xl' className={`grid grid-cols-[350px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr] items-center w-full ${className}`}>
 
 
             <div className='flex gap-4 items-center '>
