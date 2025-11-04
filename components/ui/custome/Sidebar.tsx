@@ -20,7 +20,7 @@ export default function Sidebar({ isOpen }: SidebarProps) {
     const menuItems = [
         { href: '/user/dashboard', label: 'Dashboard', icon: LayoutGrid },
         { href: '/user/screens', label: 'Screens', icon: ScreenShare },
-        { href: '/user/playlist', label: 'Playlist', icon: PlaySquare },
+        { href: '/user/playlists', label: 'Playlist', icon: PlaySquare },
         { href: '/user/scheduler', label: 'Scheduler', icon: CalendarClock },
         { href: '/user/files', label: 'Files', icon: FolderOpen },
         { href: '/user/settings', label: 'Settings', icon: Settings },

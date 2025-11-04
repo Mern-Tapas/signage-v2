@@ -28,7 +28,7 @@ import Link from 'next/link';
 import { Input } from '../custome/Input';
 import DeviceList from '../custome/DeviceList';
 import Checkbox from '../custome/Checkbox';
-function UserScreens() {
+function UserPlaylists() {
 
 
 
@@ -60,7 +60,7 @@ function UserScreens() {
         mounted ? <Container className='grid gap-4'>
             <Container className='flex items-center justify-between'>
                 <Container>
-                    <Typography variant='h4' weight='medium'>Screen Manager</Typography>
+                    <Typography variant='h4' weight='medium'>Playlists Manager</Typography>
                     <Typography variant='body2' color='secondary'>Manage your digital signage devices</Typography>
 
 
@@ -183,4 +183,4 @@ function UserScreens() {
     )
 }
 
-export default UserScreens
+export default UserPlaylists

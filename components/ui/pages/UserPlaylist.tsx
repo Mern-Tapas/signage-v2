@@ -9,7 +9,7 @@ import AnalyticsCard from '../custome/AnalyticsCard'
 import DeviceList from '../custome/DeviceList'
 import { Card, CardHeader } from '../custome/Card'
 
-function UserScreen() {
+function UserPlaylist() {
     return (
         <Container className='grid gap-4'>
             <Container className='flex items-center justify-between'>
@@ -168,4 +168,4 @@ function UserScreen() {
     )
 }
 
-export default UserScreen
+export default UserPlaylist
