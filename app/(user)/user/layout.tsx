@@ -4,7 +4,8 @@ import DashboardHeader from '@/components/ui/custome/DashboardHeader'
 import Sidebar from '@/components/ui/custome/Sidebar'
 import React from 'react'
 import { useState, useEffect } from 'react'
-function layout({ children }: { children: React.ReactNode }) {
+
+function Layout({ children }: { children: React.ReactNode }) {
 
     const [isOpen, setOpen] = useState(true)
     const [isMounted, setMounted] = useState(false)
@@ -47,4 +48,4 @@ function layout({ children }: { children: React.ReactNode }) {
         )
 }
 
-export default layout
+export default Layout
