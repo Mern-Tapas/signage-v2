@@ -80,8 +80,8 @@ function UserScreens() {
 
                     <Dialog>
                         <DialogTrigger>
-                            <Button variant="primary" className='h-full md:block hidden' size='md' icon={<PlusIcon size={18} strokeWidth={1.5} />}>Add Device</Button>
-                            <Button size='icon' className='block md:hidden' variant='primary' icon={<PlusIcon strokeWidth={1.2} radius={'md'} />} onClick={() => changeLayout(!deviceLayout)} />
+                            <Button variant="primary" className='h-full md:flex hidden' size='md' icon={<PlusIcon size={18} strokeWidth={1.5} />}>Add Device</Button>
+                            <Button size='icon' className='block md:hidden' variant='primary' icon={<PlusIcon strokeWidth={1.2} radius={'md'} />}  />
 
                         </DialogTrigger>
                         <DialogContent>
@@ -142,7 +142,7 @@ function UserScreens() {
                             size="md"
                         />
 
-                        <Container variant='default' padding='sm' radius='xl' className='w-full grid grid-cols-[250px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr] items-center '>
+                        <Container variant='default' padding='sm' radius='xl' className='w-full grid grid-cols-[220px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr] items-center '>
 
                             <div className='flex gap-4 items-center '>
                                 <Typography variant='body2' weight='normal' className='truncate '>All Devices</Typography>
