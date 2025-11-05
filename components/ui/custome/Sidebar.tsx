@@ -1,14 +1,11 @@
 'use client'
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Container from "@/components/layout/Container";
 import IconBox from "./IconBox";
 import { Typography } from "@/components/typography/typography";
 import { CalendarClock, CreditCard, Files, FolderOpen, Grid, LayoutGrid, LifeBuoy, ListVideo, PlaySquare, ScreenShare, Settings, Settings2 } from "lucide-react";
 import ImageBox from "./ImageBox";
 import Link from "next/link";
-import logo from '@/assets/images/brand/LOGO.jpg'
-import { Separator } from "./Seprator";
-
 
 interface SidebarProps {
     isOpen: boolean
