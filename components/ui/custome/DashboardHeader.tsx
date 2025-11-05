@@ -13,7 +13,7 @@ import { Input } from './Input'
 
 interface DashboardHeaderProps {
     sidebarController: () => void,
-    isSidebarOpen: Boolean
+    isSidebarOpen: boolean
 }
 
 function DashboardHeader({ sidebarController, isSidebarOpen }: DashboardHeaderProps) {

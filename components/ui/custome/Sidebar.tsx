@@ -11,7 +11,7 @@ import { Separator } from "./Seprator";
 
 
 interface SidebarProps {
-    isOpen: Boolean
+    isOpen: boolean
 }
 
 export default function Sidebar({ isOpen }: SidebarProps) {

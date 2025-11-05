@@ -9,7 +9,7 @@ import Link from 'next/link'
 import Checkbox from './Checkbox'
 import { Dropdown, DropdownContent, DropdownItem, DropdownTrigger } from './Dropdown'
 
-function PlaylistListItem({className}:{className?:String,}) {
+function PlaylistListItem({className}:{className?:string,}) {
     const [checked, setChecked] = React.useState(false);
     return (
         <Container padding='sm' radius='xl' className={`grid grid-cols-[350px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr] items-center w-full ${className}`}>
