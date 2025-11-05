@@ -9,19 +9,19 @@ import Link from 'next/link'
 import Checkbox from './Checkbox'
 import { Dropdown, DropdownContent, DropdownItem, DropdownTrigger } from './Dropdown'
 
-function DeviceList({className}:{className?:string,}) {
+function DeviceList({ className }: { className?: string, }) {
     const [checked, setChecked] = React.useState(false);
     return (
-        <Container padding='sm' radius='xl' className={`grid grid-cols-[350px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr] items-center w-full ${className}`}>
+        <Container padding='sm' radius='xl' className={`grid grid-cols-[250px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr] items-center w-full ${className}`}>
 
 
-            <div className='flex gap-4 items-center '>
+            <div className='flex gap-4 items-center w-full  '>
 
                 <IconBox className='shrink-0 border border-gray-200' size='lg' icon={TvMinimal} />
-                <Container className=''>
+                <Container className='truncate'>
 
                     <Link className='' href={'/user/screens/device'}>
-                        <Typography variant='body2' weight='normal' className='truncate '>Silver Spring Phase 2 Block A</Typography>
+                        <Typography variant='body2' weight='normal' className='truncate w-full'>Silver Spring Phase 2 Block A dfhfhfhh</Typography>
 
                     </Link>                    {/* <Typography variant='caption' weight='medium'  className='truncate '>Please type here short description mk</Typography> */}
                     <Container className='flex gap-2'>
