@@ -122,7 +122,10 @@ function UserScreen() {
             <Card>
                 <CardHeader >
                     <Container className='flex justify-between' padding='sm'>
-                        <Typography weight='medium'>Playlists</Typography>
+                        <div>
+                            <Typography variant='h6'>Playlists</Typography>
+                            <Typography variant='body2' color='muted'>Connected Playlists </Typography>
+                        </div>
                         <Container>
                             d
                         </Container>
