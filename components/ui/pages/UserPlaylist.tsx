@@ -3,28 +3,31 @@ import React from 'react'
 import Container from '@/components/layout/Container'
 import { Caption, Typography } from '@/components/typography/typography'
 import IconBox from '../custome/IconBox'
-import { Database, Icon, Info, Maximize, ScreenShare, TvMinimal } from 'lucide-react'
+import { Database, ExternalLink, Icon, Info, Maximize, Pen, PlusIcon, ScreenShare, TvMinimal } from 'lucide-react'
+import Link from 'next/link'
 import { Badge } from '../custome/Badge'
 import AnalyticsCard from '../custome/AnalyticsCard'
 import DeviceList from '../custome/DeviceList'
 import { Card, CardHeader } from '../custome/Card'
+import { Button } from '../custome/Button'
 
 function UserPlaylist() {
     return (
         <Container className='grid gap-4'>
             <Container className='flex items-center justify-between'>
                 <Container>
-                    <Typography variant='h4' weight='medium'>Screen Details</Typography>
-                    <Typography variant='body2' color='secondary'>Connect playlist and manage your ads</Typography>
+                    <Typography variant='h4' weight='medium'>Playlist Details</Typography>
+                    <Typography variant='body2' color='secondary'>Manage your digital signage content playlist</Typography>
                 </Container>
 
             </Container>
 
             <Container className='flex gap-4 flex-col lg:flex-row' variant='default' padding='none'>
 
-                {/* Device Details */}
+                {/* Playlist Details */}
                 <Container className='lg:w-100 w-full gap-4 grid relative shrink-0' variant='primary' padding='md' radius='xl' >
-                    <Badge size='sm' variant='filled' color='success' className='absolute top-4 right-4'>Online</Badge>
+
+                    <Pen className='absolute top-4 right-4' size={18} />
 
 
                     <div className='flex gap-4 '>
@@ -75,45 +78,7 @@ function UserPlaylist() {
 
                 </Container>
 
-                <div className='grid grid-cols-2 gap-4 w-full'>
 
-                    <AnalyticsCard
-                        title="Total Screens"
-                        value="2,567"
-                        subtitle="45 online currently"
-                        icon={ScreenShare}
-                        iconVariant="transparant"
-                        iconColor="secondary"
-
-                    />
-                    <AnalyticsCard
-                        title="Total Screens"
-                        value="2,567"
-                        subtitle="45 online currently"
-                        icon={ScreenShare}
-                        iconVariant="transparant"
-                        iconColor="secondary"
-
-                    />
-                    <AnalyticsCard
-                        title="Total Screens"
-                        value="2,567"
-                        subtitle="45 online currently"
-                        icon={ScreenShare}
-                        iconVariant="transparant"
-                        iconColor="secondary"
-
-                    />
-                    <AnalyticsCard
-                        title="Total Screens"
-                        value="2,567"
-                        subtitle="45 online currently"
-                        icon={ScreenShare}
-                        iconVariant="transparant"
-                        iconColor="secondary"
-
-                    />
-                </div>
 
             </Container>
 
@@ -122,9 +87,13 @@ function UserPlaylist() {
             <Card>
                 <CardHeader >
                     <Container className='flex justify-between' padding='sm'>
-                        <Typography weight='medium'>Playlists</Typography>
-                        <Container>
-                            d
+                        <div>
+                            <Typography variant='h6'>Playlist Items</Typography>
+                            <Typography variant='body2' color='muted'>Playlist Items</Typography>
+                        </div>
+                        <Container className='flex items-center'>
+                            <Button variant="primary" className=' md:flex hidden' size='md' icon={<PlusIcon size={18} strokeWidth={1.5} />}>Add Content</Button>
+                            <Button variant="primary" className=' md:hidden flex' size='icon' icon={<PlusIcon size={18} strokeWidth={1.5} />}></Button>
                         </Container>
                     </Container>
                 </CardHeader>
@@ -133,7 +102,7 @@ function UserPlaylist() {
 
 
 
-                    <Container variant='default' padding='sm' radius='xl' className='grid grid-cols-[350px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr] items-center '>
+                    <Container variant='default' padding='sm' radius='xl' className='grid grid-cols-[220px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr_1fr] items-center '>
 
 
                         <div className='flex gap-4 items-center '>
@@ -146,6 +115,9 @@ function UserPlaylist() {
                         </div>
                         <div className='hidden lg:flex '>
                             <Typography variant='body2' weight='normal' className='truncate '>Devices Id</Typography>
+                        </div>
+                        <div className='hidden lg:flex '>
+                            <Typography variant='body2' weight='normal' className='truncate '>Status</Typography>
                         </div>
                         <div className='hidden lg:flex '>
                             <Typography variant='body2' weight='normal' className='truncate '>Status</Typography>

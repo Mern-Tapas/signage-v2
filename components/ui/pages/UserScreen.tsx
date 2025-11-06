@@ -9,6 +9,7 @@ import AnalyticsCard from '../custome/AnalyticsCard'
 import DeviceList from '../custome/DeviceList'
 import { Card, CardHeader } from '../custome/Card'
 import Link from 'next/link'
+import PlaylistListItem from '../custome/PlaylistListItem'
 
 function UserScreen() {
     return (
@@ -163,11 +164,7 @@ function UserScreen() {
                         </div>
                     </Container>
 
-                    <DeviceList className={''} />
-                    <DeviceList className={''} />
-                    <DeviceList className={''} />
-                    <DeviceList className={''} />
-                    <DeviceList className={''} />
+                    <PlaylistListItem/>
                 </Container>
             </Card>
 
