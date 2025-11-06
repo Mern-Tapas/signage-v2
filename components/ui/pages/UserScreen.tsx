@@ -3,11 +3,12 @@ import React from 'react'
 import Container from '@/components/layout/Container'
 import { Caption, Typography } from '@/components/typography/typography'
 import IconBox from '../custome/IconBox'
-import { Database, Icon, Info, Maximize, ScreenShare, TvMinimal } from 'lucide-react'
+import { Database, ExternalLink, Icon, Info, Maximize, ScreenShare, TvMinimal } from 'lucide-react'
 import { Badge } from '../custome/Badge'
 import AnalyticsCard from '../custome/AnalyticsCard'
 import DeviceList from '../custome/DeviceList'
 import { Card, CardHeader } from '../custome/Card'
+import Link from 'next/link'
 
 function UserScreen() {
     return (
@@ -75,7 +76,7 @@ function UserScreen() {
 
                 </Container>
 
-                <div className='grid grid-cols-2 gap-4 w-full'>
+                {/* <div className='grid grid-cols-2 gap-4 w-full'>
 
                     <AnalyticsCard
                         title="Total Screens"
@@ -113,7 +114,7 @@ function UserScreen() {
                         iconColor="secondary"
 
                     />
-                </div>
+                </div> */}
 
             </Container>
 
@@ -127,7 +128,7 @@ function UserScreen() {
                             <Typography variant='body2' color='muted'>Connected Playlists </Typography>
                         </div>
                         <Container>
-                            d
+                            <Link href={'/user/playlists'} ><ExternalLink size={18} /></Link>
                         </Container>
                     </Container>
                 </CardHeader>
@@ -136,7 +137,7 @@ function UserScreen() {
 
 
 
-                    <Container variant='default' padding='sm' radius='xl' className='grid grid-cols-[350px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr] items-center '>
+                    <Container variant='default' padding='sm' radius='xl' className='grid grid-cols-[350px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr_1fr] items-center '>
 
 
                         <div className='flex gap-4 items-center '>
@@ -149,6 +150,9 @@ function UserScreen() {
                         </div>
                         <div className='hidden lg:flex '>
                             <Typography variant='body2' weight='normal' className='truncate '>Devices Id</Typography>
+                        </div>
+                        <div className='hidden lg:flex '>
+                            <Typography variant='body2' weight='normal' className='truncate '>Status</Typography>
                         </div>
                         <div className='hidden lg:flex '>
                             <Typography variant='body2' weight='normal' className='truncate '>Status</Typography>

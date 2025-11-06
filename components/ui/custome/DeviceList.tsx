@@ -2,17 +2,19 @@ import React from 'react'
 import Container from '@/components/layout/Container'
 import IconBox from './IconBox'
 import { Caption, Typography } from '@/components/typography/typography'
-import { Delete, EllipsisVertical, Eye, Menu, Trash, TvMinimal } from 'lucide-react'
+import { Delete, EllipsisVertical, Eye, Menu, Trash, TvMinimal, Volume1 } from 'lucide-react'
 import MarqueeText from './MarqueeText'
 import { Badge } from './Badge'
 import Link from 'next/link'
 import Checkbox from './Checkbox'
 import { Dropdown, DropdownContent, DropdownItem, DropdownTrigger } from './Dropdown'
+import { Image, List, ListVideo, } from 'lucide-react'
+
 
 function DeviceList({ className }: { className?: string, }) {
     const [checked, setChecked] = React.useState(false);
     return (
-        <Container padding='sm' radius='xl' className={`grid grid-cols-[220px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr] items-center w-full ${className}`}>
+        <Container padding='sm' radius='xl' className={`grid grid-cols-[220px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr_1fr] items-center w-full ${className}`}>
 
 
             <div className='flex gap-4 items-center w-full  '>
@@ -35,6 +37,24 @@ function DeviceList({ className }: { className?: string, }) {
             </div>
             <div className='hidden lg:flex '>
                 <Badge size='sm' color='success'>Online</Badge>
+            </div>
+            <div className='hidden lg:flex'>
+
+                <Container radius='md' padding='sm' className='border border-gray-300 flex justify-around gap-6 items-center '>
+                    <div className='flex gap-1 items-center'>
+                        <ListVideo size={16} />
+                        <Caption>10</Caption>
+                    </div>
+                    <div className='flex gap-1 items-center'>
+                        <Image size={16} />
+                        <Caption>10</Caption>
+                    </div>
+                    <div className='flex gap-1 items-center'>
+                        <Volume1 size={16} />
+                        <Caption>0</Caption>
+                    </div>
+                </Container>
+
             </div>
             <div className="ms-auto flex items-center">
                 <Dropdown >

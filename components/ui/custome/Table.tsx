@@ -28,7 +28,7 @@ export const Table: React.FC<TableProps> = ({
     <div className="overflow-x-auto w-full">
       <table
         className={clsx(
-          "w-full border-collapse",
+          "w-full overflow-x-auto border-collapse",
           variant === "bordered" && "border border-gray-200 dark:border-gray-700",
           className
         )}

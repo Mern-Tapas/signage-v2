@@ -142,7 +142,7 @@ function UserScreens() {
                             size="md"
                         />
 
-                        <Container variant='default' padding='sm' radius='xl' className='w-full grid grid-cols-[220px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr] items-center '>
+                        <Container variant='default' padding='sm' radius='xl' className='w-full grid grid-cols-[220px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr_1fr] items-center '>
 
                             <div className='flex gap-4 items-center '>
                                 <Typography variant='body2' weight='normal' className='truncate '>All Devices</Typography>
@@ -152,6 +152,9 @@ function UserScreens() {
                             </div>
                             <div className='hidden lg:flex '>
                                 <Typography variant='body2' weight='normal' className='truncate '>Status</Typography>
+                            </div>
+                            <div className='hidden lg:flex '>
+                                <Typography variant='body2' weight='normal' className='truncate '>Content</Typography>
                             </div>
                             <div className="ms-auto flex items-center">
                                 <Typography variant='body2' weight='normal' className='truncate '>Action</Typography>

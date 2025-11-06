@@ -22,7 +22,7 @@ function DeviceCard() {
                         </Container>
                     </Container>
                 </Container>
-                <Container radius='md' padding='sm' className='border border-gray-400 flex justify-around gap-2 items-center'>
+                <Container radius='md' padding='sm' className='border border-gray-300 flex justify-around gap-2 items-center'>
                     <div className='flex gap-1 items-center'>
                         <ListVideo size={16} />
                         <Caption>10</Caption>

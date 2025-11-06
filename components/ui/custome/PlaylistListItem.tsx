@@ -8,16 +8,17 @@ import { Badge } from './Badge'
 import Link from 'next/link'
 import Checkbox from './Checkbox'
 import { Dropdown, DropdownContent, DropdownItem, DropdownTrigger } from './Dropdown'
+import { ListVideo,Image,Volume1 } from 'lucide-react'
 
 function PlaylistListItem({className}:{className?:string,}) {
     const [checked, setChecked] = React.useState(false);
     return (
-        <Container padding='sm' radius='xl' className={`grid grid-cols-[350px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr] items-center w-full ${className}`}>
+        <Container padding='sm' radius='xl' className={`grid grid-cols-[350px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr_1fr] items-center w-full ${className}`}>
 
 
             <div className='flex gap-4 items-center '>
 
-                <IconBox className='shrink-0 border border-gray-200' size='lg' icon={TvMinimal} />
+                <IconBox className='shrink-0 border border-gray-200' size='lg' icon={ListVideo} />
                 <Container className=''>
 
                     <Link className='' href={'/user/screens/device'}>
@@ -25,7 +26,7 @@ function PlaylistListItem({className}:{className?:string,}) {
 
                     </Link>                    {/* <Typography variant='caption' weight='medium'  className='truncate '>Please type here short description mk</Typography> */}
                     <Container className='flex gap-2'>
-                        <Caption color='success'>Online</Caption>
+                        <Caption color='success'>Active</Caption>
                         <Caption color='muted'>10 Videos</Caption>
                     </Container>
                 </Container>
@@ -35,6 +36,22 @@ function PlaylistListItem({className}:{className?:string,}) {
             </div>
             <div className='hidden lg:flex '>
                 <Badge size='sm' color='success'>Online</Badge>
+            </div>
+            <div className='hidden lg:flex '>
+                 <Container radius='md' padding='sm' className='border border-gray-300 flex justify-around gap-6 items-center '>
+                    <div className='flex gap-1 items-center'>
+                        <ListVideo size={16} />
+                        <Caption>10</Caption>
+                    </div>
+                    <div className='flex gap-1 items-center'>
+                        <Image size={16} />
+                        <Caption>10</Caption>
+                    </div>
+                    <div className='flex gap-1 items-center'>
+                        <Volume1 size={16} />
+                        <Caption>0</Caption>
+                    </div>
+                </Container>
             </div>
             <div className="ms-auto flex items-center">
                 <Dropdown >
