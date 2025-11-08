@@ -39,7 +39,7 @@ function UserScreen() {
                         </div>
                     </div>
 
-                    <Container className='grid gap-6 lg:grid-cols-2  grid-cols-1' variant='outline' padding='md' radius='md'>
+                    <Container className='grid gap-6 lg:grid-cols-2  grid-cols-2' variant='outline' padding='md' radius='md'>
                         {/* section 1 */}
                         <div className='flex gap-2  items-center'>
                             <Info size={24} strokeWidth={1.5} className='shrink-0 h-10 w-10 p-2' />
