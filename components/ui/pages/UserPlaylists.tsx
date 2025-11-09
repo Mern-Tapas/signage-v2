@@ -29,6 +29,7 @@ import { Input } from '../custome/Input';
 import DeviceList from '../custome/DeviceList';
 import Checkbox from '../custome/Checkbox';
 import PlaylistListItem from '../custome/PlaylistListItem';
+import PlaylistCard from '../custome/PlaylistCard';
 function UserPlaylists() {
 
 
@@ -127,7 +128,7 @@ function UserPlaylists() {
                 <Container className='grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'  >
                     {Array.from({ length: 10 }, ( _,i) => {
 
-                        return <DeviceCard key={i} />
+                        return <PlaylistCard key={i} />
                     })}
                 </Container> :
 

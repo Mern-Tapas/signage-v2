@@ -80,7 +80,7 @@ function UserScreens() {
 
                     <Dialog>
                         <DialogTrigger>
-                            <Button variant="primary" className='h-full md:flex hidden' size='md' icon={<PlusIcon size={18} strokeWidth={1.5} />}>Add Device</Button>
+                            <Button variant="primary" className='h-full md:flex hidden' size='md' icon={<PlusIcon size={18} strokeWidth={1.5} />}>Add Screen</Button>
                             <Button size='icon' className='block md:hidden' variant='primary'  icon={<PlusIcon strokeWidth={1.2}  />}  />
 
                         </DialogTrigger>

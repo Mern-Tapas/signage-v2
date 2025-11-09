@@ -10,6 +10,7 @@ import DeviceList from '../custome/DeviceList'
 import { Card, CardHeader } from '../custome/Card'
 import Link from 'next/link'
 import PlaylistListItem from '../custome/PlaylistListItem'
+import { Button } from '../custome/Button'
 
 function UserScreen() {
     return (
@@ -25,16 +26,16 @@ function UserScreen() {
             <Container className='flex gap-4 flex-col lg:flex-row' variant='default' padding='none'>
 
                 {/* Device Details */}
-                <Container className='lg:w-100 w-full gap-4 grid relative shrink-0' variant='primary' padding='md' radius='xl' >
+                <Container className='lg:w-130 w-full gap-4 grid relative shrink-0' variant='primary' padding='md' radius='xl' >
                     <Badge size='sm' variant='filled' color='success' className='absolute top-4 right-4'>Online</Badge>
 
 
-                    <div className='flex gap-4 '>
+                    <div className='flex gap-4  w-full'>
                         <div>
                             <IconBox className='shrink-0 border border-gray-200' size='lg' icon={TvMinimal} />
                         </div>
-                        <div>
-                            <Typography variant='h4'>Shalimar Township</Typography>
+                        <div className='truncate w-60'>
+                            <Typography className=' truncate' variant='h4'>Shalimar Township Block A 1 Silver</Typography>
                             <Typography variant='caption'>Lorem ipsum dolor sit amet.</Typography>
                         </div>
                     </div>
@@ -128,8 +129,8 @@ function UserScreen() {
                             <Typography variant='h6'>Playlists</Typography>
                             <Typography variant='body2' color='muted'>Connected Playlists </Typography>
                         </div>
-                        <Container>
-                            <Link href={'/user/playlists'} ><ExternalLink size={18} /></Link>
+                        <Container className='flex items-center'>
+                           <Button variant='primary' className='shadow-md'>Assign Playlist</Button>
                         </Container>
                     </Container>
                 </CardHeader>

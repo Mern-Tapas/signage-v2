@@ -19,10 +19,10 @@ function PlaylistListItem({className}:{className?:string,}) {
             <div className='flex gap-4 items-center '>
 
                 <IconBox className='shrink-0 border border-gray-200' size='lg' icon={ListVideo} />
-                <Container className=''>
+                <Container className=' truncate w-full'>
 
-                    <Link className='' href={'/user/screens/device'}>
-                        <Typography variant='body2' weight='normal' className='truncate '>Silver Spring Phase 2 Block A</Typography>
+                    <Link className='' href={'/user/playlists/paylist'}>
+                        <Typography variant='body2' weight='normal' className='truncate '>Silver Spring Phase 2 Block A singhaprul dlfo fodf </Typography>
 
                     </Link>                    {/* <Typography variant='caption' weight='medium'  className='truncate '>Please type here short description mk</Typography> */}
                     <Container className='flex gap-2'>
