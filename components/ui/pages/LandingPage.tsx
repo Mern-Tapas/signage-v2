@@ -1,9 +1,9 @@
 'use client'
 import React, { useState } from 'react';
 import { Monitor, Zap, Cloud, BarChart3, Shield, Users, Check, Menu, X, ArrowRight, Play } from 'lucide-react';
+import Link from 'next/link';
 
 export default function LandingePage() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const features = [
     {
@@ -111,51 +111,9 @@ export default function LandingePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 font-sans">
+    <>
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <Monitor className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                SignageHub
-              </span>
-            </div>
-            
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#features" className="text-gray-700 hover:text-blue-600 transition">Features</a>
-              <a href="#pricing" className="text-gray-700 hover:text-blue-600 transition">Pricing</a>
-              <a href="#testimonials" className="text-gray-700 hover:text-blue-600 transition">Testimonials</a>
-              <button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:shadow-lg transition transform hover:scale-105">
-                Sign In
-              </button>
-            </div>
-
-            <button 
-              className="md:hidden"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              {mobileMenuOpen ? <X /> : <Menu />}
-            </button>
-          </div>
-        </div>
-
-        {mobileMenuOpen && (
-          <div className="md:hidden bg-white border-t">
-            <div className="px-4 py-4 space-y-3">
-              <a href="#features" className="block text-gray-700 hover:text-blue-600 transition">Features</a>
-              <a href="#pricing" className="block text-gray-700 hover:text-blue-600 transition">Pricing</a>
-              <a href="#testimonials" className="block text-gray-700 hover:text-blue-600 transition">Testimonials</a>
-              <button className="w-full px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full">
-                Sign In
-              </button>
-            </div>
-          </div>
-        )}
-      </nav>
+    
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
@@ -171,18 +129,20 @@ export default function LandingePage() {
               </span>
             </h1>
             <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Effortlessly manage, schedule, and deploy stunning content across your entire display network. 
+              Effortlessly manage, schedule, and deploy stunning content across your entire display network.
               Powerful features, simple interface, exceptional results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-xl transition transform hover:scale-105 flex items-center gap-2">
                 Get Started <ArrowRight className="w-5 h-5" />
               </button>
+              <Link href={'/demo'}>
               <button className="px-8 py-4 bg-white text-gray-700 rounded-full font-semibold hover:shadow-lg transition border-2 border-gray-200 flex items-center gap-2">
                 <Play className="w-5 h-5" /> Book a Demo
               </button>
+              </Link>
             </div>
-            
+
             <div className="mt-16 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-3xl blur-3xl opacity-20"></div>
               <div className="relative bg-white rounded-3xl shadow-2xl p-4 border border-gray-200">
@@ -209,7 +169,7 @@ export default function LandingePage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <div 
+              <div
                 key={index}
                 className="p-8 bg-gradient-to-br from-gray-50 to-white rounded-2xl hover:shadow-xl transition border border-gray-100 group"
               >
@@ -238,13 +198,12 @@ export default function LandingePage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {pricingPlans.map((plan, index) => (
-              <div 
+              <div
                 key={index}
-                className={`p-8 rounded-3xl transition ${
-                  plan.popular 
-                    ? 'bg-gradient-to-br from-blue-600 to-purple-600 text-white shadow-2xl scale-105 border-4 border-white' 
+                className={`p-8 rounded-3xl transition ${plan.popular
+                    ? 'bg-gradient-to-br from-blue-600 to-purple-600 text-white shadow-2xl scale-105 border-4 border-white'
                     : 'bg-white shadow-lg hover:shadow-xl border border-gray-200'
-                }`}
+                  }`}
               >
                 {plan.popular && (
                   <div className="text-center mb-4">
@@ -269,11 +228,10 @@ export default function LandingePage() {
                     </span>
                   )}
                 </div>
-                <button className={`w-full py-3 rounded-full font-semibold transition mb-8 ${
-                  plan.popular 
-                    ? 'bg-white text-blue-600 hover:shadow-lg' 
+                <button className={`w-full py-3 rounded-full font-semibold transition mb-8 ${plan.popular
+                    ? 'bg-white text-blue-600 hover:shadow-lg'
                     : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-lg'
-                }`}>
+                  }`}>
                   Get Started
                 </button>
                 <ul className="space-y-4">
@@ -304,7 +262,7 @@ export default function LandingePage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div 
+              <div
                 key={index}
                 className="p-8 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-xl transition border border-gray-100"
               >
@@ -349,58 +307,7 @@ export default function LandingePage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                  <Monitor className="w-6 h-6 text-white" />
-                </div>
-                <span className="text-xl font-bold text-white">SignageHub</span>
-              </div>
-              <p className="text-sm leading-relaxed">
-                Empowering businesses with intelligent digital signage solutions since 2020.
-              </p>
-            </div>
 
-            <div>
-              <h4 className="text-white font-semibold mb-4">Product</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-white transition">Features</a></li>
-                <li><a href="#" className="hover:text-white transition">Pricing</a></li>
-                <li><a href="#" className="hover:text-white transition">Integrations</a></li>
-                <li><a href="#" className="hover:text-white transition">API</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-white font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-white transition">About Us</a></li>
-                <li><a href="#" className="hover:text-white transition">Careers</a></li>
-                <li><a href="#" className="hover:text-white transition">Blog</a></li>
-                <li><a href="#" className="hover:text-white transition">Contact</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-white font-semibold mb-4">Legal</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-white transition">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white transition">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-white transition">Security</a></li>
-                <li><a href="#" className="hover:text-white transition">Compliance</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="pt-8 border-t border-gray-800 text-center text-sm">
-            <p>© 2025 SignageHub. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </>
   );
 }
