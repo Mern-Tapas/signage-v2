@@ -83,7 +83,7 @@ export default function BusinessBuyerPage() {
         <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-3xl p-12 shadow-xl text-center">
           <h2 className="text-4xl font-bold mb-4">Interested in Acquisition or Investment?</h2>
           <p className="text-lg text-blue-100 mb-8">
-            Let's discuss how you can be part of our growth story and help us expand globally.
+            Let&#39;s discuss how you can be part of our growth story and help us expand globally.
           </p>
           <a
             href="mailto:invest@signagehub.com"
