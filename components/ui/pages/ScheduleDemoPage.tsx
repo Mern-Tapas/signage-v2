@@ -107,7 +107,7 @@ export default function ScheduleDemoPage() {
                 </div>
 
                 <div className="p-6 bg-white rounded-2xl shadow-lg border border-gray-200">
-                  <h3 className="font-semibold text-gray-900 mb-4">What You'll Learn:</h3>
+                  <h3 className="font-semibold text-gray-900 mb-4">What You&#39;ll Learn:</h3>
                   <ul className="space-y-3">
                     {[
                       'Multi-screen content management',
@@ -331,14 +331,14 @@ export default function ScheduleDemoPage() {
                 Demo Scheduled Successfully!
               </h2>
               <p className="text-xl text-gray-600 mb-8">
-                Thank you, {formData.firstName}! We've received your demo request for {formData.date} at {formData.time}.
+                Thank you, {formData.firstName}! We&#39;ve received your demo request for {formData.date} at {formData.time}.
               </p>
               <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 mb-8 text-left">
                 <h3 className="font-semibold text-gray-900 mb-4">What happens next?</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3 text-gray-700">
                     <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                    You'll receive a confirmation email with calendar invite
+                    You&#39;ll receive a confirmation email with calendar invite
                   </li>
                   <li className="flex items-start gap-3 text-gray-700">
                     <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
@@ -346,7 +346,7 @@ export default function ScheduleDemoPage() {
                   </li>
                   <li className="flex items-start gap-3 text-gray-700">
                     <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                    We'll send you a personalized demo link 15 minutes before
+                    We&#39;ll send you a personalized demo link 15 minutes before
                   </li>
                 </ul>
               </div>

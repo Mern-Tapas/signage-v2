@@ -2,15 +2,16 @@ import React from 'react'
 import Container from '@/components/layout/Container'
 import IconBox from './IconBox'
 import { Caption, Typography } from '@/components/typography/typography'
-import { Delete, EllipsisVertical, Eye, Menu, Trash, TvMinimal } from 'lucide-react'
+import { Delete, EllipsisVertical, Eye, Menu, Trash, TvMinimal, Video } from 'lucide-react'
 import MarqueeText from './MarqueeText'
 import { Badge } from './Badge'
 import Link from 'next/link'
 import Checkbox from './Checkbox'
 import { Dropdown, DropdownContent, DropdownItem, DropdownTrigger } from './Dropdown'
-import { ListVideo,Image,Volume1 } from 'lucide-react'
+import { ListVideo, Volume1 } from 'lucide-react'
+import Image from 'next/image'
 
-function PlaylistListItem({className}:{className?:string,}) {
+function PlaylistListItem({ className }: { className?: string, }) {
     const [checked, setChecked] = React.useState(false);
     return (
         <Container padding='sm' radius='xl' className={`grid grid-cols-[220px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr_1fr] items-center w-full ${className}`}>
@@ -18,7 +19,10 @@ function PlaylistListItem({className}:{className?:string,}) {
 
             <div className='flex gap-4 items-center '>
 
-                <IconBox className='shrink-0 border border-gray-200' size='lg' icon={ListVideo} />
+                {/* <IconBox className='shrink-0 border border-gray-200' size='lg' icon={ListVideo} /> */}
+                <div className='border border-gray-400 h-12 w-12 overflow-hidden rounded-lg shrink-0'>
+                    <Image height={300} width={300} alt='playlist' className='h-full w-full object-cover' src={"/images/creative1.jpg"} />
+                </div>
                 <Container className=' truncate w-full'>
 
                     <Link className='' href={'/user/playlists/paylist'}>
@@ -38,13 +42,13 @@ function PlaylistListItem({className}:{className?:string,}) {
                 <Badge size='sm' color='success'>Online</Badge>
             </div>
             <div className='hidden lg:flex '>
-                 <Container radius='md' padding='sm' className='border border-gray-300 flex justify-around gap-6 items-center '>
+                <Container radius='md' padding='sm' className='border border-gray-300 flex justify-around gap-6 items-center '>
                     <div className='flex gap-1 items-center'>
                         <ListVideo size={16} />
                         <Caption>10</Caption>
                     </div>
                     <div className='flex gap-1 items-center'>
-                        <Image size={16} />
+                        <Video size={16} />
                         <Caption>10</Caption>
                     </div>
                     <div className='flex gap-1 items-center'>

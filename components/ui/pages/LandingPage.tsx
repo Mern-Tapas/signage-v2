@@ -1,5 +1,4 @@
-'use client'
-import React, { useState } from 'react';
+import React from 'react';
 import { Monitor, Zap, Cloud, BarChart3, Shield, Users, Check, Menu, X, ArrowRight, Play } from 'lucide-react';
 import Link from 'next/link';
 
@@ -277,7 +276,7 @@ export default function LandingePage() {
                   </div>
                 </div>
                 <p className="text-gray-700 leading-relaxed italic">
-                  "{testimonial.content}"
+                  &quot;{testimonial.content}&quot;
                 </p>
               </div>
             ))}

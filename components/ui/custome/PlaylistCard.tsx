@@ -13,7 +13,7 @@ function PlaylistCard() {
     return (
             <Container variant='primary' padding='sm' radius='xl' className='grid gap-2'>
                 <Container className='flex gap-2 items-center'>
-                    <div className='border border-gray-400 h-12 w-12 overflow-hidden rounded-lg'>
+                    <div className='border border-gray-400 h-12 w-12 overflow-hidden rounded-lg shrink-0'>
                         <Image height={300} width={300} alt='playlist' className='h-full w-full object-cover' src={"/images/creative1.jpg"} />
                     </div>
                     <Container className='w-[70%]'>

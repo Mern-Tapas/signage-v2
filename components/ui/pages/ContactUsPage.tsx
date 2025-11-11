@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import { Monitor, Mail, Phone, MapPin, Send, CheckCircle, Check, X, ArrowRight, Clock, MessageSquare, User } from 'lucide-react';
-
+import Link from 'next/link';
 interface ContactFormData {
     name: string;
     email: string;
@@ -54,10 +54,10 @@ export default function ContactUsPage() {
                                 💬 Get in Touch
                             </span>
                             <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-                                We'd Love to Hear From You
+                                We&#39;d Love to Hear From You
                             </h1>
                             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                                Have questions? Our team is here to help. Reach out and we'll respond as soon as possible.
+                                Have questions? Our team is here to help. Reach out and we&#39;ll respond as soon as possible.
                             </p>
                         </div>
 
@@ -69,9 +69,9 @@ export default function ContactUsPage() {
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-2">Email Us</h3>
                                 <p className="text-gray-600 mb-4">Our team is here to help</p>
-                                <a href="mailto:hello@signagehub.com" className="text-blue-600 hover:text-blue-700 font-semibold">
+                                <Link href="mailto:hello@signagehub.com" className="text-blue-600 hover:text-blue-700 font-semibold">
                                     hello@signagehub.com
-                                </a>
+                                </Link>
                             </div>
 
                             <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200 hover:shadow-xl transition">
@@ -80,9 +80,9 @@ export default function ContactUsPage() {
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-2">Call Us</h3>
                                 <p className="text-gray-600 mb-4">Mon-Fri from 8am to 6pm</p>
-                                <a href="tel:+1-555-123-4567" className="text-blue-600 hover:text-blue-700 font-semibold">
+                                <Link href="tel:+1-555-123-4567" className="text-blue-600 hover:text-blue-700 font-semibold">
                                     +1 (555) 123-4567
-                                </a>
+                                </Link>
                             </div>
 
                             <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200 hover:shadow-xl transition">
@@ -250,22 +250,22 @@ export default function ContactUsPage() {
                                 <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-200">
                                     <h3 className="text-xl font-bold text-gray-900 mb-4">Quick Links</h3>
                                     <div className="space-y-3">
-                                        <a href="/schedule-demo" className="block text-blue-600 hover:text-blue-700 font-medium flex items-center gap-2 transition">
+                                        <Link href="/schedule-demo" className="block text-blue-600 hover:text-blue-700 font-medium flex items-center gap-2 transition">
                                             <ArrowRight className="w-4 h-4" />
                                             Schedule a Demo
-                                        </a>
-                                        <a href="/#pricing" className="block text-blue-600 hover:text-blue-700 font-medium flex items-center gap-2 transition">
+                                        </Link>
+                                        <Link href="/#pricing" className="block text-blue-600 hover:text-blue-700 font-medium flex items-center gap-2 transition">
                                             <ArrowRight className="w-4 h-4" />
                                             View Pricing Plans
-                                        </a>
-                                        <a href="/docs" className="block text-blue-600 hover:text-blue-700 font-medium flex items-center gap-2 transition">
+                                        </Link>
+                                        <Link href="/docs" className="block text-blue-600 hover:text-blue-700 font-medium flex items-center gap-2 transition">
                                             <ArrowRight className="w-4 h-4" />
                                             Read Documentation
-                                        </a>
-                                        <a href="/testimonials" className="block text-blue-600 hover:text-blue-700 font-medium flex items-center gap-2 transition">
+                                        </Link>
+                                        <Link href="/testimonials" className="block text-blue-600 hover:text-blue-700 font-medium flex items-center gap-2 transition">
                                             <ArrowRight className="w-4 h-4" />
                                             Customer Stories
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
 
@@ -293,14 +293,14 @@ export default function ContactUsPage() {
                                 Message Sent Successfully!
                             </h2>
                             <p className="text-xl text-gray-600 mb-8">
-                                Thank you for reaching out, {contactData.name}! We've received your message and will get back to you shortly.
+                                Thank you for reaching out, {contactData.name}! We&#39;ve received your message and will get back to you shortly.
                             </p>
                             <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 mb-8 text-left">
-                                <h3 className="font-semibold text-gray-900 mb-4">What's next?</h3>
+                                <h3 className="font-semibold text-gray-900 mb-4">What&#39;s next?</h3>
                                 <ul className="space-y-3">
                                     <li className="flex items-start gap-3 text-gray-700">
                                         <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                                        You'll receive a confirmation email at {contactData.email}
+                                        You&#39;ll receive a confirmation email at {contactData.email}
                                     </li>
                                     <li className="flex items-start gap-3 text-gray-700">
                                         <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
