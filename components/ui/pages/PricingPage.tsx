@@ -232,7 +232,7 @@ export default function PricingPage() {
                   </button>
                   <div className={`pt-6 border-t ${plan.popular ? 'border-blue-400/30' : 'border-gray-200'}`}>
                     <p className={`text-sm font-semibold mb-4 ${plan.popular ? 'text-blue-100' : 'text-gray-700'}`}>
-                      What's included:
+                      What&#39;s included:
                     </p>
                     <ul className="space-y-3">
                       {plan.features.map((feature, fIndex) => (
@@ -285,7 +285,7 @@ export default function PricingPage() {
               Compare Plans in Detail
             </h2>
             <p className="text-lg text-gray-600">
-              See what's included in each plan
+              See what&#39;s included in each plan
             </p>
           </div>
           <div className="bg-white rounded-3xl shadow-xl border border-gray-200 overflow-hidden">
