@@ -85,10 +85,11 @@ function UserDashboard() {
 
       </Container>
       <Container className='grid gap-4 xl:grid-cols-2' >
+        {/* <DeviceTable />
         <DeviceTable />
         <DeviceTable />
-        <DeviceTable />
-        <DeviceTable />
+        <DeviceTable /> */}
+        d
       </Container>
 
 

@@ -2,7 +2,7 @@ import React from 'react'
 import Container from '@/components/layout/Container'
 import IconBox from './IconBox'
 import { Caption, Typography } from '@/components/typography/typography'
-import { Delete, EllipsisVertical, Eye, Menu, Trash, TvMinimal, Volume1 } from 'lucide-react'
+import { Delete, EllipsisVertical, Eye, MapPin, Menu, Monitor, Trash, TvMinimal, Volume1 } from 'lucide-react'
 import MarqueeText from './MarqueeText'
 import { Badge } from './Badge'
 import Link from 'next/link'
@@ -19,16 +19,18 @@ function DeviceList({ className }: { className?: string, }) {
 
             <div className='flex gap-4 items-center w-full  '>
 
-                <IconBox className='shrink-0 border border-gray-200' size='lg' icon={TvMinimal} />
+                <div className=' border-gray-400 h-12 w-12 overflow-hidden flex rounded-lg shrink-0'>
+                    <Monitor strokeWidth={1.3} size={24} className='text-blue-600 m-auto' />
+                </div>
                 <Container className='truncate'>
 
                     <Link className='' href={'/user/screens/device'}>
                         <Typography variant='body2' weight='normal' className='truncate w-full'>Silver Spring Phase 2 Block A dfhfhfhh</Typography>
 
                     </Link>                    {/* <Typography variant='caption' weight='medium'  className='truncate '>Please type here short description mk</Typography> */}
-                    <Container className='flex gap-2'>
-                        <Caption color='success'>Online</Caption>
-                        <Caption color='muted'>10 Videos</Caption>
+                    <Container className='flex gap-2 items-center'>
+                        <MapPin className='text-gray-500' size={14} strokeWidth={1.5} />
+                        <Caption color='muted'>Main Entrance</Caption>
                     </Container>
                 </Container>
             </div>

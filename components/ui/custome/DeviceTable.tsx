@@ -8,13 +8,13 @@ import { ScreenShare } from 'lucide-react';
 
 function DeviceTable() {
     return (
-        <Card>
+        <Card className='w-full border'>
             <CardHeader>
                 <Typography variant='h6'>Devices</Typography>
                 <Typography variant='body2' color='muted'>Recently active Devices</Typography>
 
             </CardHeader >
-            <CardBody >
+            <CardBody className='w-full' >
                 <Table variant="default" size="md">
                     <TableHeader >
                         <TableRow>

@@ -2,7 +2,7 @@ import React from 'react'
 import Container from '@/components/layout/Container'
 import IconBox from './IconBox'
 import { Caption, Typography } from '@/components/typography/typography'
-import { Image, List, ListVideo, TvMinimal, Volume1 } from 'lucide-react'
+import { Image, List, ListVideo, MapPin, Monitor, TvMinimal, Volume1 } from 'lucide-react'
 import MarqueeText from './MarqueeText'
 import { Badge } from './Badge'
 import Link from 'next/link'
@@ -12,13 +12,15 @@ function DeviceCard() {
         <Link href={'/user/screens/deviceid'}>
             <Container variant='primary' padding='sm' radius='xl' className='grid gap-2'>
                 <Container className='flex gap-2 items-center'>
-                    <IconBox className='shrink-0 border border-gray-200' size='lg' icon={TvMinimal} />
+                    <div className=' border-gray-400 h-12 w-12 overflow-hidden flex rounded-lg shrink-0'>
+                    <Monitor strokeWidth={1.3} size={24} className='text-blue-600 m-auto' />
+                    </div>
                     <Container className='w-[70%]'>
                         <Typography variant='body2' weight='normal' className='truncate '>Shalimar Towshipt kanadia road</Typography>
                         {/* <Typography variant='caption' weight='medium'  className='truncate '>Please type here short description mk</Typography> */}
-                        <Container className='flex gap-2'>
-                            <Caption color='success'>Online</Caption>
-                            <Caption color='muted'>10 Videos</Caption>
+                        <Container className='flex gap-2 items-center'>
+                            <MapPin className='text-gray-500' size={14} strokeWidth={1.5}/>
+                            <Caption color='muted'>Main Entrance</Caption>
                         </Container>
                     </Container>
                 </Container>

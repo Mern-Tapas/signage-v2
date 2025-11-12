@@ -21,7 +21,6 @@ export default function Sidebar({ isOpen }: SidebarProps) {
         { href: '/user/scheduler', label: 'Scheduler', icon: CalendarClock },
         { href: '/user/files', label: 'Files', icon: FolderOpen },
         { href: '/user/components', label: 'Reports', icon: FileText },
-        { href: '/user/components', label: 'Components', icon: Settings2 },
         { href: '/user/settings', label: 'Settings', icon: Settings },
     ];
     const menuItems2 = [
@@ -64,7 +63,7 @@ export default function Sidebar({ isOpen }: SidebarProps) {
                 <Typography variant='overline' weight='medium' className="mb-4">Others</Typography>
                 :
                 ""}
-            <Container className="flex flex-col gap-2">
+            {/* <Container className="flex flex-col gap-2">
 
 
                 {menuItems2.map(({ href, label, icon: Icon }, index) => (
@@ -74,7 +73,20 @@ export default function Sidebar({ isOpen }: SidebarProps) {
                     </Link>
                 ))}
 
-            </Container>
+            </Container> */}
+
+            {isOpen ?
+                <Container className="flex flex-col gap-2">
+                    <div className=" p-4 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl text-white">
+                        <div className="text-2xl mb-2">🚀</div>
+                        <p className="text-xs font-medium mb-1">You're on the free plan.</p>
+                        <p className="text-xs opacity-90 mb-3">Upgrade to pro.</p>
+                        <button className="w-full bg-white text-purple-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100">
+                            Upgrade
+                        </button>
+                    </div>
+                </Container>
+                : ""}
         </Container>
     </Container>
 };
