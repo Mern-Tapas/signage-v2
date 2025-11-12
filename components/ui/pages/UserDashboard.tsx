@@ -3,13 +3,21 @@ import Container from '@/components/layout/Container';
 import { Typography } from '@/components/typography/typography';
 import AnalyticsCard from '@/components/ui/custome/AnalyticsCard';
 
-import { Database, File, PlaySquare, ScreenShare, Timer, } from 'lucide-react';
+import { Database, File, MoreVertical, PlaySquare, ScreenShare, Timer, } from 'lucide-react';
 import React from 'react'
 import DeviceTable from '../custome/DeviceTable';
 import { Button } from '../custome/Button';
+import { Card, CardBody, CardHeader } from '../custome/Card';
+import DeviceList from '../custome/DeviceList';
+import StackedCircleGraph from '../custome/StackedGraph';
 
 function UserDashboard() {
 
+   const segments = [
+    { label: "Math", value: 100, color: "#FCD34D" },
+    { label: "English", value: 100, color: "#A78BFA" },
+    { label: "Chemistry", value: 100, color: "#34D399" },
+  ];
 
   return (
     <Container className='grid gap-4'>
@@ -84,16 +92,83 @@ function UserDashboard() {
         />
 
       </Container>
-      <Container className='grid gap-4 xl:grid-cols-2' >
-        {/* <DeviceTable />
-        <DeviceTable />
-        <DeviceTable />
-        <DeviceTable /> */}
-        d
-      </Container>
+      <Container className='grid gap-4 xl:grid-cols-[1fr_1fr_1fr]' >
+
+        <Card radius='xl' variant='default'>
+          <CardHeader className='py-4'>
+            <Typography weight='medium'>Recent Offline</Typography>
+          </CardHeader>
+          <CardBody>
+
+            <DeviceList detailedView={false} className='' />
+            <DeviceList detailedView={false} className='' />
+            <DeviceList detailedView={false} className='' />
+            <DeviceList detailedView={false} className='' />
+
+          </CardBody>
+        </Card>
+
+        <Card radius='xl' variant='default'>
+          <CardHeader className='py-4'>
+            <Typography weight='medium'>Recent Offline</Typography>
+          </CardHeader>
+          <CardBody>
+
+            <DeviceList detailedView={false} className='' />
+            <DeviceList detailedView={false} className='' />
+            <DeviceList detailedView={false} className='' />
+            <DeviceList detailedView={false} className='' />
+
+          </CardBody>
+        </Card>
+
+        <Card radius='xl' variant='default'>
+          <CardHeader className='py-4 flex items-center justify-between'>
+            <Typography  weight='medium'>Display Statistics</Typography>
+                <button><MoreVertical size={20} className="text-gray-400" /></button>
+
+          </CardHeader>
+          <CardBody>
+
+            
+<StackedCircleGraph segments={segments} />
+              {/* <div className="flex items-center justify-center mb-6">
+                <div className="relative w-48 h-48">
+                  <svg className="w-full h-full transform -rotate-90">
+                    <circle cx="96" cy="96" r="80" fill="none" stroke="#FCD34D" strokeWidth="20" strokeDasharray="502" strokeDashoffset="100" />
+                    <circle cx="96" cy="96" r="80" fill="none" stroke="#A78BFA" strokeWidth="20" strokeDasharray="502" strokeDashoffset="251" />
+                    <circle cx="96" cy="96" r="80" fill="none" stroke="#34D399" strokeWidth="20" strokeDasharray="502" strokeDashoffset="377" />
+                  </svg>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <div className="text-sm text-gray-500">Total</div>
+                    <div className="text-3xl font-bold text-gray-800">15000</div>
+                  </div>
+                </div>
+              </div> */}
+
+              {/* <div className="flex items-center justify-center gap-6 text-sm">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+                  <span className="text-gray-600">Math</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-purple-400"></div>
+                  <span className="text-gray-600">English</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-green-400"></div>
+                  <span className="text-gray-600">Chemistry</span>
+                </div>
+              </div> */}
+
+        </CardBody>
+      </Card>
 
 
     </Container>
+
+
+    </Container >
   )
 }
 

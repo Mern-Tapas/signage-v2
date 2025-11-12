@@ -11,10 +11,9 @@ import { Dropdown, DropdownContent, DropdownItem, DropdownTrigger } from './Drop
 import { Image, List, ListVideo, } from 'lucide-react'
 
 
-function DeviceList({ className }: { className?: string, }) {
-    const [checked, setChecked] = React.useState(false);
+function DeviceList({ className, detailedView = true }: { className?: string, detailedView: boolean }) {
     return (
-        <Container padding='sm' radius='xl' className={`grid grid-cols-[220px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr_1fr] items-center w-full ${className}`}>
+        <Container padding='sm' radius='xl' className={`grid grid-cols-[220px_1fr] gap-4 ${detailedView?"lg:grid-cols-[350px_1fr_1fr_1fr_1fr]":""} items-center w-full ${className}`}>
 
 
             <div className='flex gap-4 items-center w-full  '>
@@ -34,13 +33,13 @@ function DeviceList({ className }: { className?: string, }) {
                     </Container>
                 </Container>
             </div>
-            <div className='hidden lg:flex '>
+            <div className={`hidden ${detailedView ? "lg:flex" : ""} `}>
                 <Typography variant='caption'>WS123840</Typography>
             </div>
-            <div className='hidden lg:flex '>
+            <div className={`hidden ${detailedView ? "lg:flex" : ""} `}>
                 <Badge size='sm' color='success'>Online</Badge>
             </div>
-            <div className='hidden lg:flex'>
+            <div className={`hidden ${detailedView ? "lg:flex" : ""} `}>
 
                 <Container radius='md' padding='sm' className='border border-gray-300 flex justify-around gap-6 items-center '>
                     <div className='flex gap-1 items-center'>
