@@ -14,7 +14,7 @@ import StackedCircleGraph from '../custome/StackedGraph';
 function UserDashboard() {
 
    const segments = [
-    { label: "Math", value: 100, color: "#FCD34D" },
+    { label: "Math", value: 0, color: "#FCD34D" },
     { label: "English", value: 100, color: "#A78BFA" },
     { label: "Chemistry", value: 100, color: "#34D399" },
   ];
