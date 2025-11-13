@@ -11,7 +11,7 @@ import { Dropdown, DropdownContent, DropdownItem, DropdownTrigger } from './Drop
 import { Image, List, ListVideo, } from 'lucide-react'
 
 
-function DeviceList({ className, detailedView = true }: { className?: string, detailedView: boolean }) {
+function DeviceList({ className, detailedView = true }: { className?: string, detailedView?: boolean }) {
     return (
         <Container padding='sm' radius='xl' className={`grid grid-cols-[220px_1fr] gap-4 ${detailedView?"lg:grid-cols-[350px_1fr_1fr_1fr_1fr]":""} items-center w-full ${className}`}>
 
