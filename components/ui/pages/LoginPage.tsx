@@ -142,7 +142,7 @@ export default function LoginPage() {
 
             {/* Sign Up Link */}
             <p className="text-center text-sm text-gray-600">
-              Don't have an account?{' '}
+              Don&apos;t have an account?{' '}
               <button className="text-blue-600 hover:text-blue-700 font-medium">
                 Sign up
               </button>
@@ -196,7 +196,7 @@ export default function LoginPage() {
           {/* Testimonial */}
           <div className="mt-12 bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
             <p className="text-white mb-4 italic">
-              "SignageHub transformed how we manage our 200+ displays. The platform is intuitive and powerful."
+              &quot;SignageHub transformed how we manage our 200+ displays. The platform is intuitive and powerful.&quot;
             </p>
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-white font-semibold">

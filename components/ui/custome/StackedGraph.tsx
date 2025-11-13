@@ -39,7 +39,7 @@ const StackedCircleGraph: React.FC<StackedCircleGraphProps> = ({
     let cumulative = 0;
 
     return (
-        <div className="w-full flex flex-col gap-4 items-center justify-center">
+        <div className="w-full flex flex-col gap-4 items-center justify-center ">
             <div className="relative " style={{ width: size, height: size }}>
                 <svg
                     viewBox={`0 0 ${size} ${size}`}
@@ -105,9 +105,9 @@ const StackedCircleGraph: React.FC<StackedCircleGraphProps> = ({
             </div>
 
             {/* Legend */}
-            <div className="flex">
+            <div className="flex gap-8">
                 {segments.map((s) => (
-                    <div key={s.label} className="flex items-center gap-2">
+                    <div key={s.label} className="flex items-center gap-2 ">
                         <span
                             style={{
                                 width: 12,
@@ -117,8 +117,8 @@ const StackedCircleGraph: React.FC<StackedCircleGraphProps> = ({
                                 display: "inline-block",
                             }}
                         />
-                        <span className="text-sm text-gray-700">
-                            {s.label}
+                        <span className="text-sm text-gray-700 flex gap-2">
+                            <span> {s.label}</span>
                             <span className="font-medium">
                                 {((s.value / realTotal) * 100).toFixed(1)}%
                             </span>
