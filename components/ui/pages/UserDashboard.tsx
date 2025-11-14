@@ -92,9 +92,11 @@ function UserDashboard() {
         />
 
       </Container>
-      <Container className='grid gap-4 xl:grid-cols-[1fr_1fr_1fr]' >
+      <Container className='grid gap-4 xl:grid-cols-3' >
 
-        <Card radius='xl' variant='default'>
+      
+
+        <Card radius='xl' className='shrink-0' variant='default'>
           <CardHeader className='py-4'>
             <Typography weight='medium'>Recent Offline</Typography>
           </CardHeader>
@@ -108,23 +110,9 @@ function UserDashboard() {
           </CardBody>
         </Card>
 
-        <Card radius='xl' variant='default'>
+        <Card radius='xl' className='shrink-0' variant='default'>
           <CardHeader className='py-4'>
-            <Typography weight='medium'>Recent Offline</Typography>
-          </CardHeader>
-          <CardBody>
-
-            <DeviceList detailedView={false} className='' />
-            <DeviceList detailedView={false} className='' />
-            <DeviceList detailedView={false} className='' />
-            <DeviceList detailedView={false} className='' />
-            <DeviceList detailedView={false} className='' />
-
-          </CardBody>
-        </Card>
-        <Card radius='xl' variant='default'>
-          <CardHeader className='py-4'>
-            <Typography weight='medium'>Recent Offline</Typography>
+            <Typography weight='medium'>Recent File</Typography>
           </CardHeader>
           <CardBody>
 
@@ -136,7 +124,8 @@ function UserDashboard() {
           </CardBody>
         </Card>
 
-        <Card radius='xl' variant='default'>
+       
+ <Card radius='xl' variant='default'>
           <CardHeader className='py-4 flex items-center justify-between'>
             <Typography weight='medium'>Display Statistics</Typography>
             <button><MoreVertical size={20} className="text-gray-400" /></button>
@@ -150,7 +139,6 @@ function UserDashboard() {
 
           </CardBody>
         </Card>
-
 
       </Container>
 

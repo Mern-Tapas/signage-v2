@@ -21,10 +21,10 @@ function UserSettings() {
 
     return (
         <Container className='grid gap-4'>
-            <Container className='flex items-center justify-between'>
+            <Container className='flex items-center justify-between '>
                 <Container>
                     <Typography variant='h4' weight='bold'>Settings</Typography>
-                    <Typography variant='body2' color='secondary'>Customize your signage preference</Typography>
+                    {/* <Typography variant='body2' color='secondary'>Customize your signage preference</Typography> */}
                 </Container>
 
             </Container>

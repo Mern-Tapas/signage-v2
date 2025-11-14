@@ -117,11 +117,11 @@ const StackedCircleGraph: React.FC<StackedCircleGraphProps> = ({
                                 display: "inline-block",
                             }}
                         />
-                        <span className="text-sm text-gray-700 flex gap-2">
+                        <span className="text-sm text-gray-700 flex gap-2 ">
                             <span> {s.label}</span>
-                            <span className="font-medium">
+                            {/* <span className="font-medium">
                                 {((s.value / realTotal) * 100).toFixed(1)}%
-                            </span>
+                            </span> */}
                         </span>
                     </div>
                 ))}

@@ -41,7 +41,8 @@ export default function Sidebar({ isOpen }: SidebarProps) {
         </Container>
         <Container className="flex flex-col">
             {isOpen ?
-                <Typography variant='overline' weight='medium' className="mb-4">Menu</Typography>
+                // <Typography variant='overline' weight='medium' className="mb-4">Menu</Typography>
+                ''
                 :
                 ""
             }
@@ -60,7 +61,8 @@ export default function Sidebar({ isOpen }: SidebarProps) {
         </Container>
         <Container className="flex flex-col ">
             {isOpen ?
-                <Typography variant='overline' weight='medium' className="mb-4">Others</Typography>
+                // <Typography variant='overline' weight='medium' className="mb-4">Others</Typography>
+                ""
                 :
                 ""}
             <Container className="flex flex-col gap-2">
