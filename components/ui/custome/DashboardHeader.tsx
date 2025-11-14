@@ -38,37 +38,39 @@ function DashboardHeader({ sidebarController, isSidebarOpen }: DashboardHeaderPr
     }, []);
 
     return (
-        <Container padding='md' className={`flex  justify-between items-center sticky top-0 bg-[#f5f7fb] transition-all  ${scrollPosition > 10 ? 'bg-white/60 backdrop-blur-xl' : ''}  z-10    `}>
-            <Container className='flex gap-2 items-center' >
-                <Button size='icon' icon={isSidebarOpen ? <X strokeWidth={1.5} radius={'md'} /> : <Menu strokeWidth={1.5} radius={'md'} />} onClick={sidebarController} />
+        <Container  className={` sticky top-0 bg-[#f5f7fb] transition-all  ${scrollPosition > 10 ? 'bg-white/60 backdrop-blur-xl' : ''}  z-10    `}>
+            <Container className="max-w-screen-2xl flex  justify-between items-center mx-auto" padding='md'>
+                <Container className='flex gap-2 items-center' >
+                    <Button size='icon' icon={isSidebarOpen ? <X strokeWidth={1.5} radius={'md'} /> : <Menu strokeWidth={1.5} radius={'md'} />} onClick={sidebarController} />
 
-            </Container>
-            <Container className='flex gap-2 items-center' >
+                </Container>
+                <Container className='flex gap-2 items-center' >
 
-                <Button icon={<Bell strokeWidth={1} />} size='icon' />
+                    <Button icon={<Bell strokeWidth={1} />} size='icon' />
 
-                <Container>
-                    <Dropdown >
-                        <DropdownTrigger>
-                            <Container variant='primary' padding='sm' radius='xl'  >
-                                <ProfileCard variant='right' />
-                            </Container>
-                        </DropdownTrigger>
+                    <Container>
+                        <Dropdown >
+                            <DropdownTrigger>
+                                <Container variant='primary' padding='sm' radius='xl'  >
+                                    <ProfileCard variant='right' />
+                                </Container>
+                            </DropdownTrigger>
 
-                        <DropdownContent align="right" className='p-2 rounded-xl'>
-                            <DropdownItem>
-                                <Link href={'/user'}>
-                                    <User size={16} className="inline mr-2" /> Profile
-                                </Link>
-                            </DropdownItem>
-                            <DropdownItem>
-                                <Settings size={16} className="inline mr-2" /> Settings
-                            </DropdownItem>
-                            <DropdownItem danger>
-                                <LogOut size={16} className="inline mr-2" /> Logout
-                            </DropdownItem>
-                        </DropdownContent>
-                    </Dropdown>
+                            <DropdownContent align="right" className='p-2 rounded-xl'>
+                                <DropdownItem>
+                                    <Link href={'/user'}>
+                                        <User size={16} className="inline mr-2" /> Profile
+                                    </Link>
+                                </DropdownItem>
+                                <DropdownItem>
+                                    <Settings size={16} className="inline mr-2" /> Settings
+                                </DropdownItem>
+                                <DropdownItem danger>
+                                    <LogOut size={16} className="inline mr-2" /> Logout
+                                </DropdownItem>
+                            </DropdownContent>
+                        </Dropdown>
+                    </Container>
                 </Container>
             </Container>
         </Container>

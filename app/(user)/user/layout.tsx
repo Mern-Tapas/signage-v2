@@ -34,9 +34,10 @@ function Layout({ children }: { children: React.ReactNode }) {
             <div className='h-screen bg-[#f0f4f7] flex overflow-hidden dashboard'>
                 <Sidebar isOpen={isOpen} />
                 <div className='w-full overflow-y-scroll' id='scrollable-container'>
+
+                    <DashboardHeader isSidebarOpen={isOpen} sidebarController={() => sidebarHandler()} />
                     <div className='max-w-screen-2xl mx-auto'>
                         <Container className='grid gap-4 relative'>
-                            <DashboardHeader isSidebarOpen={isOpen} sidebarController={() => sidebarHandler()} />
 
                             <Container padding='md' className='pt-0'>
                                 {children}

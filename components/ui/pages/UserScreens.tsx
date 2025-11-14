@@ -118,7 +118,7 @@ function UserScreens() {
                         </DialogContent>
                     </Dialog>
 
-                    <Button size='icon' icon={<LayoutGrid strokeWidth={1.2} radius={'md'} />} onClick={() => changeLayout(!deviceLayout)} />
+                    <Button size='icon' icon={<LayoutGrid strokeWidth={1} radius={'md'} />} onClick={() => changeLayout(!deviceLayout)} />
 
                 </Container>
             </Container>
