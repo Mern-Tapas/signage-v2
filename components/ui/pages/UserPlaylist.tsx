@@ -3,13 +3,14 @@ import React from 'react'
 import Container from '@/components/layout/Container'
 import { Caption, Typography } from '@/components/typography/typography'
 import IconBox from '../custome/IconBox'
-import { Database, ExternalLink, Icon, Info, Maximize, Pen, PlusIcon, ScreenShare, TvMinimal } from 'lucide-react'
+import { Clock, Database, ExternalLink, Icon, Info, Maximize, Monitor, Pen, PlusIcon, ScreenShare, TvMinimal, Video, Watch } from 'lucide-react'
 import Link from 'next/link'
 import { Badge } from '../custome/Badge'
 import AnalyticsCard from '../custome/AnalyticsCard'
 import DeviceList from '../custome/DeviceList'
 import { Card, CardHeader } from '../custome/Card'
 import { Button } from '../custome/Button'
+import Image from 'next/image'
 
 function UserPlaylist() {
     return (
@@ -22,10 +23,70 @@ function UserPlaylist() {
 
             </Container>
 
-            <Container className='flex gap-4 flex-col lg:flex-row' variant='default' padding='none'>
+            <Container className='' variant='default'    radius='xl'>
 
                 {/* Playlist Details */}
-               s
+                <Container padding='md' radius='xl' className=' flex lg:flex-row flex-col gap-8'>
+                    <Container>
+                        <div className="box h-40 w-40 shadow-xl">
+                            <Image className='h-full w-full object-cover' src={'https://i.pinimg.com/736x/4a/34/21/4a3421607270aa8efeba120c04dc4420.jpg'} height={200} width={300} alt='playlist page' />
+                        </div>
+                    </Container>
+                    <Container className='flex flex-col gap-4'>
+                        <div className="">
+                            <Typography variant='h4' weight='bold'>Phoenix Creatives</Typography>
+                            <Typography variant='body2' color='muted'>Connect playlist and manage your ads</Typography>
+                        </div>
+                        <div className='flex flex-col gap-2'>
+                            <div className='grid items-center grid-cols-[30px_60px_20px_100px]'>
+                                <div className='flex items-center'>
+                                    <Clock size={18} />
+                                </div>
+                                <div className='flex items-center'>
+                                    <Typography variant='caption'>  Duration</Typography>
+                                </div>
+                                <div className='flex items-center'>
+                                    <Typography variant='caption'>:</Typography>
+                                </div>
+                                <div className='flex items-center'>
+                                    <Typography variant='caption'>1 Min</Typography>
+                                </div>
+                            </div>
+
+                            <div className='grid items-center grid-cols-[30px_60px_20px_100px]'>
+                                <div className='flex items-center'>
+                                    <Video size={18} />
+                                </div>
+                                <div className='flex items-center'>
+                                    <Typography variant='caption'>Content</Typography>
+                                </div>
+                                <div className='flex items-center'>
+                                    <Typography variant='caption'>:</Typography>
+                                </div>
+                                <div className='flex items-center'>
+                                    <Typography variant='caption'>11 Files</Typography>
+                                </div>
+                            </div>
+
+                            <div className='grid items-center grid-cols-[30px_60px_20px_100px]'>
+                                <div className='flex items-center'>
+                                    <Monitor size={18} />
+                                </div>
+                                <div className='flex items-center'>
+                                    <Typography variant='caption'>Screens</Typography>
+                                </div>
+                                <div className='flex items-center'>
+                                    <Typography variant='caption'>:</Typography>
+                                </div>
+                                <div className='flex items-center'>
+                                    <Typography variant='caption'>11</Typography>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </Container>
+                </Container>
 
 
 
@@ -41,8 +102,8 @@ function UserPlaylist() {
                             <Typography variant='body2' color='muted'>Playlist Items</Typography>
                         </div>
                         <Container className='flex items-center'>
-                            <Button variant="primary"  className='shadow-md md:flex hidden' size='md' icon={<PlusIcon size={18} strokeWidth={1.5} />}>Add Content</Button>
-                            <Button variant="primary"  className='shadow-md md:hidden flex' size='icon' icon={<PlusIcon size={18} strokeWidth={1.5} />}></Button>
+                            <Button variant="primary" className='shadow-md md:flex hidden' size='md' icon={<PlusIcon size={18} strokeWidth={1.5} />}>Add Content</Button>
+                            <Button variant="primary" className='shadow-md md:hidden flex' size='icon' icon={<PlusIcon size={18} strokeWidth={1.5} />}></Button>
                         </Container>
                     </Container>
                 </CardHeader>
