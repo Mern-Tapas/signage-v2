@@ -89,9 +89,7 @@ function UserPlaylist() {
 
                         </div>
                     </Container>
-                    <Switch size='sm' checked={false} onChange={()=>{}}/>
                     <Switch size='md' checked={false} onChange={()=>{}}/>
-                    <Switch size='lg' checked={false} onChange={()=>{}}/>
                 </Container>
 
 
