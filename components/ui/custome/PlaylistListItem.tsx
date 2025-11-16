@@ -2,7 +2,7 @@ import React from 'react'
 import Container from '@/components/layout/Container'
 import IconBox from './IconBox'
 import { Caption, Typography } from '@/components/typography/typography'
-import { Delete, EllipsisVertical, Eye, Menu, Trash, TvMinimal, Video } from 'lucide-react'
+import { Delete, EllipsisVertical, Eye, Menu, PlaySquare, Trash, TvMinimal, Video } from 'lucide-react'
 import MarqueeText from './MarqueeText'
 import { Badge } from './Badge'
 import Link from 'next/link'
@@ -20,8 +20,8 @@ function PlaylistListItem({ className }: { className?: string, }) {
             <div className='flex gap-4 items-center '>
 
                 {/* <IconBox className='shrink-0 border border-gray-200' size='lg' icon={ListVideo} /> */}
-                <div className='border border-gray-400 h-12 w-12 overflow-hidden rounded-lg shrink-0'>
-                    <Image height={300} width={300} alt='playlist' className='h-full w-full object-cover' src={"/images/creative1.jpg"} />
+               <div className=' border-gray-400 h-12 w-12 overflow-hidden flex rounded-lg shrink-0'>
+                    <PlaySquare strokeWidth={1.3} size={24} className='text-pink-600 m-auto' />
                 </div>
                 <Container className=' truncate w-full'>
 

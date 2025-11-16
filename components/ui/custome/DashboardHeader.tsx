@@ -38,7 +38,7 @@ function DashboardHeader({ sidebarController, isSidebarOpen }: DashboardHeaderPr
     }, []);
 
     return (
-        <Container  className={` sticky top-0 bg-[#f5f7fb] transition-all  ${scrollPosition > 10 ? 'bg-white/60 backdrop-blur-xl' : ''}  z-10    `}>
+        <Container  className={` sticky top-0 bg-[#f5f7fb] transition-all  ${scrollPosition > 10 ? 'bg-white/60 backdrop-blur-xl' : ''}  z-40    `}>
             <Container className="max-w-screen-2xl flex  justify-between items-center mx-auto" padding='md'>
                 <Container className='flex gap-2 items-center' >
                     <Button size='icon' icon={isSidebarOpen ? <X strokeWidth={1.5} radius={'md'} /> : <Menu strokeWidth={1.5} radius={'md'} />} onClick={sidebarController} />
