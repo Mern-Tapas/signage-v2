@@ -8,6 +8,7 @@ import Link from 'next/link'
 import IconBox from '../custome/IconBox'
 import { Settings } from 'lucide-react'
 import NavLink from '../custome/NavLink'
+import HorizontalScrollMenu from '../custome/HorizontalScrollMenu'
 function UserSettings() {
 
     const menuItems = [
@@ -24,19 +25,20 @@ function UserSettings() {
             <Container className='flex items-center justify-between '>
                 <Container>
                     <Typography variant='h4' weight='bold'>Settings</Typography>
-                    {/* <Typography variant='body2' color='secondary'>Customize your signage preference</Typography> */}
+                    <Typography variant='body2' color='secondary'>Customize your signage preference</Typography>
                 </Container>
 
             </Container>
-            <Container className='grid gap-4 lg:grid-cols-[1fr_3.5fr]'>
-                <Container padding='lg' variant='primary' className='grid gap-8 self-start' radius='xl'>
+            <Container className='grid gap-4 lg:grid-cols-[270px_auto]'>
+
+                <Container padding='lg' variant='primary' className='hidden gap-8 self-start lg:grid' radius='xl'>
                     <Container className='grid gap-4'>
                         <Typography variant='overline' weight='medium' className="">YOUR ACCOUNT</Typography>
                         <Container className='grid gap-1'>
 
 
 
-                            {menuItems.map(({ label, icon: Icon },index) => (
+                            {menuItems.map(({ label, icon: Icon }, index) => (
 
                                 <NavLink key={index} href={"/"} icon={Icon} label={label} />
                             ))}
@@ -48,7 +50,7 @@ function UserSettings() {
                         <Typography variant='overline' weight='medium' className="">YOUR ACCOUNT</Typography>
                         <Container className='grid gap-1'>
 
-                             {menuItems.map(({ label, icon: Icon },index) => (
+                            {menuItems.map(({ label, icon: Icon }, index) => (
 
                                 <NavLink key={index} href={"/"} icon={Icon} label={label} />
                             ))}
@@ -57,9 +59,13 @@ function UserSettings() {
                         </Container>
                     </Container>
                 </Container>
+
+                <HorizontalScrollMenu className='lg:hidden' />
+
+
                 <Container padding='lg' variant='primary' className='flex flex-col gap-4' radius='xl'>
                     <Container >
-                        <Typography variant='h6' weight='medium'>General Settings</Typography>
+                        <Typography variant='h6' weight='medium'>General Information</Typography>
                         <Typography variant='body2' color='secondary'>Update generale settings from here</Typography>
 
                     </Container>
@@ -87,34 +93,6 @@ function UserSettings() {
                         />
                     </Container>
 
-                    <Container variant='outline' padding='md' radius='md' className='flex gap-4 items-center'>
-                        <Container>
-                            <Typography variant='h6' weight='medium'>Private profile</Typography>
-                            <Typography variant='body2' color='secondary'>When your profile is private, only the people you approve can see your profile, Pins, boards, followers and following lists.</Typography>
-                        </Container>
-                        <Container className='w-10'>
-                            d
-                        </Container>
-                    </Container>
-                    <Container variant='outline' padding='md' radius='md' className='flex gap-4 items-center'>
-                        <Container>
-                            <Typography variant='h6' weight='medium'>Private profile</Typography>
-                            <Typography variant='body2' color='secondary'>When your profile is private, only the people you approve can see your profile, Pins, boards, followers and following lists.</Typography>
-                        </Container>
-                        <Container className='w-10'>
-                            d
-                        </Container>
-                    </Container>
-
-                    <Container variant='outline' padding='md' radius='md' className='flex gap-4 items-center'>
-                        <Container>
-                            <Typography variant='h6' weight='medium'>Private profile</Typography>
-                            <Typography variant='body2' color='secondary'>When your profile is private, only the people you approve can see your profile, Pins, boards, followers and following lists.</Typography>
-                        </Container>
-                        <Container className='w-10'>
-                            d
-                        </Container>
-                    </Container>
                     <Container variant='outline' padding='md' radius='md' className='flex gap-4 items-center'>
                         <Container>
                             <Typography variant='h6' weight='medium'>Private profile</Typography>

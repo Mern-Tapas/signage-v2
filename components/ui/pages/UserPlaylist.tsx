@@ -28,7 +28,7 @@ function UserPlaylist() {
             <Container className='grid' variant='default' radius='xl'>
 
                 {/* Playlist Details */}
-                <Container padding='md' radius='xl' variant='primary' className=' flex lg:flex-row flex-col gap-16'>
+                <Container padding='md' radius='xl' variant='primary' className=' flex lg:flex-row flex-col gap-4 lg:gap-16'>
                     <Container>
                         <div className="box h-60 w-60">
                             {/* <Image className='h-full w-full object-cover' src={'https://i.pinimg.com/736x/4a/34/21/4a3421607270aa8efeba120c04dc4420.jpg'} height={200} width={300} alt='playlist page' /> */}

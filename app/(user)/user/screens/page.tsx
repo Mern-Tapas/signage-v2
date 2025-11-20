@@ -5,8 +5,8 @@ import React from 'react'
 
 
 export const metadata: Metadata = {
-    title: "Screens",
-    description: "Manage your user Screens and settings",
+    title: "Comanany | Screens",
+    description: "Manage your user Ads",
 };
 
 

@@ -48,7 +48,7 @@ const NavLink: React.FC<NavLinkProps> = ({
     <Link
       href={href}
       className={clsx(
-        "flex items-center cursor-pointer transition-colors hover:bg-gray-100 dark:hover:bg-gray-800",
+        "flex items-center cursor-pointer transition-colors hover:bg-gray-100 dark:hover:bg-gray-800 shrink-0",
         sizeStyles[size],
         radiusStyles[radius],
         className
