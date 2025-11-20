@@ -6,6 +6,7 @@ type IconBoxSize = "xs" | "sm" | "md" | "lg";
 type IconBoxRadius = "sm" | "md" | "lg" | "full";
 type IconBoxVariant = "default" | "primary" | "secondary" | "transparant";
 type IconColor =
+  | "white"
   | "primary"
   | "secondary"
   | "muted"
@@ -53,6 +54,7 @@ const IconBox: React.FC<IconBoxProps> = ({
   };
 
   const iconColorStyles: Record<IconColor, string> = {
+    white: "text-white ",
     primary: "text-gray-900 dark:text-gray-100",
     secondary: "text-gray-700 dark:text-gray-300",
     muted: "text-gray-500 dark:text-gray-400",

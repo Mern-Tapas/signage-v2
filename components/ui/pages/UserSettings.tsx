@@ -9,6 +9,7 @@ import IconBox from '../custome/IconBox'
 import { Settings } from 'lucide-react'
 import NavLink from '../custome/NavLink'
 import HorizontalScrollMenu from '../custome/HorizontalScrollMenu'
+import { Separator } from '../custome/Seprator'
 function UserSettings() {
 
     const menuItems = [
@@ -63,14 +64,14 @@ function UserSettings() {
                 <HorizontalScrollMenu className='lg:hidden' />
 
 
-                <Container padding='lg' variant='primary' className='flex flex-col gap-4' radius='xl'>
-                    <Container >
+                <Container variant='primary' className='flex flex-col' radius='xl'>
+                    <Container padding='lg'>
                         <Typography variant='h6' weight='medium'>General Information</Typography>
                         <Typography variant='body2' color='secondary'>Update generale settings from here</Typography>
 
                     </Container>
-
-                    <Container className='grid grid-cols-2 gap-4'>
+                    <Separator thickness='thin' />
+                    <Container padding='lg' className='grid grid-cols-2 gap-4'>
                         <Input
                             label="default Input"
                             variant="default"
@@ -93,15 +94,7 @@ function UserSettings() {
                         />
                     </Container>
 
-                    <Container variant='outline' padding='md' radius='md' className='flex gap-4 items-center'>
-                        <Container>
-                            <Typography variant='h6' weight='medium'>Private profile</Typography>
-                            <Typography variant='body2' color='secondary'>When your profile is private, only the people you approve can see your profile, Pins, boards, followers and following lists.</Typography>
-                        </Container>
-                        <Container className='w-10'>
-                            d
-                        </Container>
-                    </Container>
+
                 </Container>
 
             </Container>

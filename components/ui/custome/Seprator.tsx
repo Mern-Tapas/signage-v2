@@ -20,7 +20,7 @@ const colorMap: Record<NonNullable<SeparatorProps["color"]>, string> = {
 };
 
 const thicknessMap: Record<NonNullable<SeparatorProps["thickness"]>, string> = {
-  thin: "border",
+  thin: "border-.5",
   normal: "border-2",
   thick: "border-4",
 };

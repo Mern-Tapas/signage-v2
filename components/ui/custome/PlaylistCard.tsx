@@ -17,7 +17,10 @@ function PlaylistCard() {
                     <PlaySquare strokeWidth={1.3} size={24} className='text-pink-600 m-auto' />
                 </div>
                 <Container className='w-[70%]'>
-                    <Typography variant='body2' weight='normal' className='truncate '>Shalimar Towshipt kanadia road</Typography>
+                    <Link href={'/user/playlists/123'}>
+
+                        <Typography variant='body2' weight='normal' className='truncate '>Shalimar Towshipt kanadia road</Typography>
+                    </Link>
                     {/* <Typography variant='caption' weight='medium'  className='truncate '>Please type here short description mk</Typography> */}
                     <Container className='flex gap-2'>
                         <Caption color='success'>Online</Caption>

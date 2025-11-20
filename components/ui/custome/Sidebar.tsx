@@ -6,12 +6,15 @@ import { Typography } from "@/components/typography/typography";
 import { CalendarClock, CreditCard, Files, FileText, FolderOpen, Grid, LayoutGrid, LifeBuoy, ListVideo, Monitor, PlaySquare, ScreenShare, Settings, Settings2 } from "lucide-react";
 import ImageBox from "./ImageBox";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface SidebarProps {
     isOpen: boolean
 }
 
 export default function Sidebar({ isOpen }: SidebarProps) {
+
+const pathName = usePathname()
 
 
     const menuItems = [
@@ -50,9 +53,9 @@ export default function Sidebar({ isOpen }: SidebarProps) {
 
 
                 {menuItems.map(({ href, label, icon: Icon }, index) => (
-                    <Link key={index} href={href} className="flex items-center cursor-pointer gap-1 hover:bg-gray-100 rounded-md transition-bg">
-                        <IconBox size='md' variant='transparant' icon={Icon} />
-                        {isOpen ? <Typography variant='body2' className="">{label}</Typography> : ""}
+                    <Link key={index} href={href} className={`flex items-center cursor-pointer gap-1  rounded-xl transition-all ${(pathName.includes(href))?"bg-blue-600 text-white hover:bg-blue-700":"hover:bg-gray-200"}`}>
+                        <IconBox size='md' variant='transparant' className="transition-color text-white" iconColor={(pathName.includes(href))?"white":"primary"} icon={Icon} />
+                        {isOpen ? <Typography variant='body2' className={`transition-all ${(pathName.includes(href))?"text-white":"text-black"}`}>{label}</Typography> : ""}
                     </Link>
                 ))}
 

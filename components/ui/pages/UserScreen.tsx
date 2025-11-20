@@ -34,9 +34,9 @@ function UserScreen() {
                         <div>
                             <IconBox className='shrink-0 border border-gray-200' size='lg' icon={TvMinimal} />
                         </div>
-                        <div className='truncate w-60'>
-                            <Typography className=' truncate' variant='h4'>Shalimar Township Block A 1 Silver</Typography>
-                            <Typography variant='caption'>Lorem ipsum dolor sit amet.</Typography>
+                        <div className='truncate lg:w-80 w-70'>
+                            <Typography className='truncate' variant='h4'>Shalimar Township Block A1</Typography>
+                            <Typography variant='caption' color='muted'>Lorem ipsum dolor sit amet.</Typography>
                         </div>
                     </div>
 
@@ -122,7 +122,7 @@ function UserScreen() {
 
 
 
-            <Card>
+            <Card radius='xl'>
                 <CardHeader >
                     <Container className='flex justify-between' padding='sm'>
                         <div>
