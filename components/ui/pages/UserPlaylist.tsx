@@ -28,15 +28,15 @@ function UserPlaylist() {
             <Container className='grid' variant='default' radius='xl'>
 
                 {/* Playlist Details */}
-                <Container padding='lg' radius='xl' variant='primary' className=' flex lg:flex-row flex-col gap-4 lg:gap-16'>
-                    <Container>
-                        <div className="box h-60 w-60">
+                <Container padding='lg' radius='xl' variant='primary' className='flex flex-col lg:flex-row lg:gap-6 gap-4'>
+                    <Container className='w-60 shrink-0'>
+                        <div className="box aspect-[9/16] w-35">
                             <CardStack />
                         </div>
                     </Container>
-                    <Container className='flex flex-col gap-4 py-4'>
-                        <div className="">
-                            <Typography variant='h4' weight='bold'>Phoenix Creatives ADVERTISMENT</Typography>
+                    <Container className='flex flex-col gap-4 py-4 shrink-0'>
+                        <div className="max-w-90">
+                            <Typography variant='h4' weight='bold'>Phoenix Creatives Advertisment Power point</Typography>
                             <Typography variant='body2' color='muted'>Connect playlist and manage your ads</Typography>
                         </div>
                         <div className='flex flex-col gap-3 border border-gray-400 p-4 rounded-xl border-dashed'>
@@ -87,6 +87,9 @@ function UserPlaylist() {
 
 
                         </div>
+                    </Container>
+                    <Container radius='md' padding='md' className='bg-gray-100 w-full' variant='secondary'>
+                        d
                     </Container>
                     {/* <Switch size='md' checked={false} onChange={() => { }} /> */}
                 </Container>
