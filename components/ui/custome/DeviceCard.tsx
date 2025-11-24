@@ -9,7 +9,7 @@ import Link from 'next/link'
 
 function DeviceCard() {
     return (
-        <Container variant='primary' padding='sm' radius='xl' className='grid gap-2'>
+        <Container variant='primary' padding='sm' radius='xl' className='gap-2'>
             <Container className='flex gap-2 items-center'>
                 <div className=' border-gray-400 h-12 w-12 overflow-hidden flex rounded-lg shrink-0'>
                     <Monitor strokeWidth={1.3} size={24} className='text-blue-600 m-auto' />
@@ -27,7 +27,7 @@ function DeviceCard() {
                     </Container>
                 </Container>
             </Container>
-            <Container radius='md' padding='sm' className='border border-gray-300 flex justify-around gap-2 items-center'>
+            <Container radius='md' padding='sm' className='border border-gray-300 grid grid-cols-2 justify-items-center items-center '>
                 <div className='flex gap-1 items-center'>
                     <ListVideo size={16} />
                     <Caption>10</Caption>
@@ -36,10 +36,7 @@ function DeviceCard() {
                     <Image size={16} />
                     <Caption>10</Caption>
                 </div>
-                <div className='flex gap-1 items-center'>
-                    <Volume1 size={16} />
-                    <Caption>0</Caption>
-                </div>
+
             </Container>
         </Container>
     )
