@@ -84,7 +84,7 @@ function UserSheduler() {
             </Container>
 
             <Container>
-                <Container className='grid grid-cols-3'>
+                <Container className='grid lg:grid-cols-3 gap-4 grid-cols-1'>
                     <Calendar 
                     selectedDate={selectedDate}
                     onDateSelect={setSelectedDate}

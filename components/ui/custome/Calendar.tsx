@@ -77,7 +77,7 @@ export function Calendar({ selectedDate, onDateSelect, eventDates }: CalendarPro
       <button
         key={day}
         onClick={() => handleDateClick(day)}
-        className={`h-12 rounded-lg font-medium transition-all relative
+        className={`h-12 rounded-lg font-medium text-sm transition-all relative
           ${isSelected(day) ? 'bg-blue-600 text-white' : ''}
           ${!isSelected(day) && isToday ? 'bg-blue-100 text-blue-600' : ''}
           ${!isSelected(day) && !isToday ? 'hover:bg-gray-100' : ''}
@@ -92,7 +92,7 @@ export function Calendar({ selectedDate, onDateSelect, eventDates }: CalendarPro
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-sm p-6">
+    <div className="bg-white rounded-xl  p-6">
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-xl font-semibold text-gray-900">
           {monthNames[currentMonth.getMonth()]} {currentMonth.getFullYear()}
@@ -113,15 +113,15 @@ export function Calendar({ selectedDate, onDateSelect, eventDates }: CalendarPro
         </div>
       </div>
 
-      <div className="grid grid-cols-7 gap-2 mb-2">
+      <div className="grid grid-cols-7 gap-1 mb-2">
         {dayNames.map(name => (
-          <div key={name} className="h-10 flex items-center justify-center text-sm font-medium text-gray-600">
+          <div key={name} className="h-8 flex items-center justify-center text-sm font-medium text-gray-600">
             {name}
           </div>
         ))}
       </div>
 
-      <div className="grid grid-cols-7 gap-2">
+      <div className="grid grid-cols-7  gap-1">
         {days}
       </div>
     </div>
