@@ -103,9 +103,9 @@ function UserPlaylist() {
             <Card radius='xl'>
                 <CardHeader >
                     <Container className='flex justify-between' padding='sm'>
-                        <div>
+                        <div className='items-center flex'>
                             <Typography variant='h6'>Playlist Items</Typography>
-                            <Typography variant='body2' color='muted'>Playlist Items</Typography>
+                            {/* <Typography variant='body2' color='muted'>Playlist Items</Typography> */}
                         </div>
                         <Container className='flex items-center'>
                             <Button variant="primary" className='shadow-md md:flex hidden' size='md' icon={<PlusIcon size={18} strokeWidth={1.5} />}>Add Content</Button>

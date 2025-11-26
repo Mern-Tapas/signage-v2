@@ -125,9 +125,9 @@ function UserScreen() {
             <Card radius='xl'>
                 <CardHeader >
                     <Container className='flex justify-between' padding='sm'>
-                        <div>
+                        <div className='flex items-center'>
                             <Typography variant='h6'>Playlists</Typography>
-                            <Typography variant='body2' color='muted'>Connected Playlists </Typography>
+                            {/* <Typography variant='body2' color='muted'>Connected Playlists </Typography> */}
                         </div>
                         <Container className='flex items-center'>
                            <Button variant='primary' className='shadow-md'>Assign Playlist</Button>
