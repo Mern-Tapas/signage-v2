@@ -53,8 +53,8 @@ const pathName = usePathname()
 
 
                 {menuItems.map(({ href, label, icon: Icon }, index) => (
-                    <Link key={index} href={href} className={`flex items-center cursor-pointer gap-1  rounded-xl transition-all ${(pathName.includes(href))?"bg-blue-600 text-white hover:bg-blue-700":"hover:bg-gray-200"}`}>
-                        <IconBox size='md' variant='transparant' className="transition-color text-white" iconColor={(pathName.includes(href))?"white":"primary"} icon={Icon} />
+                    <Link key={index} href={href} className={`flex items-center cursor-pointer gap-1 p-1.5 rounded-xl transition-all ${(pathName.includes(href))?"bg-blue-600 text-white hover:bg-blue-700":"hover:bg-gray-200"}`}>
+                        <IconBox size='sm' variant='transparant' className="transition-color text-white" iconColor={(pathName.includes(href))?"white":"primary"} icon={Icon} />
                         {isOpen ? <Typography variant='body2' className={`transition-all ${(pathName.includes(href))?"text-white":"text-black"}`}>{label}</Typography> : ""}
                     </Link>
                 ))}
