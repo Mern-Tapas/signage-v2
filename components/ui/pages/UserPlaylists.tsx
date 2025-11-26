@@ -17,10 +17,7 @@ import {
     DialogFooter,
     DialogClose,
 } from "@/components/ui/custome/Dialog";
-import DeviceCard from '../custome/DeviceCard';
-import Link from 'next/link';
 import { Input } from '../custome/Input';
-import DeviceList from '../custome/DeviceList';
 import Checkbox from '../custome/Checkbox';
 import PlaylistListItem from '../custome/PlaylistListItem';
 import PlaylistCard from '../custome/PlaylistCard';

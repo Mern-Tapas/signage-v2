@@ -24,16 +24,7 @@ function UserDashboard() {
         <Typography variant='body2' color='secondary'>Welcome to your dashboard</Typography>
 
       </Container>
-      {/* <div className="p-4 rounded-xl bg-gradient-to-r from-amber-100 via-yellow-200 to-orange-100 border border-yellow-300 flex items-center justify-between">
-        <p className="text-black font-medium">
-          You’re currently on the <span className="font-semibold">Free Plan</span>. Upgrade to unlock more features!
-        </p>
-        <button
-          className="ml-4 px-4 py-2 rounded-lg bg-gradient-to-r from-yellow-400 to-orange-400 text-black font-semibold shadow hover:opacity-90 transition"
-        >
-          Upgrade
-        </button>
-      </div> */}
+   
 
 
       <div className="p-4 rounded-xl bg-gradient-to-r from-blue-100 via-sky-200 to-indigo-100 border border-blue-300 flex items-center justify-between">
