@@ -4,6 +4,7 @@ import Container from '@/components/layout/Container'
 import { Typography } from '@/components/typography/typography'
 import { Calendar } from '../custome/Calendar'
 import { useState } from 'react'
+import { Card, CardHeader } from '../custome/Card'
 
 
 
@@ -75,12 +76,28 @@ function UserSheduler() {
             </Container>
 
             <Container>
-                <Container className='grid lg:grid-cols-3 gap-4 grid-cols-1'>
-                    <Calendar
-                        selectedDate={selectedDate}
-                        onDateSelect={setSelectedDate}
-                        eventDates={eventDates}
-                    />
+                <Container className='grid lg:grid-cols-[400px_auto] gap-4 grid-cols-1'>
+
+
+                    <Container>
+                        <Calendar
+                            selectedDate={selectedDate}
+                            onDateSelect={setSelectedDate}
+                            eventDates={eventDates} />
+                    </Container>
+                    <Container className='grid gap-4 self-start'>
+
+                        <Card>
+                            <CardHeader>
+                                <Typography variant='h6'>Sheduled Content</Typography>
+                            </CardHeader>
+                        </Card>
+                        <Container radius='xl' padding='lg' variant='primary' className='self-auto'>
+                            <Typography variant='h6'>Sheduled Content</Typography>
+                        </Container>
+
+                    </Container>
+
                 </Container>
             </Container>
 

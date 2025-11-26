@@ -3,7 +3,7 @@ import React from 'react'
 import Container from '@/components/layout/Container'
 import { Typography } from '@/components/typography/typography'
 import { Input } from '../custome/Input'
-import { CreditCard,  Palette,  Shield } from 'lucide-react'
+import { CreditCard, Palette, Shield } from 'lucide-react'
 import { Settings } from 'lucide-react'
 import NavLink from '../custome/NavLink'
 import HorizontalScrollMenu from '../custome/HorizontalScrollMenu'
@@ -23,7 +23,7 @@ function UserSettings() {
         <Container className='grid gap-4'>
             <Container className='flex items-center justify-between '>
                 <Container>
-                    <Typography variant='h4' weight='bold'>Settings</Typography>
+                    <Typography variant='h4' weight='medium'>Content Scheduler</Typography>
                     <Typography variant='body2' color='secondary'>Customize your signage preference</Typography>
                 </Container>
 
@@ -64,7 +64,7 @@ function UserSettings() {
 
                 <Container variant='primary' className='flex flex-col' radius='xl'>
                     <Container padding='lg'>
-                        <Typography variant='h6' weight='medium'>General Information</Typography>
+                        <Typography variant='h6'>General Information</Typography>
                         <Typography variant='body2' color='secondary'>Update generale settings from here</Typography>
 
                     </Container>
