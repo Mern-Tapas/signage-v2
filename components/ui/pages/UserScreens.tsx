@@ -1,17 +1,9 @@
 'use client'
 import Container from '@/components/layout/Container';
-import { Caption, Typography } from '@/components/typography/typography';
-import AnalyticsCard from '@/components/ui/custome/AnalyticsCard';
-import Avatar from '@/components/ui/custome/Avatar';
-import IconBox from '@/components/ui/custome/IconBox';
-import ProductCard from '@/components/ui/custome/ProductCard';
-import { ProfileCard } from '@/components/ui/custome/ProfileCard';
-import { Database, Download, File, Grid, Grid2X2, LayoutGrid, PlayIcon, PlaySquare, Plus, PlusIcon, Radio, ScreenShare, ScreenShareIcon, Search, Timer, Trash, TvMinimal, Users, WatchIcon } from 'lucide-react';
-import { Metadata } from 'next';
+import { Typography } from '@/components/typography/typography';
+import { Download, LayoutGrid, PlusIcon, Search, Trash } from 'lucide-react';
 import React, { useEffect, useState } from 'react'
 import { Button } from '../custome/Button';
-
-
 import {
     Dialog,
     DialogTrigger,

@@ -1,10 +1,7 @@
 import React from 'react'
 import Container from '@/components/layout/Container'
-import IconBox from './IconBox'
 import { Caption, Typography } from '@/components/typography/typography'
-import { Image, List, ListVideo, MapPin, Monitor, TvMinimal, Volume1 } from 'lucide-react'
-import MarqueeText from './MarqueeText'
-import { Badge } from './Badge'
+import { Image, List, ListVideo, MapPin, Monitor,  } from 'lucide-react'
 import Link from 'next/link'
 
 function DeviceCard() {

@@ -1,14 +1,11 @@
 import React from 'react'
 import Container from '@/components/layout/Container'
-import IconBox from './IconBox'
 import { Caption, Typography } from '@/components/typography/typography'
-import { Delete, EllipsisVertical, Eye, MapPin, Menu, Monitor, Trash, TvMinimal, Volume1 } from 'lucide-react'
-import MarqueeText from './MarqueeText'
+import { EllipsisVertical, Eye, MapPin, Monitor, Trash, Volume1 } from 'lucide-react'
 import { Badge } from './Badge'
 import Link from 'next/link'
-import Checkbox from './Checkbox'
 import { Dropdown, DropdownContent, DropdownItem, DropdownTrigger } from './Dropdown'
-import { Image, List, ListVideo, } from 'lucide-react'
+import { Image, ListVideo, } from 'lucide-react'
 
 
 function DeviceList({ className, detailedView = true }: { className?: string, detailedView?: boolean }) {

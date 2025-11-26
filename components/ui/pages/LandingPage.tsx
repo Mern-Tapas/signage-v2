@@ -1,5 +1,5 @@
 import React from 'react';
-import { Monitor, Zap, Cloud, BarChart3, Shield, Users, Check, Menu, X, ArrowRight, Play } from 'lucide-react';
+import { Monitor, Zap, Cloud, BarChart3, Shield, Users, Check, ArrowRight, Play } from 'lucide-react';
 import Link from 'next/link';
 
 export default function LandingePage() {

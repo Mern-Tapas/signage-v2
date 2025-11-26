@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import { Monitor, Mail, Phone, MapPin, Send, CheckCircle, Check, X, ArrowRight, Clock, MessageSquare, User } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, Check, X, ArrowRight, Clock, MessageSquare, User } from 'lucide-react';
 import Link from 'next/link';
 interface ContactFormData {
     name: string;

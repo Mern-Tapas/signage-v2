@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import { Monitor, Mail, Lock, Eye, EyeOff, ArrowRight, CheckCircle } from 'lucide-react';
+import { Monitor, Eye, EyeOff, CheckCircle } from 'lucide-react';
 
 interface LoginFormData {
   email: string;

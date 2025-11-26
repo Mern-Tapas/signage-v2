@@ -4,11 +4,9 @@ import Container from '@/components/layout/Container'
 import { Button } from '@/components/ui/custome/Button'
 import { Menu, Bell, User, Settings, LogOut, Search, X } from 'lucide-react'
 import { ProfileCard } from '@/components/ui/custome/ProfileCard'
-import LinkIconButton from '@/components/ui/custome/LinkIconButton'
 import { useEffect, useState } from 'react'
 import { Dropdown, DropdownContent, DropdownItem, DropdownTrigger } from './Dropdown'
 import Link from 'next/link'
-import { Input } from './Input'
 
 
 interface DashboardHeaderProps {

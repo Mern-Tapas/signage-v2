@@ -1,18 +1,12 @@
 'use client'
 import React from 'react'
 import Container from '@/components/layout/Container'
-import { Caption, Typography } from '@/components/typography/typography'
-import IconBox from '../custome/IconBox'
-import { Clock, Database, ExternalLink, Icon, Info, Maximize, Monitor, Pen, PlusIcon, ScreenShare, TvMinimal, Video, Watch } from 'lucide-react'
-import Link from 'next/link'
-import { Badge } from '../custome/Badge'
-import AnalyticsCard from '../custome/AnalyticsCard'
+import { Typography } from '@/components/typography/typography'
+import { Clock,  Monitor, PlusIcon, Video, } from 'lucide-react'
 import DeviceList from '../custome/DeviceList'
 import { Card, CardHeader } from '../custome/Card'
 import { Button } from '../custome/Button'
-import Image from 'next/image'
 import CardStack from '../custome/CardStack'
-import { Switch } from '../custome/Switch'
 
 function UserPlaylist() {
     return (

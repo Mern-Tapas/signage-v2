@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import clsx from "clsx";
 import { Button } from "./Button";
-import { Caption, Typography } from "@/components/typography/typography";
+import {  Typography } from "@/components/typography/typography";
 
 type DialogContextType = {
   open: boolean;

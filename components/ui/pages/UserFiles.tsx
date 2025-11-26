@@ -2,7 +2,6 @@
 import React from 'react'
 import Container from '@/components/layout/Container'
 import { Typography } from '@/components/typography/typography'
-import { Input } from '../custome/Input'
 import { FileCard } from '../custome/FileCard'
 
 function UserFiles() {

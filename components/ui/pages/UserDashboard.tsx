@@ -2,10 +2,8 @@
 import Container from '@/components/layout/Container';
 import { Typography } from '@/components/typography/typography';
 import AnalyticsCard from '@/components/ui/custome/AnalyticsCard';
-
 import { Database, File, MoreVertical, PlaySquare, ScreenShare, Timer, } from 'lucide-react';
 import React from 'react'
-import DeviceTable from '../custome/DeviceTable';
 import { Button } from '../custome/Button';
 import { Card, CardBody, CardHeader } from '../custome/Card';
 import DeviceList from '../custome/DeviceList';

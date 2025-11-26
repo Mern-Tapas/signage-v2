@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import { Monitor, Check, X, Zap, Shield, Cloud, Users, BarChart3, Headphones, Globe, Code, Sparkles } from 'lucide-react';
+import { Check, X, Zap, Shield, Cloud, Users, BarChart3, Headphones,  Sparkles } from 'lucide-react';
 
 interface PricingPlan {
   name: string;
