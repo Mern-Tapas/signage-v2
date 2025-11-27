@@ -5,6 +5,10 @@ import { Typography } from '@/components/typography/typography'
 import { Calendar } from '../custome/Calendar'
 import { useState } from 'react'
 import { Card, CardHeader } from '../custome/Card'
+import { Separator } from '../custome/Seprator'
+import IconBox from '../custome/IconBox'
+import { WatchIcon } from 'lucide-react'
+import Image from 'next/image'
 
 
 
@@ -87,13 +91,23 @@ function UserSheduler() {
                     </Container>
                     <Container className='grid gap-4 self-start'>
 
-                        <Card>
-                            <CardHeader>
+
+                        <Container radius='xl' variant='primary' className='self-auto'>
+                            <Container radius='xl' padding='lg' variant='primary' className=''>
                                 <Typography variant='h6'>Sheduled Content</Typography>
-                            </CardHeader>
-                        </Card>
-                        <Container radius='xl' padding='lg' variant='primary' className='self-auto'>
-                            <Typography variant='h6'>Sheduled Content</Typography>
+                            </Container>
+                            <Separator />
+                            <Container radius='xl' padding='lg' variant='primary' className='gap-3'>
+                                <Container radius='xl' padding='sm' variant='primary' className='flex gap-2 border border-gray-300'>
+                                    <div className=' h-12 w-12 rounded-md overflow-hidden'>
+                                        <Image src={"https://i.pinimg.com/736x/1a/0c/13/1a0c13f582d7b4bdcc11f129cf7a424d.jpg"} height={100} width={100} alt='content' />
+                                    </div>
+                                    <div>
+                                        <Typography variant='h6' weight='medium'>Phoenix citadel time Events</Typography>
+                                    </div>
+                                </Container>
+
+                            </Container>
                         </Container>
 
                     </Container>
