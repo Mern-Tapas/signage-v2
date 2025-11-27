@@ -7,6 +7,7 @@ import { CalendarClock, CreditCard, Files, FileText, FolderOpen, Grid, LayoutGri
 import ImageBox from "./ImageBox";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import NavLink from "./NavLink";
 
 interface SidebarProps {
     isOpen: boolean
@@ -14,7 +15,7 @@ interface SidebarProps {
 
 export default function Sidebar({ isOpen }: SidebarProps) {
 
-const pathName = usePathname()
+    const pathName = usePathname()
 
 
     const menuItems = [
@@ -27,8 +28,8 @@ const pathName = usePathname()
         { href: '/user/settings', label: 'Settings', icon: Settings },
     ];
     const menuItems2 = [
-        { href: '/user/dashboard', label: 'Plan', icon: CreditCard },
-        { href: '/user/screens', label: 'Help', icon: LifeBuoy },
+        { href: '/user/plan', label: 'Plan', icon: CreditCard },
+        { href: '/user/help', label: 'Help', icon: LifeBuoy },
 
     ];
 
@@ -53,9 +54,10 @@ const pathName = usePathname()
 
 
                 {menuItems.map(({ href, label, icon: Icon }, index) => (
-                    <Link key={index} href={href} className={`flex items-center cursor-pointer gap-1 p-1.5 rounded-xl transition-all ${(pathName.includes(href))?"bg-blue-600 text-white hover:bg-blue-700":"hover:bg-gray-200"}`}>
-                        <IconBox size='sm' variant='transparant' className="transition-color text-white" iconColor={(pathName.includes(href))?"white":"primary"} icon={Icon} />
-                        {isOpen ? <Typography variant='body2' className={`transition-all ${(pathName.includes(href))?"text-white":"text-black"}`}>{label}</Typography> : ""}
+                    <Link key={index} href={href} className={`flex items-center cursor-pointer gap-2 p-2.5 rounded-lg transition-all ${(pathName.includes(href)) ? "bg-blue-600 text-white hover:bg-blue-700" : "hover:bg-gray-200"}`}>
+                        {/* <IconBox size='sm' variant='transparant' className="transition-color text-white" iconColor={(pathName.includes(href))?"white":"primary"} icon={Icon} /> */}
+                        <Icon strokeWidth={1.7} size={20} />
+                        {isOpen ? <Typography variant='body2' className={`transition-all ${(pathName.includes(href)) ? "text-white" : "text-black"}`}>{label}</Typography> : ""}
                     </Link>
                 ))}
 
@@ -72,15 +74,16 @@ const pathName = usePathname()
 
 
                 {menuItems2.map(({ href, label, icon: Icon }, index) => (
-                    <Link key={index} href={href} className="flex items-center cursor-pointer gap-1 hover:bg-gray-100 rounded-md transition-bg">
-                        <IconBox size='md' variant='transparant' icon={Icon} />
-                        {isOpen ? <Typography variant='body2' className="">{label}</Typography> : ""}
+                    <Link key={index} href={href} className={`flex items-center cursor-pointer gap-2 p-2.5 rounded-lg transition-all ${(pathName.includes(href)) ? "bg-blue-600 text-white hover:bg-blue-700" : "hover:bg-gray-200"}`}>
+                        {/* <IconBox size='sm' variant='transparant' className="transition-color text-white" iconColor={(pathName.includes(href))?"white":"primary"} icon={Icon} /> */}
+                        <Icon strokeWidth={1.7} size={20} />
+                        {isOpen ? <Typography variant='body2' className={`transition-all ${(pathName.includes(href)) ? "text-white" : "text-black"}`}>{label}</Typography> : ""}
                     </Link>
                 ))}
 
             </Container>
 
-            
+
         </Container>
     </Container>
 };

@@ -34,7 +34,7 @@ const IconBox: React.FC<IconBoxProps> = ({
 }) => {
   const sizeStyles: Record<IconBoxSize, string> = {
     xs: " text-xs",
-    sm: "w-8 h-8 text-sm",
+    sm: "w-7 h-7 text-sm",
     md: "w-10 h-10 text-base",
     lg: "w-12 h-12 text-lg",
   };
