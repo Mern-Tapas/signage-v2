@@ -9,6 +9,7 @@ import { Separator } from '../custome/Seprator'
 import IconBox from '../custome/IconBox'
 import { WatchIcon } from 'lucide-react'
 import Image from 'next/image'
+import { Button } from '../custome/Button'
 
 
 
@@ -93,19 +94,17 @@ function UserSheduler() {
 
 
                         <Container radius='xl' variant='primary' className='self-auto'>
-                            <Container radius='xl' padding='lg' variant='primary' className=''>
+                            <Container radius='xl' padding='lg' variant='primary' className='flex items-center justify-between'>
                                 <Typography variant='h6'>Sheduled Content</Typography>
+                                <Button variant='danger'>Clear All</Button>
                             </Container>
                             <Separator />
-                            <Container radius='xl' padding='lg' variant='primary' className='gap-3'>
-                                <Container radius='xl' padding='sm' variant='primary' className='flex gap-2 border border-gray-300'>
-                                    <div className=' h-12 w-12 rounded-md overflow-hidden'>
-                                        <Image src={"https://i.pinimg.com/736x/1a/0c/13/1a0c13f582d7b4bdcc11f129cf7a424d.jpg"} height={100} width={100} alt='content' />
-                                    </div>
-                                    <div>
-                                        <Typography variant='h6' weight='medium'>Phoenix citadel time Events</Typography>
-                                    </div>
-                                </Container>
+                            <Container radius='xl' padding='lg' variant='primary' className='gap-2 grid'>
+
+                                <ScheduledContent />
+                                <ScheduledContent />
+                                <ScheduledContent />
+                                <ScheduledContent />
 
                             </Container>
                         </Container>
@@ -120,3 +119,15 @@ function UserSheduler() {
 }
 
 export default UserSheduler
+
+
+const ScheduledContent = () => {
+    return <Container radius='xl' padding='sm' variant='primary' className='flex gap-3 border border-gray-300'>
+        <div className=' h-12 w-12 rounded-md overflow-hidden'>
+            <Image src={"https://i.pinimg.com/736x/1a/0c/13/1a0c13f582d7b4bdcc11f129cf7a424d.jpg"} height={100} width={100} alt='content' />
+        </div>
+        <div>
+            <Typography variant='h6' weight='medium'>Phoenix citadel time Events</Typography>
+        </div>
+    </Container>
+}
