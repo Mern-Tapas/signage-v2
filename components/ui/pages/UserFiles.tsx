@@ -15,11 +15,12 @@ function UserFiles() {
                 </Container>
 
             </Container>
-            <Container className='grid gap-4 grid-cols-5'>
+            <Container className='grid gap-4 lg:grid-cols-4 xl:grid-cols-5'>
                 <FileCard />
                 <FileCard />
-
-
+                <FileCard />
+                <FileCard />
+                <FileCard />
 
             </Container>
 
