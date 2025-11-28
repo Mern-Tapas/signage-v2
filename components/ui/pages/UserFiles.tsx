@@ -2,7 +2,8 @@
 import React from 'react'
 import Container from '@/components/layout/Container'
 import { Typography } from '@/components/typography/typography'
-import { FileCard } from '../custome/FileCard'
+import FileUploadLayout from '../custome/FileUploader'
+import FileCard from '../custome/FileCard'
 
 function UserFiles() {
     return (
@@ -14,19 +15,11 @@ function UserFiles() {
                 </Container>
 
             </Container>
-            <Container className='grid gap-2 grid-cols-4'>
+            <Container className='grid gap-4 grid-cols-5'>
+                <FileCard />
+                <FileCard />
 
-                <FileCard
-                    fileName="document name odf dfwidf dfik.pdf"
-                    fileType="pdf"
-                    fileSize="2.4 MB"
-                    uploadDate="2 days ago"
-                    previewUrl="/path/to/image.jpg" // optional
-                    onDownload={() => console.log('download')}
-                    onDelete={() => console.log('delete')}
-                    onShare={() => console.log('share')}
-                    onPreview={() => console.log('preview')}
-                />
+
 
             </Container>
 
