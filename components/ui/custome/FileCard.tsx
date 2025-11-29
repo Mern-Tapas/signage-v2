@@ -4,7 +4,6 @@ import React from "react"
 import Container from "@/components/layout/Container"
 import Image from "next/image"
 import { Video } from "lucide-react"
-import { Caption } from "@/components/typography/typography"
 
 const FileCard: React.FC = () => {
 
@@ -17,7 +16,7 @@ const FileCard: React.FC = () => {
         <Video className="text-blue-700" strokeWidth={1.2} />
       </div>
       <div className="flex items-center">
-        <p className="text-xs">Untitled.jpeg</p>
+        <p className="text-xs">Untitled Documents ps1.jpeg</p>
       </div>
     </Container>
   </Container>

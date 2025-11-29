@@ -75,46 +75,6 @@ function UserScreen() {
 
                 </Container>
 
-                {/* <div className='grid grid-cols-2 gap-4 w-full'>
-
-                    <AnalyticsCard
-                        title="Total Screens"
-                        value="2,567"
-                        subtitle="45 online currently"
-                        icon={ScreenShare}
-                        iconVariant="transparant"
-                        iconColor="secondary"
-
-                    />
-                    <AnalyticsCard
-                        title="Total Screens"
-                        value="2,567"
-                        subtitle="45 online currently"
-                        icon={ScreenShare}
-                        iconVariant="transparant"
-                        iconColor="secondary"
-
-                    />
-                    <AnalyticsCard
-                        title="Total Screens"
-                        value="2,567"
-                        subtitle="45 online currently"
-                        icon={ScreenShare}
-                        iconVariant="transparant"
-                        iconColor="secondary"
-
-                    />
-                    <AnalyticsCard
-                        title="Total Screens"
-                        value="2,567"
-                        subtitle="45 online currently"
-                        icon={ScreenShare}
-                        iconVariant="transparant"
-                        iconColor="secondary"
-
-                    />
-                </div> */}
-
             </Container>
 
 
@@ -127,7 +87,7 @@ function UserScreen() {
                             {/* <Typography variant='body2' color='muted'>Connected Playlists </Typography> */}
                         </div>
                         <Container className='flex items-center'>
-                           <Button variant='primary' className='shadow-md'>Assign Playlist</Button>
+                            <Button variant='primary' className='shadow-md'>Assign Playlist</Button>
                         </Container>
                     </Container>
                 </CardHeader>
@@ -162,7 +122,7 @@ function UserScreen() {
                         </div>
                     </Container>
 
-                    <PlaylistListItem/>
+                    <PlaylistListItem />
                 </Container>
             </Card>
 
