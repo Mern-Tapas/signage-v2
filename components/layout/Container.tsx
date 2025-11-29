@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import clsx from "clsx";
 
 type Variant = "default" | "primary" | "secondary" | "outline";
-type Radius ="none"| "sm" | "md" | "xl" | "2xl" | "3xl";
+type Radius = "none" | "sm" | "md" | "xl" | "2xl" | "3xl";
 type Shadow = "none" | "sm" | "md" | "lg";
 type Padding = "none" | "sm" | "md" | "lg" | "xl";
 
@@ -13,6 +13,7 @@ interface ContainerProps {
     padding?: Padding;
     children: ReactNode;
     className?: string;
+    onClick?: () => void;
 }
 
 const Container: React.FC<ContainerProps> = ({
@@ -56,6 +57,7 @@ const Container: React.FC<ContainerProps> = ({
 
     return (
         <div
+        onClick={()=>onclick}
             className={clsx(
                 variantStyles[variant],
                 radiusStyles[radius],
