@@ -81,7 +81,7 @@ export const DialogContent = ({
       <div
         ref={dialogRef}
         className={clsx(
-          "bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 w-full animate-in zoom-in-95 slide-in-from-top-2",
+          "bg-white dark:bg-gray-900 rounded-xl  shadow-lg p-6 w-full animate-in zoom-in-95 slide-in-from-top-2",
           maxWidth,
           className
         )}

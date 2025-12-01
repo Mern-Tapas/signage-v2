@@ -20,6 +20,7 @@ import { Input } from '../custome/Input';
 import DeviceList from '../custome/DeviceList';
 import Checkbox from '../custome/Checkbox';
 import FileCard from '../custome/FileCard';
+import FileUploadLayout from '../custome/FileUploader';
 function UserFiles() {
 
 
@@ -70,43 +71,20 @@ function UserFiles() {
                     <Button className='hidden' variant="outline" size='md' icon={<Download size={18} strokeWidth={1.5} />}>Export</Button>
                     <Button className='hidden' variant="danger" size='md' icon={<Trash size={18} strokeWidth={1.5} />}>Delete</Button>
 
-                    <Dialog>
+                    <Dialog  >
                         <DialogTrigger>
                             <Button variant="primary" className='h-full md:flex hidden' size='md' icon={<PlusIcon size={18} strokeWidth={1.5} />}>Add Screen</Button>
                             <Button size='icon' className='block md:hidden' variant='primary' icon={<PlusIcon strokeWidth={1.2} />} />
 
                         </DialogTrigger>
-                        <DialogContent>
-                            <DialogHeader>
-                                <DialogTitle>Create User</DialogTitle>
-                                <DialogDescription>
-                                    Fill in the details below to create a new user.
-                                </DialogDescription>
-                            </DialogHeader>
+                        <DialogContent maxWidth='max-w-2xl' className='max-h-[600px] overflow-x-scroll '  >
+                            
 
-                            <DialogBody>
-                                <form className="space-y-4">
-                                    <div>
-                                        <Typography variant='body2' className="">Name</Typography >
-                                        <input
-                                            type="text"
-                                            className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-700 bg-transparent px-3 py-2"
-                                        />
-                                    </div>
-                                    <div>
-                                        <Typography variant='body2' className="">Email</Typography>
-                                        <input
-                                            type="email"
-                                            className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-700 bg-transparent px-3 py-2"
-                                        />
-                                    </div>
-                                </form>
+                            <DialogBody  >
+                               <FileUploadLayout   />
                             </DialogBody>
 
-                            <DialogFooter>
-                                <DialogClose>Cancel</DialogClose>
-                                <Button variant="primary">Save</Button>
-                            </DialogFooter>
+                           
                         </DialogContent>
                     </Dialog>
 

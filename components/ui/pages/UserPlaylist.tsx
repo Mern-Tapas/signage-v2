@@ -33,7 +33,7 @@ function UserPlaylist() {
                             <Typography variant='h4' weight='bold'>Phoenix Creatives Advertisment Power point</Typography>
                             <Typography variant='body2' color='muted'>Connect playlist and manage your ads</Typography>
                         </div>
-                        <div className='flex flex-col gap-3 border border-gray-400 p-4 rounded-xl border-dashed'>
+                        <div className='flex flex-col gap-3 borer border-gray-400 p- rounded-xl border-dahed'>
                             <div className='grid items-center grid-cols-[30px_60px_20px_100px]'>
                                 <div className='flex items-center'>
                                     <Clock className='text-yellow-600' strokeWidth={1.5} size={18} />
@@ -82,7 +82,7 @@ function UserPlaylist() {
 
                         </div>
                     </Container>
-                    <Container radius='md' padding='md' className='bg-gray-100 w-full' variant='secondary'>
+                    <Container radius='md' padding='md' className='bg-gray-100 w-full border border-gray-300' variant='primary'>
                         d
                     </Container>
                     {/* <Switch size='md' checked={false} onChange={() => { }} /> */}
