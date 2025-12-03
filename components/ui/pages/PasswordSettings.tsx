@@ -1,15 +1,18 @@
 'use client'
 import React from 'react'
 import Container from '@/components/layout/Container'
-import Avatar from '../custome/Avatar'
 import { Typography } from '@/components/typography/typography'
-import { Caption } from '@/components/typography/typography'
 import { Input } from '../custome/Input'
 import { Button } from '../custome/Button'
 
 function PasswordSettings() {
     return (
-        <Container className='grid gap-4'>
+        <Container className='grid gap-4 self-start'>
+
+            <Container>
+                <Typography variant='h4' weight='medium'>Security Settings</Typography>
+                <Typography variant='body2' color='secondary'>You can find all settings here.</Typography>
+            </Container>
 
 
             <Container variant='primary' padding='lg' className='flex flex-col gap-4 self-start' radius='xl'>

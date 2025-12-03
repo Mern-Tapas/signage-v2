@@ -10,7 +10,12 @@ import { Button } from '../custome/Button'
 
 function GeneralSettings() {
     return (
-        <Container className='grid gap-4'>
+        <Container className='grid gap-4 self-start'>
+
+            <Container>
+                <Typography variant='h4' weight='medium'>General Settings</Typography>
+                <Typography variant='body2' color='secondary'>You can find all settings here.</Typography>
+            </Container>
 
             <Container variant='primary' padding='lg' className='flex flex-col gap-4 self-start' radius='xl'>
                 <Container className='flex items-center '>
@@ -50,9 +55,10 @@ function GeneralSettings() {
                         placeholder="Email address"
                     />
                     <Input
-                        label="First Name"
+                        label="Date of Birth"
                         variant="default"
                         placeholder="Email address"
+                        type='date'
                     />
                     <Input
                         label="Last Name"
