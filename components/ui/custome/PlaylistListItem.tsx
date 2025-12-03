@@ -1,18 +1,13 @@
 import React from 'react'
 import Container from '@/components/layout/Container'
-import IconBox from './IconBox'
 import { Caption, Typography } from '@/components/typography/typography'
-import { Delete, EllipsisVertical, Eye, Menu, PlaySquare, Trash, TvMinimal, Video } from 'lucide-react'
-import MarqueeText from './MarqueeText'
+import { EllipsisVertical, Eye, PlaySquare, Trash, Video } from 'lucide-react'
 import { Badge } from './Badge'
 import Link from 'next/link'
-import Checkbox from './Checkbox'
 import { Dropdown, DropdownContent, DropdownItem, DropdownTrigger } from './Dropdown'
 import { ListVideo, Volume1 } from 'lucide-react'
-import Image from 'next/image'
 
 function PlaylistListItem({ className }: { className?: string, }) {
-    const [checked, setChecked] = React.useState(false);
     return (
         <Container padding='sm' radius='xl' className={`grid grid-cols-[220px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr_1fr] items-center w-full ${className}`}>
 

@@ -1,9 +1,8 @@
 'use client'
-
 import React from "react"
 import Container from "@/components/layout/Container"
 import Image from "next/image"
-import { Video, FileText, Image as ImageIcon, Archive, File, Icon } from "lucide-react";
+import { Video, FileText, Image as ImageIcon, Archive, File } from "lucide-react";
 
 
 export type FileCardProps = {

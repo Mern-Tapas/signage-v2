@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 import GeneralSettings from '@/components/ui/pages/GeneralSettings'
 
-function page() {
+function Page() {
   const router = useRouter()
   useEffect(() => {
     router.push("settings/general")
@@ -14,4 +14,4 @@ function page() {
   )
 }
 
-export default page
+export default Page
