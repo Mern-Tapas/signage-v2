@@ -5,6 +5,7 @@ import Avatar from "@/components/ui/custome/Avatar";
 import React from "react";
 import SettingsNavigation2 from "@/components/ui/custome/SettingsNavigation2";
 import { Mail, Phone } from "lucide-react";
+import { Button } from "@/components/ui/custome/Button";
 
 function layout({ children }: { children: React.ReactNode }) {
 
@@ -51,7 +52,7 @@ function layout({ children }: { children: React.ReactNode }) {
                             </Container>
                         </div>
                         <Container variant="outline" radius="xl" padding="md" className="w-full">
-                            <table className="text-sm border-separate border-spacing-x-4 border-spacing-y-1 text-gray-600">
+                            <table className="text-sm border-separate border-spacing-x-4 border-spacing-y-2 text-gray-600">
                                 <tbody>
                                     <tr>
                                         <td className="">Name:</td>
@@ -65,8 +66,15 @@ function layout({ children }: { children: React.ReactNode }) {
                                         <td className="">DOB:</td>
                                         <td className="">25 July 1998</td>
                                     </tr>
+                                    <tr>
+                                        <td className="">Place:</td>
+                                        <td className="">Indore</td>
+                                    </tr>
                                 </tbody>
                             </table>
+                        </Container>
+                        <Container className="w-full">
+                            <Button variant="danger" className="w-full">Logout</Button>
                         </Container>
                     </div>
                 </Container>

@@ -5,9 +5,11 @@ import Avatar from '../custome/Avatar'
 import { Typography } from '@/components/typography/typography'
 import { Input } from '../custome/Input'
 import { Button } from '../custome/Button'
-
+import Textarea from '../custome/TextArea'
+import { Select } from '../custome/Select'
 
 function GeneralSettings() {
+
     return (
         <Container className='grid gap-4 self-start'>
 
@@ -60,11 +62,18 @@ function GeneralSettings() {
                         placeholder="Email address"
                         type='date'
                     />
-                    <Input
-                        label="Last Name"
-                        variant="default"
-                        placeholder="Email address"
+                    <Select
+                        label="Country"
+                        helperText="Choose your country"
+                        size="md"
+                        options={[
+                            { label: "Male", value: "male" },
+                            { label: "Female", value: "female" },
+                        ]}
+                        value={'male'}
+                        onChange={() => { }}
                     />
+
 
                 </Container>
 
@@ -76,26 +85,39 @@ function GeneralSettings() {
 
 
             <Container variant='primary' padding='lg' className='flex flex-col gap-4 self-start' radius='xl'>
-                <Typography variant='h6'>Security Information</Typography>
+                <Typography variant='h6'>Contact Details</Typography>
 
                 <Container className='grid grid-cols-2 gap-4'>
                     <Input
-                        label="Password"
+                        label="Mobile Number"
                         variant="default"
                         placeholder="Password"
-                        helperText='Password must be 8–12 characters long and include at least one lowercase and one uppercase letter.'
                     />
                     <Input
-                        label="Confirm Password"
+                        label="Whatsapp Number"
                         variant="default"
                         placeholder="Confirm Password"
-                        helperText='Confirm Password must match the Password exactly and follow the same password rules.'
                     />
+                    <Input
+                        label="Email Address"
+                        variant="default"
+                        placeholder="Password"
+                    />
+                    <Textarea
+                        label="Address"
+                        textareaSize="sm"
+                        variant="default"
+                        radius="md"
+                        resize="none"
+                        className=""
+
+                    />
+
 
 
                 </Container>
                 <div className='flex justify-end'>
-                    <Button variant='primary' className=''>Update</Button>
+                    <Button variant='primary' disabled className=''>Update</Button>
 
                 </div>
 
