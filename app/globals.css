@@ -39,3 +39,20 @@ body {
   min-width: 100%;
   animation: marquee linear infinite;
 }
+
+
+/* hide scrollbar of the setting navigation */
+
+.setting_navigation::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.setting_navigation {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for IE and Edge (legacy) */
+.setting_navigation {
+  -ms-overflow-style: none;
+}
