@@ -3,7 +3,6 @@ import React from 'react'
 import Container from '@/components/layout/Container'
 import Avatar from '../custome/Avatar'
 import { Typography } from '@/components/typography/typography'
-import { Caption } from '@/components/typography/typography'
 import { Input } from '../custome/Input'
 import { Button } from '../custome/Button'
 
@@ -28,8 +27,9 @@ function GeneralSettings() {
                             className="border-white"
                         />
                         <div>
-                            <Typography variant='h4'>Tapas Gharami</Typography>
-                            <Caption>cyb6261452510@gmail.com</Caption>
+                            <Typography variant='h4' className=''>Tapas Gharami</Typography>
+                            <Typography variant="caption" color="muted">cyb6261452510@gmail.com</Typography>
+
                         </div>
                     </div>
                     <div className="ms-auto flex gap-4">
