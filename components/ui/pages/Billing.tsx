@@ -133,9 +133,9 @@ const BillingHistoryCard = () => {
     ];
 
     return (
-        <Container className="" variant='primary' padding='lg' radius='xl'>
+        <Container className="space-y-6" variant='primary' padding='lg' radius='xl'>
 
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center justify-between ">
                 <div className="flex items-center gap-3">
                     <div className="bg-green-100 p-2 rounded-lg">
                         <Download className="text-green-600" size={24} />
@@ -164,6 +164,15 @@ const BillingHistoryCard = () => {
                         </div>
                     </div>
                 ))}
+
+
+            </div>
+
+            <div className=" border border-dashed rounded-md p-4 h-50 border-gray-300 flex justify-center items-center">
+                <div>
+                    <h3 className="text-center text-sm font-semibold text-gray-900">No invoices yet</h3>
+                    <p className="text-center text-xs text-gray-500 mt-1">We couldn't find any billing history for this account.</p>
+                </div>
             </div>
         </Container>
     );
@@ -231,14 +240,14 @@ const PricingPlansCard = () => {
 export default function BillingPage() {
     return (
         <Container className='space-y-6'>
-                <div>
-                    <h1 className="text-3xl font-bold text-gray-900 mb-2">Billing & Subscription</h1>
-                    <p className="text-gray-600">Manage your subscription, payment methods, and billing history</p>
-                </div>
-                <CurrentPlanCard />
-                <PricingPlansCard />
-                <PaymentMethodCard />
-                <BillingHistoryCard />
+            <div>
+                <h1 className="text-3xl font-bold text-gray-900 mb-2">Billing & Subscription</h1>
+                <p className="text-gray-600">Manage your subscription, payment methods, and billing history</p>
+            </div>
+            <CurrentPlanCard />
+            <PricingPlansCard />
+            <PaymentMethodCard />
+            <BillingHistoryCard />
         </Container>
     );
 }
