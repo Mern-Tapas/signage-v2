@@ -27,57 +27,87 @@ function layout({ children }: { children: React.ReactNode }) {
             </Container>
             <Container className='grid gap-4 xl:grid-cols-[300px_auto]'>
 
-                <Container variant="primary" padding="lg" className="self-start gap-4" radius="xl">
-                    <div className="flex flex-col items-center gap-4">
-                        <Avatar
-                            src="https://i.pinimg.com/736x/6f/a3/6a/6fa36aa2c367da06b2a4c8ae1cf9ee02.jpg"
-                            alt="User Avatar"
-                            size="lg"
-                            radius="lg"
-                            className="border-white"
-                        />
-                        <div>
-                            <Typography variant='h4' className="uppercase">Tapas Gharami</Typography>
-                            <Typography variant="caption" color="muted">cyb6261452510@gmail.com</Typography>
+                <div className="self-start gap-4 grid grid-cols-1">
+
+                    <Container variant="primary" padding="lg" className=" gap-4" radius="xl">
+                        <div className="flex flex-col items-center gap-4">
+                            <Avatar
+                                src="https://i.pinimg.com/736x/6f/a3/6a/6fa36aa2c367da06b2a4c8ae1cf9ee02.jpg"
+                                alt="User Avatar"
+                                size="lg"
+                                radius="lg"
+                                className="border-white"
+                            />
+                            <div>
+                                <Typography variant='h4' className="uppercase">Tapas Gharami</Typography>
+                                <Typography variant="caption" color="muted">cyb6261452510@gmail.com</Typography>
+                            </div>
+                            <div className="flex gap-2">
+                                <Container variant="outline" radius="sm" padding="sm" className="w-10 h-10 flex items-center justify-center" >
+                                    <Phone size={18} strokeWidth={1.8} />
+                                </Container>
+                                <Container variant="outline" radius="sm" padding="sm" className="w-10 h-10 flex items-center justify-center" >
+                                    <Mail size={18} strokeWidth={1.8} />
+                                </Container>
+                                <Container variant="outline" radius="sm" padding="sm" className="w-10 h-10 flex items-center justify-center" >
+                                    <Phone size={18} strokeWidth={1.8} />
+                                </Container>
+                            </div>
+                            <Container variant="outline" radius="xl" padding="md" className="w-full">
+                                <table className="text-sm border-separate border-spacing-x-4 border-spacing-y-2 text-gray-600">
+                                    <tbody>
+                                        <tr>
+                                            <td className="">Name:</td>
+                                            <td className="">Tapas Gharami</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="">Age:</td>
+                                            <td className="">45</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="">DOB:</td>
+                                            <td className="">25 July 1998</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="">Place:</td>
+                                            <td className="">Indore</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </Container>
+
                         </div>
-                        <div className="flex gap-2">
-                            <Container variant="outline" radius="sm" padding="sm" className="w-10 h-10 flex items-center justify-center" >
-                                <Phone size={18} strokeWidth={1.8} />
+                    </Container>
+                    <Container variant="primary" padding="lg" className=" gap-4" radius="xl">
+                        <div className="flex flex-col items-center gap-4">
+                           
+                            <Container variant="outline" radius="xl" padding="md" className="w-full">
+                                <table className="text-sm border-separate border-spacing-x-4 border-spacing-y-2 text-gray-600">
+                                    <tbody>
+                                        <tr>
+                                            <td className="">Name:</td>
+                                            <td className="">Tapas Gharami</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="">Age:</td>
+                                            <td className="">45</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="">DOB:</td>
+                                            <td className="">25 July 1998</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="">Place:</td>
+                                            <td className="">Indore</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </Container>
-                            <Container variant="outline" radius="sm" padding="sm" className="w-10 h-10 flex items-center justify-center" >
-                                <Mail size={18} strokeWidth={1.8} />
-                            </Container>
-                            <Container variant="outline" radius="sm" padding="sm" className="w-10 h-10 flex items-center justify-center" >
-                                <Phone size={18} strokeWidth={1.8} />
-                            </Container>
+
                         </div>
-                        <Container variant="outline" radius="xl" padding="md" className="w-full">
-                            <table className="text-sm border-separate border-spacing-x-4 border-spacing-y-2 text-gray-600">
-                                <tbody>
-                                    <tr>
-                                        <td className="">Name:</td>
-                                        <td className="">Tapas Gharami</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="">Age:</td>
-                                        <td className="">45</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="">DOB:</td>
-                                        <td className="">25 July 1998</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="">Place:</td>
-                                        <td className="">Indore</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </Container>
-                        <Container className="w-full">
-                            <Button variant="danger" className="w-full">Logout</Button>
-                        </Container>
-                    </div>
-                </Container>
+                    </Container>
+
+                </div>
 
                 {/* <SettingsNavigation /> */}
                 {children}

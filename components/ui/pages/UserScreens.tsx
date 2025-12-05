@@ -126,12 +126,12 @@ function UserScreens() {
                 <Container className='grid gap-4'>
 
                     <Container className='px-4 flex gap-2'>
-                        <Checkbox
+                        {/* <Checkbox
                             checked={false}
                             onChange={() => { }}
                             color="primary"
                             size="md"
-                        />
+                        /> */}
 
                         <Container variant='default' padding='sm' radius='xl' className='w-full grid grid-cols-[220px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr_1fr] items-center '>
 
@@ -159,12 +159,13 @@ function UserScreens() {
 
                     {Array.from({ length: 10 }, (_, i) => {
                         return <Container key={i} className='flex px-4 gap-2' radius='xl' variant='primary' >
-                            <Checkbox
+                            {/* <Checkbox
                                 checked={false}
                                 onChange={() => { }}
                                 color="primary"
                                 size="md"
-                            />
+                                
+                            /> */}
                             <DeviceList />
                         </Container>
                     })}

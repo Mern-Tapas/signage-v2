@@ -8,19 +8,14 @@ import {
     Dialog,
     DialogTrigger,
     DialogContent,
-    DialogHeader,
-    DialogTitle,
-    DialogDescription,
     DialogBody,
-    DialogFooter,
-    DialogClose,
 } from "@/components/ui/custome/Dialog";
-import DeviceCard from '../custome/DeviceCard';
 import { Input } from '../custome/Input';
 import DeviceList from '../custome/DeviceList';
 import Checkbox from '../custome/Checkbox';
 import FileCard from '../custome/FileCard';
 import FileUploadLayout from '../custome/FileUploader';
+import FileListView from '../custome/FileListView';
 function UserFiles() {
 
 
@@ -78,13 +73,13 @@ function UserFiles() {
 
                         </DialogTrigger>
                         <DialogContent maxWidth='max-w-2xl' className='max-h-[600px] overflow-x-scroll '  >
-                            
+
 
                             <DialogBody  >
-                               <FileUploadLayout   />
+                                <FileUploadLayout />
                             </DialogBody>
 
-                           
+
                         </DialogContent>
                     </Dialog>
 
@@ -150,7 +145,7 @@ function UserFiles() {
                                 color="primary"
                                 size="md"
                             />
-                            <DeviceList />
+                            <FileListView detailedView />
                         </Container>
                     })}
 
