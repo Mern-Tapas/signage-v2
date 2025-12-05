@@ -26,7 +26,7 @@ function SettingsNavigation2() {
             {navItems.map((item) => (
                 <Link 
                     key={item.href}
-                    className={`p-2 text-sm rounded-lg px-4 transition-colors ${
+                    className={`shrink-0 p-2 text-sm rounded-lg px-4 transition-colors ${
                         isActive(item.href) 
                             ? 'bg-blue-600 text-white' 
                             : 'bg-white text-gray-700 hover:bg-gray-50'
