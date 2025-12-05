@@ -121,7 +121,7 @@ function PasswordSettings() {
                     </div>
                     <div>
                         <h2 className="text-lg font-semibold text-gray-900">Active Sessions</h2>
-                        <p className="text-sm text-gray-500">Manage devices where you're currently logged in</p>
+                        <p className="text-sm text-gray-500">Manage devices where you&apos;re currently logged in</p>
                     </div>
                 </div>
                 <div className="space-y-3">
