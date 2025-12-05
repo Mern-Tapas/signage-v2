@@ -103,7 +103,7 @@ function PasswordSettings() {
                 {twoFactorEnabled && (
                     <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                         <p className="text-sm text-blue-800">
-                            Two-factor authentication is enabled. You'll need to enter a code from your authenticator app when signing in.
+                            Two-factor authentication is enabled. You&apos;ll need to enter a code from your authenticator app when signing in.
                         </p>
                     </div>
                 )}
