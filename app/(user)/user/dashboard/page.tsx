@@ -5,7 +5,7 @@ import React from 'react'
 
 
 export const metadata: Metadata = {
-  title: "User Dashboard",
+  title: "Company | User Dashboard",
   description: "Manage your user dashboard and settings",
 };
 
