@@ -56,3 +56,18 @@ body {
 .setting_navigation {
   -ms-overflow-style: none;
 }
+/* hide scrollbar of the setting navigation */
+
+.fileUploader::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.fileUploader {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for IE and Edge (legacy) */
+.fileUploader {
+  -ms-overflow-style: none;
+}

@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react';
 import { Upload, X, File } from 'lucide-react';
+import axios from 'axios';
 
 interface FileData {
   id: string;
@@ -9,6 +10,9 @@ interface FileData {
   name: string;
   size: number;
   type: string;
+  progress: number;
+  status: 'pending' | 'uploading' | 'completed' | 'error';
+  error?: string;
 }
 
 export default function FileUploadUI() {
@@ -29,7 +33,7 @@ export default function FileUploadUI() {
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     setIsDragging(false);
-    
+
     const droppedFiles = Array.from(e.dataTransfer.files);
     addFiles(droppedFiles);
   };
@@ -47,9 +51,11 @@ export default function FileUploadUI() {
       file,
       name: file.name,
       size: file.size,
-      type: file.type
+      type: file.type,
+      progress: 0,
+      status: 'pending' as const
     }));
-    
+
     setFiles(prev => [...prev, ...filesWithMetadata]);
   };
 
@@ -65,34 +71,61 @@ export default function FileUploadUI() {
     return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
   };
 
+  const uploadFile = async (fileData: FileData): Promise<boolean> => {
+    const formData = new FormData();
+    formData.append('file', fileData.file);
+
+    try {
+      await axios.post('/api/user/files/upload', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+        onUploadProgress: (progressEvent) => {
+          if (progressEvent.total) {
+            const percentComplete = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+            setFiles(prev =>
+              prev.map(f =>
+                f.id === fileData.id
+                  ? { ...f, progress: percentComplete, status: 'uploading' as const }
+                  : f
+              )
+            );
+          }
+        },
+      });
+
+      setFiles(prev =>
+        prev.map(f =>
+          f.id === fileData.id
+            ? { ...f, progress: 100, status: 'completed' as const }
+            : f
+        )
+      );
+      return true;
+    } catch (error) {
+      setFiles(prev =>
+        prev.map(f =>
+          f.id === fileData.id
+            ? { ...f, status: 'error' as const, error: 'Upload failed' }
+            : f
+        )
+      );
+      return false;
+    }
+  };
+
   const handleUpload = async () => {
     if (files.length === 0) return;
 
-    const formData = new FormData();
-    files.forEach(fileData => {
-      formData.append('files', fileData.file);
-    });
+    const pendingFiles = files.filter(f => f.status === 'pending');
 
-    try {
-      const response = await fetch('/api/upload', {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (response.ok) {
-        const result = await response.json();
-        console.log('Upload successful:', result);
-        setFiles([]);
-      } else {
-        console.error('Upload failed');
-      }
-    } catch (error) {
-      console.error('Error uploading files:', error);
+    for (const fileData of pendingFiles) {
+      await uploadFile(fileData);
     }
   };
 
   return (
-    <div className=" to-slate-100 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-8">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold text-slate-800 mb-2">File Upload</h1>
         <p className="text-slate-600 mb-8">Upload your files with drag and drop</p>
@@ -102,11 +135,10 @@ export default function FileUploadUI() {
           onDragOver={handleDragOver}
           onDragLeave={handleDragLeave}
           onDrop={handleDrop}
-          className={`border-2 border-dashed rounded-lg p-12 text-center transition-all duration-200 ${
-            isDragging
-              ? 'border-blue-500 bg-blue-50'
-              : 'border-slate-300 bg-white hover:border-slate-400'
-          }`}
+          className={`border-2 border-dashed rounded-lg p-12 text-center transition-all duration-200 ${isDragging
+            ? 'border-blue-500 bg-blue-50'
+            : 'border-slate-300 bg-white hover:border-slate-400'
+            }`}
         >
           <input
             ref={fileInputRef}
@@ -115,15 +147,15 @@ export default function FileUploadUI() {
             onChange={handleFileInput}
             className="hidden"
           />
-          
+
           <Upload className={`mx-auto mb-4 ${isDragging ? 'text-blue-500' : 'text-slate-400'}`} size={48} />
-          
+
           <h3 className="text-lg font-semibold text-slate-700 mb-2">
             {isDragging ? 'Drop files here' : 'Drag and drop files here'}
           </h3>
-          
+
           <p className="text-slate-500 mb-4">or</p>
-          
+
           <button
             onClick={() => fileInputRef.current?.click()}
             className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
@@ -146,14 +178,14 @@ export default function FileUploadUI() {
                 Upload All
               </button>
             </div>
-            
+
             <div className="space-y-3">
               {files.map(fileData => (
                 <div
                   key={fileData.id}
                   className="bg-white rounded-lg p-4 shadow-sm border border-slate-200"
                 >
-                  <div className="flex items-start justify-between">
+                  <div className="flex items-start justify-between mb-2">
                     <div className="flex items-center flex-1 min-w-0">
                       <File className="text-slate-400 flex-shrink-0 mr-3" size={24} />
                       <div className="flex-1 min-w-0">
@@ -161,14 +193,39 @@ export default function FileUploadUI() {
                         <p className="text-sm text-slate-500">{formatFileSize(fileData.size)}</p>
                       </div>
                     </div>
-                    
+
                     <button
                       onClick={() => removeFile(fileData.id)}
                       className="text-slate-400 hover:text-red-500 transition-colors ml-4"
+                      disabled={fileData.status === 'uploading'}
                     >
                       <X size={20} />
                     </button>
                   </div>
+
+                  {/* Progress Bar */}
+                  {fileData.status !== 'pending' && (
+                    <div className="mt-2">
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-xs font-medium text-slate-600">
+                          {fileData.status === 'uploading' && `Uploading... ${fileData.progress}%`}
+                          {fileData.status === 'completed' && 'Upload complete'}
+                          {fileData.status === 'error' && (fileData.error || 'Upload failed')}
+                        </span>
+                      </div>
+                      <div className="w-full bg-slate-200 rounded-full h-2 overflow-hidden">
+                        <div
+                          className={`h-2 rounded-full transition-all duration-300 ${fileData.status === 'completed'
+                              ? 'bg-green-500'
+                              : fileData.status === 'error'
+                                ? 'bg-red-500'
+                                : 'bg-blue-500'
+                            }`}
+                          style={{ width: `${fileData.progress}%` }}
+                        />
+                      </div>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
