@@ -171,7 +171,7 @@ const BillingHistoryCard = () => {
             <div className=" border border-dashed rounded-md p-4 h-50 border-gray-300 flex justify-center items-center">
                 <div>
                     <h3 className="text-center text-sm font-semibold text-gray-900">No invoices yet</h3>
-                    <p className="text-center text-xs text-gray-500 mt-1">We couldn't find any billing history for this account.</p>
+                    <p className="text-center text-xs text-gray-500 mt-1">We couldn&apos;t find any billing history for this account.</p>
                 </div>
             </div>
         </Container>

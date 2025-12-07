@@ -55,8 +55,8 @@ function PasswordSettings() {
             <Container variant='primary' padding='lg' className='flex flex-col gap-4 self-start' radius='xl'>
                 <Typography variant='h6'>Password Information</Typography>
 
-                <Container className='grid grid-cols-2 gap-4'>
-                    <div className='col-span-2'>
+                <Container className='grid xl:grid-cols-2 gap-4'>
+                    <div className='xl:col-span-2'>
                         <Input
                             className=''
                             label="Old Password"

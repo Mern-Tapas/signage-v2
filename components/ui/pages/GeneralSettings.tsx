@@ -11,7 +11,7 @@ import { Select } from '../custome/Select'
 function GeneralSettings() {
 
     return (
-        <Container className='grid gap-4 self-start'>
+        <Container className='grid gap-4 self-start grid-cols-1'>
 
             <Container>
                 <Typography variant='h4' weight='medium'>General Settings</Typography>
@@ -19,7 +19,7 @@ function GeneralSettings() {
             </Container>
 
             <Container variant='primary' padding='lg' className='flex flex-col gap-4 self-start' radius='xl'>
-                <Container className='flex items-center '>
+                <Container className='flex gap-4 xl:items-center flex-col xl:flex-row'>
                     <div className="flex items-center gap-4">
                         <Avatar
                             src="https://i.pinimg.com/736x/6f/a3/6a/6fa36aa2c367da06b2a4c8ae1cf9ee02.jpg"
@@ -45,7 +45,7 @@ function GeneralSettings() {
             <Container variant='primary' padding='lg' className='flex flex-col gap-4 self-start' radius='xl'>
                 <Typography variant='h6'>Personal Information</Typography>
 
-                <Container className='grid grid-cols-2 gap-4'>
+                <Container className='grid lg:grid-cols-2 gap-4'>
                     <Input
                         label="First Name"
                         variant="default"
@@ -87,7 +87,7 @@ function GeneralSettings() {
             <Container variant='primary' padding='lg' className='flex flex-col gap-4 self-start' radius='xl'>
                 <Typography variant='h6'>Contact Details</Typography>
 
-                <Container className='grid grid-cols-2 gap-4'>
+                <Container className='grid lg:grid-cols-2 gap-4'>
                     <Input
                         label="Mobile Number"
                         variant="default"

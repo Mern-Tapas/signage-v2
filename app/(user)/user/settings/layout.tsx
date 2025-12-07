@@ -78,34 +78,7 @@ function layout({ children }: { children: React.ReactNode }) {
 
                         </div>
                     </Container>
-                    <Container variant="primary" padding="lg" className=" gap-4" radius="xl">
-                        <div className="flex flex-col items-center gap-4">
-                           
-                            <Container variant="outline" radius="xl" padding="md" className="w-full">
-                                <table className="text-sm border-separate border-spacing-x-4 border-spacing-y-2 text-gray-600">
-                                    <tbody>
-                                        <tr>
-                                            <td className="">Name:</td>
-                                            <td className="">Tapas Gharami</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="">Age:</td>
-                                            <td className="">45</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="">DOB:</td>
-                                            <td className="">25 July 1998</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="">Place:</td>
-                                            <td className="">Indore</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </Container>
-
-                        </div>
-                    </Container>
+                  
 
                 </div>
 

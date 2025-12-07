@@ -2,7 +2,7 @@
 import React from 'react'
 import Container from '@/components/layout/Container'
 import { Typography } from '@/components/typography/typography'
-import { Clock,  Monitor, PlusIcon, Video, } from 'lucide-react'
+import { Clock, EllipsisVertical, Monitor, PlusIcon, Upload, Video, } from 'lucide-react'
 import DeviceList from '../custome/DeviceList'
 import { Card, CardHeader } from '../custome/Card'
 import { Button } from '../custome/Button'
@@ -82,8 +82,13 @@ function UserPlaylist() {
 
                         </div>
                     </Container>
-                    <Container radius='md' padding='md' className='bg-gray-100 w-full border border-gray-300' variant='primary'>
-                        d
+                    <Container radius='md' className='bg-gray-100 w-full  border-gray-300' variant='primary'>
+                        <div className="flex gap-2">
+                            <Button size='md' variant='outline' icon={<Upload size={16} />}>Assign</Button>
+                            <Button size='md' variant='outline' >Preview</Button>
+                            <Button size='md' variant='primary' icon={<Upload size={16} />}>Publish</Button>
+                            <Button size='icon' variant='outline' icon={<EllipsisVertical size={16} />}> </Button>
+                        </div>
                     </Container>
                     {/* <Switch size='md' checked={false} onChange={() => { }} /> */}
                 </Container>
