@@ -1,3 +1,8 @@
+// ============================================
+// File: app/api/uploads/files/[filename]/route.ts
+// Serve uploaded files
+// ============================================
+
 import { NextRequest, NextResponse } from 'next/server';
 import { readFile, stat } from 'fs/promises';
 import { existsSync } from 'fs';
@@ -7,10 +12,12 @@ const FINAL_DIR = path.join(process.cwd(), 'uploads', 'files');
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { filename: string } }
+  context: { params: Promise<{ filename: string }> }
 ) {
   try {
-    const fileName = params.filename;
+    // Await params in Next.js 15+
+    const { filename } = await context.params;
+    const fileName = filename;
 
     if (!fileName) {
       return NextResponse.json(
