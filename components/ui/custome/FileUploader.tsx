@@ -245,7 +245,7 @@ export default function FileUploadUI() {
   const hasUploadingFiles = files.some(f => f.status === 'uploading');
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-8">
+    <div className="p-4">
       <div className="max-w-4xl mx-auto">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-slate-800 mb-2">Large File Upload</h1>
