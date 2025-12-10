@@ -48,8 +48,8 @@ function UserFiles() {
         mounted ? <Container className='grid gap-4'>
             <Container className='flex items-center justify-between'>
                 <Container>
-                    <Typography variant='h4' weight='medium'>My Files</Typography>
-                    <Typography variant='body2' color='secondary'>Manage your Media and Assets</Typography>
+                    <Typography variant='h4' weight='medium'>My Files & Assets</Typography>
+                    <Typography variant='body2' color='secondary'>Manage your Files and Assets</Typography>
 
 
                 </Container>
@@ -90,13 +90,13 @@ function UserFiles() {
 
 
             {deviceLayout ?
-                <Container className='grid gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'  >
+                <Container className='grid gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'  >
                     {Array.from({ length: 10 }, (_, i) => {
 
                         return <FileCard
                             key={i}
                             imageSrc="https://i.pinimg.com/1200x/24/f6/41/24f6419ea4fa3f1390c2ad8b3440b908.jpg"
-                            title="Instagram Promotions Advrt.mp4"
+                            title="Instagram Promotions Advrt for downloadinge and fodlfso.mp4"
                             fileType="video"
                             onClick={() => alert('clicked')}
                         />

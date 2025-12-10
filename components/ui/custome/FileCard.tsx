@@ -17,11 +17,11 @@ export type FileCardProps = {
 };
 
 const iconMap: Record<string, React.ReactNode> = {
-  video: <Video className="text-red-700" strokeWidth={1.2} />,
-  image: <ImageIcon className="text-blue-700" strokeWidth={1.2} />,
-  document: <FileText className="text-pink-700" strokeWidth={1.2} />,
-  archive: <Archive className="text-orange-700" strokeWidth={1.2} />,
-  other: <File className="text-gray-700" strokeWidth={1.2} />,
+  video: <Video size={18} className="text-red-600" strokeWidth={1.2} />,
+  image: <ImageIcon size={18} className="text-blue-600" strokeWidth={1.2} />,
+  document: <FileText size={18} className="text-pink-600" strokeWidth={1.2} />,
+  archive: <Archive size={18} className="text-orange-600" strokeWidth={1.2} />,
+  other: <File size={18} className="text-gray-600" strokeWidth={1.2} />,
 };
 
 const FileCard: React.FC<FileCardProps> = (
@@ -41,8 +41,8 @@ const FileCard: React.FC<FileCardProps> = (
     <div className="w-full h-40 bg-gray-300 overflow-hidden p-2">
       <Image src={imageSrc} height={200} width={200} alt={alt} className="w-full h-full object-contain" />
     </div>
-    <Container padding="sm" className="flex gap-4">
-      <div className="h-8 w-8 shrink-0 flex  items-center justify-center">
+    <Container padding="md" className="flex gap-4">
+      <div className="h-8 w-8 shrink-0 flex bg-red-100 rounded-md  items-center justify-center">
         {iconMap[fileType]}
       </div>
       <div className="flex items-center">

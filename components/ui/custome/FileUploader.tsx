@@ -19,7 +19,7 @@ export default function FileUploadUI() {
   const [files, setFiles] = useState<FileData[]>([]);
   const [isDragging, setIsDragging] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  
+
   // Configuration
   const CHUNK_SIZE = 5 * 1024 * 1024; // 5MB chunks
   const MAX_FILE_SIZE = 5 * 1024 * 1024 * 1024; // 5GB max file size
@@ -195,7 +195,7 @@ export default function FileUploadUI() {
       throw new Error(`Upload failed: ${response.statusText}`);
     }
   };
-  
+
 
   const pauseUpload = (fileId: string) => {
     const file = files.find(f => f.id === fileId);
@@ -224,7 +224,7 @@ export default function FileUploadUI() {
           : f
       )
     );
-    
+
     const fileData = files.find(f => f.id === fileId);
     if (fileData) {
       await uploadFileInChunks({ ...fileData, uploadedChunks: 0, progress: 0 });
@@ -233,7 +233,7 @@ export default function FileUploadUI() {
 
   const handleUploadAll = async () => {
     const pendingFiles = files.filter(f => f.status === 'pending');
-    
+
     // Upload files with concurrency limit
     for (let i = 0; i < pendingFiles.length; i += MAX_CONCURRENT_UPLOADS) {
       const batch = pendingFiles.slice(i, i + MAX_CONCURRENT_UPLOADS);
@@ -248,8 +248,8 @@ export default function FileUploadUI() {
     <div className="p-4">
       <div className="max-w-4xl mx-auto">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-slate-800 mb-2">Large File Upload</h1>
-          <p className="text-slate-600">Chunked uploads with pause/resume support</p>
+          <h1 className="text-3xl font-bold text-slate-800 mb-2">Upload Files</h1>
+          {/* <p className="text-slate-600">Chunked uploads with pause/resume support</p> */}
           <div className="mt-2 text-sm text-slate-500">
             Max file size: {formatFileSize(MAX_FILE_SIZE)} • Chunk size: {formatFileSize(CHUNK_SIZE)}
           </div>
@@ -260,11 +260,10 @@ export default function FileUploadUI() {
           onDragOver={handleDragOver}
           onDragLeave={handleDragLeave}
           onDrop={handleDrop}
-          className={`border-2 border-dashed rounded-lg p-12 text-center transition-all duration-200 ${
-            isDragging
-              ? 'border-blue-500 bg-blue-50'
-              : 'border-slate-300 bg-white hover:border-slate-400'
-          }`}
+          className={`border-2 border-dashed rounded-lg p-12 text-center transition-all duration-200 ${isDragging
+            ? 'border-blue-500 bg-blue-50'
+            : 'border-slate-300 bg-white hover:border-slate-400'
+            }`}
         >
           <input
             ref={fileInputRef}
@@ -300,11 +299,10 @@ export default function FileUploadUI() {
               <button
                 onClick={handleUploadAll}
                 disabled={!hasPendingFiles || hasUploadingFiles}
-                className={`px-6 py-2 rounded-lg transition-colors font-medium ${
-                  hasPendingFiles && !hasUploadingFiles
-                    ? 'bg-green-600 text-white hover:bg-green-700'
-                    : 'bg-slate-300 text-slate-500 cursor-not-allowed'
-                }`}
+                className={`px-6 py-2 rounded-lg transition-colors font-medium ${hasPendingFiles && !hasUploadingFiles
+                  ? 'bg-green-600 text-white hover:bg-green-700'
+                  : 'bg-slate-300 text-slate-500 cursor-not-allowed'
+                  }`}
               >
                 Upload All
               </button>
@@ -392,15 +390,14 @@ export default function FileUploadUI() {
                       </div>
                       <div className="w-full bg-slate-200 rounded-full h-2 overflow-hidden">
                         <div
-                          className={`h-2 rounded-full transition-all duration-300 ${
-                            fileData.status === 'completed'
-                              ? 'bg-green-500'
-                              : fileData.status === 'error'
+                          className={`h-2 rounded-full transition-all duration-300 ${fileData.status === 'completed'
+                            ? 'bg-green-500'
+                            : fileData.status === 'error'
                               ? 'bg-red-500'
                               : fileData.status === 'paused'
-                              ? 'bg-yellow-500'
-                              : 'bg-blue-500'
-                          }`}
+                                ? 'bg-yellow-500'
+                                : 'bg-blue-500'
+                            }`}
                           style={{ width: `${fileData.progress}%` }}
                         />
                       </div>
@@ -413,7 +410,7 @@ export default function FileUploadUI() {
         )}
 
         {/* Information Panel */}
-        <div className="mt-8 space-y-4">
+        {/* <div className="mt-8 space-y-4">
           <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
             <h3 className="font-semibold text-blue-900 mb-2">Features:</h3>
             <ul className="text-sm text-blue-800 space-y-1">
@@ -429,7 +426,7 @@ export default function FileUploadUI() {
           <div className="p-4 bg-amber-50 border border-amber-200 rounded-lg">
             <h3 className="font-semibold text-amber-900 mb-2">Server Implementation Required:</h3>
             <pre className="text-xs text-amber-800 bg-amber-100 p-3 rounded overflow-x-auto">
-{`// POST /api/upload-chunk
+              {`// POST /api/upload-chunk
 // Required fields in FormData:
 // - chunk: File blob
 // - chunkIndex: number
@@ -444,7 +441,7 @@ export default function FileUploadUI() {
 // 4. Clean up temporary chunks`}
             </pre>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

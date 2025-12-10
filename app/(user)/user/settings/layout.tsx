@@ -53,7 +53,7 @@ function layout({ children }: { children: React.ReactNode }) {
                                     <Phone size={18} strokeWidth={1.8} />
                                 </Container>
                             </div>
-                            <Container variant="outline" radius="xl" padding="md" className="w-full">
+                            <Container variant="secondary" radius="xl" padding="md" className="w-full">
                                 <table className="text-sm border-separate border-spacing-x-4 border-spacing-y-2 text-gray-600">
                                     <tbody>
                                         <tr>
