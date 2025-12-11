@@ -11,7 +11,6 @@ import {
     DialogBody,
 } from "@/components/ui/custome/Dialog";
 import { Input } from '../custome/Input';
-import DeviceList from '../custome/DeviceList';
 import Checkbox from '../custome/Checkbox';
 import FileCard from '../custome/FileCard';
 import FileUploadLayout from '../custome/FileUploader';
