@@ -126,7 +126,7 @@ export default function ResetPassword() {
             <div>
               <div className="mb-8">
                 <h1 className="text-3xl font-bold text-gray-900 mb-2">Reset your password</h1>
-                <p className="text-gray-600">Enter your email address and we'll send you a verification code</p>
+                <p className="text-gray-600">Enter your email address and we&apos;ll send you a verification code</p>
               </div>
 
               <div className="space-y-5">
@@ -202,7 +202,7 @@ export default function ResetPassword() {
                 </button>
 
                 <p className="text-center text-sm text-gray-600">
-                  Didn't receive the code?{' '}
+                  Didn&apos;t receive the code?{' '}
                   <button className="text-blue-600 hover:text-blue-700 font-medium">
                     Resend
                   </button>
