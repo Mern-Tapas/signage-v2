@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import { Monitor, Eye, EyeOff, CheckCircle } from 'lucide-react';
+import Link from 'next/link';
 
 interface LoginFormData {
   email: string;
@@ -119,9 +120,9 @@ export default function LoginPage() {
                 />
                 <span className="ml-2 text-sm text-gray-700">Remember for 30 days</span>
               </label>
-              <button className="text-sm text-blue-600 hover:text-blue-700 font-medium">
+              <Link href={'/resetpassword'} className="text-sm text-blue-600 hover:text-blue-700 font-medium">
                 Forgot password?
-              </button>
+              </Link>
             </div>
 
             {/* Login Button */}
@@ -143,9 +144,9 @@ export default function LoginPage() {
             {/* Sign Up Link */}
             <p className="text-center text-sm text-gray-600">
               Don&apos;t have an account?{' '}
-              <button className="text-blue-600 hover:text-blue-700 font-medium">
+              <Link href={'/signup'} className="text-blue-600 hover:text-blue-700 font-medium">
                 Sign up
-              </button>
+              </Link>
             </p>
           </div>
         </div>

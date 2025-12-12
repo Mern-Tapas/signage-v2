@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import { Monitor, Mail, Lock, Eye, EyeOff,  CheckCircle, } from 'lucide-react';
+import Link from 'next/link';
 
 interface SignupFormData {
   firstName: string;
@@ -236,12 +237,12 @@ export default function SignupPage() {
             {/* Sign In Link */}
             <p className="text-center text-sm text-gray-600">
               Already have an account?{' '}
-              <button 
-                onClick={() => window.location.href = '/login'}
+              <Link 
+               href={"/login"}
                 className="text-blue-600 hover:text-blue-700 font-medium"
               >
                 Sign in
-              </button>
+              </Link>
             </p>
           </div>
         </div>
