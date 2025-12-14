@@ -2,21 +2,33 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronRight, ChevronLeft, Check, Building2, Users, Zap, Upload, Settings, AlertCircle, X } from 'lucide-react';
 
-interface FormDataStep {
-  companyName?: string;
-  companyEmail?: string;
-  industry?: string;
-  country?: string;
-  firstName?: string;
-  lastName?: string;
-  jobTitle?: string;
-  phone?: string;
-  displayCount?: string;
-  displayLocations?: string[];
-  resolution?: string;
-  contentType?: string[];
-  uploadFiles?: string[];
-  teamMembers?: Array<{ email: string; role: string }>;
+interface CompanyData {
+  companyName: string;
+  companyEmail: string;
+  industry: string;
+  country: string;
+}
+
+interface AccountData {
+  firstName: string;
+  lastName: string;
+  jobTitle: string;
+  phone: string;
+}
+
+interface DisplayData {
+  displayCount: string;
+  displayLocations: string[];
+  resolution: string;
+}
+
+interface ContentData {
+  contentType: string[];
+  uploadFiles: string[];
+}
+
+interface TeamData {
+  teamMembers: Array<{ email: string; role: string }>;
 }
 
 interface Step {
@@ -31,34 +43,35 @@ export default function Onboarding() {
   const [completed, setCompleted] = useState<Set<number>>(new Set());
   const [loading, setLoading] = useState<boolean>(false);
   
-  const [formDataArray, setFormDataArray] = useState<FormDataStep[]>([
-    {
-      companyName: '',
-      companyEmail: '',
-      industry: '',
-      country: '',
-    },
-    {
-      firstName: '',
-      lastName: '',
-      jobTitle: '',
-      phone: '',
-    },
-    {
-      displayCount: '',
-      displayLocations: [],
-      resolution: '',
-    },
-    {
-      contentType: [],
-      uploadFiles: [],
-    },
-    {
-      teamMembers: [{ email: '', role: 'viewer' }],
-    },
-  ]);
+  // Separate state for each step
+  const [companyData, setCompanyData] = useState<CompanyData>({
+    companyName: '',
+    companyEmail: '',
+    industry: '',
+    country: '',
+  });
 
-  const formData = formDataArray[currentStep];
+  const [accountData, setAccountData] = useState<AccountData>({
+    firstName: '',
+    lastName: '',
+    jobTitle: '',
+    phone: '',
+  });
+
+  const [displayData, setDisplayData] = useState<DisplayData>({
+    displayCount: '',
+    displayLocations: [],
+    resolution: '',
+  });
+
+  const [contentData, setContentData] = useState<ContentData>({
+    contentType: [],
+    uploadFiles: [],
+  });
+
+  const [teamData, setTeamData] = useState<TeamData>({
+    teamMembers: [{ email: '', role: 'viewer' }],
+  });
 
   const steps: Step[] = [
     { id: 0, title: 'Company', icon: Building2, description: 'Organization details' },
@@ -73,81 +86,26 @@ export default function Onboarding() {
     loadData();
   }, []);
 
-const loadData = () => {
-  try {
-    const result = localStorage.getItem('onboarding_complete_data');
-    if (result) {
-      const saved = JSON.parse(result);
-      setFormDataArray(saved.formDataArray || formDataArray);
-      setCurrentStep(saved.currentStep || 0);
-      setCompleted(new Set(saved.completed || []));
-    }
-  } catch (error) {
-    console.log('No saved data found');
-  }
-};
-
-const saveData = () => {
-  setLoading(true);
-  try {
-    localStorage.setItem(
-      'onboarding_complete_data',
-      JSON.stringify({
-        formDataArray,
-        currentStep,
-        completed: Array.from(completed),
-        timestamp: new Date().toISOString(),
-      })
-    );
-  } catch (error) {
-    console.error('Save error:', error);
-    alert('Failed to save step. Please try again.');
-  }
-  setLoading(false);
-};
-
-
- 
-
-  const handleInputChange = (field: string, value: any) => {
-    setFormDataArray(prev => {
-      const newArray = [...prev];
-      newArray[currentStep] = { ...newArray[currentStep], [field]: value };
-      return newArray;
-    });
+  const loadData = () => {
+    // Data is stored in state only - no persistence between page reloads
+    console.log('Data loaded from component state');
   };
 
-  const addTeamMember = () => {
-    setFormDataArray(prev => {
-      const newArray = [...prev];
-      const stepData = { ...newArray[4] };
-      stepData.teamMembers = [...(stepData.teamMembers || []), { email: '', role: 'viewer' }];
-      newArray[4] = stepData;
-      return newArray;
+  const saveData = async () => {
+    setLoading(true);
+    // Simulating an async save operation
+    await new Promise(resolve => setTimeout(resolve, 300));
+    console.log('Data saved:', {
+      companyData,
+      accountData,
+      displayData,
+      contentData,
+      teamData,
+      currentStep,
+      completed: Array.from(completed),
+      timestamp: new Date().toISOString(),
     });
-  };
-
-  const removeTeamMember = (index: number) => {
-    setFormDataArray(prev => {
-      const newArray = [...prev];
-      const stepData = { ...newArray[4] };
-      stepData.teamMembers = (stepData.teamMembers || []).filter((_, i) => i !== index);
-      newArray[4] = stepData;
-      return newArray;
-    });
-  };
-
-  const toggleContentType = (type: string) => {
-    setFormDataArray(prev => {
-      const newArray = [...prev];
-      const stepData = { ...newArray[currentStep] };
-      const contentType = stepData.contentType || [];
-      stepData.contentType = contentType.includes(type)
-        ? contentType.filter(t => t !== type)
-        : [...contentType, type];
-      newArray[currentStep] = stepData;
-      return newArray;
-    });
+    setLoading(false);
   };
 
   const nextStep = async () => {
@@ -178,8 +136,8 @@ const saveData = () => {
           <label className="block text-xs font-semibold text-gray-700 mb-1.5">Company Name *</label>
           <input
             type="text"
-            value={formData.companyName || ''}
-            onChange={(e) => handleInputChange('companyName', e.target.value)}
+            value={companyData.companyName}
+            onChange={(e) => setCompanyData({ ...companyData, companyName: e.target.value })}
             placeholder="Your company"
             className="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-cyan-500 focus:outline-none transition focus:ring-2 focus:ring-cyan-500/20"
           />
@@ -188,8 +146,8 @@ const saveData = () => {
           <label className="block text-xs font-semibold text-gray-700 mb-1.5">Company Email *</label>
           <input
             type="email"
-            value={formData.companyEmail || ''}
-            onChange={(e) => handleInputChange('companyEmail', e.target.value)}
+            value={companyData.companyEmail}
+            onChange={(e) => setCompanyData({ ...companyData, companyEmail: e.target.value })}
             placeholder="company@example.com"
             className="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-cyan-500 focus:outline-none transition focus:ring-2 focus:ring-cyan-500/20"
           />
@@ -200,8 +158,8 @@ const saveData = () => {
         <div>
           <label className="block text-xs font-semibold text-gray-700 mb-1.5">Industry *</label>
           <select
-            value={formData.industry || ''}
-            onChange={(e) => handleInputChange('industry', e.target.value)}
+            value={companyData.industry}
+            onChange={(e) => setCompanyData({ ...companyData, industry: e.target.value })}
             className="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-900 focus:border-cyan-500 focus:outline-none transition focus:ring-2 focus:ring-cyan-500/20"
           >
             <option value="">Select industry</option>
@@ -217,8 +175,8 @@ const saveData = () => {
         <div>
           <label className="block text-xs font-semibold text-gray-700 mb-1.5">Country *</label>
           <select
-            value={formData.country || ''}
-            onChange={(e) => handleInputChange('country', e.target.value)}
+            value={companyData.country}
+            onChange={(e) => setCompanyData({ ...companyData, country: e.target.value })}
             className="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-900 focus:border-cyan-500 focus:outline-none transition focus:ring-2 focus:ring-cyan-500/20"
           >
             <option value="">Select country</option>
@@ -242,8 +200,8 @@ const saveData = () => {
           <label className="block text-xs font-semibold text-gray-700 mb-1.5">First Name *</label>
           <input
             type="text"
-            value={formData.firstName || ''}
-            onChange={(e) => handleInputChange('firstName', e.target.value)}
+            value={accountData.firstName}
+            onChange={(e) => setAccountData({ ...accountData, firstName: e.target.value })}
             placeholder="John"
             className="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-cyan-500 focus:outline-none transition focus:ring-2 focus:ring-cyan-500/20"
           />
@@ -252,8 +210,8 @@ const saveData = () => {
           <label className="block text-xs font-semibold text-gray-700 mb-1.5">Last Name *</label>
           <input
             type="text"
-            value={formData.lastName || ''}
-            onChange={(e) => handleInputChange('lastName', e.target.value)}
+            value={accountData.lastName}
+            onChange={(e) => setAccountData({ ...accountData, lastName: e.target.value })}
             placeholder="Doe"
             className="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-cyan-500 focus:outline-none transition focus:ring-2 focus:ring-cyan-500/20"
           />
@@ -265,8 +223,8 @@ const saveData = () => {
           <label className="block text-xs font-semibold text-gray-700 mb-1.5">Job Title *</label>
           <input
             type="text"
-            value={formData.jobTitle || ''}
-            onChange={(e) => handleInputChange('jobTitle', e.target.value)}
+            value={accountData.jobTitle}
+            onChange={(e) => setAccountData({ ...accountData, jobTitle: e.target.value })}
             placeholder="Marketing Manager"
             className="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-cyan-500 focus:outline-none transition focus:ring-2 focus:ring-cyan-500/20"
           />
@@ -275,8 +233,8 @@ const saveData = () => {
           <label className="block text-xs font-semibold text-gray-700 mb-1.5">Phone Number</label>
           <input
             type="tel"
-            value={formData.phone || ''}
-            onChange={(e) => handleInputChange('phone', e.target.value)}
+            value={accountData.phone}
+            onChange={(e) => setAccountData({ ...accountData, phone: e.target.value })}
             placeholder="+1 (555) 000-0000"
             className="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-cyan-500 focus:outline-none transition focus:ring-2 focus:ring-cyan-500/20"
           />
@@ -285,7 +243,7 @@ const saveData = () => {
 
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 flex gap-2">
         <AlertCircle size={16} className="text-blue-600 flex-shrink-0 mt-0.5" />
-        <p className="text-xs text-blue-800">We&apos;ll use this information to create your admin account.</p>
+        <p className="text-xs text-blue-800">We&rsquo;ll use this information to create your admin account.</p>
       </div>
     </div>
   );
@@ -296,8 +254,8 @@ const saveData = () => {
         <div>
           <label className="block text-xs font-semibold text-gray-700 mb-1.5">Number of Displays *</label>
           <select
-            value={formData.displayCount || ''}
-            onChange={(e) => handleInputChange('displayCount', e.target.value)}
+            value={displayData.displayCount}
+            onChange={(e) => setDisplayData({ ...displayData, displayCount: e.target.value })}
             className="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-900 focus:border-cyan-500 focus:outline-none transition focus:ring-2 focus:ring-cyan-500/20"
           >
             <option value="">Select count</option>
@@ -311,8 +269,8 @@ const saveData = () => {
         <div>
           <label className="block text-xs font-semibold text-gray-700 mb-1.5">Default Resolution *</label>
           <select
-            value={formData.resolution || ''}
-            onChange={(e) => handleInputChange('resolution', e.target.value)}
+            value={displayData.resolution}
+            onChange={(e) => setDisplayData({ ...displayData, resolution: e.target.value })}
             className="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-900 focus:border-cyan-500 focus:outline-none transition focus:ring-2 focus:ring-cyan-500/20"
           >
             <option value="">Select resolution</option>
@@ -331,12 +289,12 @@ const saveData = () => {
             <label key={location} className="flex items-center gap-2 cursor-pointer text-sm">
               <input
                 type="checkbox"
-                checked={(formData.displayLocations || []).includes(location)}
+                checked={displayData.displayLocations.includes(location)}
                 onChange={(e) => {
                   const newLocations = e.target.checked
-                    ? [...(formData.displayLocations || []), location]
-                    : (formData.displayLocations || []).filter(l => l !== location);
-                  handleInputChange('displayLocations', newLocations);
+                    ? [...displayData.displayLocations, location]
+                    : displayData.displayLocations.filter(l => l !== location);
+                  setDisplayData({ ...displayData, displayLocations: newLocations });
                 }}
                 className="w-4 h-4 rounded border-gray-300 cursor-pointer accent-cyan-600"
               />
@@ -351,21 +309,26 @@ const saveData = () => {
   const ContentStep: React.FC = () => (
     <div className="space-y-4">
       <div>
-        <label className="block text-xs font-semibold text-gray-700 mb-2">Content Types You&apos;ll Use</label>
+        <label className="block text-xs font-semibold text-gray-700 mb-2">Content Types You&rsquo;ll Use</label>
         <div className="grid grid-cols-3 gap-2">
           {['Videos', 'Images', 'Documents', 'Live Data', 'Social Media', 'Custom Apps'].map((type) => (
             <button
               key={type}
-              onClick={() => toggleContentType(type)}
+              onClick={() => {
+                const newContentType = contentData.contentType.includes(type)
+                  ? contentData.contentType.filter(t => t !== type)
+                  : [...contentData.contentType, type];
+                setContentData({ ...contentData, contentType: newContentType });
+              }}
               className={`p-2 rounded-lg border transition-all text-left ${
-                (formData.contentType || []).includes(type)
+                contentData.contentType.includes(type)
                   ? 'bg-cyan-50 border-cyan-500 text-cyan-900'
                   : 'bg-white border-gray-300 text-gray-700 hover:border-gray-400'
               }`}
             >
               <div className="flex items-center gap-2">
-                <div className={`w-4 h-4 rounded border flex items-center justify-center ${(formData.contentType || []).includes(type) ? 'bg-cyan-600 border-cyan-600' : 'border-gray-300'}`}>
-                  {(formData.contentType || []).includes(type) && <Check size={12} className="text-white" />}
+                <div className={`w-4 h-4 rounded border flex items-center justify-center ${contentData.contentType.includes(type) ? 'bg-cyan-600 border-cyan-600' : 'border-gray-300'}`}>
+                  {contentData.contentType.includes(type) && <Check size={12} className="text-white" />}
                 </div>
                 <span className="font-medium text-xs">{type}</span>
               </div>
@@ -391,7 +354,11 @@ const saveData = () => {
         <div className="flex items-center justify-between mb-2">
           <label className="block text-xs font-semibold text-gray-700">Invite Team Members</label>
           <button
-            onClick={addTeamMember}
+            onClick={() => {
+              setTeamData({
+                teamMembers: [...teamData.teamMembers, { email: '', role: 'viewer' }]
+              });
+            }}
             className="text-xs bg-cyan-100 hover:bg-cyan-200 text-cyan-700 px-3 py-1 rounded transition-colors font-medium"
           >
             + Add
@@ -399,15 +366,15 @@ const saveData = () => {
         </div>
 
         <div className="space-y-2">
-          {(formData.teamMembers || []).map((member, idx) => (
+          {teamData.teamMembers.map((member, idx) => (
             <div key={idx} className="flex gap-2">
               <input
                 type="email"
                 value={member.email}
                 onChange={(e) => {
-                  const newMembers = [...(formData.teamMembers || [])];
+                  const newMembers = [...teamData.teamMembers];
                   newMembers[idx].email = e.target.value;
-                  handleInputChange('teamMembers', newMembers);
+                  setTeamData({ teamMembers: newMembers });
                 }}
                 placeholder="team@example.com"
                 className="flex-1 bg-white border border-gray-300 rounded-lg px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-cyan-500 focus:outline-none transition text-xs focus:ring-2 focus:ring-cyan-500/20"
@@ -415,9 +382,9 @@ const saveData = () => {
               <select
                 value={member.role}
                 onChange={(e) => {
-                  const newMembers = [...(formData.teamMembers || [])];
+                  const newMembers = [...teamData.teamMembers];
                   newMembers[idx].role = e.target.value;
-                  handleInputChange('teamMembers', newMembers);
+                  setTeamData({ teamMembers: newMembers });
                 }}
                 className="bg-white border border-gray-300 rounded-lg px-3 py-2 text-gray-900 text-xs focus:border-cyan-500 focus:outline-none transition focus:ring-2 focus:ring-cyan-500/20"
               >
@@ -427,7 +394,10 @@ const saveData = () => {
               </select>
               {idx > 0 && (
                 <button
-                  onClick={() => removeTeamMember(idx)}
+                  onClick={() => {
+                    const newMembers = teamData.teamMembers.filter((_, i) => i !== idx);
+                    setTeamData({ teamMembers: newMembers });
+                  }}
                   className="px-2 py-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
                 >
                   <X size={16} />
@@ -440,7 +410,7 @@ const saveData = () => {
 
       <div className="bg-green-50 border border-green-200 rounded-lg p-3 flex gap-2">
         <Check size={16} className="text-green-600 flex-shrink-0 mt-0.5" />
-        <p className="text-xs text-green-800">You&apos;re all set! Team members will receive invitation emails.</p>
+        <p className="text-xs text-green-800">You&rsquo;re all set! Team members will receive invitation emails.</p>
       </div>
     </div>
   );
@@ -461,7 +431,7 @@ const saveData = () => {
             <Zap className="text-white" size={24} />
           </div>
           <h1 className="text-xl font-bold text-gray-900 mb-1">Welcome to DigitalSignage</h1>
-          <p className="text-gray-600 text-xs">Let&apos;s get your digital signage up and running in 5 minutes</p>
+          <p className="text-gray-600 text-xs">Let&rsquo;s get your digital signage up and running in 5 minutes</p>
         </div>
 
         <div className="mb-6">
