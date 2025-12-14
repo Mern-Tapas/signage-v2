@@ -285,7 +285,7 @@ const saveData = () => {
 
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 flex gap-2">
         <AlertCircle size={16} className="text-blue-600 flex-shrink-0 mt-0.5" />
-        <p className="text-xs text-blue-800">We'll use this information to create your admin account.</p>
+        <p className="text-xs text-blue-800">We&apos;ll use this information to create your admin account.</p>
       </div>
     </div>
   );
@@ -351,7 +351,7 @@ const saveData = () => {
   const ContentStep: React.FC = () => (
     <div className="space-y-4">
       <div>
-        <label className="block text-xs font-semibold text-gray-700 mb-2">Content Types You'll Use</label>
+        <label className="block text-xs font-semibold text-gray-700 mb-2">Content Types You&apos;ll Use</label>
         <div className="grid grid-cols-3 gap-2">
           {['Videos', 'Images', 'Documents', 'Live Data', 'Social Media', 'Custom Apps'].map((type) => (
             <button
@@ -440,7 +440,7 @@ const saveData = () => {
 
       <div className="bg-green-50 border border-green-200 rounded-lg p-3 flex gap-2">
         <Check size={16} className="text-green-600 flex-shrink-0 mt-0.5" />
-        <p className="text-xs text-green-800">You're all set! Team members will receive invitation emails.</p>
+        <p className="text-xs text-green-800">You&apos;re all set! Team members will receive invitation emails.</p>
       </div>
     </div>
   );
@@ -461,7 +461,7 @@ const saveData = () => {
             <Zap className="text-white" size={24} />
           </div>
           <h1 className="text-xl font-bold text-gray-900 mb-1">Welcome to DigitalSignage</h1>
-          <p className="text-gray-600 text-xs">Let's get your digital signage up and running in 5 minutes</p>
+          <p className="text-gray-600 text-xs">Let&apos;s get your digital signage up and running in 5 minutes</p>
         </div>
 
         <div className="mb-6">
