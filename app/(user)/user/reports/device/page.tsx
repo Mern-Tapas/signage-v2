@@ -1,8 +1,10 @@
+import UserDeviceReport from '@/components/ui/pages/UserDeviceReports'
 import React from 'react'
 
 function page() {
   return (
-    <div>page</div>
+    <UserDeviceReport />
+
   )
 }
 

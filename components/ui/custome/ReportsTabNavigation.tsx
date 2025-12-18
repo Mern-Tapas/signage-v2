@@ -7,8 +7,8 @@ function ReportsTab() {
     const pathname = usePathname()
 
     const navItems = [
-        { href: '/user/reports/device', label: 'Device Reports' },
-        { href: '/user/reports/media', label: 'Media Reports' },
+        { href: '/user/reports/device', label: 'Device Report' },
+        { href: '/user/reports/media', label: 'Media Report' },
     ]
 
     const isActive = (path: string) => pathname === path

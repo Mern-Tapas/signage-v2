@@ -46,7 +46,7 @@ export const Select: React.FC<SelectProps> = ({
   );
 
   return (
-    <div className="flex flex-col w-full gap-1">
+    <div className="flex flex-col w-full gap-2">
       {/* Label */}
       {label && (
         <label className="text-sm font-medium text-gray-700 dark:text-gray-200">
