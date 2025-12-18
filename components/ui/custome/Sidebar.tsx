@@ -1,13 +1,10 @@
 'use client'
 import React from "react";
 import Container from "@/components/layout/Container";
-import IconBox from "./IconBox";
 import { Typography } from "@/components/typography/typography";
-import { CalendarClock, CreditCard, Files, FileText, FolderOpen, Grid, LayoutGrid, LifeBuoy, ListVideo, Monitor, PlaySquare, ScreenShare, Settings, Settings2 } from "lucide-react";
-import ImageBox from "./ImageBox";
+import { CalendarClock, CreditCard, FileText, FolderOpen, LayoutGrid, LifeBuoy, Monitor, PlaySquare, Settings } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import NavLink from "./NavLink";
 
 interface SidebarProps {
     isOpen: boolean
@@ -24,7 +21,7 @@ export default function Sidebar({ isOpen }: SidebarProps) {
         { href: '/user/playlists', label: 'Playlist', icon: PlaySquare },
         { href: '/user/scheduler', label: 'Scheduler', icon: CalendarClock },
         { href: '/user/files', label: 'Files', icon: FolderOpen },
-        { href: '/user/components', label: 'Reports', icon: FileText },
+        { href: '/user/reports', label: 'Reports', icon: FileText },
         { href: '/user/settings', label: 'Settings', icon: Settings },
     ];
     const menuItems2 = [

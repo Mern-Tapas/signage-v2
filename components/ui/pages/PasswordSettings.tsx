@@ -4,7 +4,7 @@ import Container from '@/components/layout/Container'
 import { Typography } from '@/components/typography/typography'
 import { Input } from '../custome/Input'
 import { Button } from '../custome/Button'
-import { Clock, Shield, Smartphone } from 'lucide-react';
+import { Clock, Key, Shield, Smartphone } from 'lucide-react';
 import { Switch } from '../custome/Switch'
 
 interface Session {
@@ -53,7 +53,15 @@ function PasswordSettings() {
 
 
             <Container variant='primary' padding='lg' className='flex flex-col gap-4 self-start' radius='xl'>
-                <Typography variant='h6'>Password Information</Typography>
+                <div className="flex items-center gap-3">
+                    <div className="bg-purple-100 p-2 rounded-lg">
+                        <Key className="text-purple-600" size={24} />
+                    </div>
+                    <div>
+                        <h2 className="text-lg font-semibold text-gray-900">Update Password</h2>
+                        <p className="text-sm text-gray-500">Add an extra layer of security to your account</p>
+                    </div>
+                </div>
 
                 <Container className='grid xl:grid-cols-2 gap-4'>
                     <div className='xl:col-span-2'>

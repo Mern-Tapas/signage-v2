@@ -5,7 +5,6 @@ import Avatar from "@/components/ui/custome/Avatar";
 import React from "react";
 import SettingsNavigation2 from "@/components/ui/custome/SettingsNavigation2";
 import { Mail, Phone } from "lucide-react";
-import { Button } from "@/components/ui/custome/Button";
 
 function layout({ children }: { children: React.ReactNode }) {
 
