@@ -14,7 +14,7 @@ function ReportsTab() {
     const isActive = (path: string) => pathname === path
 
     return (
-        <Container className='gap-2 flex overflow-x-scroll setting_navigation bg-white w-fit rounded-lg p-2'>
+        <Container className='gap-2 flex overflow-x-scroll setting_navigation bg-white w-fit rounded-xl p-2'>
             {navItems.map((item) => (
                 <Link
                     key={item.href}
