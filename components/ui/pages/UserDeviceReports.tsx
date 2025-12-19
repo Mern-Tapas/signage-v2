@@ -4,6 +4,7 @@ import Container from '@/components/layout/Container'
 import { Select } from '../custome/Select'
 import { Input } from '../custome/Input'
 import { Button } from '../custome/Button'
+import { Typography } from '@/components/typography/typography'
 
 function UserDeviceReport() {
 
@@ -36,13 +37,19 @@ function UserDeviceReport() {
                     variant="default"
                     placeholder="Email address"
                     type='date'
-                    
+
                 />
                 <Button variant='primary' size='md' className='py-3 rounded-lg' >Get Report</Button>
 
 
             </Container>
 
+            <Container padding='lg' variant='primary' radius='xl'>
+                <Container>
+                    <Typography>Hotel Anjushri Lobby</Typography>
+                </Container>
+
+            </Container>
 
 
 
