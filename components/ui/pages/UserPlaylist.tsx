@@ -22,74 +22,28 @@ function UserPlaylist() {
             <Container className='grid' variant='default' radius='xl'>
 
                 {/* Playlist Details */}
-                <Container padding='lg' radius='xl' variant='primary' className='flex flex-col lg:flex-row lg:gap-6 gap-4'>
-                    <Container className='w-60 shrink-0'>
-                        <div className="box aspect-[9/16] w-35">
-                            <CardStack />
-                        </div>
-                    </Container>
-                    <Container className='flex flex-col gap-4 py-4 shrink-0'>
-                        <div className="max-w-90">
-                            <Typography variant='h4' weight='bold'>Phoenix Creatives Advertisment Power point</Typography>
-                            <Typography variant='body2' color='muted'>Connect playlist and manage your ads</Typography>
-                        </div>
-                        <div className='flex flex-col gap-3 borer border-gray-400 p- rounded-xl border-dahed'>
-                            <div className='grid items-center grid-cols-[30px_60px_20px_100px]'>
-                                <div className='flex items-center'>
-                                    <Clock className='text-yellow-600' strokeWidth={1.5} size={18} />
-                                </div>
-                                <div className='flex items-center'>
-                                    <Typography variant='caption'>  Duration</Typography>
-                                </div>
-                                <div className='flex items-center'>
-                                    <Typography variant='caption'>:</Typography>
-                                </div>
-                                <div className='flex items-center'>
-                                    <Typography variant='caption'>21 Min</Typography>
-                                </div>
+                <Container padding='lg' radius='xl' variant='primary' className=''>
+
+                    <div className='flex justify-between'>
+
+                        <Container className='flex flex-col gap-4 shrink-0 '>
+                            <div className="max-w-180">
+                                <Typography variant='h4' weight='bold'>Phoenix Creatives Advertisment Power point</Typography>
+                                <Typography variant='body2' color='muted'>Connect playlist and manage your ads</Typography>
                             </div>
 
-                            <div className='grid items-center grid-cols-[30px_60px_20px_100px]'>
-                                <div className='flex items-center'>
-                                    <Video className='text-purple-600' strokeWidth={1.5} size={18} />
-                                </div>
-                                <div className='flex items-center'>
-                                    <Typography variant='caption'>Content</Typography>
-                                </div>
-                                <div className='flex items-center'>
-                                    <Typography variant='caption'>:</Typography>
-                                </div>
-                                <div className='flex items-center'>
-                                    <Typography variant='caption'>27 Files</Typography>
-                                </div>
+                        </Container>
+                        <Container radius='md' className='bg-gray-100 w-full  border-gray-300' variant='primary'>
+                            <div className="flex gap-2">
+                                <Button size='md' variant='outline' icon={<Upload size={16} />}>Assign</Button>
+                                <Button size='md' variant='outline' >Preview</Button>
+                                <Button size='md' variant='primary' icon={<Upload size={16} />}>Publish</Button>
+                                <Button size='icon' variant='outline' icon={<EllipsisVertical size={16} />}> </Button>
                             </div>
-
-                            <div className='grid items-center grid-cols-[30px_60px_20px_100px]'>
-                                <div className='flex items-center'>
-                                    <Monitor className='text-blue-600' strokeWidth={1.5} size={18} />
-                                </div>
-                                <div className='flex items-center'>
-                                    <Typography variant='caption'>Screens</Typography>
-                                </div>
-                                <div className='flex items-center'>
-                                    <Typography variant='caption'>:</Typography>
-                                </div>
-                                <div className='flex items-center'>
-                                    <Typography variant='caption'>11</Typography>
-                                </div>
-                            </div>
+                        </Container>
+                    </div>
 
 
-                        </div>
-                    </Container>
-                    <Container radius='md' className='bg-gray-100 w-full  border-gray-300' variant='primary'>
-                        <div className="flex gap-2">
-                            <Button size='md' variant='outline' icon={<Upload size={16} />}>Assign</Button>
-                            <Button size='md' variant='outline' >Preview</Button>
-                            <Button size='md' variant='primary' icon={<Upload size={16} />}>Publish</Button>
-                            <Button size='icon' variant='outline' icon={<EllipsisVertical size={16} />}> </Button>
-                        </div>
-                    </Container>
                     {/* <Switch size='md' checked={false} onChange={() => { }} /> */}
                 </Container>
 

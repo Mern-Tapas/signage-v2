@@ -46,10 +46,10 @@ function PasswordSettings() {
     return (
         <Container className='grid gap-4 self-start'>
 
-            <Container>
-                <Typography variant='h4' weight='medium'>Security Settings</Typography>
-                <Typography variant='body2' color='secondary'>You can find all settings here.</Typography>
-            </Container>
+            <div>
+                <h1 className="text-3xl font-bold text-gray-900 mb-2">Security Settings</h1>
+                <p className="text-gray-600">Manage your subscription, payment methods, and billing history</p>
+            </div>
 
 
             <Container variant='primary' padding='lg' className='flex flex-col gap-4 self-start' radius='xl'>

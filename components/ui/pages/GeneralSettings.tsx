@@ -7,16 +7,17 @@ import { Input } from '../custome/Input'
 import { Button } from '../custome/Button'
 import Textarea from '../custome/TextArea'
 import { Select } from '../custome/Select'
+import { Key, User } from 'lucide-react'
 
 function GeneralSettings() {
 
     return (
         <Container className='grid gap-4 self-start grid-cols-1'>
 
-            <Container>
-                <Typography variant='h4' weight='medium'>General Settings</Typography>
-                <Typography variant='body2' color='secondary'>You can find all settings here.</Typography>
-            </Container>
+             <div>
+                <h1 className="text-3xl font-bold text-gray-900 mb-2">Profile Settings</h1>
+                <p className="text-gray-600">Manage your subscription, payment methods, and billing history</p>
+            </div>
 
             <Container variant='primary' padding='lg' className='flex flex-col gap-4 self-start' radius='xl'>
                 <Container className='flex gap-4 xl:items-center flex-col xl:flex-row'>
@@ -43,7 +44,15 @@ function GeneralSettings() {
 
 
             <Container variant='primary' padding='lg' className='flex flex-col gap-4 self-start' radius='xl'>
-                <Typography variant='h6'>Personal Information</Typography>
+                <div className="flex items-center gap-3">
+                    <div className="bg-purple-100 p-2 rounded-lg">
+                        <User className="text-purple-600" size={24} />
+                    </div>
+                    <div>
+                        <h2 className="text-lg font-semibold text-gray-900">Personal Details</h2>
+                        <p className="text-sm text-gray-500">Add an extra layer of security to your account</p>
+                    </div>
+                </div>
 
                 <Container className='grid lg:grid-cols-2 gap-4'>
                     <Input
@@ -85,7 +94,15 @@ function GeneralSettings() {
 
 
             <Container variant='primary' padding='lg' className='flex flex-col gap-4 self-start' radius='xl'>
-                <Typography variant='h6'>Contact Details</Typography>
+               <div className="flex items-center gap-3">
+                    <div className="bg-green-100 p-2 rounded-lg">
+                        <User className="text-green-600" size={24} />
+                    </div>
+                    <div>
+                        <h2 className="text-lg font-semibold text-gray-900">Contact Details</h2>
+                        <p className="text-sm text-gray-500">Add an extra layer of security to your account</p>
+                    </div>
+                </div>
 
                 <Container className='grid lg:grid-cols-2 gap-4'>
                     <Input

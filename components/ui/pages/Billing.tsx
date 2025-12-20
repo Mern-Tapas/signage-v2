@@ -239,7 +239,7 @@ const PricingPlansCard = () => {
 
 export default function BillingPage() {
     return (
-        <Container className='space-y-6'>
+        <Container className='grid gap-4'>
             <div>
                 <h1 className="text-3xl font-bold text-gray-900 mb-2">Billing & Subscription</h1>
                 <p className="text-gray-600">Manage your subscription, payment methods, and billing history</p>
