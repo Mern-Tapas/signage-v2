@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import clsx from "clsx";
 import { Button } from "./Button";
-import {  Typography } from "@/components/typography/typography";
+import { Typography } from "@/components/typography/typography";
 
 type DialogContextType = {
   open: boolean;
@@ -23,10 +23,31 @@ const useDialog = () => {
 };
 
 // Root wrapper
-export const Dialog = ({ children }: { children: React.ReactNode }) => {
-  const [open, setOpen] = useState(false);
+interface DialogProps {
+  children: React.ReactNode;
+  open?: boolean;
+  defaultOpen?: boolean;
+  onOpenChange?: (open: boolean) => void;
+}
+
+export const Dialog = ({
+  children,
+  open,
+  defaultOpen = false,
+  onOpenChange,
+}: DialogProps) => {
+  const [internalOpen, setInternalOpen] = useState(defaultOpen);
+  const isControlled = open !== undefined;
+
+  const isOpen = isControlled ? open : internalOpen;
+
+  const setOpen = (value: boolean) => {
+    if (!isControlled) setInternalOpen(value);
+    onOpenChange?.(value);
+  };
+
   return (
-    <DialogContext.Provider value={{ open, setOpen }}>
+    <DialogContext.Provider value={{ open: isOpen, setOpen }}>
       {children}
     </DialogContext.Provider>
   );
@@ -55,33 +76,49 @@ export const DialogContent = ({
   const { open, setOpen } = useDialog();
   const dialogRef = useRef<HTMLDivElement>(null);
 
-  // Close on outside click / Escape
+  // Close on ESC & outside click
   useEffect(() => {
     if (!open) return;
+
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setOpen(false);
     };
+
     const handleClick = (e: MouseEvent) => {
       if (dialogRef.current && !dialogRef.current.contains(e.target as Node)) {
         setOpen(false);
       }
     };
+
     document.addEventListener("keydown", handleKey);
     document.addEventListener("mousedown", handleClick);
+
     return () => {
       document.removeEventListener("keydown", handleKey);
       document.removeEventListener("mousedown", handleClick);
     };
   }, [open, setOpen]);
 
-  if (!open) return null;
-
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm animate-in fade-in-0">
+    <div
+      data-state={open ? "open" : "closed"}
+      className={clsx(
+        "fixed inset-0 z-50 flex items-center justify-center",
+        "bg-black/50 backdrop-blur-sm",
+        "transition-opacity duration-200",
+        "data-[state=closed]:opacity-0",
+        "data-[state=open]:opacity-100",
+        open ? "pointer-events-auto" : "pointer-events-none"
+      )}
+    >
       <div
         ref={dialogRef}
+        data-state={open ? "open" : "closed"}
         className={clsx(
-          "bg-white dark:bg-gray-900 rounded-xl  shadow-lg p-6 w-full animate-in zoom-in-95 slide-in-from-top-2",
+          "bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 w-full",
+          "transform transition-all duration-200 ease-out",
+          "data-[state=closed]:opacity-0 data-[state=closed]:scale-95 data-[state=closed]:translate-y-2",
+          "data-[state=open]:opacity-100 data-[state=open]:scale-100 data-[state=open]:translate-y-0",
           maxWidth,
           className
         )}
@@ -91,6 +128,7 @@ export const DialogContent = ({
     </div>
   );
 };
+
 
 // Header
 export const DialogHeader = ({ children }: { children: React.ReactNode }) => (
@@ -130,7 +168,7 @@ export const DialogClose = ({
   const { setOpen } = useDialog();
   return (
     <Button
-    variant="secondary"
+      variant="secondary"
       onClick={() => {
         onClick?.();
         setOpen(false);

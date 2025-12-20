@@ -72,7 +72,7 @@ function UserPlaylist() {
 
 
 
-                            <Dialog>
+                            <Dialog >
                                 <DialogTrigger>
                                     <Button variant="primary" className='shadow-md md:flex hidden' size='md' icon={<PlusIcon size={18} strokeWidth={1.5} />}>Add Content</Button>
                                     <Button variant="primary" className='shadow-md md:hidden flex' size='icon' icon={<PlusIcon size={18} strokeWidth={1.5} />}></Button>

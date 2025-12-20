@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import Container from '@/components/layout/Container';
 import { Caption, Typography } from '@/components/typography/typography';
 import AnalyticsCard from '@/components/ui/custome/AnalyticsCard';
@@ -38,7 +38,22 @@ import {
 } from "@/components/ui/custome/Dialog";
 import { Input } from '@/components/ui/custome/Input';
 
+
+import {
+    Drawer,
+    DrawerTrigger,
+    DrawerOverlay,
+    DrawerContent,
+    DrawerHeader,
+    DrawerBody,
+    DrawerFooter,
+} from '@/components/ui/custome/Drawer'
+
 function page() {
+
+    const [isOPen, setOpen] = useState(true)
+
+
     return (
         <Container className='grid gap-4'>
             <Container>
@@ -51,7 +66,7 @@ function page() {
 
 
 
-                <AlertDialog>
+                <AlertDialog >
                     <AlertDialogTrigger>
                         <Button variant="danger">Revoke New</Button>
                     </AlertDialogTrigger>
@@ -70,7 +85,7 @@ function page() {
                     </AlertDialogContent>
                 </AlertDialog>
 
-                <Dialog>
+                <Dialog  >
                     <DialogTrigger>
                         <Button variant="primary">Open Form</Button>
                     </DialogTrigger>
@@ -82,7 +97,7 @@ function page() {
                             </DialogDescription>
                         </DialogHeader>
 
-                        <DialogBody>
+                        <DialogBody >
                             <form className="space-y-4">
                                 <div>
                                     <Typography variant='body2' className="">Name</Typography >
@@ -110,7 +125,7 @@ function page() {
             </Container>
 
             <Container className='flex items-center gap-2'>
-                <Button variant="primary" icon={<Loader size={16}/>}>Primary</Button>
+                <Button variant="primary" icon={<Loader size={16} />}>Primary</Button>
                 <Button variant="secondary">Secondary</Button>
                 <Button variant="outline">Outline</Button>
                 <Button variant="ghost">Ghost</Button>
@@ -121,6 +136,7 @@ function page() {
                 <Button size="md">Medium</Button>
                 <Button size="lg" icon={<Plus />}>Large</Button>
             </Container>
+
             <Container className='flex items-center gap-2'>
                 <Input label="Default Input" placeholder="Enter text..." />
 
@@ -144,6 +160,35 @@ function page() {
                     type="password"
                     error="Password is too short"
                 />
+            </Container>
+
+            <Container className='flex items-center gap-2'>
+
+                <Button onChange={() => { setOpen(!isOPen) }}>Open</Button>
+
+                <Drawer  defaultOpen={isOPen} >
+                    <DrawerTrigger>
+                        <Button>Open Drawer</Button>
+                    </DrawerTrigger>
+
+                    <DrawerOverlay />
+
+                    <DrawerContent side="left" size="md">
+                        <DrawerHeader title="Settings" description="Manage your preferences" />
+
+                        <DrawerBody>
+                            <p className="text-sm text-gray-600">
+                                This drawer can hold forms, lists, or anything else.
+                            </p>
+                        </DrawerBody>
+
+                        <DrawerFooter>
+                            <Button variant="outline">Cancel</Button>
+                            <Button className="ml-2">Save</Button>
+                        </DrawerFooter>
+                    </DrawerContent>
+                </Drawer>
+
             </Container>
         </Container>
     )
