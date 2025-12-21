@@ -8,8 +8,11 @@ import { Card, CardHeader } from '../custome/Card'
 import { Button } from '../custome/Button'
 import CardStack from '../custome/CardStack'
 import { Dialog, DialogBody, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '../custome/Dialog'
+import { useRouter } from 'next/navigation'
 
 function UserPlaylist() {
+
+    const router = useRouter()
     return (
         <Container className='grid gap-4'>
             <Container className='flex items-center justify-between'>
@@ -72,45 +75,8 @@ function UserPlaylist() {
 
 
 
-                            <Dialog >
-                                <DialogTrigger>
-                                    <Button variant="primary" className='shadow-md md:flex hidden' size='md' icon={<PlusIcon size={18} strokeWidth={1.5} />}>Add Content</Button>
-                                    <Button variant="primary" className='shadow-md md:hidden flex' size='icon' icon={<PlusIcon size={18} strokeWidth={1.5} />}></Button>
-                                </DialogTrigger>
-                                <DialogContent>
-                                    <DialogHeader>
-                                        <DialogTitle>Create User</DialogTitle>
-                                        <DialogDescription>
-                                            Fill in the details below to create a new user
-                                        </DialogDescription>
-                                    </DialogHeader>
-
-                                    <DialogBody>
-                                        <form className="space-y-4">
-                                            <div>
-                                                <Typography variant='body2' className="">Name</Typography >
-                                                <input
-                                                    type="text"
-                                                    className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-700 bg-transparent px-3 py-2"
-                                                />
-                                            </div>
-                                            <div>
-                                                <Typography variant='body2' className="">Email</Typography>
-                                                <input
-                                                    type="email"
-                                                    className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-700 bg-transparent px-3 py-2"
-                                                />
-                                            </div>
-                                        </form>
-                                    </DialogBody>
-
-                                    <DialogFooter>
-                                        <DialogClose>Cancel</DialogClose>
-                                        <Button variant="primary">Save</Button>
-                                    </DialogFooter>
-                                </DialogContent>
-                            </Dialog>
-
+                            <Button variant="primary" onClick={() => { router.push('/user/playlists/paylist/media') }} className='shadow-md md:flex hidden' size='md' icon={<PlusIcon size={18} strokeWidth={1.5} />}>Add Content</Button>
+                            <Button variant="primary" className='shadow-md md:hidden flex' size='icon' icon={<PlusIcon size={18} strokeWidth={1.5} />}></Button>
 
 
                         </Container>

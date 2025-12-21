@@ -13,10 +13,13 @@ import {
 } from "@/components/ui/custome/Dialog";
 import { Button } from '@/components/ui/custome/Button';
 import { Typography } from '@/components/typography/typography';
+import { useRouter } from 'next/navigation';
 
 function page() {
+
+    const router = useRouter()
     return (
-        <Dialog defaultOpen={true} >
+        <Dialog onOpenChange={() => { router.back() }} defaultOpen={true} >
             <DialogTrigger>
                 <Button variant="primary">Open Form</Button>
             </DialogTrigger>
