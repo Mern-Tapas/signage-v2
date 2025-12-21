@@ -49,7 +49,7 @@ import {
     DrawerFooter,
 } from '@/components/ui/custome/Drawer'
 
-function page() {
+function Page() {
 
     const [isOPen, setOpen] = useState(true)
 
@@ -194,4 +194,4 @@ function page() {
     )
 }
 
-export default page
+export default Page
