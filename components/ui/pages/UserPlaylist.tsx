@@ -81,7 +81,7 @@ function UserPlaylist() {
                                     <DialogHeader>
                                         <DialogTitle>Create User</DialogTitle>
                                         <DialogDescription>
-                                            Fill in the details below to create a new user.
+                                            Fill in the details below to create a new user
                                         </DialogDescription>
                                     </DialogHeader>
 
