@@ -15,8 +15,8 @@ import {
     DialogFooter,
     DialogClose,
 } from "@/components/ui/custome/Dialog";
-import { DeviceCard } from '../custome/DeviceCard';
 import { Input } from '../custome/Input';
+import DeviceCard from '../custome/DeviceCard';
 import DeviceList from '../custome/DeviceList';
 import Checkbox from '../custome/Checkbox';
 function UserScreens() {
@@ -50,7 +50,7 @@ function UserScreens() {
     const [devices] = useState<Device[]>([
         {
             id: 1,
-            name: 'Lobby Display',
+            name: 'Lobby Display Phoenix Citadel',
             location: 'Main Entrance, Building A',
             status: 'online',
             lastSeen: '2 min ago',
@@ -266,8 +266,8 @@ function UserScreens() {
 
             {deviceLayout ?
                 <Container className='grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'  >
-                    {devices.map(device => (
-                        <DeviceCard key={device.id} device={device} />
+                    {devices.map((device,index) => (
+                        <DeviceCard  key={index}/>
                     ))}
                 </Container> :
 
