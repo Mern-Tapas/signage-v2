@@ -15,7 +15,7 @@ import {
     DialogFooter,
     DialogClose,
 } from "@/components/ui/custome/Dialog";
-import DeviceCard from '../custome/DeviceCard';
+import { DeviceCard } from '../custome/DeviceCard';
 import { Input } from '../custome/Input';
 import DeviceList from '../custome/DeviceList';
 import Checkbox from '../custome/Checkbox';
@@ -31,7 +31,156 @@ function UserScreens() {
         setLayout(layout)
         localStorage.setItem("deviceLayout", JSON.stringify(layout))
     }
+    interface Device {
+        id: number;
+        name: string;
+        location: string;
+        status: 'online' | 'offline' | 'warning';
+        lastSeen: string;
+        playlist: string;
+        resolution: string;
+        uptime: string;
+        storage: {
+            used: number;
+            total: number;
+        };
+    }
 
+
+    const [devices] = useState<Device[]>([
+        {
+            id: 1,
+            name: 'Lobby Display',
+            location: 'Main Entrance, Building A',
+            status: 'online',
+            lastSeen: '2 min ago',
+            playlist: 'Summer Promotions 2024',
+            resolution: '1920x1080',
+            uptime: '45 days',
+            storage: { used: 12, total: 32 }
+        },
+        {
+            id: 2,
+            name: 'Cafeteria Screen',
+            location: 'Floor 2, North Wing',
+            status: 'online',
+            lastSeen: '5 min ago',
+            playlist: 'Daily Menu & Announcements',
+            resolution: '3840x2160',
+            uptime: '30 days',
+            storage: { used: 8, total: 16 }
+        },
+        {
+            id: 3,
+            name: 'Conference Room A',
+            location: 'Floor 3, Executive Suite',
+            status: 'offline',
+            lastSeen: '2 hours ago',
+            playlist: 'Corporate Updates Q4',
+            resolution: '1920x1080',
+            uptime: '0 days',
+            storage: { used: 15, total: 32 }
+        },
+        {
+            id: 4,
+            name: 'Reception Display',
+            location: 'Ground Floor, Main Desk',
+            status: 'online',
+            lastSeen: '1 min ago',
+            playlist: 'Welcome & Directory',
+            resolution: '1920x1080',
+            uptime: '60 days',
+            storage: { used: 5, total: 16 }
+        },
+        {
+            id: 5,
+            name: 'Break Room TV',
+            location: 'Floor 4, West Side',
+            status: 'warning',
+            lastSeen: '3 min ago',
+            playlist: 'News & Weather Feed',
+            resolution: '1920x1080',
+            uptime: '15 days',
+            storage: { used: 28, total: 32 }
+        },
+        {
+            id: 6,
+            name: 'Warehouse Screen',
+            location: 'Building B, Loading Bay',
+            status: 'offline',
+            lastSeen: '1 day ago',
+            playlist: 'Safety & Procedures',
+            resolution: '1280x720',
+            uptime: '0 days',
+            storage: { used: 10, total: 16 }
+        },
+        {
+            id: 7,
+            name: 'Parking Display',
+            location: 'Garage Level 1',
+            status: 'online',
+            lastSeen: '4 min ago',
+            playlist: 'Parking Info & Ads',
+            resolution: '1920x1080',
+            uptime: '90 days',
+            storage: { used: 6, total: 16 }
+        },
+        {
+            id: 8,
+            name: 'Elevator Screen',
+            location: 'Tower A, Main Elevator',
+            status: 'online',
+            lastSeen: '1 min ago',
+            playlist: 'Quick Announcements',
+            resolution: '1080x1920',
+            uptime: '120 days',
+            storage: { used: 4, total: 8 }
+        },
+        {
+            id: 9,
+            name: 'Elevator Screen',
+            location: 'Tower A, Main Elevator',
+            status: 'online',
+            lastSeen: '1 min ago',
+            playlist: 'Quick Announcements',
+            resolution: '1080x1920',
+            uptime: '120 days',
+            storage: { used: 4, total: 8 }
+        },
+        {
+            id: 10,
+            name: 'Elevator Screen',
+            location: 'Tower A, Main Elevator',
+            status: 'online',
+            lastSeen: '1 min ago',
+            playlist: 'Quick Announcements',
+            resolution: '1080x1920',
+            uptime: '120 days',
+            storage: { used: 4, total: 8 }
+        },
+        {
+            id: 11,
+            name: 'Elevator Screen',
+            location: 'Tower A, Main Elevator',
+            status: 'online',
+            lastSeen: '1 min ago',
+            playlist: 'Quick Announcements',
+            resolution: '1080x1920',
+            uptime: '120 days',
+            storage: { used: 4, total: 8 }
+        },
+        {
+            id: 12,
+            name: 'Elevator Screen',
+            location: 'Tower A, Main Elevator',
+            status: 'online',
+            lastSeen: '1 min ago',
+            playlist: 'Quick Announcements',
+            resolution: '1080x1920',
+            uptime: '120 days',
+            storage: { used: 4, total: 8 }
+        },
+    ]);
 
     useEffect(() => {
 
@@ -117,10 +266,9 @@ function UserScreens() {
 
             {deviceLayout ?
                 <Container className='grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'  >
-                    {Array.from({ length: 10 }, (_, i) => {
-
-                        return <DeviceCard key={i} />
-                    })}
+                    {devices.map(device => (
+                        <DeviceCard key={device.id} device={device} />
+                    ))}
                 </Container> :
 
                 <Container className='grid gap-4'>
