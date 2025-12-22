@@ -4,7 +4,8 @@ import Container from '@/components/layout/Container'
 import { Select } from '../custome/Select'
 import { Input } from '../custome/Input'
 import { Button } from '../custome/Button'
-import { Typography } from '@/components/typography/typography'
+import { Caption, Typography } from '@/components/typography/typography'
+import { Sheet } from 'lucide-react'
 
 function UserDeviceReport() {
 
@@ -44,9 +45,28 @@ function UserDeviceReport() {
 
             </Container>
 
-            <Container padding='lg' variant='primary' radius='xl'>
+            <Container padding='lg' variant='primary' radius='xl' className='grid grid-cols-1 gap-4'>
+                <Container className='flex justify-between items-center'>
+                    <div>
+                        <Typography>Hotel Anjushri Lobby</Typography>
+                        <Caption>Here is the detailed report of Screen</Caption>
+                    </div>
+                    <div>
+                        <Button className='bg-[#1d6f42] text-white' icon={<Sheet size={16} />}>Download</Button>
+                    </div>
+                </Container>
                 <Container>
-                    <Typography>Hotel Anjushri Lobby</Typography>
+                    <table className='border-separate border-spacing-2 border border-gray-400 dark:border-gray-500  w-full'>
+                        <thead>
+                            <tr className=''>
+                                <td className='border'>Sr </td>
+                                <td className='border'>Media Name</td>
+                                <td className='border'>Date</td>
+                                <td className='border'>Start Time</td>
+                                <td className='border'>End Time</td>
+                            </tr>
+                        </thead>
+                    </table>
                 </Container>
 
             </Container>
