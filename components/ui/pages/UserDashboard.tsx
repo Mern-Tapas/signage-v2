@@ -18,7 +18,7 @@ function UserDashboard() {
   ];
 
   return (
-    <Container className='grid gap-4'>
+    <Container className='grid gap-6'>
       <Container>
         <Typography variant='h4' weight='medium'>Dashboard</Typography>
         <Typography variant='body2' color='secondary'>Welcome to your dashboard</Typography>

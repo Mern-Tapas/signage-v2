@@ -71,7 +71,7 @@ function UserSheduler() {
 
 
     return (
-        <Container className='grid gap-4'>
+        <Container className='grid gap-6'>
             <Container className='flex items-center justify-between'>
                 <Container>
                     <Typography variant='h4' weight='medium'>Content Scheduler</Typography>

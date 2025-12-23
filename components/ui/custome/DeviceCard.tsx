@@ -5,20 +5,20 @@ import React from 'react'
 import { Button } from './Button'
 import Link from 'next/link'
 
- interface Device {
-        id: number;
-        name: string;
-        location: string;
-        status: 'online' | 'offline' | 'warning';
-        lastSeen: string;
-        playlist: string;
-        resolution: string;
-        uptime: string;
-        storage: {
-            used: number;
-            total: number;
-        };
-    }
+interface Device {
+    id: number;
+    name: string;
+    location: string;
+    status: 'online' | 'offline' | 'warning';
+    lastSeen: string;
+    playlist: string;
+    resolution: string;
+    uptime: string;
+    storage: {
+        used: number;
+        total: number;
+    };
+}
 
 
 function DeviceCard(device: Device) {
@@ -76,18 +76,24 @@ function DeviceCard(device: Device) {
                         )}
                     </div>
 
+                    <div>
+                        <div className={`flex items-center space-x-2 px-3 bg-gray-100 py-1.5 rounded-full backdrop-blur-sm`}>
+                            <span className={`text-xs font-bold capitalize text-gray-500 `}>02 Active Playlist</span>
+                        </div>
+                    </div>
+
                 </div>
             </Container>
 
             <Container className='grid gap-2 grid-cols-2'>
-                <Container  padding='sm' radius='md' className='bg-gradient-to-br from-blue-50 to-cyan-50'>
+                <Container padding='sm' radius='md' className='bg-gradient-to-br from-blue-50 to-cyan-50'>
                     <Typography color='muted' variant='caption'>Uptime</Typography>
                     <Typography variant='body2' weight='bold' className='text-sm'>15d 7h 32m</Typography>
 
                 </Container>
-                <Container  padding='sm' radius='md' className='bg-gradient-to-br from-green-50 to-emerald-50'>
-                    <Typography color='muted' variant='caption'>Active Playlist</Typography>
-                    <Typography variant='body2' weight='bold' className='text-sm'>02</Typography>
+                <Container padding='sm' radius='md' className='bg-gradient-to-br from-green-50 to-emerald-50'>
+                    <Typography color='muted' variant='caption'>Device Id</Typography>
+                    <Typography variant='body2' weight='bold' className='text-sm'>SC1526546</Typography>
 
                 </Container>
             </Container>
