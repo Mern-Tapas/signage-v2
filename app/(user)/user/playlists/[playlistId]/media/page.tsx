@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import {
     Dialog,
     DialogTrigger,
@@ -18,10 +18,34 @@ import { useRouter } from 'next/navigation';
 function page() {
 
     const router = useRouter()
+    const [isOpen, setOpen] = useState<boolean>(false)
+    const dialogButton = useRef<HTMLButtonElement | null>(null)
+
+    useEffect(() => {
+        if (dialogButton.current) {
+            dialogButton.current.click()
+            setOpen(!isOpen)
+        }
+    }, [])
+
+    const closeDialog = () => {
+
+        if (isOpen) {
+
+            setOpen(false);
+
+            setTimeout(() => {
+                router.back()
+            }, 300);
+        }
+
+    }
+
+
     return (
-        <Dialog onOpenChange={() => { router.back() }} defaultOpen={true} >
+        <Dialog onOpenChange={closeDialog} >
             <DialogTrigger>
-                <Button variant="primary">Open Form</Button>
+                <Button variant="primary" className='hidden' ref={dialogButton}>Open Form</Button>
             </DialogTrigger>
             <DialogContent>
                 <DialogHeader>
