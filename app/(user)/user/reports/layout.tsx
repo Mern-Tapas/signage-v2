@@ -7,7 +7,7 @@ import ReportsTab from "@/components/ui/custome/ReportsTabNavigation";
 function layout({ children }: { children: React.ReactNode }) {
 
     return (
-        <Container className='grid gap-4 grid-cols-1'>
+        <Container className='grid gap-6 grid-cols-1'>
             <Container className='flex items-center justify-between '>
                 <Container>
                     <Typography variant='h4' weight='medium'>Reports</Typography>

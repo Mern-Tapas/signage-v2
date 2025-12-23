@@ -50,7 +50,7 @@ function UserPlaylists() {
 
 
     return (
-        mounted ? <Container className='grid gap-4'>
+        mounted ? <Container className='grid gap-6'>
             <Container className='flex items-center justify-between'>
                 <Container>
                     <Typography variant='h4' weight='medium'>Playlists Manager</Typography>
