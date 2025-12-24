@@ -19,6 +19,7 @@ import { Input } from '../custome/Input';
 import DeviceCard from '../custome/DeviceCard';
 import DeviceList from '../custome/DeviceList';
 import Checkbox from '../custome/Checkbox';
+import EmpatyState from '../custome/EmptyState';
 function UserScreens() {
 
 
@@ -267,7 +268,7 @@ function UserScreens() {
             {deviceLayout ?
                 <Container className='grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'  >
                     {devices.map((device, index) => (
-                        <DeviceCard {...device}  key={index} />
+                        <DeviceCard {...device} key={index} />
                     ))}
                 </Container> :
 
@@ -319,6 +320,7 @@ function UserScreens() {
                     })}
 
 
+                    {devices.length == 0 ? <EmpatyState /> : ""}
                 </Container>
 
             }
