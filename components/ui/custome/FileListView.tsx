@@ -14,7 +14,7 @@ function FileListView({ className, detailedView = true }: { className?: string, 
 
             <div className='flex gap-4 items-center w-full  '>
 
-                <div className=' border-gray-400 h-12 w-12 overflow-hidden flex rounded-lg shrink-0'>
+                <div className=' border-gray-400 h-12 w-12 overflow-hidden flex rounded-lg shrink-0 '>
                     <FileText strokeWidth={1.3} size={24} className='text-blue-600 m-auto' />
                 </div>
                 <Container className='truncate'>

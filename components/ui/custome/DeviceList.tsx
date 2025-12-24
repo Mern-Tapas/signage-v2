@@ -10,23 +10,21 @@ import { Image, ListVideo, } from 'lucide-react'
 
 function DeviceList({ className, detailedView = true }: { className?: string, detailedView?: boolean }) {
     return (
-        <Container padding='sm' radius='xl' className={`grid grid-cols-[220px_1fr] gap-4 ${detailedView?"lg:grid-cols-[350px_1fr_1fr_1fr_1fr]":""} items-center w-full ${className}`}>
+        <Container padding='sm' radius='xl' className={`grid grid-cols-[220px_1fr] gap-4 ${detailedView ? "lg:grid-cols-[350px_1fr_1fr_1fr_1fr]" : ""} items-center w-full ${className}`}>
 
 
             <div className='flex gap-4 items-center w-full  '>
 
-                <div className=' border-gray-400 h-12 w-12 overflow-hidden flex rounded-lg shrink-0'>
-                    <Monitor strokeWidth={1.3} size={24} className='text-blue-600 m-auto' />
+                <div className="w-10 h-10 shrink-0 rounded-lg bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 flex items-center justify-center shadow-lg shadow-blue-300/50 hover:shadow-blue-400/60 transition-all duration-300 cursor-pointer group">
+                    <Monitor className="w-5 h-5 text-white  transition-transform" />
                 </div>
                 <Container className='truncate'>
 
                     <Link className='' href={'/user/screens/device'}>
-                        <Typography variant='body2' weight='normal' className='truncate w-full'>Silver Spring Phase 2 Block A dfhfhfhh</Typography>
-
+                        <Typography weight='medium' className='text-sm truncate mb-1 w-full'>Silver Spring Phase 2 Block A dfhfhfhh</Typography>
                     </Link>                    {/* <Typography variant='caption' weight='medium'  className='truncate '>Please type here short description mk</Typography> */}
                     <Container className='flex gap-2 items-center'>
-                        <MapPin className='text-gray-500' size={14} strokeWidth={1.5} />
-                        <Caption color='muted'>Main Entrance</Caption>
+                        <p className='text-xs flex items-center gap-1 text-gray-500'> <MapPin size={14} />Location</p>
                     </Container>
                 </Container>
             </div>
