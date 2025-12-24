@@ -3,13 +3,16 @@ import React from 'react'
 import Container from '@/components/layout/Container'
 import { Typography } from '@/components/typography/typography'
 import IconBox from '../custome/IconBox'
-import { Activity, Database, Info, Maximize, Monitor, TvMinimal, Wifi, WifiOff } from 'lucide-react'
+import { Activity, Database, Info, Maximize, Monitor, PlusIcon, TvMinimal, Wifi, WifiOff } from 'lucide-react'
 import { Badge } from '../custome/Badge'
 import { Card, CardHeader } from '../custome/Card'
 import PlaylistListItem from '../custome/PlaylistListItem'
 import { Button } from '../custome/Button'
+import { useRouter } from 'next/navigation'
 
 function UserScreen() {
+
+    const router = useRouter()
 
     const getStatusColor = (status: string) => {
         switch (status) {
@@ -39,7 +42,7 @@ function UserScreen() {
     };
 
     const device = {
-        status:"online"
+        status: "online"
     }
 
     return (
@@ -130,7 +133,8 @@ function UserScreen() {
                             {/* <Typography variant='body2' color='muted'>Connected Playlists </Typography> */}
                         </div>
                         <Container className='flex items-center'>
-                            <Button variant='primary' className='shadow-md'>Assign Playlist</Button>
+                            <Button variant="primary" onClick={() => { router.push('device/assign') }} className='shadow-md md:flex hidden' size='md' icon={<PlusIcon size={18} strokeWidth={1.5} />}>Add Content</Button>
+
                         </Container>
                     </Container>
                 </CardHeader>
@@ -165,6 +169,7 @@ function UserScreen() {
                         </div>
                     </Container>
 
+                    <PlaylistListItem />
                     <PlaylistListItem />
                 </Container>
             </Card>

@@ -1,14 +1,47 @@
 import React from 'react'
 import Container from '@/components/layout/Container'
 import { Caption, Typography } from '@/components/typography/typography'
-import { EllipsisVertical, Eye, MapPin, Monitor, Trash, Volume1 } from 'lucide-react'
+import { Activity, EllipsisVertical, Eye, MapPin, Monitor, Trash, Volume1, Wifi, WifiOff } from 'lucide-react'
 import { Badge } from './Badge'
 import Link from 'next/link'
 import { Dropdown, DropdownContent, DropdownItem, DropdownTrigger } from './Dropdown'
 import { Image, ListVideo, } from 'lucide-react'
+import { Button } from './Button'
 
 
 function DeviceList({ className, detailedView = true }: { className?: string, detailedView?: boolean }) {
+
+    const getStatusColor = (status: string) => {
+        switch (status) {
+            case 'online': return 'from-emerald-400 to-green-500';
+            case 'offline': return 'from-rose-400 to-red-500';
+            case 'warning': return 'from-amber-400 to-yellow-500';
+            default: return 'from-gray-400 to-gray-500';
+        }
+    };
+
+    const getStatusText = (status: string) => {
+        switch (status) {
+            case 'online': return 'text-emerald-600';
+            case 'offline': return 'text-rose-600';
+            case 'warning': return 'text-amber-600';
+            default: return 'text-gray-600';
+        }
+    };
+
+    const getStatusBg = (status: string) => {
+        switch (status) {
+            case 'online': return 'bg-emerald-500/10';
+            case 'offline': return 'bg-rose-500/10';
+            case 'warning': return 'bg-amber-500/10';
+            default: return 'bg-gray-500/10';
+        }
+    };
+
+    const device = {
+        status: "online"
+    }
+
     return (
         <Container padding='sm' radius='xl' className={`grid grid-cols-[220px_1fr] gap-4 ${detailedView ? "lg:grid-cols-[350px_1fr_1fr_1fr_1fr]" : ""} items-center w-full ${className}`}>
 
@@ -32,7 +65,18 @@ function DeviceList({ className, detailedView = true }: { className?: string, de
                 <Typography variant='caption'>WS123840</Typography>
             </div>
             <div className={`hidden ${detailedView ? "lg:flex" : ""} `}>
-                <Badge size='sm' color='success'>Online</Badge>
+                <div className={`flex items-center space-x-2 px-3 py-1.5 rounded-full ${getStatusBg(device.status)} backdrop-blur-sm`}>
+                    <span className={`w-2 h-2 rounded-full bg-gradient-to-r ${getStatusColor(device.status)} animate-pulse shadow-lg`}></span>
+                    <span className={`text-xs font-bold capitalize ${getStatusText(device.status)}`}>{device.status}</span>
+                    {device.status === 'online' ? (
+                        <Wifi className={`w-3.5 h-3.5 ${getStatusText(device.status)}`} />
+                    ) : device.status === 'offline' ? (
+                        <WifiOff className={`w-3.5 h-3.5 ${getStatusText(device.status)}`} />
+                    ) : (
+                        <Activity className={`w-3.5 h-3.5 ${getStatusText(device.status)}`} />
+                    )}
+                </div>
+
             </div>
             <div className={`hidden ${detailedView ? "lg:flex" : ""} `}>
 
@@ -52,7 +96,7 @@ function DeviceList({ className, detailedView = true }: { className?: string, de
                 </Container>
 
             </div>
-            <div className="ms-auto flex items-center">
+            <div className="ms-auto flex items-center md:hidden">
                 <Dropdown >
                     <DropdownTrigger>
                         <Container variant='primary' padding='sm' radius='xl'  >
@@ -70,6 +114,10 @@ function DeviceList({ className, detailedView = true }: { className?: string, de
 
                     </DropdownContent>
                 </Dropdown>
+            </div>
+            <div className='justify-end md:flex gap-2 hidden '>
+                <Button size='sm' variant='danger'>Delete</Button>
+                <Button size='sm'  variant='outline'>View</Button>
             </div>
         </Container>
     )
