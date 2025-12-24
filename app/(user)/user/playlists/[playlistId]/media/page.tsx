@@ -15,7 +15,7 @@ import { Button } from '@/components/ui/custome/Button';
 import { Typography } from '@/components/typography/typography';
 import { useRouter } from 'next/navigation';
 
-function page() {
+function Page() {
 
     const router = useRouter()
     const [isOpen, setOpen] = useState<boolean>(false)
@@ -83,4 +83,4 @@ function page() {
     )
 }
 
-export default page
+export default Page
