@@ -48,6 +48,7 @@ import {
     DrawerBody,
     DrawerFooter,
 } from '@/components/ui/custome/Drawer'
+import Testing from '@/components/ui/custome/Testing';
 
 function Page() {
 
@@ -189,6 +190,9 @@ function Page() {
                     </DrawerContent>
                 </Drawer>
 
+            </Container>
+            <Container>
+                <Testing/>
             </Container>
         </Container>
     )
