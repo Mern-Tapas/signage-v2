@@ -99,7 +99,8 @@ function DeviceCard(device: Device) {
             </Container>
 
             <Container className='grid grid-cols-1 '>
-                <Link href={'/user/screens/123'} className='text-sm w-full p-2 text-center bg-gray-200 rounded-lg hover:bg-gray-300 transition'>View Detial</Link>
+                <Link href={'/user/screens/123'} className='text-sm w-full p-2 text-center bg-gray-200 rounded-lg hover:bg-gray-300 transition'>View Details</Link>
+                
             </Container>
         </Container>
     )
