@@ -12,7 +12,7 @@ function PlaylistCard() {
     return (
         <Container padding='md' variant='primary' radius='xl' className='relative  overflow-hidden grid grid-cols-1 gap-6' >
             <div className='flex gap-3'>
-                <div className="w-11 h-11 shrink-0 rounded-lg bg-gradient-to-br from-pink-500 via-pink-600 to-blue-700 flex items-center justify-center shadow-lg shadow-blue-300/50 hover:shadow-blue-400/60 transition-all duration-300 cursor-pointer group">
+                <div className="w-10 h-10 shrink-0 rounded-lg bg-gradient-to-br from-pink-500 via-pink-600 to-blue-700 flex items-center justify-center shadow-lg shadow-blue-300/50 hover:shadow-blue-400/60 transition-all duration-300 cursor-pointer group">
                 <ListVideo className="w-5 h-5 text-white  transition-transform" />
             </div>
             <div>
