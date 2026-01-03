@@ -10,11 +10,6 @@ interface ApiResponseData<T = any> {
   statusCode: number;
 }
 
-interface ApiResponseOptions<T = any> {
-  data?: T;
-  message?: string;
-  error?: string;
-}
 
 export class ApiResponse {
   static success<T = any>(
