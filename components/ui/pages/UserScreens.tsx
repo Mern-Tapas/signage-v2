@@ -1,7 +1,7 @@
 'use client'
 import Container from '@/components/layout/Container';
 import { Typography } from '@/components/typography/typography';
-import { Download, LayoutGrid, PlusIcon, Search, Trash } from 'lucide-react';
+import { Download, LayoutGrid, MonitorOff, PlusIcon, Search, Trash } from 'lucide-react';
 import React, { useEffect, useState } from 'react'
 import { Button } from '../custome/Button';
 import {
@@ -20,6 +20,7 @@ import DeviceCard from '../custome/DeviceCard';
 import DeviceList from '../custome/DeviceList';
 import Checkbox from '../custome/Checkbox';
 import EmpatyState from '../custome/EmptyState';
+import EmptyState from '../custome/EmptyState';
 function UserScreens() {
 
 
@@ -303,10 +304,21 @@ function UserScreens() {
                     })}
 
 
-                    {devices.length == 0 ? <EmpatyState /> : ""}
+                   
                 </Container>
 
             }
+
+            <EmptyState
+                icon={MonitorOff}
+                title="No devices found"
+                description="You haven’t added any devices yet."
+                buttonText="Add Device"
+                onButtonClick={() => {
+                    // navigate("/devices/add");
+                }}
+                iconGradient="bg-gradient-to-br from-gray-300 via-gray-400 to-gray-700"
+            />;
 
 
         </Container> : ""

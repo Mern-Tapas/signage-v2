@@ -1,7 +1,7 @@
 'use client'
 import Container from '@/components/layout/Container';
 import { Typography } from '@/components/typography/typography';
-import { Download, LayoutGrid, PlusIcon, Search, Trash } from 'lucide-react';
+import { Download, FolderOpen, LayoutGrid, MonitorOff, PlusIcon, Search, Trash } from 'lucide-react';
 import React, { useEffect, useState } from 'react'
 import { Button } from '../custome/Button';
 import {
@@ -15,6 +15,8 @@ import Checkbox from '../custome/Checkbox';
 import FileCard from '../custome/FileCard';
 import FileUploadLayout from '../custome/FileUploader';
 import FileListView from '../custome/FileListView';
+import EmptyState from '../custome/EmptyState';
+
 function UserFiles() {
 
 
@@ -90,41 +92,64 @@ function UserFiles() {
 
             {deviceLayout ?
                 <Container className='grid gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'  >
-                    {Array.from({ length: 10 }, (_, i) => {
 
-                        return <FileCard
-                            key={i}
-                            imageSrc="https://i.pinimg.com/1200x/24/f6/41/24f6419ea4fa3f1390c2ad8b3440b908.jpg"
-                            title="Instagram Promotions Advrt for downloadinge and fodlfso.mp4"
-                            fileType="video"
-                            onClick={() => alert('clicked')}
-                        />
-                    })}
+
+                    <FileCard
+
+                        imageSrc="https://i.pinimg.com/736x/3e/8b/a4/3e8ba4ff99ac869558917de0003c3ff7.jpg"
+                        title="Instagram Promotions.mp4"
+                        fileType="image"
+                        onClick={() => alert('clicked')}
+                    />
+                    <FileCard
+
+                        imageSrc="https://i.pinimg.com/736x/3e/8b/a4/3e8ba4ff99ac869558917de0003c3ff7.jpg"
+                        title="Instagram Promotions.mp4"
+                        fileType="image"
+                        onClick={() => alert('clicked')}
+                    />
+                    <FileCard
+
+                        imageSrc="https://i.pinimg.com/736x/3e/8b/a4/3e8ba4ff99ac869558917de0003c3ff7.jpg"
+                        title="Instagram Promotions.mp4"
+                        fileType="image"
+                        onClick={() => alert('clicked')}
+                    />
+                    <FileCard
+
+                        imageSrc="https://i.pinimg.com/1200x/24/f6/41/24f6419ea4fa3f1390c2ad8b3440b908.jpg"
+                        title="Instagram Promotions Advrt for downloadinge and fodlfso.mp4"
+                        fileType="video"
+                        onClick={() => alert('clicked')}
+                    />
+                    <FileCard
+
+                        imageSrc="https://i.pinimg.com/736x/db/e3/d4/dbe3d47c35a749790fdbd9a3ee7b30a7.jpg"
+                        title="Instagram Promotions Advrt for downloadinge and fodlfso.mp4"
+                        fileType="document"
+                        onClick={() => alert('clicked')}
+                    />
+
                 </Container> :
 
                 <Container className='grid gap-4'>
 
-                    <Container className='px-4 flex gap-2'>
-                        <Checkbox
-                            checked={false}
-                            onChange={() => { }}
-                            color="primary"
-                            size="md"
-                        />
+                    <Container className=' flex gap-2'>
+
 
                         <Container variant='default' padding='sm' radius='xl' className='w-full grid grid-cols-[220px_1fr] gap-4 lg:grid-cols-[350px_1fr_1fr_1fr_1fr] items-center '>
 
                             <div className='flex gap-4 items-center '>
-                                <Typography variant='body2' weight='bold' className='truncate '>All Devices</Typography>
+                                <Typography variant='body2' weight='bold' className='truncate '>File Name</Typography>
                             </div>
                             <div className='hidden lg:flex '>
-                                <Typography variant='body2' weight='bold' className='truncate '>Devices Id</Typography>
+                                <Typography variant='body2' weight='bold' className='truncate '>File Type</Typography>
                             </div>
                             <div className='hidden lg:flex '>
-                                <Typography variant='body2' weight='bold' className='truncate '>Status</Typography>
+                                <Typography variant='body2' weight='bold' className='truncate '>File Size</Typography>
                             </div>
                             <div className='hidden lg:flex '>
-                                <Typography variant='body2' weight='bold' className='truncate '>Content</Typography>
+                                <Typography variant='body2' weight='bold' className='truncate '>Linked</Typography>
                             </div>
                             <div className="ms-auto flex items-center">
                                 <Typography variant='body2' weight='bold' className='truncate '>Action</Typography>
@@ -136,22 +161,29 @@ function UserFiles() {
 
 
 
-                    {Array.from({ length: 10 }, (_, i) => {
-                        return <Container key={i} className='flex px-4 gap-2' radius='xl' variant='primary' >
-                            <Checkbox
-                                checked={false}
-                                onChange={() => { }}
-                                color="primary"
-                                size="md"
-                            />
-                            <FileListView detailedView />
-                        </Container>
-                    })}
+
+                    <FileListView detailedView className='bg-white' />
+                    <FileListView detailedView className='bg-white' />
 
 
                 </Container>
 
             }
+
+            {/* empty state  */}
+            <EmptyState
+                icon={FolderOpen}
+                title="No files found"
+                description="Upload media files to start building your library."
+                buttonText="Upload Files"
+                onButtonClick={() => {
+                    // navigate("/files/upload");
+                }}
+                iconGradient="bg-gradient-to-br from-gray-500 via-gray-600 to-gray-700"
+            />;
+
+            {/* empty state  */}
+
 
 
         </Container> : ""

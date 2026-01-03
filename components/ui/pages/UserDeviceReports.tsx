@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import Container from '@/components/layout/Container'
 import { Select } from '../custome/Select'
 import { Input } from '../custome/Input'
@@ -8,6 +8,9 @@ import { Caption, Typography } from '@/components/typography/typography'
 import { Sheet } from 'lucide-react'
 
 function UserDeviceReport() {
+
+
+    const [value, setValue] = useState<string>("");
 
     return (
         <Container className='grid gap-4 self-start grid-cols-1'>
@@ -19,12 +22,12 @@ function UserDeviceReport() {
                     label="Select Device"
                     size="md"
                     options={[
-                        { label: "Hotel Anjushri Lobby", value: "Hotel_Anjushri_Lobby" },
-                        { label: "Phoenix Lobby", value: "Phoenix_Lobby" },
+                        { label: "Hotel Anjushri Lobby", value: "Hotel Anjushri Lobby" },
+                        { label: "Phoenix Lobby", value: "Phoenix Lobby" },
 
                     ]}
-                    value={'Phoenix_Lobby'}
-                    onChange={() => { }}
+                    value={value}
+                    onChange={(v) => { setValue(v as string) }}
                 />
 
                 <Input

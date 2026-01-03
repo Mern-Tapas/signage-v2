@@ -49,17 +49,17 @@ function FileListView({ className, detailedView = true }: { className?: string, 
 
             <div className='flex gap-4 items-center w-full  '>
 
-                <div className="w-10 h-10 shrink-0 rounded-lg bg-gradient-to-br overflow-hidden from-blue-500 via-blue-600 to-blue-700 flex items-center justify-center shadow-lg shadow-blue-300/50 hover:shadow-blue-400/60 transition-all duration-300 cursor-pointer group">
+                <div className="w-10 h-10 shrink-0 rounded-lg bg-gradient-to-br overflow-hidden from-blue-500 via-blue-600 to-blue-700 flex items-center justify-center shadow-l shadow-blue-300/50 hover:shadow-blue-400/60 transition-all duration-300 cursor-pointer group">
                     <Image src={'https://i.pinimg.com/1200x/ad/cd/d1/adcdd107f773d0155042159aafdc40e3.jpg'} height={100} width={100} alt='files'/>
                 </div>
                 <Container className='truncate'>
 
                     <Link className='' href={'/user/screens/device'}>
-                        <Typography weight='medium' className='text-sm truncate mb-1 w-full'>Silver Spring Phase 2 Block A dfhfhfhh</Typography>
-                    </Link>                    {/* <Typography variant='caption' weight='medium'  className='truncate '>Please type here short description mk</Typography> */}
-                    <Container className='flex gap-2 items-center'>
+                        <Typography weight='medium' className='text-sm truncate mb-1 w-full'>Phoenix Shuttel Sirvice.jpeg</Typography>
+                    </Link>                   
+                    {/* <Container className='flex gap-2 items-center'>
                         <p className='text-xs flex items-center gap-1 text-gray-500'> <MapPin size={14} />Location</p>
-                    </Container>
+                    </Container> */}
                 </Container>
             </div>
             <div className={`hidden ${detailedView ? "lg:flex" : ""} `}>

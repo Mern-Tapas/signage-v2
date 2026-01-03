@@ -1,43 +1,56 @@
-"use client";
+'use client'
+import { LucideIcon } from "lucide-react";
+import Container from "@/components/layout/Container";
+import { Typography } from "@/components/typography/typography";
 import { Button } from "./Button";
-import { Card } from "./Card";
-import { Upload, FolderOpen } from "lucide-react";
 
-export default function MyFilesPage() {
-  const files = []; // empty state
+interface EmptyStateProps {
+  icon: LucideIcon;
+  title: string;
+  description?: string;
+  buttonText?: string;
+  onButtonClick?: () => void;
+  iconGradient?: string;
+  iconSize?: number;
+}
 
+export default function EmptyState({
+  icon: Icon,
+  title,
+  description,
+  buttonText,
+  onButtonClick,
+  iconGradient = "bg-gradient-to-br from-gray-300 via-gray-400 to-gray-700",
+  iconSize = 60,
+}: EmptyStateProps) {
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
-     
-      {/* Content */}
-      {files.length === 0 ? (
-        <Card className="rounded-3xl border-dashed border-2 border-gray-200 bg-white">
-          <div className="flex flex-col items-center justify-center py-24 px-6 text-center">
-            <div
-              className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white shadow-lg transition-transform duration-300 ease-out hover:scale-105"
-            >
-              <FolderOpen className="w-8 h-8" />
-            </div>
-
-            <h3 className="mt-6 text-lg font-semibold text-gray-900">
-              No files uploaded yet
-            </h3>
-            <p className="mt-2 text-sm text-gray-500 max-w-sm">
-              Upload images and videos to start creating playlists for your
-              digital signage screens.
-            </p>
-
-            <Button className="mt-6 rounded-xl px-6">
-              <Upload className="w-4 h-4 mr-2" />
-              Upload your first file
-            </Button>
-          </div>
-        </Card>
-      ) : (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {/* Files grid goes here */}
+    <Container className="h-[600px] flex items-center justify-center">
+      <div className="flex flex-col items-center gap-6">
+        {/* Icon */}
+        <div className={`p-8 rounded-full ${iconGradient}`}>
+          <Icon size={iconSize} strokeWidth={1} className="text-white" />
         </div>
-      )}
-    </div>
+
+        {/* Text */}
+        <div>
+          <Typography className="text-center" variant="h3">
+            {title}
+          </Typography>
+
+          {description && (
+            <Typography className="text-center" variant="body2">
+              {description}
+            </Typography>
+          )}
+        </div>
+
+        {/* Action */}
+        {buttonText && onButtonClick && (
+          <Button variant="primary" size="lg" onClick={onButtonClick}>
+            {buttonText}
+          </Button>
+        )}
+      </div>
+    </Container>
   );
 }

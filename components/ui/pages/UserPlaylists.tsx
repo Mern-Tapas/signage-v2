@@ -1,7 +1,7 @@
 'use client'
 import Container from '@/components/layout/Container';
 import { Typography } from '@/components/typography/typography';
-import { Download, LayoutGrid, PlusIcon, Search, Trash } from 'lucide-react';
+import { Download, LayoutGrid, ListMusic, PlusIcon, Search, Trash } from 'lucide-react';
 import React, { useEffect, useState } from 'react'
 import { Button } from '../custome/Button';
 
@@ -23,6 +23,7 @@ import PlaylistListItem from '../custome/PlaylistListItem';
 import PlaylistCard from '../custome/PlaylistCard';
 import DeviceList from '../custome/DeviceList';
 import PlaylistList from '../custome/PlaylistListItem';
+import EmptyState from '../custome/EmptyState';
 function UserPlaylists() {
 
 
@@ -119,7 +120,7 @@ function UserPlaylists() {
 
             {deviceLayout ?
                 <Container className='grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'  >
-                    {Array.from({ length: 10 }, (_, i) => {
+                    {Array.from({ length: 2 }, (_, i) => {
 
                         return <PlaylistCard key={i} />
                     })}
@@ -149,7 +150,7 @@ function UserPlaylists() {
 
 
 
-                    {Array.from({ length: 10 }, (_, i) => {
+                    {Array.from({ length: 2 }, (_, i) => {
                         return <Container key={i} className='' radius='xl' variant='primary' >
                             <PlaylistList />
                         </Container>
@@ -160,6 +161,16 @@ function UserPlaylists() {
                 </Container>
             }
 
+            <EmptyState
+                icon={ListMusic}
+                title="No playlists found"
+                description="Create a playlist to organize your media."
+                buttonText="Create Playlist"
+                onButtonClick={() => {
+                    // navigate("/playlists/create");
+                }}
+                iconGradient="bg-gradient-to-br from-gray-500 via-gray-600 to-gray-700"
+            />
 
         </Container> : ""
     )
