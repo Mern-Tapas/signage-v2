@@ -9,6 +9,7 @@ import { Button } from '../custome/Button'
 import CardStack from '../custome/CardStack'
 import { Dialog, DialogBody, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '../custome/Dialog'
 import { useRouter } from 'next/navigation'
+import FileListView from '../custome/FileListView'
 
 function UserPlaylist() {
 
@@ -94,12 +95,12 @@ function UserPlaylist() {
 
                             <Container className=''>
 
-                                <Typography variant='body2' weight='normal' className='truncate '>All Devices</Typography>
+                                <Typography variant='body2' weight='normal' className='truncate '>File Name</Typography>
 
                             </Container>
                         </div>
                         <div className='hidden lg:flex '>
-                            <Typography variant='body2' weight='normal' className='truncate '>Devices Id</Typography>
+                            <Typography variant='body2' weight='normal' className='truncate '>File Type</Typography>
                         </div>
                         <div className='hidden lg:flex '>
                             <Typography variant='body2' weight='normal' className='truncate '>Status</Typography>
@@ -113,11 +114,7 @@ function UserPlaylist() {
                         </div>
                     </Container>
 
-                    <DeviceList className={''} />
-                    <DeviceList className={''} />
-                    <DeviceList className={''} />
-                    <DeviceList className={''} />
-                    <DeviceList className={''} />
+                    <FileListView />
                 </Container>
             </Card>
 
