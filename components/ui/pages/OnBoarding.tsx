@@ -130,7 +130,7 @@ export default function Onboarding() {
   const isStepCompleted = (stepId: number): boolean => completed.has(stepId);
 
   const CompanyStep: React.FC = () => (
-    <div className="space-y-4">
+    <div className="space-y-4 ">
       <div className="grid grid-cols-2 gap-3">
         <div>
           <label className="block text-xs font-semibold text-gray-700 mb-1.5">Company Name *</label>
@@ -424,8 +424,8 @@ export default function Onboarding() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50 py-6 px-4">
-      <div className="max-w-3xl mx-auto">
+    <div className="min-h-screen flex bg-gradient-to-br from-gray-50 via-white to-gray-50 py-6 px-4 ">
+      <div className="max-w-3xl lg:min-w-3xl my-auto  mx-auto">
         <div className="text-center mb-6">
           <div className="inline-block p-2.5 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl mb-3">
             <Zap className="text-white" size={24} />
