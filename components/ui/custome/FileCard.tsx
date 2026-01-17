@@ -3,6 +3,7 @@ import React from "react"
 import Container from "@/components/layout/Container"
 import Image from "next/image"
 import { Video, FileText, Image as ImageIcon, Archive, File } from "lucide-react";
+import { Typography } from "@/components/typography/typography";
 
 
 export type FileCardProps = {
@@ -14,14 +15,15 @@ export type FileCardProps = {
   className?: string;
   /** Pass through any extra props to the root button element */
   ariaLabel?: string;
+  size: string;
 };
 
 const iconMap: Record<string, React.ReactNode> = {
-  video: <Video size={18} className="text-white" strokeWidth={1.5} />,
-  image: <ImageIcon size={18} className="text-white" strokeWidth={1.5} />,
-  document: <FileText size={18} className="text-white" strokeWidth={1.5} />,
-  archive: <Archive size={18} className="text-white" strokeWidth={1.5} />,
-  other: <File size={18} className="text-white" strokeWidth={1.5} />,
+  video: <Video size={20} className="text-white" strokeWidth={1.5} />,
+  image: <ImageIcon size={20} className="text-white" strokeWidth={1.5} />,
+  document: <FileText size={20} className="text-white" strokeWidth={1.5} />,
+  archive: <Archive size={20} className="text-white" strokeWidth={1.5} />,
+  other: <File size={20} className="text-white" strokeWidth={1.5} />,
 };
 
 
@@ -54,6 +56,7 @@ const FileCard: React.FC<FileCardProps> = (
     fileType = "document",
     className = "",
     ariaLabel,
+    size
   }
 
 ) => {
@@ -63,11 +66,12 @@ const FileCard: React.FC<FileCardProps> = (
       <Image src={imageSrc} height={200} width={200} alt={alt} className="w-full h-full object-contain" />
     </div>
     <Container padding="md" className="flex gap-4">
-      <div className={`h-8 w-8 shrink-0 flex ${getColour(fileType)} rounded-md  items-center justify-center`}>
+      <div className={`h-10 w-10 shrink-0 flex ${getColour(fileType)} rounded-lg  items-center justify-center`}>
         {iconMap[fileType]}
       </div>
-      <div className="flex items-center">
-        <p className="text-xs">{title}</p>
+      <div className="w-full truncate elipses ">
+        <p className="text-xs truncate mb-1 w-full">{title}</p>
+        <p className="text-xs truncate mb-1 w-full">{size}</p>
       </div>
     </Container>
   </Container>

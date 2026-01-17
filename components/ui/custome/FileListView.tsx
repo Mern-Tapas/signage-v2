@@ -63,22 +63,12 @@ function FileListView({ className, detailedView = true }: { className?: string, 
                 </Container>
             </div>
             <div className={`hidden ${detailedView ? "lg:flex" : ""} `}>
-                <Typography variant='caption'>WS123840</Typography>
+                <Typography variant='caption'>IMAGE</Typography>
             </div>
             <div className={`hidden ${detailedView ? "lg:flex" : ""} `}>
-                <div className={`flex items-center space-x-2 px-3 py-1.5 rounded-full ${getStatusBg(device.status)} backdrop-blur-sm`}>
-                    <span className={`w-2 h-2 rounded-full bg-gradient-to-r ${getStatusColor(device.status)} animate-pulse shadow-lg`}></span>
-                    <span className={`text-xs font-bold capitalize ${getStatusText(device.status)}`}>{device.status}</span>
-                    {device.status === 'online' ? (
-                        <Wifi className={`w-3.5 h-3.5 ${getStatusText(device.status)}`} />
-                    ) : device.status === 'offline' ? (
-                        <WifiOff className={`w-3.5 h-3.5 ${getStatusText(device.status)}`} />
-                    ) : (
-                        <Activity className={`w-3.5 h-3.5 ${getStatusText(device.status)}`} />
-                    )}
-                </div>
-
+                <Typography variant='caption'>10 MB</Typography>
             </div>
+           
             <div className={`hidden ${detailedView ? "lg:flex" : ""} `}>
 
                 <Container radius='md' padding='sm' className='border border-gray-300 flex justify-around gap-6 items-center '>

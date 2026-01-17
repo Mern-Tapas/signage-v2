@@ -54,8 +54,9 @@ function UserDeviceReport() {
                         <Typography>Hotel Anjushri Lobby</Typography>
                         <Caption>Here is the detailed report of Screen</Caption>
                     </div>
-                    <div>
-                        <Button className='bg-[#1d6f42] text-white' icon={<Sheet size={16} />}>Download</Button>
+                    <div className='flex gap-3'>
+                        <Button variant='secondary' icon={<Sheet size={16} />}>Excel </Button>
+                        <Button variant='secondary' icon={<Sheet size={16} />}>Pdf</Button>
                     </div>
                 </Container>
                 <Container>

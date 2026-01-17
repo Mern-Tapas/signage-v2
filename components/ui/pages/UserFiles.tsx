@@ -95,35 +95,35 @@ function UserFiles() {
 
 
                     <FileCard
-
+                        size='13 Mb'
                         imageSrc="https://i.pinimg.com/736x/3e/8b/a4/3e8ba4ff99ac869558917de0003c3ff7.jpg"
                         title="Instagram Promotions.mp4"
                         fileType="image"
                         onClick={() => alert('clicked')}
                     />
                     <FileCard
-
+                        size='13 Mb'
                         imageSrc="https://i.pinimg.com/736x/3e/8b/a4/3e8ba4ff99ac869558917de0003c3ff7.jpg"
                         title="Instagram Promotions.mp4"
                         fileType="image"
                         onClick={() => alert('clicked')}
                     />
                     <FileCard
-
+                        size='13 Mb'
                         imageSrc="https://i.pinimg.com/736x/3e/8b/a4/3e8ba4ff99ac869558917de0003c3ff7.jpg"
                         title="Instagram Promotions.mp4"
                         fileType="image"
                         onClick={() => alert('clicked')}
                     />
                     <FileCard
-
+                        size='13 Mb'
                         imageSrc="https://i.pinimg.com/1200x/24/f6/41/24f6419ea4fa3f1390c2ad8b3440b908.jpg"
                         title="Instagram Promotions Advrt for downloadinge and fodlfso.mp4"
                         fileType="video"
                         onClick={() => alert('clicked')}
                     />
                     <FileCard
-
+                        size='13 Mb'
                         imageSrc="https://i.pinimg.com/736x/db/e3/d4/dbe3d47c35a749790fdbd9a3ee7b30a7.jpg"
                         title="Instagram Promotions Advrt for downloadinge and fodlfso.mp4"
                         fileType="document"
