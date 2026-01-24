@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Golden Leaf Reality",
-  description: "Golden Way of Success",
+  title: "Digital Signage",
+  description: "Prompote your advertisment",
 };
 
 export default function RootLayout({
