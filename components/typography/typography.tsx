@@ -66,13 +66,13 @@ const variantStyles: Record<TypographyVariant, string> = {
 
 // Color styles mapping
 const colorStyles: Record<TypographyColor, string> = {
-  primary: 'text-gray-900 dark:text-gray-100',
-  secondary: 'text-gray-700 dark:text-gray-300',
-  muted: 'text-gray-500 dark:text-gray-400',
-  success: 'text-green-600 dark:text-green-400',
-  warning: 'text-amber-600 dark:text-amber-400',
-  error: 'text-red-600 dark:text-red-400',
-  info: 'text-blue-600 dark:text-blue-400',
+  primary: 'text-gray-900 ark:text-gray-100',
+  secondary: 'text-gray-700 ark:text-gray-300',
+  muted: 'text-gray-500 ark:text-gray-400',
+  success: 'text-green-600 ark:text-green-400',
+  warning: 'text-amber-600 ark:text-amber-400',
+  error: 'text-red-600 ark:text-red-400',
+  info: 'text-blue-600 ark:text-blue-400',
 };
 
 // Weight styles mapping
