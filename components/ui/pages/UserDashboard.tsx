@@ -24,7 +24,7 @@ function UserDashboard() {
         <Typography variant='body2' color='secondary'>Welcome to your dashboard</Typography>
 
       </Container>
-   
+
 
 
       <div className="p-4 rounded-xl bg-gradient-to-r from-blue-100 via-sky-200 to-indigo-100 border border-blue-300 flex items-center justify-between">
@@ -81,9 +81,9 @@ function UserDashboard() {
         />
 
       </Container>
-      <Container className='grid gap-4 xl:grid-cols-3' >
+      <Container className='grid gap-4 xl:grid-cols-2' >
 
-      
+
 
         <Card radius='xl' className='shrink-0' variant='default'>
           <CardHeader className='py-4'>
@@ -99,22 +99,10 @@ function UserDashboard() {
           </CardBody>
         </Card>
 
-        <Card radius='xl' className='shrink-0' variant='default'>
-          <CardHeader className='py-4'>
-            <Typography weight='medium'>Recent File</Typography>
-          </CardHeader>
-          <CardBody>
+      
 
-            <DeviceList detailedView={false} className='' />
-            <DeviceList detailedView={false} className='' />
-            <DeviceList detailedView={false} className='' />
-            <DeviceList detailedView={false} className='' />
 
-          </CardBody>
-        </Card>
-
-       
- <Card radius='xl' variant='default'>
+        <Card radius='xl' variant='default'>
           <CardHeader className='py-4 flex items-center justify-between'>
             <Typography weight='medium'>Display Statistics</Typography>
             <button><MoreVertical size={20} className="text-gray-400" /></button>

@@ -49,7 +49,29 @@ import {
     DrawerFooter,
 } from '@/components/ui/custome/Drawer'
 import Testing from '@/components/ui/custome/Testing';
+import FilesTable, { FileItem } from '@/components/ui/custome/FilesTable';
 
+
+const files :FileItem[]= [
+  {
+    id: "1",
+    name: "Phoenix Shuttle Service.jpeg",
+    type: "IMAGE",
+    size: "10 MB",
+    linkedScreens: 10,
+    linkedPlaylists: 2,
+    thumbnail: "/sample.jpg",
+  },
+  {
+    id: "2",
+    name: "Promo Video.mp4",
+    type: "VIDEO",
+    size: "45 MB",
+    linkedScreens: 5,
+    linkedPlaylists: 1,
+    thumbnail: "/sample.jpg",
+  },
+];
 
 function Page() {
 
@@ -57,14 +79,14 @@ function Page() {
 
 
     return (
-        <Container className='grid gap-4'>
+        <Container className='grid gap-4 w-full'>
             <Container>
                 <Typography variant='h4' weight='bold'>Components</Typography>
                 <Typography variant='body2'>Welcome to your dashboard</Typography>
 
             </Container>
 
-            <Container className='flex gap-4'>
+            {/* <Container className='flex gap-4'>
 
 
 
@@ -194,6 +216,12 @@ function Page() {
             </Container>
             <Container>
                 <Testing/>
+            </Container> */}
+
+            <Container className='w-full'>
+                d
+                      <FilesTable files={files} />
+
             </Container>
       
         </Container>

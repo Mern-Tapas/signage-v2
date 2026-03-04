@@ -16,7 +16,7 @@ function PlaylistCard() {
                 <ListVideo className="w-5 h-5 text-white  transition-transform" />
             </div>
             <div>
-                <Typography variant='h6' weight='normal'> Foods Creatives & Phoenix creative</Typography>
+                <Typography variant='h6' weight='normal' className='leading-tight'> Foods Creatives & Phoenix creative</Typography>
             </div>
             </div>
             <div className='grid grid-cols-2'>
