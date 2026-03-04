@@ -81,37 +81,7 @@ function UserSheduler() {
             </Container>
 
             <Container>
-                <Container className='grid lg:grid-cols-[400px_auto] gap-4 grid-cols-1'>
-
-
-                    <Container>
-                        <Calendar
-                            selectedDate={selectedDate}
-                            onDateSelect={setSelectedDate}
-                            eventDates={eventDates} />
-                    </Container>
-                    <Container className='grid gap-4 self-start'>
-
-
-                        <Container radius='xl' variant='primary' className='self-auto'>
-                            <Container radius='xl' padding='lg' variant='primary' className='flex items-center justify-between'>
-                                <Typography variant='h6'>Sheduled Content</Typography>
-                                <Button variant='danger'>Clear All</Button>
-                            </Container>
-                            <Separator />
-                            <Container radius='xl' padding='lg' variant='primary' className='gap-2 grid'>
-
-                                <ScheduledContent />
-                                <ScheduledContent />
-                                <ScheduledContent />
-                                <ScheduledContent />
-
-                            </Container>
-                        </Container>
-
-                    </Container>
-
-                </Container>
+               f
             </Container>
 
         </Container>
