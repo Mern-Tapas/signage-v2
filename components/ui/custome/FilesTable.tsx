@@ -20,7 +20,7 @@ const FilesTable: React.FC<Props> = ({ files }) => {
   return (
     <div className="w-full">
       {/* Desktop Table */}
-      <div className="hidden w-full md:block bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+      <div className="hidden w-full md:block bg-white   overflow-hidden">
         <table className="w-full text-sm">
           <thead className="bg-gray-50 text-gray-600 uppercase text-xs tracking-wider">
             <tr>

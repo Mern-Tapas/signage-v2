@@ -65,14 +65,50 @@ const FileCard: React.FC<FileCardProps> = (
     <div className="w-full h-40 bg-gray-300 overflow-hidden p-2">
       <Image src={imageSrc} height={200} width={200} alt={alt} className="w-full h-full object-contain" />
     </div>
-    <Container padding="md" className="flex gap-4">
-      <div className={`h-10 w-10 shrink-0 flex ${getColour(fileType)} rounded-lg  items-center justify-center`}>
+    <Container padding="md" className="flex items-start gap-3">
+
+      {/* File Type Icon */}
+
+      <div
+        className={`h-10 w-10 shrink-0 flex ${getColour(
+          fileType
+        )} rounded-lg items-center justify-center shadow-sm`}
+      >
         {iconMap[fileType]}
       </div>
-      <div className="w-full truncate elipses ">
-        <p className="text-xs truncate mb-1 w-full">{title}</p>
-        <p className="text-xs truncate mb-1 w-full">{size}</p>
+
+      {/* File Info */}
+
+      <div className="flex flex-col min-w-0 flex-1">
+
+        <Typography
+          variant="caption"
+          weight="medium"
+          className="truncate text-gray-800 leading-tight"
+        >
+          {title}
+        </Typography>
+
+        <div className="flex items-center  gap-2 mt-1">
+
+          {/* File Size */}
+
+          <span className="text-[10px] px-2 py-[2px] rounded-md bg-gray-100 text-gray-600 uppercase tracking-wide">
+            {fileType}
+          </span>
+
+          <span className="text-[11px] text-gray-500">
+            {size}
+          </span>
+
+          {/* File Type */}
+
+
+
+        </div>
+
       </div>
+
     </Container>
   </Container>
 }

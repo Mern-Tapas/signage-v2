@@ -8,6 +8,7 @@ import { Button } from '../custome/Button';
 import { Card, CardBody, CardHeader } from '../custome/Card';
 import DeviceList from '../custome/DeviceList';
 import StackedCircleGraph from '../custome/StackedGraph';
+import RecentOfflineItem from '../custome/RecentOfflineItem';
 
 function UserDashboard() {
 
@@ -81,7 +82,7 @@ function UserDashboard() {
         />
 
       </Container>
-      <Container className='grid gap-4 xl:grid-cols-2' >
+      <Container className='grid gap-4 xl:grid-cols-[2fr_1fr]' >
 
 
 
@@ -90,16 +91,15 @@ function UserDashboard() {
             <Typography weight='medium'>Recent Offline</Typography>
           </CardHeader>
           <CardBody>
-
-            <DeviceList detailedView={false} className='' />
-            <DeviceList detailedView={false} className='' />
-            <DeviceList detailedView={false} className='' />
-            <DeviceList detailedView={false} className='' />
-
+            <RecentOfflineItem />
+            <RecentOfflineItem />
+            <RecentOfflineItem />
+            <RecentOfflineItem />
+            <RecentOfflineItem />
           </CardBody>
         </Card>
 
-      
+
 
 
         <Card radius='xl' variant='default'>
@@ -117,6 +117,127 @@ function UserDashboard() {
           </CardBody>
         </Card>
 
+      </Container>
+
+
+
+      {/* ================= NEW BOTTOM SECTION ================= */}
+
+      <Container className="grid gap-4 xl:grid-cols-2">
+
+        {/* Today's Schedule */}
+        <Card radius="xl" variant="default">
+          <CardHeader className="py-4 flex items-center justify-between">
+            <Typography weight="medium">Today's Schedule</Typography>
+            <Button size="sm" variant="ghost">View All</Button>
+          </CardHeader>
+
+          <CardBody className="space-y-4">
+
+            <div className="flex items-center justify-between p-3 rounded-lg bg-gray-50">
+              <div>
+                <Typography className="text-sm font-medium">
+                  Morning Promotion
+                </Typography>
+                <Typography variant="caption" color="secondary">
+                  06:00 AM - 11:00 AM
+                </Typography>
+              </div>
+              <span className="text-xs text-emerald-600 font-medium">
+                Running
+              </span>
+            </div>
+
+            <div className="flex items-center justify-between p-3 rounded-lg bg-gray-50">
+              <div>
+                <Typography className="text-sm font-medium">
+                  Lunch Offers
+                </Typography>
+                <Typography variant="caption" color="secondary">
+                  12:00 PM - 03:00 PM
+                </Typography>
+              </div>
+              <span className="text-xs text-gray-500">
+                Upcoming
+              </span>
+            </div>
+
+          </CardBody>
+        </Card>
+
+
+        {/* Recent Uploads */}
+        <Card radius="xl" variant="default">
+          <CardHeader className="py-4 flex items-center justify-between">
+            <Typography weight="medium">Recent Uploads</Typography>
+            <Button size="sm" variant="ghost">Manage Files</Button>
+          </CardHeader>
+
+          <CardBody className="space-y-4">
+
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center">
+                <File size={18} className="text-blue-500" />
+              </div>
+              <div>
+                <Typography className="text-sm font-medium">
+                  Summer Campaign.mp4
+                </Typography>
+                <Typography variant="caption" color="secondary">
+                  120 MB • Uploaded 2h ago
+                </Typography>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center">
+                <File size={18} className="text-purple-500" />
+              </div>
+              <div>
+                <Typography className="text-sm font-medium">
+                  Menu Display.png
+                </Typography>
+                <Typography variant="caption" color="secondary">
+                  2.3 MB • Uploaded 5h ago
+                </Typography>
+              </div>
+            </div>
+
+          </CardBody>
+        </Card>
+
+      </Container>
+
+
+
+      {/* ================= ACTIVITY TIMELINE ================= */}
+
+      <Container>
+        <Card radius="xl" variant="default">
+          <CardHeader className="py-4 flex items-center justify-between">
+            <Typography weight="medium">Recent Activity</Typography>
+            <Button size="sm" variant="ghost">View Logs</Button>
+          </CardHeader>
+
+          <CardBody className="space-y-4">
+
+            <div className="flex items-center gap-3 text-sm">
+              <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
+              Screen <span className="font-medium">WS123840</span> came online
+            </div>
+
+            <div className="flex items-center gap-3 text-sm">
+              <div className="w-2 h-2 rounded-full bg-rose-500"></div>
+              Screen <span className="font-medium">WS839201</span> went offline
+            </div>
+
+            <div className="flex items-center gap-3 text-sm">
+              <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+              New playlist published
+            </div>
+
+          </CardBody>
+        </Card>
       </Container>
 
 

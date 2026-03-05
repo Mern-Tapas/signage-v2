@@ -10,6 +10,8 @@ import CardStack from '../custome/CardStack'
 import { Dialog, DialogBody, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '../custome/Dialog'
 import { useRouter } from 'next/navigation'
 import FileListView from '../custome/FileListView'
+import PlaylistListItem from '../custome/PlaylistListItem'
+import PlaylistItem from '../custome/PlaylistItem'
 
 function UserPlaylist() {
 
@@ -114,7 +116,7 @@ function UserPlaylist() {
                         </div>
                     </Container>
 
-                    <FileListView />
+                    <PlaylistItem />
                 </Container>
             </Card>
 

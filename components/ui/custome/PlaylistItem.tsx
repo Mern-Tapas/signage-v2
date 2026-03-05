@@ -5,11 +5,12 @@ import { Activity, EllipsisVertical, Eye, MapPin, Monitor, Trash, Volume1, Wifi,
 import { Badge } from './Badge'
 import Link from 'next/link'
 import { Dropdown, DropdownContent, DropdownItem, DropdownTrigger } from './Dropdown'
-import { Image, ListVideo, } from 'lucide-react'
+import {  ListVideo, } from 'lucide-react'
+import Image from 'next/image'
 import { Button } from './Button'
 
 
-function PlaylistListItem({ className, detailedView = true }: { className?: string, detailedView?: boolean }) {
+function PlaylistItem({ className, detailedView = true }: { className?: string, detailedView?: boolean }) {
 
     const getStatusColor = (status: string) => {
         switch (status) {
@@ -48,36 +49,26 @@ function PlaylistListItem({ className, detailedView = true }: { className?: stri
 
             <div className='flex gap-4 items-center w-full  '>
 
-                <div className="w-10 h-10 shrink-0 rounded-lg bg-gradient-to-br from-pink-500 via-pink-600 to-blue-700 flex items-center justify-center shadow-lg shadow-blue-300/50 hover:shadow-blue-400/60 transition-all duration-300 cursor-pointer group">
-                    <ListVideo className="w-5 h-5 text-white  transition-transform" />
+                <div className="w-10 h-10 shrink-0 rounded-lg bg-gradient-to-br overflow-hidden from-blue-500 via-blue-600 to-blue-700 flex items-center justify-center shadow-l shadow-blue-300/50 hover:shadow-blue-400/60 transition-all duration-300 cursor-pointer group">
+                    <Image src={'https://i.pinimg.com/1200x/ad/cd/d1/adcdd107f773d0155042159aafdc40e3.jpg'} height={100} width={100} alt='files'/>
                 </div>
                 <Container className='truncate'>
 
-                    <Link className='' href={'/user/playlists/123'}>
-                        <Typography weight='medium' className='text-sm truncate mb-1 w-full'>All Foods Creatives</Typography>
-                    </Link>                    {/* <Typography variant='caption' weight='medium'  className='truncate '>Please type here short description mk</Typography> */}
-                    <Container className='flex gap-2 items-center'>
-                        <p className='text-xs flex items-center gap-1 text-gray-500'> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae, ad!</p>
-                    </Container>
+                    <Link className='' href={'/user/screens/device'}>
+                        <Typography weight='medium' className='text-sm truncate mb-1 w-full'>Phoenix Shuttel Sirvice.jpeg</Typography>
+                    </Link>                   
+                    {/* <Container className='flex gap-2 items-center'>
+                        <p className='text-xs flex items-center gap-1 text-gray-500'> <MapPin size={14} />Location</p>
+                    </Container> */}
                 </Container>
             </div>
             <div className={`hidden ${detailedView ? "lg:flex" : ""} `}>
-                <Typography variant='caption'>WS123840</Typography>
+                <Typography variant='caption'>IMAGE</Typography>
             </div>
             <div className={`hidden ${detailedView ? "lg:flex" : ""} `}>
-                <div className={`flex items-center space-x-2 px-3 py-1.5 rounded-full ${getStatusBg(device.status)} backdrop-blur-sm`}>
-                    <span className={`w-2 h-2 rounded-full bg-gradient-to-r ${getStatusColor(device.status)} animate-pulse shadow-lg`}></span>
-                    <span className={`text-xs font-bold capitalize ${getStatusText(device.status)}`}>{device.status}</span>
-                    {device.status === 'online' ? (
-                        <Wifi className={`w-3.5 h-3.5 ${getStatusText(device.status)}`} />
-                    ) : device.status === 'offline' ? (
-                        <WifiOff className={`w-3.5 h-3.5 ${getStatusText(device.status)}`} />
-                    ) : (
-                        <Activity className={`w-3.5 h-3.5 ${getStatusText(device.status)}`} />
-                    )}
-                </div>
-
+                <Typography variant='caption'>10 MB</Typography>
             </div>
+           
             <div className={`hidden ${detailedView ? "lg:flex" : ""} `}>
 
                 <Container radius='md' padding='sm' className='border border-gray-300 flex justify-around gap-6 items-center '>
@@ -85,10 +76,7 @@ function PlaylistListItem({ className, detailedView = true }: { className?: stri
                         <ListVideo size={16} />
                         <Caption>10</Caption>
                     </div>
-                    <div className='flex gap-1 items-center'>
-                        <Image size={16} />
-                        <Caption>10</Caption>
-                    </div>
+                   
                     <div className='flex gap-1 items-center'>
                         <Volume1 size={16} />
                         <Caption>0</Caption>
@@ -116,11 +104,10 @@ function PlaylistListItem({ className, detailedView = true }: { className?: stri
                 </Dropdown>
             </div>
             <div className='justify-end md:flex gap-2 hidden '>
-                <Button size='sm' variant='danger'>Delete</Button>
-                <Button size='sm' variant='outline'>View</Button>
+                <Button size='sm' variant='danger'>Remove</Button>
             </div>
         </Container>
     )
 }
 
-export default PlaylistListItem
+export default PlaylistItem

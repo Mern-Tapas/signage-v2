@@ -6,11 +6,33 @@ import { Input } from '../custome/Input'
 import { Button } from '../custome/Button'
 import { Caption, Typography } from '@/components/typography/typography'
 import { Sheet } from 'lucide-react'
+import FilesTable, { FileItem } from '../custome/FilesTable'
 
 function UserDeviceReport() {
 
 
     const [value, setValue] = useState<string>("");
+
+    const files :FileItem[]= [
+      {
+        id: "1",
+        name: "Phoenix Shuttle Service.jpeg",
+        type: "IMAGE",
+        size: "10 MB",
+        linkedScreens: 10,
+        linkedPlaylists: 2,
+        thumbnail: "/sample.jpg",
+      },
+      {
+        id: "2",
+        name: "Promo Video.mp4",
+        type: "VIDEO",
+        size: "45 MB",
+        linkedScreens: 5,
+        linkedPlaylists: 1,
+        thumbnail: "/sample.jpg",
+      },
+    ];
 
     return (
         <Container className='grid gap-4 self-start grid-cols-1'>
@@ -60,7 +82,7 @@ function UserDeviceReport() {
                     </div>
                 </Container>
                 <Container>
-                    <table className='border-separate border-spacing-2 border border-gray-400 dark:border-gray-500  w-full'>
+                    {/* <table className='border-separate border-spacing-2 border border-gray-400 dark:border-gray-500  w-full'>
                         <thead>
                             <tr className=''>
                                 <td className='border'>Sr </td>
@@ -70,7 +92,9 @@ function UserDeviceReport() {
                                 <td className='border'>End Time</td>
                             </tr>
                         </thead>
-                    </table>
+                    </table> */}
+
+                    <FilesTable files={files}/>
                 </Container>
 
             </Container>

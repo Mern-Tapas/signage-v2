@@ -1,103 +1,192 @@
 'use client'
+
 import React from 'react'
 import Container from '@/components/layout/Container'
 import { Typography } from '@/components/typography/typography'
-import { Calendar } from '../custome/Calendar'
-import { useState } from 'react'
-import { Card, CardHeader } from '../custome/Card'
-import { Separator } from '../custome/Seprator'
-import IconBox from '../custome/IconBox'
-import { WatchIcon } from 'lucide-react'
-import Image from 'next/image'
-import { Button } from '../custome/Button'
+import { Card, CardBody, CardHeader } from '@/components/ui/custome/Card'
+import { Button } from '@/components/ui/custome/Button'
+import { Dropdown, DropdownContent, DropdownItem, DropdownTrigger } from '@/components/ui/custome/Dropdown'
+import { Badge } from '@/components/ui/custome/Badge'
+
+import {
+  Calendar,
+  Clock,
+  MoreVertical,
+  Plus,
+  Play,
+  Trash,
+  Eye
+} from 'lucide-react'
+
+function SchedulePage() {
+
+  const schedules = [
+    {
+      id: 1,
+      title: "Mall Promotion Video",
+      screen: "Indore Mall Display",
+      start: "10:00 AM",
+      end: "12:00 PM",
+      status: "running"
+    },
+    {
+      id: 2,
+      title: "Lunch Offer Campaign",
+      screen: "Food Court Screen",
+      start: "01:00 PM",
+      end: "03:00 PM",
+      status: "scheduled"
+    },
+    {
+      id: 3,
+      title: "Evening Sale Banner",
+      screen: "Main Entrance Display",
+      start: "05:00 PM",
+      end: "07:00 PM",
+      status: "scheduled"
+    }
+  ]
+
+  const getStatus = (status: string) => {
+    if (status === 'running') return <Badge variant="filled" color='success'>Running</Badge>
+    if (status === 'scheduled') return <Badge variant="filled" color='warning'>Scheduled</Badge>
+    return <Badge>Expired</Badge>
+  }
+
+  return (
+    <Container className="space-y-6">
+
+      {/* HEADER */}
+
+      <Container>
+        <Typography variant="h4" weight="medium">
+          Content Scheduler
+        </Typography>
+        <Typography variant="body2" color="secondary">
+          Manage scheduled and running display content
+        </Typography>
+      </Container>
 
 
+      {/* CREATE SCHEDULE CARD */}
 
-interface Event {
-    id: string;
-    title: string;
-    description: string;
-    event_date: string;
-    event_type: string;
-    status: string;
-}
+      <Card radius="xl">
 
-interface ScheduledContent {
-    id: string;
-    event_id: string;
-    content_title: string;
-    content_body: string;
-    publish_date: string;
-    platform: string;
-    status: string;
-}
+        <CardBody className="flex items-center justify-between">
 
-function UserSheduler() {
+          <Container className="flex items-center gap-4">
 
-
-    const [selectedDate, setSelectedDate] = useState<Date | null>(null);
-    const [events, setEvents] = useState<Event[]>([]);
-    const [loading, setLoading] = useState(true);
-
-
-    const fetchEvents = async () => {
-        try {
-
-        } catch (error) {
-            console.error('Error fetching events:', error);
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    const handleSaveEvent = async (eventData: Partial<Event>) => {
-        try {
-
-
-        } catch (error) {
-            console.error('Error saving event:', error);
-        }
-    };
-
-    const handleSaveContent = async (contentData: Partial<ScheduledContent>) => {
-        try {
-
-        } catch (error) {
-            console.error('Error saving content:', error);
-        }
-    };
-
-    const eventDates = events.map(event => new Date(event.event_date));
-
-
-    return (
-        <Container className='grid gap-6'>
-            <Container className='flex items-center justify-between'>
-                <Container>
-                    <Typography variant='h4' weight='medium'>Content Scheduler</Typography>
-                    <Typography variant='body2' color='secondary'>Connect playlist and manage your ads</Typography>
-                </Container>
-
+            <Container className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center">
+              <Calendar size={20} className="text-blue-600" />
             </Container>
 
             <Container>
-               f
+              <Typography weight="medium">
+                Schedule New Content
+              </Typography>
+
+              <Typography variant="caption" color="secondary">
+                Choose media, screens and time slot
+              </Typography>
             </Container>
 
-        </Container>
-    )
-}
+          </Container>
 
-export default UserSheduler
+          <Button variant="primary" icon={<Plus/>}>
+            Create Schedule
+          </Button>
+
+        </CardBody>
+
+      </Card>
 
 
-const ScheduledContent = () => {
-    return <Container radius='xl' padding='sm' variant='primary' className='flex gap-3 border border-gray-300'>
-        <div className=' h-12 w-12 rounded-md overflow-hidden'>
-            <Image src={"https://i.pinimg.com/736x/1a/0c/13/1a0c13f582d7b4bdcc11f129cf7a424d.jpg"} height={100} width={100} alt='content' />
-        </div>
-        <div>
-            <Typography variant='h6' weight='medium'>Phoenix citadel time Events</Typography>
-        </div>
+      {/* SCHEDULE LIST */}
+
+      <Card radius="xl">
+
+        <CardHeader className="flex items-center justify-between">
+          <Typography weight="medium">
+            Scheduled Content
+          </Typography>
+        </CardHeader>
+
+        <CardBody className="space-y-3">
+
+          {schedules.map((item) => (
+
+            <Container
+              key={item.id}
+              padding="sm"
+              radius="xl"
+              className="border border-gray-200 flex items-center justify-between hover:bg-gray-50 transition"
+            >
+
+              <Container className="flex items-center gap-4">
+
+                <Container className="w-10 h-10 rounded-lg bg-indigo-100 flex items-center justify-center">
+                  <Play size={16} className="text-indigo-600" />
+                </Container>
+
+                <Container>
+
+                  <Typography weight="medium" className="text-sm">
+                    {item.title}
+                  </Typography>
+
+                  <div className="flex items-center gap-3 text-xs text-gray-500">
+
+                    <span className="flex items-center gap-1">
+                      <Clock size={12} />
+                      {item.start} - {item.end}
+                    </span>
+
+                    <span>{item.screen}</span>
+
+                  </div>
+
+                </Container>
+
+              </Container>
+
+
+              <Container className="flex items-center gap-4">
+
+                {getStatus(item.status)}
+
+                <Dropdown>
+                  <DropdownTrigger>
+                    <MoreVertical size={18} />
+                  </DropdownTrigger>
+
+                  <DropdownContent align="right">
+                    <DropdownItem>
+                      <Eye size={14} /> View
+                    </DropdownItem>
+
+                    <DropdownItem>
+                      Edit
+                    </DropdownItem>
+
+                    <DropdownItem>
+                      <Trash size={14} /> Delete
+                    </DropdownItem>
+                  </DropdownContent>
+
+                </Dropdown>
+
+              </Container>
+
+            </Container>
+
+          ))}
+
+        </CardBody>
+
+      </Card>
+
     </Container>
+  )
 }
+
+export default SchedulePage
