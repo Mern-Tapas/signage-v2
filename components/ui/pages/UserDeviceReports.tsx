@@ -5,7 +5,7 @@ import { Select } from '../custome/Select'
 import { Input } from '../custome/Input'
 import { Button } from '../custome/Button'
 import { Caption, Typography } from '@/components/typography/typography'
-import { Sheet } from 'lucide-react'
+import { BoxIcon, Sheet } from 'lucide-react'
 import FilesTable, { FileItem } from '../custome/FilesTable'
 
 function UserDeviceReport() {
@@ -78,7 +78,7 @@ function UserDeviceReport() {
                     </div>
                     <div className='flex gap-3'>
                         <Button variant='secondary' icon={<Sheet size={16} />}>Excel </Button>
-                        <Button variant='secondary' icon={<Sheet size={16} />}>Pdf</Button>
+                        <Button variant='default' className='bg-[#F40F02] text-white' icon={<BoxIcon size={16} />}>Pdf</Button>
                     </div>
                 </Container>
                 <Container>
