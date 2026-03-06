@@ -77,7 +77,7 @@ function UserDeviceReport() {
                         <Caption>Here is the detailed report of Screen</Caption>
                     </div>
                     <div className='flex gap-3'>
-                        <Button variant='secondary' icon={<Sheet size={16} />}>Excel </Button>
+                        <Button variant='default' className='bg-[#008000] text-white' icon={<Sheet size={16} />}>Excel</Button>
                         <Button variant='default' className='bg-[#F40F02] text-white' icon={<BoxIcon size={16} />}>Pdf</Button>
                     </div>
                 </Container>
