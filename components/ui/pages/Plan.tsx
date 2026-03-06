@@ -363,7 +363,7 @@ export const Plan: React.FC = () => {
               Detailed Feature Comparison
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              See exactly what's included in each plan
+              See exactly what&apos;s included in each plan
             </p>
           </div>
 
