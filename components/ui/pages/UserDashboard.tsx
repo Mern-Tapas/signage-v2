@@ -128,7 +128,7 @@ function UserDashboard() {
         {/* Today's Schedule */}
         <Card radius="xl" variant="default">
           <CardHeader className="py-4 flex items-center justify-between">
-            <Typography weight="medium">Today's Schedule</Typography>
+            <Typography weight="medium">Today&apos;s Schedule</Typography>
             <Button size="sm" variant="ghost">View All</Button>
           </CardHeader>
 
