@@ -50,7 +50,7 @@ function Page() {
 
   return (
 
-    <Container className="max-w-6xl mx-auto grid gap-10">
+    <Container className="mx-auto grid gap-10">
 
       {/* HEADER */}
 
