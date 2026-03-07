@@ -69,13 +69,13 @@ const FileCard: React.FC<FileCardProps> = (
 
       {/* File Type Icon */}
 
-      <div
+      {/* <div
         className={`h-10 w-10 shrink-0 flex ${getColour(
           fileType
         )} rounded-lg items-center justify-center shadow-sm`}
       >
         {iconMap[fileType]}
-      </div>
+      </div> */}
 
       {/* File Info */}
 
@@ -93,7 +93,9 @@ const FileCard: React.FC<FileCardProps> = (
 
           {/* File Size */}
 
-          <span className="text-[10px] px-2 py-[2px] rounded-md bg-gray-100 text-gray-600 uppercase tracking-wide">
+          <span className={`text-[10px] text-white px-2 py-[2px] rounded-md bg-gray-100 text-gray-600 uppercase tracking-wide ${getColour(
+            fileType
+          )} rounded-lg items-center justify-center shadow-sm`}>
             {fileType}
           </span>
 

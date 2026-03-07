@@ -5,34 +5,34 @@ import { Select } from '../custome/Select'
 import { Input } from '../custome/Input'
 import { Button } from '../custome/Button'
 import { Caption, Typography } from '@/components/typography/typography'
-import { BoxIcon, Sheet } from 'lucide-react'
+import { BoxIcon, FileSpreadsheet, FileText, Sheet } from 'lucide-react'
 import FilesTable, { FileItem } from '../custome/FilesTable'
+import PlaybackLogsTable from '../custome/PlaybackLogsTable'
 
 function UserDeviceReport() {
 
 
     const [value, setValue] = useState<string>("");
 
-    const files :FileItem[]= [
-      {
-        id: "1",
-        name: "Phoenix Shuttle Service.jpeg",
-        type: "IMAGE",
-        size: "10 MB",
-        linkedScreens: 10,
-        linkedPlaylists: 2,
-        thumbnail: "/sample.jpg",
-      },
-      {
-        id: "2",
-        name: "Promo Video.mp4",
-        type: "VIDEO",
-        size: "45 MB",
-        linkedScreens: 5,
-        linkedPlaylists: 1,
-        thumbnail: "/sample.jpg",
-      },
+    const playbackLogs = [
+        {
+            id: "1",
+            filename: "summer-sale.mp4",
+            playlist: "Morning Ads",
+            startTime: "2026-05-20 10:00 AM",
+            endTime: "2026-05-20 10:00:30 AM",
+            duration: "30 sec"
+        },
+        {
+            id: "2",
+            filename: "burger-ad.jpg",
+            playlist: "Food Promotions",
+            startTime: "2026-05-20 10:01 AM",
+            endTime: "2026-05-20 10:01:15 AM",
+            duration: "15 sec"
+        }
     ];
+
 
     return (
         <Container className='grid gap-4 self-start grid-cols-1'>
@@ -77,8 +77,25 @@ function UserDeviceReport() {
                         <Caption color='muted'>Here is the detailed report of Screen</Caption>
                     </div>
                     <div className='flex gap-3'>
-                        <Button variant='default' className='bg-[#008000] text-white' icon={<Sheet size={16} />}>Excel</Button>
-                        <Button variant='default' className='bg-[#F40F02] text-white' icon={<BoxIcon size={16} />}>Pdf</Button>
+                        {/* Excel Download */}
+
+                        <Button
+                            onClick={() => { }}
+                            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-green-600 text-white text-sm font-medium hover:bg-green-700 transition shadow-sm"
+                        >
+                            <FileSpreadsheet size={18} />
+                            Download Excel
+                        </Button>
+
+                        {/* PDF Download */}
+
+                        <Button
+                            onClick={() => { }}
+                            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-red-600 text-white text-sm font-medium hover:bg-red-700 transition shadow-sm"
+                        >
+                            <FileText size={18} />
+                            Download PDF
+                        </Button>
                     </div>
                 </Container>
                 <Container>
@@ -94,7 +111,7 @@ function UserDeviceReport() {
                         </thead>
                     </table> */}
 
-                    <FilesTable files={files}/>
+                    <PlaybackLogsTable logs={playbackLogs} />
                 </Container>
 
             </Container>
