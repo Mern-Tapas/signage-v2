@@ -5,6 +5,7 @@ import { Typography } from "@/components/typography/typography";
 import { CalendarClock, CreditCard, FileText, FolderOpen, LayoutGrid, LifeBuoy, Monitor, PlaySquare, Settings, Timer } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 interface SidebarProps {
     isOpen: boolean
@@ -34,9 +35,18 @@ export default function Sidebar({ isOpen }: SidebarProps) {
         <Container className='flex items-center mt-4 justify-center gap-2 '>
             {isOpen ?
                 // <ImageBox height={400} width={400} src={"https://i.pinimg.com/736x/f6/26/47/f62647f23f4eb78d1b9d267c92ee1521.jpg"} size="xs" radius="none" className="" variant="transparent" />
-                <Typography weight="bold">Logo</Typography>
+                <div className="flex gap-2 items-center">
+                    <div className="logo h-8 w-8">
+                        <Image src={'/images/logo/logo.png'} height={200} width={200} alt="logo" />
+                    </div>
+                    <div>
+                        <Typography weight="bold" variant="h5">FOXMEDIA</Typography>
+                    </div>
+                </div>
                 :
-                <Typography weight="bold">L</Typography>
+                <div className="logo h-8 w-8">
+                    <Image src={'/images/logo/logo.png'} height={200} width={200} alt="logo" />
+                </div>
                 // <ImageBox height={400} width={400} src={"https://i.pinimg.com/736x/f6/26/47/f62647f23f4eb78d1b9d267c92ee1521.jpg"} size="xs" radius="none" className="" variant="transparent" />
             }
         </Container>

@@ -1,0 +1,229 @@
+'use client'
+
+import React from "react"
+import Container from "@/components/layout/Container"
+import { Typography } from "@/components/typography/typography"
+import { Check } from "lucide-react"
+import { Button } from "../custome/Button"
+
+function UpgradePage() {
+
+  const plans = [
+    {
+      name: "Free",
+      price: "₹0",
+      description: "Perfect for small setups",
+      features: [
+        "2 Screens",
+        "1 Playlist",
+        "1GB Storage",
+        "Basic Scheduling"
+      ],
+      current: true
+    },
+    {
+      name: "Pro",
+      price: "₹499 / mo",
+      description: "Best for growing businesses",
+      popular: true,
+      features: [
+        "20 Screens",
+        "Unlimited Playlists",
+        "20GB Storage",
+        "Advanced Scheduling",
+        "Priority Support"
+      ]
+    },
+    {
+      name: "Business",
+      price: "₹1499 / mo",
+      description: "For large deployments",
+      features: [
+        "Unlimited Screens",
+        "Unlimited Playlists",
+        "100GB Storage",
+        "Advanced Analytics",
+        "Priority Support"
+      ]
+    }
+  ]
+
+  return (
+
+    <Container className="grid gap-6">
+
+      {/* Header */}
+
+  
+
+      <Container>
+        <Typography variant='h4' weight='medium'>Upgrade Your Plan</Typography>
+        <Typography variant='body2' color='secondary'> Scale your digital signage network with more screens,
+          storage and advanced automation tools.</Typography>
+      </Container>
+
+
+
+      {/* Current Usage */}
+
+      <Container
+        radius="xl"
+        padding="lg"
+        variant="primary"
+        className="grid md:grid-cols-3 gap-6 items-center"
+      >
+
+        <div>
+          <Typography weight="medium">
+            Current Plan
+          </Typography>
+          <Typography className="text-gray-500 text-sm">
+            Free Plan
+          </Typography>
+        </div>
+
+        {/* Screens */}
+
+        <div>
+          <Typography className="text-sm mb-1">
+            Screens Usage
+          </Typography>
+
+          <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+            <div className="h-full w-full bg-red-500"></div>
+          </div>
+
+          <Typography variant="caption">
+            2 / 2 Screens Used
+          </Typography>
+        </div>
+
+        {/* Storage */}
+
+        <div>
+          <Typography className="text-sm mb-1">
+            Storage Usage
+          </Typography>
+
+          <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+            <div className="h-full w-[90%] bg-orange-500"></div>
+          </div>
+
+          <Typography variant="caption">
+            900MB / 1GB Used
+          </Typography>
+        </div>
+
+      </Container>
+
+
+      {/* Plans */}
+
+      <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+
+        {plans.map((plan, index) => (
+
+          <Container
+            key={index}
+            radius="xl"
+            padding="lg"
+            variant="primary"
+            className={`relative flex flex-col justify-between border transition hover:shadow-xl 
+            ${plan.popular ? "border-blue-500 scale-[1.02]" : ""}`}
+          >
+
+            {/* Popular Badge */}
+
+            {plan.popular && (
+
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs px-3 py-1 rounded-full">
+                Most Popular
+              </div>
+
+            )}
+
+            <div>
+
+              <Typography weight="medium">
+                {plan.name}
+              </Typography>
+
+              <Typography
+                variant="h3"
+                className="mt-2"
+              >
+                {plan.price}
+              </Typography>
+
+              <Typography
+                variant="caption"
+                className="text-gray-500"
+              >
+                {plan.description}
+              </Typography>
+
+
+              {/* Features */}
+
+              <div className="mt-6 space-y-3">
+
+                {plan.features.map((feature, i) => (
+
+                  <div key={i} className="flex items-center gap-2">
+
+                    <Check
+                      size={16}
+                      className="text-green-500"
+                    />
+
+                    <Typography variant="caption">
+                      {feature}
+                    </Typography>
+
+                  </div>
+
+                ))}
+
+              </div>
+
+            </div>
+
+
+            {/* Button */}
+
+            <div className="mt-8">
+
+              {plan.current ? (
+
+                <Button
+                  variant="outline"
+                  className="w-full"
+                >
+                  Current Plan
+                </Button>
+
+              ) : (
+
+                <Button
+                  variant="primary"
+                  className="w-full"
+                >
+                  Upgrade Plan
+                </Button>
+
+              )}
+
+            </div>
+
+          </Container>
+
+        ))}
+
+      </div>
+
+    </Container>
+
+  )
+}
+
+export default UpgradePage

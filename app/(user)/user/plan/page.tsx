@@ -1,4 +1,4 @@
-import Plan from '@/components/ui/pages/Plan';
+import Plan from '@/components/ui/pages/UpgradePage';
 import { Metadata } from 'next';
 import React from 'react'
 

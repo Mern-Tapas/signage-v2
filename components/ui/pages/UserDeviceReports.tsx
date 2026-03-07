@@ -73,8 +73,8 @@ function UserDeviceReport() {
             <Container padding='lg' variant='primary' radius='xl' className='grid grid-cols-1 gap-4'>
                 <Container className='flex justify-between items-center'>
                     <div>
-                        <Typography>Hotel Anjushri Lobby</Typography>
-                        <Caption>Here is the detailed report of Screen</Caption>
+                        <Typography weight='bold' className='leading-none'> Hotel Anjushri Lobby</Typography>
+                        <Caption color='muted'>Here is the detailed report of Screen</Caption>
                     </div>
                     <div className='flex gap-3'>
                         <Button variant='default' className='bg-[#008000] text-white' icon={<Sheet size={16} />}>Excel</Button>
