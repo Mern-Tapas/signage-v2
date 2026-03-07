@@ -14,28 +14,36 @@ import {
   ImageIcon,
   Calendar,
   HardDrive,
-  Link2
+  Link2,
+  Copy,
+  Monitor,
+  ListVideo
 } from "lucide-react";
+import Image from "next/image";
 
-function page() {
+function Page() {
 
   const file = {
     name: "Phoenix Shuttle Service.jpeg",
     type: "Image",
     size: "10 MB",
     uploaded: "12 March 2026",
+    resolution: "1920 x 1080",
+    duration: "-",
     screens: 10,
     playlists: 0,
+    id: "asset_3929392",
+    url: "https://cdn.cms.com/assets/phoenix.jpeg",
     preview:
-      "https://images.unsplash.com/photo-1581091215367-59ab6b3d0e2c"
+      "https://i.pinimg.com/1200x/c8/54/cc/c854ccce48c3dbbeb16a834046bce01c.jpg"
   };
 
   return (
     <Container className="grid gap-6">
 
-      {/* PAGE HEADER */}
+      {/* HEADER */}
 
-      <Container className="flex items-center justify-between">
+      <Container className="flex items-center justify-between flex-wrap gap-4">
 
         <Container>
           <Typography variant="h4" weight="medium">
@@ -43,21 +51,21 @@ function page() {
           </Typography>
 
           <Typography variant="body2" color="secondary">
-            Manage and view asset information
+            Manage and inspect asset information
           </Typography>
         </Container>
 
         <Container className="flex gap-3">
 
-          <Button variant="outline" icon={<Download/>}>
+          <Button variant="outline" icon={<Download size={16} />}>
             Download
           </Button>
 
-          <Button variant="outline" icon={<RefreshCw/>}>
-            Replace File
+          <Button variant="outline" icon={<RefreshCw size={16} />}>
+            Replace
           </Button>
 
-          <Button variant="danger"  icon={<Trash/>}>
+          <Button variant="danger" icon={<Trash size={16} />}>
             Delete
           </Button>
 
@@ -66,29 +74,45 @@ function page() {
       </Container>
 
 
-      {/* MAIN GRID */}
+      {/* GRID */}
 
       <Container className="grid lg:grid-cols-[2fr_1fr] gap-6">
 
-        {/* FILE PREVIEW */}
+        {/* PREVIEW */}
 
         <Card radius="xl">
 
-          <CardHeader>
+          <CardHeader className="flex items-center justify-between">
+
             <Typography weight="medium">
               File Preview
             </Typography>
+
+            <Badge>
+              {file.type}
+            </Badge>
+
           </CardHeader>
 
           <CardBody>
 
-            <div className="rounded-xl overflow-hidden border bg-gray-50 flex items-center justify-center h-[380px]">
+            <div className="relative rounded-xl overflow-hidden border border-gray-300 bg-gray-50 flex items-center justify-center h-[380px]">
 
-              <img
-                src={file.preview}
-                alt="preview"
-                className="max-h-full object-contain"
-              />
+              {file.preview ? (
+
+                <Image
+                  height={300}
+                  width={300}
+                  src={file.preview}
+                  alt="preview"
+                  className="max-h-full object-contain p-2"
+                />
+
+              ) : (
+
+                <ImageIcon size={40} className="text-gray-400" />
+
+              )}
 
             </div>
 
@@ -97,7 +121,7 @@ function page() {
         </Card>
 
 
-        {/* FILE INFORMATION */}
+        {/* FILE INFO */}
 
         <Card radius="xl">
 
@@ -107,35 +131,81 @@ function page() {
             </Typography>
           </CardHeader>
 
-          <CardBody className="space-y-5">
+          <CardBody className="space-y-4 text-sm">
 
-            <div className="flex items-center justify-between">
-              <span className="text-gray-500 text-sm">File Name</span>
-              <span className="text-sm font-medium">{file.name}</span>
+            <div className="flex justify-between">
+              <span className="text-gray-500">File Name</span>
+              <span className="font-medium">{file.name}</span>
             </div>
 
-            <div className="flex items-center justify-between">
-              <span className="text-gray-500 text-sm flex items-center gap-2">
-                <ImageIcon size={14} />
-                File Type
+            <div className="flex justify-between">
+              <span className="text-gray-500 flex items-center gap-2">
+                <ImageIcon size={14} /> Type
               </span>
               <Badge>{file.type}</Badge>
             </div>
 
-            <div className="flex items-center justify-between">
-              <span className="text-gray-500 text-sm flex items-center gap-2">
-                <HardDrive size={14} />
-                File Size
+            <div className="flex justify-between">
+              <span className="text-gray-500 flex items-center gap-2">
+                <HardDrive size={14} /> Size
               </span>
-              <span className="text-sm font-medium">{file.size}</span>
+              <span className="font-medium">{file.size}</span>
             </div>
 
-            <div className="flex items-center justify-between">
-              <span className="text-gray-500 text-sm flex items-center gap-2">
-                <Calendar size={14} />
-                Upload Date
+            <div className="flex justify-between">
+              <span className="text-gray-500 flex items-center gap-2">
+                <Calendar size={14} /> Upload Date
               </span>
-              <span className="text-sm font-medium">{file.uploaded}</span>
+              <span className="font-medium">{file.uploaded}</span>
+            </div>
+
+            <div className="flex justify-between">
+              <span className="text-gray-500">Resolution</span>
+              <span className="font-medium">{file.resolution}</span>
+            </div>
+
+            <div className="flex justify-between">
+              <span className="text-gray-500">Duration</span>
+              <span className="font-medium">{file.duration}</span>
+            </div>
+
+            <hr />
+
+            {/* FILE ID */}
+
+            <div className="flex justify-between items-center">
+
+              <span className="text-gray-500">
+                File ID
+              </span>
+
+              <div className="flex items-center gap-2">
+
+                <span className="font-medium text-xs">
+                  {file.id}
+                </span>
+
+                <button className="text-gray-400 hover:text-black">
+                  <Copy size={14} />
+                </button>
+
+              </div>
+
+            </div>
+
+            {/* FILE URL */}
+
+            <div className="flex justify-between items-center">
+
+              <span className="text-gray-500">
+                File URL
+              </span>
+
+              <button className="flex items-center gap-1 text-blue-600 text-xs">
+                <Link2 size={14} />
+                Copy Link
+              </button>
+
             </div>
 
           </CardBody>
@@ -145,75 +215,91 @@ function page() {
       </Container>
 
 
-
-      {/* LINKED SECTION */}
+      {/* LINKED USAGE */}
 
       <Card radius="xl">
 
         <CardHeader>
           <Typography weight="medium">
-            Linked Usage
+            Usage & Playlists
           </Typography>
         </CardHeader>
 
-        <CardBody>
+        <CardBody className="grid lg:grid-cols-[1fr_2fr] gap-6">
 
-          <div className="grid md:grid-cols-2 gap-4">
+          {/* PLAYBACK STATS */}
 
-            {/* Screens */}
+          <div className="border border-gray-300 rounded-xl p-4 space-y-3">
 
-            <div className="border rounded-xl p-4 flex items-center justify-between">
+            <Typography weight="medium">
+              Playback Stats
+            </Typography>
 
-              <div className="flex items-center gap-3">
-
-                <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
-                  <Link2 size={16} className="text-blue-600" />
-                </div>
-
-                <div>
-                  <Typography weight="medium">
-                    Screens
-                  </Typography>
-
-                  <Typography variant="caption" color="secondary">
-                    Displays using this file
-                  </Typography>
-                </div>
-
-              </div>
-
-              <Badge variant="outlined">
-                {file.screens}
-              </Badge>
-
+            <div className="flex justify-between text-sm">
+              <span className="text-gray-500">Total Plays</span>
+              <span className="font-medium">3,240</span>
             </div>
 
+            <div className="flex justify-between text-sm">
+              <span className="text-gray-500">Last Played</span>
+              <span className="font-medium">Today 10:32 AM</span>
+            </div>
 
-            {/* Playlists */}
+          </div>
 
-            <div className="border rounded-xl p-4 flex items-center justify-between">
 
-              <div className="flex items-center gap-3">
+          {/* PLAYLIST LIST */}
 
-                <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center">
-                  <Link2 size={16} className="text-purple-600" />
+          <div className="border border-gray-300 rounded-xl p-4">
+
+            <Typography weight="medium" className="mb-4">
+              Playlists Using This File
+            </Typography>
+
+            <div className="space-y-3">
+
+              {[
+                { id: 1, name: "Morning Ads", items: 8 },
+                { id: 2, name: "Restaurant Promo", items: 5 },
+                { id: 3, name: "Weekend Offers", items: 12 }
+              ].map((playlist) => (
+
+                <div
+                  key={playlist.id}
+                  className="flex items-center justify-between bg-gray-100 rounded-lg px-3 py-2"
+                >
+
+                  <div>
+
+                    <p className="text-sm font-medium">
+                      {playlist.name}
+                    </p>
+
+                    <p className="text-xs text-gray-500">
+                      {playlist.items} items
+                    </p>
+
+                  </div>
+
+                  <div className="flex gap-3">
+                    <Button
+                      size="sm"
+                      variant="outline"
+                    >
+                      View
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="danger"
+                      className="text-white border-red-200"
+                    >
+                      Remove
+                    </Button>
+                  </div>
+
                 </div>
 
-                <div>
-                  <Typography weight="medium">
-                    Playlists
-                  </Typography>
-
-                  <Typography variant="caption" color="secondary">
-                    Playlists using this file
-                  </Typography>
-                </div>
-
-              </div>
-
-              <Badge variant="outlined">
-                {file.playlists}
-              </Badge>
+              ))}
 
             </div>
 
@@ -227,4 +313,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
