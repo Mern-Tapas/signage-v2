@@ -9,6 +9,7 @@ import { Card, CardBody, CardHeader } from '../custome/Card';
 import DeviceList from '../custome/DeviceList';
 import StackedCircleGraph from '../custome/StackedGraph';
 import RecentOfflineItem from '../custome/RecentOfflineItem';
+import Link from 'next/link';
 
 function UserDashboard() {
 
@@ -32,7 +33,7 @@ function UserDashboard() {
         <p className="text-black font-medium">
           You’re currently on the <span className="font-semibold">Free Plan</span>. Upgrade to unlock more features!
         </p>
-        <Button variant='primary'>Upgrade</Button>
+        <Button variant='primary'><Link href={'/user/plan'}>Upgrade</Link></Button>
       </div>
       <Container className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4'>
 
