@@ -30,6 +30,22 @@ function UserDeviceReport() {
             startTime: "2026-05-20 10:01 AM",
             endTime: "2026-05-20 10:01:15 AM",
             duration: "15 sec"
+        },
+        {
+            id: "3",
+            filename: "burger-ad.jpg",
+            playlist: "Food Promotions",
+            startTime: "2026-05-20 10:01 AM",
+            endTime: "2026-05-20 10:01:15 AM",
+            duration: "15 sec"
+        },
+        {
+            id: "4",
+            filename: "burger-ad.jpg",
+            playlist: "Food Promotions",
+            startTime: "2026-05-20 10:01 AM",
+            endTime: "2026-05-20 10:01:15 AM",
+            duration: "15 sec"
         }
     ];
 
@@ -71,7 +87,7 @@ function UserDeviceReport() {
             </Container>
 
             <Container padding='lg' variant='primary' radius='xl' className='grid grid-cols-1 gap-4'>
-                <Container className='flex justify-between items-center'>
+                <Container className='flex lg:flex-row flex-col justify-between lg:gap-0 gap-4 lg:items-center'>
                     <div>
                         <Typography weight='bold' className='leading-none'> Hotel Anjushri Lobby</Typography>
                         <Caption color='muted'>Here is the detailed report of Screen</Caption>

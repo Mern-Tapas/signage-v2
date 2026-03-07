@@ -19,11 +19,23 @@ function UpgradePage() {
     {
       name: "Free",
       price: "₹0",
-      description: "Perfect for small setups",
+      description: "Perfect for testing the platform",
       features: [
         "2 Screens",
         "1 Playlist",
         "1GB Storage",
+        "Basic Scheduling"
+      ],
+      current: true
+    },
+    {
+      name: "Starter",
+      price: "₹299 / mo",
+      description: "For small businesses",
+      features: [
+        "5 Screens",
+        "5 Playlists",
+        "5GB Storage",
         "Basic Scheduling"
       ]
     },
@@ -32,7 +44,6 @@ function UpgradePage() {
       price: "₹499 / mo",
       description: "Best for growing businesses",
       popular: true,
-      current: true,
       features: [
         "20 Screens",
         "Unlimited Playlists",
@@ -50,7 +61,8 @@ function UpgradePage() {
         "Unlimited Playlists",
         "100GB Storage",
         "Advanced Analytics",
-        "Priority Support"
+        "Priority Support",
+        "API Access"
       ]
     }
   ]
@@ -217,7 +229,7 @@ function UpgradePage() {
 
       {/* Plans */}
 
-      <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
 
         {plans.map((plan, index) => (
 
@@ -226,25 +238,32 @@ function UpgradePage() {
             radius="xl"
             padding="lg"
             variant="primary"
-            className={`relative flex flex-col justify-between border transition hover:shadow-xl 
-            ${plan.popular ? "border-blue-500 scale-[1.02]" : ""}`}
+            className={`relative flex flex-col justify-between border transition duration-300 hover:shadow-xl hover:-translate-y-1
+      ${plan.popular ? "border-blue-500 shadow-lg" : ""}`}
           >
+
+            {/* Popular Badge */}
 
             {plan.popular && (
 
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs px-3 py-1 rounded-full">
-                Most Popular
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-medium">
+                Recommended
               </div>
 
             )}
 
+            {/* Plan Info */}
+
             <div>
 
-              <Typography weight="medium">
+              <Typography weight="medium" className="text-lg">
                 {plan.name}
               </Typography>
 
-              <Typography variant="h3" className="mt-2">
+              <Typography
+                variant="h3"
+                className="mt-2"
+              >
                 {plan.price}
               </Typography>
 
@@ -256,13 +275,26 @@ function UpgradePage() {
               </Typography>
 
 
-              <div className="mt-6 space-y-3">
+              {/* Divider */}
+
+              <div className="h-px bg-gray-200 my-5"></div>
+
+
+              {/* Features */}
+
+              <div className="space-y-3">
 
                 {plan.features.map((feature, i) => (
 
-                  <div key={i} className="flex items-center gap-2">
+                  <div
+                    key={i}
+                    className="flex items-center gap-2"
+                  >
 
-                    <Check size={16} className="text-green-500" />
+                    <Check
+                      size={16}
+                      className="text-green-500"
+                    />
 
                     <Typography variant="caption">
                       {feature}
@@ -276,6 +308,8 @@ function UpgradePage() {
 
             </div>
 
+
+            {/* Button */}
 
             <div className="mt-8">
 
@@ -291,10 +325,10 @@ function UpgradePage() {
               ) : (
 
                 <Button
-                  variant="primary"
+                  variant={plan.popular ? "primary" : "outline"}
                   className="w-full"
                 >
-                  Upgrade Plan
+                  Upgrade
                 </Button>
 
               )}
