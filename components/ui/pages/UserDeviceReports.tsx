@@ -8,6 +8,7 @@ import { Caption, Typography } from '@/components/typography/typography'
 import { BoxIcon, FileSpreadsheet, FileText, Sheet } from 'lucide-react'
 import FilesTable, { FileItem } from '../custome/FilesTable'
 import PlaybackLogsTable from '../custome/PlaybackLogsTable'
+import EmptyState from '../custome/EmptyState'
 
 function UserDeviceReport() {
 
@@ -114,6 +115,8 @@ function UserDeviceReport() {
                         </Button>
                     </div>
                 </Container>
+
+                {/* log report */}
                 <Container>
                     {/* <table className='border-separate border-spacing-2 border border-gray-400 dark:border-gray-500  w-full'>
                         <thead>
@@ -132,7 +135,16 @@ function UserDeviceReport() {
 
             </Container>
 
-
+            <EmptyState
+                icon={BoxIcon}
+                title="No log report found"
+                description="Select device and date range to generate report"
+                buttonText="Generate Report"
+                onButtonClick={() => {
+                    // navigate("/files/upload");
+                }}
+                iconGradient="bg-gradient-to-br from-gray-500 via-gray-600 to-gray-700"
+            />
 
         </Container>
 

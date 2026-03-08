@@ -180,7 +180,7 @@ function UserFiles() {
                     // navigate("/files/upload");
                 }}
                 iconGradient="bg-gradient-to-br from-gray-500 via-gray-600 to-gray-700"
-            />;
+            />
 
             {/* empty state  */}
 
