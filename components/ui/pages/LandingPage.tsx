@@ -1,4 +1,5 @@
 'use client'
+import Link from "next/link"
 import { useState, useEffect, useRef, RefObject } from "react"
 
 // --- Types ---
@@ -376,9 +377,9 @@ export default function FoxMediaLanding() {
           ))}
         </div>
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-          <button style={{ background: "none", border: "none", color: "#374151", fontWeight: 500, fontSize: 15, cursor: "pointer", fontFamily: "'DM Sans', sans-serif" }}>
+          <Link href={'/user/dashboard'} style={{ background: "none", border: "none", color: "#374151", fontWeight: 500, fontSize: 15, cursor: "pointer", fontFamily: "'DM Sans', sans-serif" }}>
             Log in
-          </button>
+          </Link>
           <button
             style={{
               background: "linear-gradient(135deg,#2563eb,#1d4ed8)", color: "#fff",

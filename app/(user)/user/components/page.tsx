@@ -50,27 +50,28 @@ import {
 } from '@/components/ui/custome/Drawer'
 import Testing from '@/components/ui/custome/Testing';
 import FilesTable, { FileItem } from '@/components/ui/custome/FilesTable';
+import Counter from '@/components/ui/custome/Counter';
 
 
-const files :FileItem[]= [
-  {
-    id: "1",
-    name: "Phoenix Shuttle Service.jpeg",
-    type: "IMAGE",
-    size: "10 MB",
-    linkedScreens: 10,
-    linkedPlaylists: 2,
-    thumbnail: "/sample.jpg",
-  },
-  {
-    id: "2",
-    name: "Promo Video.mp4",
-    type: "VIDEO",
-    size: "45 MB",
-    linkedScreens: 5,
-    linkedPlaylists: 1,
-    thumbnail: "/sample.jpg",
-  },
+const files: FileItem[] = [
+    {
+        id: "1",
+        name: "Phoenix Shuttle Service.jpeg",
+        type: "IMAGE",
+        size: "10 MB",
+        linkedScreens: 10,
+        linkedPlaylists: 2,
+        thumbnail: "/sample.jpg",
+    },
+    {
+        id: "2",
+        name: "Promo Video.mp4",
+        type: "VIDEO",
+        size: "45 MB",
+        linkedScreens: 5,
+        linkedPlaylists: 1,
+        thumbnail: "/sample.jpg",
+    },
 ];
 
 function Page() {
@@ -220,10 +221,12 @@ function Page() {
 
             <Container className='w-full'>
                 d
-                      <FilesTable files={files} />
+                <FilesTable files={files} />
 
             </Container>
-      
+
+            <Counter />
+
         </Container>
     )
 }

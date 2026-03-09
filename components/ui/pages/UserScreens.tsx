@@ -226,37 +226,96 @@ function UserScreens() {
                             <Button size='icon' className='block md:hidden' variant='primary' icon={<PlusIcon strokeWidth={1.2} />} />
 
                         </DialogTrigger>
-                        <DialogContent>
+                        <DialogContent className="max-w-md">
+
                             <DialogHeader>
-                                <DialogTitle>Create User</DialogTitle>
+
+                                <DialogTitle>Add New Screen</DialogTitle>
+
                                 <DialogDescription>
-                                    Fill in the details below to create a new user.
+                                    Register a new screen/device to start managing content and playlists.
                                 </DialogDescription>
+
                             </DialogHeader>
 
+
                             <DialogBody>
+
                                 <form className="space-y-4">
+
+                                    {/* Screen Name */}
+
                                     <div>
-                                        <Typography variant='body2' className="">Name</Typography >
+                                        <Typography variant="body2">Screen Name</Typography>
+
                                         <input
                                             type="text"
-                                            className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-700 bg-transparent px-3 py-2"
+                                            placeholder="Lobby TV"
+                                            className="mt-1 w-full rounded-md border border-gray-300 dark:border-gray-700 bg-transparent px-3 py-2"
                                         />
                                     </div>
+
+
+                                    {/* Device ID */}
+
                                     <div>
-                                        <Typography variant='body2' className="">Email</Typography>
+                                        <Typography variant="body2">Device ID</Typography>
+
                                         <input
-                                            type="email"
-                                            className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-700 bg-transparent px-3 py-2"
+                                            type="text"
+                                            placeholder="Enter device activation code"
+                                            className="mt-1 w-full rounded-md border border-gray-300 dark:border-gray-700 bg-transparent px-3 py-2"
+                                        />
+
+                                        <p className="text-xs text-gray-500 mt-1">
+                                            This code is shown on the screen device.
+                                        </p>
+                                    </div>
+
+
+                                    {/* Location */}
+
+                                    <div>
+                                        <Typography variant="body2">Location</Typography>
+
+                                        <input
+                                            type="text"
+                                            placeholder="Hotel Lobby"
+                                            className="mt-1 w-full rounded-md border border-gray-300 dark:border-gray-700 bg-transparent px-3 py-2"
                                         />
                                     </div>
+
+
+                                    {/* Description */}
+
+                                    <div>
+                                        <Typography variant="body2">Description</Typography>
+
+                                        <textarea
+                                            rows={3}
+                                            placeholder="Optional notes about this screen"
+                                            className="mt-1 w-full rounded-md border border-gray-300 dark:border-gray-700 bg-transparent px-3 py-2"
+                                        />
+
+                                    </div>
+
                                 </form>
+
                             </DialogBody>
 
-                            <DialogFooter>
-                                <DialogClose>Cancel</DialogClose>
-                                <Button variant="primary">Save</Button>
+
+                            <DialogFooter >
+
+                                <DialogClose >
+                                    Close
+                                </DialogClose>
+
+                                <Button variant="primary">
+                                    Add Screen
+                                </Button>
+
                             </DialogFooter>
+
                         </DialogContent>
                     </Dialog>
 
@@ -304,7 +363,7 @@ function UserScreens() {
                     })}
 
 
-                   
+
                 </Container>
 
             }
