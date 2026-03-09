@@ -4,7 +4,6 @@
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
-
 generator client {
   provider = "prisma-client"
   output   = "../lib/generated/prisma"
@@ -12,33 +11,25 @@ generator client {
 
 datasource db {
   provider = "postgresql"
- 
 }
 
-
 model Device {
-  id            String   @id @default(cuid())
-  name          String
-  deviceKey     String   @unique
-  location      String?
-  status        DeviceStatus @default(OFFLINE)
+  id        String       @id @default(cuid())
+  name      String
+  deviceKey String       @unique
+  location  String?
+  status    DeviceStatus @default(OFFLINE)
 
-  ipAddress     String?
-  lastSeen      DateTime?
+  ipAddress String?
+  lastSeen  DateTime?
 
-  volume        Int      @default(50)
-  brightness    Int      @default(70)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
-  isMuted       Boolean  @default(false)
-  screenOn      Boolean  @default(true)
+  playlistId String?
+  playlist   Playlist? @relation(fields: [playlistId], references: [id])
 
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
-
-  playlistId    String?
-  playlist      Playlist? @relation(fields: [playlistId], references: [id])
-
-  schedules     Schedule[]
+  schedules Schedule[]
 }
 
 enum DeviceStatus {
@@ -47,24 +38,23 @@ enum DeviceStatus {
   UNKNOWN
 }
 
-
 model Playlist {
-  id        String   @id @default(cuid())
-  name      String
-  devices   Device[]
+  id      String   @id @default(cuid())
+  name    String
+  devices Device[]
 
   createdAt DateTime @default(now())
 }
 
 model Schedule {
-  id        String   @id @default(cuid())
-  deviceId  String
-  device    Device   @relation(fields: [deviceId], references: [id])
+  id       String @id @default(cuid())
+  deviceId String
+  device   Device @relation(fields: [deviceId], references: [id])
 
   startTime DateTime
   endTime   DateTime
 
-  action    ScheduleAction
+  action ScheduleAction
 
   createdAt DateTime @default(now())
 }

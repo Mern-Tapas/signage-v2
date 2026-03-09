@@ -20,7 +20,7 @@ export default function Sidebar({ isOpen }: SidebarProps) {
         { href: '/user/dashboard', label: 'Dashboard', icon: LayoutGrid },
         { href: '/user/screens', label: 'Screens', icon: Monitor },
         { href: '/user/playlists', label: 'Playlist', icon: PlaySquare },
-        { href: '/user/scheduler', label: 'Scheduler', icon: Timer },
+        { href: '/user/content', label: 'Content', icon: Timer },
         { href: '/user/files', label: 'Files', icon: FolderOpen },
         { href: '/user/reports', label: 'Reports', icon: FileText },
         { href: '/user/settings', label: 'Settings', icon: Settings },
