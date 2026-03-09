@@ -14,8 +14,9 @@ import {
   Edit,
   Trash
 } from "lucide-react"
+import Image from "next/image"
 
-type TabType = "active" | "scheduled" | "expired"
+type TabType = "published" | "scheduled" | "expired"
 
 interface ContentItem {
   id: number
@@ -35,11 +36,11 @@ interface ContentItem {
 
 export default function Page() {
 
-  const [tab, setTab] = useState<TabType>("active")
+  const [tab, setTab] = useState<TabType>("published")
 
   const data: Record<TabType, ContentItem[]> = {
 
-    active: [
+    published: [
       {
         id: 1,
         name: "Restaurant Promo",
@@ -106,7 +107,7 @@ export default function Page() {
         </Typography>
 
         <Typography variant="body2" color="secondary">
-          Manage active, scheduled and expired content
+          Manage published, scheduled and expired content
         </Typography>
 
       </Container>
@@ -114,37 +115,54 @@ export default function Page() {
 
       {/* TABS */}
 
-      <Container className="flex gap-2 border-b pb-2">
+      <Container className="flex gap-6 border-b relative">
 
-        <button
-          onClick={() => setTab("active")}
-          className={`px-4 py-2 rounded-lg text-sm flex items-center gap-2 ${
-            tab === "active" ? "bg-blue-50 text-blue-600" : "text-gray-500"
-          }`}
-        >
-          <PlayCircle size={16}/>
-          Active
-        </button>
+        {[
+          { key: "published", label: "Published", icon: <PlayCircle size={16} />, count: 12 },
+          { key: "scheduled", label: "Scheduled", icon: <Clock size={16} />, count: 4 },
+          { key: "expired", label: "Expired", icon: <Archive size={16} />, count: 8 }
+        ].map((item) => {
 
-        <button
-          onClick={() => setTab("scheduled")}
-          className={`px-4 py-2 rounded-lg text-sm flex items-center gap-2 ${
-            tab === "scheduled" ? "bg-blue-50 text-blue-600" : "text-gray-500"
-          }`}
-        >
-          <Clock size={16}/>
-          Scheduled
-        </button>
+          const ispublished = tab === item.key
 
-        <button
-          onClick={() => setTab("expired")}
-          className={`px-4 py-2 rounded-lg text-sm flex items-center gap-2 ${
-            tab === "expired" ? "bg-blue-50 text-blue-600" : "text-gray-500"
-          }`}
-        >
-          <Archive size={16}/>
-          Expired
-        </button>
+          return (
+
+            <button
+              key={item.key}
+              onClick={() => setTab(item.key as TabType)}
+              className="relative flex items-center gap-2 pb-3 text-sm font-medium transition"
+            >
+
+              <span
+                className={`flex items-center gap-2 ${ispublished ? "text-blue-600" : "text-gray-500 hover:text-gray-700"
+                  }`}
+              >
+                {item.icon}
+                {item.label}
+
+                {/* COUNT BADGE */}
+
+                <span
+                  className={`text-xs px-2 py-0.5 rounded-full ${ispublished
+                      ? "bg-blue-100 text-blue-600"
+                      : "bg-gray-100 text-gray-600"
+                    }`}
+                >
+                  {item.count}
+                </span>
+
+              </span>
+
+              {/* published INDICATOR */}
+
+              {ispublished && (
+                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-blue-600 rounded-full" />
+              )}
+
+            </button>
+
+          )
+        })}
 
       </Container>
 
@@ -163,7 +181,9 @@ export default function Page() {
 
               <div className="flex items-center gap-4">
 
-                <img
+                <Image
+                  height={300}
+                  width={300}
                   src={item.thumbnail}
                   className="w-20 h-14 rounded-md object-cover border"
                   alt="content"
@@ -194,7 +214,7 @@ export default function Page() {
 
               <div className="flex items-center gap-6 text-sm">
 
-                {tab === "active" && (
+                {tab === "published" && (
                   <>
                     <div>
                       <p className="text-gray-500">Screens</p>
@@ -268,7 +288,7 @@ export default function Page() {
                 <Button
                   size="sm"
                   variant="outline"
-                  icon={<Edit size={14}/>}
+                  icon={<Edit size={14} />}
                 >
                   Edit
                 </Button>
@@ -276,7 +296,7 @@ export default function Page() {
                 <Button
                   size="sm"
                   variant="danger"
-                  icon={<Trash size={14}/>}
+                  icon={<Trash size={14} />}
                 >
                   Delete
                 </Button>

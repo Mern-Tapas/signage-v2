@@ -57,68 +57,150 @@ function UserScreen() {
 
             <Container className='flex gap-4 flex-col lg:flex-row' variant='default' padding='none'>
 
-                {/* Device Details */}
-                <Container className='lg:w-130 w-full gap-6 grid relative shrink-0' variant='primary' padding='lg' radius='xl' >
-                    <div className={`absolute right-6 top-6 flex items-center space-x-2 px-3 py-1.5 rounded-full ${getStatusBg(device.status)} backdrop-blur-sm`}>
-                        <span className={`w-2 h-2 rounded-full bg-gradient-to-r ${getStatusColor(device.status)} animate-pulse shadow-lg`}></span>
-                        <span className={`text-xs font-bold capitalize ${getStatusText(device.status)}`}>{device.status}</span>
-                        {device.status === 'online' ? (
-                            <Wifi className={`w-3.5 h-3.5 ${getStatusText(device.status)}`} />
-                        ) : device.status === 'offline' ? (
-                            <WifiOff className={`w-3.5 h-3.5 ${getStatusText(device.status)}`} />
+                <Container
+                    className=' w-full relative overflow-hidden'
+                    variant='primary'
+                    padding='lg'
+                    radius='xl'
+                >
+
+                    {/* HEADER GRADIENT */}
+
+                    <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10" />
+
+                    {/* STATUS BADGE */}
+
+                    <div
+                        className={`absolute right-6 top-6 flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold ${getStatusBg(device.status)}`}
+                    >
+                        <span
+                            className={`w-2 h-2 rounded-full bg-gradient-to-r ${getStatusColor(device.status)} animate-pulse`}
+                        />
+
+                        {device.status}
+
+                        {device.status === "online" ? (
+                            <Wifi size={14} />
+                        ) : device.status === "offline" ? (
+                            <WifiOff size={14} />
                         ) : (
-                            <Activity className={`w-3.5 h-3.5 ${getStatusText(device.status)}`} />
+                            <Activity size={14} />
                         )}
                     </div>
 
-                    <div className='flex gap-4  w-full'>
-                        <div>
-                            <div className="w-12 h-12 shrink-0 rounded-lg bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 flex items-center justify-center shadow-lg shadow-blue-300/50 hover:shadow-blue-400/60 transition-all duration-300 cursor-pointer group">
-                                <Monitor className="w-5 h-5 text-white  transition-transform" />
-                            </div>
+
+                    {/* DEVICE HEADER */}
+
+                    <div className='flex gap-4 items-center mb-6'>
+
+                        <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-lg">
+
+                            <Monitor className="w-6 h-6 text-white" />
+
                         </div>
-                        <div className='truncate lg:w-80 w-70'>
-                            <Typography className='truncate' variant='h4'>Shalimar Township Block A1</Typography>
-                            <Typography variant='caption' color='muted'>Lorem ipsum dolor sit amet.</Typography>
+
+                        <div className='truncate'>
+
+                            <Typography className='truncate' variant='h4'>
+                                Shalimar Township Block A1
+                            </Typography>
+
+                            <Typography variant='caption' color='muted'>
+                                Android Player • Last active 2 min ago
+                            </Typography>
+
                         </div>
+
                     </div>
 
-                    <Container className='grid gap-6 lg:grid-cols-2  grid-cols-2' radius='md'>
-                        {/* section 1 */}
-                        <div className='flex gap-2  items-center'>
-                            <Info size={24} strokeWidth={1.5} className='shrink-0 h-10 w-10 p-2' />
-                            <div className='grid'>
-                                <Typography variant='caption' color='muted'>DEVICE ID</Typography>
-                                <Typography variant='caption' weight='bold'>WITTY12930</Typography>
+
+                    {/* DEVICE STATS */}
+                    <Container className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+
+                        {/* Device ID */}
+
+                        <div className="bg-gray-50 border border-gray-100 hover:border-gray-200 hover:bg-white transition rounded-xl p-4 flex items-start gap-3">
+
+                            <Info size={20} className="text-gray-500 mt-0.5 shrink-0" />
+
+                            <div className="flex flex-col min-w-0">
+
+                                <Typography variant="caption" color="muted">
+                                    Device ID
+                                </Typography>
+
+                                <Typography weight="bold" className="text-sm whitespace-nowrap">
+                                    WITTY12930
+                                </Typography>
+
                             </div>
+
                         </div>
-                        {/* section 2 */}
-                        <div className='flex gap-2  items-center'>
-                            <Maximize size={24} strokeWidth={1.5} className='shrink-0 h-10 w-10 p-2' />
-                            <div className='grid'>
-                                <Typography variant='caption' color='muted'>RESOLUTION</Typography>
-                                <Typography variant='caption' weight='bold'>8 Gb</Typography>
+
+
+                        {/* Resolution */}
+
+                        <div className="bg-gray-50 border border-gray-100 hover:border-gray-200 hover:bg-white transition rounded-xl p-4 flex items-start gap-3">
+
+                            <Maximize size={20} className="text-gray-500 mt-0.5 shrink-0" />
+
+                            <div className="flex flex-col min-w-0">
+
+                                <Typography variant="caption" color="muted">
+                                    Resolution
+                                </Typography>
+
+                                <Typography weight="bold" className="text-sm whitespace-nowrap">
+                                    1920 × 1080
+                                </Typography>
+
                             </div>
+
                         </div>
-                        {/* section 3 */}
-                        <div className='flex gap-2  items-center'>
-                            <Database size={24} strokeWidth={1.5} className='shrink-0 h-10 w-10 p-2' />
-                            <div className='grid'>
-                                <Typography variant='caption' color='muted'>STORAGE</Typography>
-                                <Typography variant='caption' weight='bold'>8 Gb</Typography>
+
+
+                        {/* Storage */}
+
+                        <div className="bg-gray-50 border border-gray-100 hover:border-gray-200 hover:bg-white transition rounded-xl p-4 flex items-start gap-3">
+
+                            <Database size={20} className="text-gray-500 mt-0.5 shrink-0" />
+
+                            <div className="flex flex-col min-w-0">
+
+                                <Typography variant="caption" color="muted">
+                                    Storage
+                                </Typography>
+
+                                <Typography weight="bold" className="text-sm whitespace-nowrap">
+                                    8 GB / 16 GB
+                                </Typography>
+
                             </div>
+
                         </div>
-                        {/* section 3 */}
-                        <div className='flex gap-2  items-center'>
-                            <Database size={24} strokeWidth={1.5} className='shrink-0 h-10 w-10 p-2' />
-                            <div className='grid'>
-                                <Typography variant='caption' color='muted'>STORAGE</Typography>
-                                <Typography variant='caption' weight='bold'>8 Gb</Typography>
+
+
+                        {/* Uptime */}
+
+                        <div className="bg-gray-50 border border-gray-100 hover:border-gray-200 hover:bg-white transition rounded-xl p-4 flex items-start gap-3">
+
+                            <Activity size={20} className="text-gray-500 mt-0.5 shrink-0" />
+
+                            <div className="flex flex-col min-w-0">
+
+                                <Typography variant="caption" color="muted">
+                                    Uptime
+                                </Typography>
+
+                                <Typography weight="bold" className="text-sm whitespace-nowrap">
+                                    3 Days
+                                </Typography>
+
                             </div>
+
                         </div>
 
                     </Container>
-
                 </Container>
 
             </Container>

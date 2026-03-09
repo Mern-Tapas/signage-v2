@@ -18,10 +18,7 @@ import {
     DialogClose,
 } from "@/components/ui/custome/Dialog";
 import { Input } from '../custome/Input';
-import Checkbox from '../custome/Checkbox';
-import PlaylistListItem from '../custome/PlaylistListItem';
 import PlaylistCard from '../custome/PlaylistCard';
-import DeviceList from '../custome/DeviceList';
 import PlaylistList from '../custome/PlaylistListItem';
 import EmptyState from '../custome/EmptyState';
 function UserPlaylists() {

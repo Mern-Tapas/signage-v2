@@ -2,7 +2,7 @@
 import React from "react";
 import Container from "@/components/layout/Container";
 import { Typography } from "@/components/typography/typography";
-import { CalendarClock, CreditCard, FileText, FolderOpen, LayoutGrid, LifeBuoy, Monitor, PlaySquare, Settings, Timer } from "lucide-react";
+import { CalendarClock, CalendarRange, CreditCard, FileText, FolderOpen, LayoutDashboard, LayoutGrid, LifeBuoy, Monitor, PlaySquare, Settings, Timer } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
@@ -20,7 +20,7 @@ export default function Sidebar({ isOpen }: SidebarProps) {
         { href: '/user/dashboard', label: 'Dashboard', icon: LayoutGrid },
         { href: '/user/screens', label: 'Screens', icon: Monitor },
         { href: '/user/playlists', label: 'Playlist', icon: PlaySquare },
-        { href: '/user/content', label: 'Content', icon: Timer },
+        { href: '/user/content', label: 'Content', icon: CalendarRange },
         { href: '/user/files', label: 'Files', icon: FolderOpen },
         { href: '/user/reports', label: 'Reports', icon: FileText },
         { href: '/user/settings', label: 'Settings', icon: Settings },
