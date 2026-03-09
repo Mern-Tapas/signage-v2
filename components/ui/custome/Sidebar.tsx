@@ -31,7 +31,7 @@ export default function Sidebar({ isOpen }: SidebarProps) {
 
     ];
 
-    return <Container className={`${isOpen ? "w-[270px]" : ""} h-full bg-white xl:flex flex-col hidden gap-10`} padding="md">
+    return <Container className={`${isOpen ? "w-[260px]" : ""} h-full bg-white xl:flex flex-col hidden gap-10`} padding="md">
         <Container className='flex items-center mt-4 justify-center gap-2 '>
             {isOpen ?
                 // <ImageBox height={400} width={400} src={"https://i.pinimg.com/736x/f6/26/47/f62647f23f4eb78d1b9d267c92ee1521.jpg"} size="xs" radius="none" className="" variant="transparent" />
