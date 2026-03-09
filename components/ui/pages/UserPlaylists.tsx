@@ -77,28 +77,74 @@ function UserPlaylists() {
                         </DialogTrigger>
                         <DialogContent>
                             <DialogHeader>
-                                <DialogTitle>Create User</DialogTitle>
+                                <DialogTitle>Create Playlist</DialogTitle>
                                 <DialogDescription>
                                     Fill in the details below to create a new user.
                                 </DialogDescription>
                             </DialogHeader>
 
                             <DialogBody>
-                                <form className="space-y-4">
-                                    <div>
-                                        <Typography variant='body2' className="">Name</Typography >
+                                <form className="space-y-5">
+
+                                    {/* Playlist Name */}
+
+                                    <div className="space-y-1">
+                                        <Typography variant="body2">Playlist Name</Typography>
+
                                         <input
                                             type="text"
-                                            className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-700 bg-transparent px-3 py-2"
+                                            placeholder="e.g. Morning Promotions"
+                                            className="w-full rounded-md border border-gray-300 dark:border-gray-700 bg-transparent px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        />
+
+                                        <p className="text-xs text-gray-500">
+                                            This name will help you identify the playlist.
+                                        </p>
+                                    </div>
+
+
+                                    {/* Description */}
+
+                                    <div className="space-y-1">
+                                        <Typography variant="body2">Description</Typography>
+
+                                        <textarea
+                                            rows={3}
+                                            placeholder="Optional description for this playlist"
+                                            className="w-full rounded-md border border-gray-300 dark:border-gray-700 bg-transparent px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                                         />
                                     </div>
-                                    <div>
-                                        <Typography variant='body2' className="">Email</Typography>
+
+
+                                    {/* Default Media Duration */}
+
+                                    <div className="space-y-1">
+                                        <Typography variant="body2">Default Media Duration</Typography>
+
                                         <input
-                                            type="email"
-                                            className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-700 bg-transparent px-3 py-2"
+                                            type="number"
+                                            placeholder="10"
+                                            className="w-full rounded-md border border-gray-300 dark:border-gray-700 bg-transparent px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        />
+
+                                        <p className="text-xs text-gray-500">
+                                            Default duration (seconds) for images in this playlist.
+                                        </p>
+                                    </div>
+
+
+                                    {/* Playlist Tag */}
+
+                                    <div className="space-y-1">
+                                        <Typography variant="body2">Tag / Category</Typography>
+
+                                        <input
+                                            type="text"
+                                            placeholder="Promotion / Ads / Informational"
+                                            className="w-full rounded-md border border-gray-300 dark:border-gray-700 bg-transparent px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                                         />
                                     </div>
+
                                 </form>
                             </DialogBody>
 
