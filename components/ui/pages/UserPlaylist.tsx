@@ -26,44 +26,101 @@ function UserPlaylist() {
 
             </Container>
 
-            <Container className='grid' variant='default' radius='xl'>
+       <Container className="grid" variant="default" radius="xl">
 
-                {/* Playlist Details */}
-                <Container padding='lg' radius='xl' variant='primary' className=''>
+  <Container
+    padding="lg"
+    radius="xl"
+    variant="primary"
+    className="relative overflow-hidden"
+  >
 
-                    <div className='flex lg:flex-row flex-col justify-between gap-4 lg:items-center '>
+    {/* Gradient Background */}
 
-                        <Container className='flex gap-4  '>
-                            <div className='flex bg-pink-100 rounded-lg p-2 h-14 w-14 shrink-0'>
+    <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-r from-pink-500/15 via-purple-500/15 to-blue-500/15 pointer-events-none" />
 
-                                <ListVideo className='m-auto text-pink-600' size={24} />
+    <div className="relative flex lg:flex-row flex-col gap-6 justify-between lg:items-center">
 
-                            </div>
-                            <div className="max-w-180">
-                                <Typography variant='h4' weight='bold'>Phoenix Creatives Advertisment Power point</Typography>
-                                <Typography variant='body2' color='muted'>Connect playlist and manage your ads</Typography>
-                            </div>
+      {/* LEFT SECTION */}
 
-                        </Container>
+      <div className="flex gap-4 items-start">
 
-                        <Container radius='md' className='bg-gray-100 border-gray-300' variant='primary'>
-                            <div className="flex gap-2">
-                                <Button size='md' variant='outline' icon={<Upload size={16} />}>Assign</Button>
-                                <Button size='md' variant='outline' >Preview</Button>
-                                <Button size='md' variant='primary' icon={<Upload size={16} />}>Publish</Button>
-                                <Button size='icon' variant='outline' icon={<EllipsisVertical size={16} />}> </Button>
-                            </div>
-                        </Container>
+        {/* ICON */}
 
-                    </div>
+        <div className="flex h-14 w-14 rounded-xl bg-gradient-to-br from-pink-500 to-purple-600 shadow-md shrink-0">
+          <ListVideo className="m-auto text-white" size={24}/>
+        </div>
+
+        {/* TITLE + INFO */}
+
+        <div className="max-w-xl">
+
+          <Typography variant="h4" weight="bold">
+            Phoenix Creatives Advertisment Power point
+          </Typography>
+
+          <Typography variant="body2" color="muted">
+            Connect playlist and manage your ads
+          </Typography>
+
+          {/* META */}
+
+          <div className="flex flex-wrap gap-4 mt-3 text-sm text-gray-600">
+
+            <span>12 Items</span>
+
+            <span>45 sec Duration</span>
+
+            <span>5 Screens</span>
+
+            <span>Updated 2h ago</span>
+
+          </div>
+
+        </div>
+
+      </div>
 
 
-                    {/* <Switch size='md' checked={false} onChange={() => { }} /> */}
-                </Container>
+      {/* RIGHT ACTIONS */}
 
+      <div className="flex gap-2 flex-wrap items-center">
 
+        <Button
+          size="sm"
+          variant="outline"
+          icon={<Upload size={16}/>}
+        >
+          Assign
+        </Button>
 
-            </Container>
+        <Button
+          size="sm"
+          variant="outline"
+        >
+          Preview
+        </Button>
+
+        <Button
+          size="sm"
+          variant="primary"
+        >
+          Publish
+        </Button>
+
+        <Button
+          size="icon"
+          variant="outline"
+          icon={<EllipsisVertical size={16}/>}
+        />
+
+      </div>
+
+    </div>
+
+  </Container>
+
+</Container>
 
 
 

@@ -14,33 +14,86 @@ function GeneralSettings() {
     return (
         <Container className='grid gap-4 self-start grid-cols-1'>
 
-             <div>
+            <div>
                 <h1 className="text-3xl font-bold text-gray-900 mb-2">Profile Settings</h1>
                 <p className="text-gray-600">Manage your subscription, payment methods, and billing history</p>
             </div>
+            {/* profile */}
+            <Container
+                variant="primary"
+                padding="lg"
+                radius="xl"
+                className="relative overflow-hidden flex flex-col gap-6"
+            >
 
-            <Container variant='primary' padding='lg' className='flex flex-col gap-4 self-start' radius='xl'>
-                <Container className='flex gap-4 xl:items-center flex-col xl:flex-row'>
+                {/* Gradient Background */}
+
+                <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 pointer-events-none" />
+
+                <div className="relative flex flex-col xl:flex-row gap-6 xl:items-center">
+
+                    {/* LEFT */}
+
                     <div className="flex items-center gap-4">
+
                         <Avatar
                             src="https://i.pinimg.com/736x/6f/a3/6a/6fa36aa2c367da06b2a4c8ae1cf9ee02.jpg"
                             alt="User Avatar"
                             size="lg"
                             radius="lg"
-                            className="border-white"
+                            className="border-2 border-white shadow-md"
                         />
-                        <div>
-                            <Typography variant='h4' className=''>Tapas Gharami</Typography>
-                            <Typography variant="caption" color="muted">cyb6261452510@gmail.com</Typography>
+
+                        <div className="flex flex-col">
+
+                            <Typography variant="h4">
+                                Tapas Gharami
+                            </Typography>
+
+                            <Typography variant="caption" color="muted">
+                                cyb6261452510@gmail.com
+                            </Typography>
+
+                            {/* small meta */}
+
+                            <div className="flex gap-3 mt-1 text-xs text-gray-500">
+
+                                <span>Admin</span>
+
+                                <span>•</span>
+
+                                <span>Last login 2h ago</span>
+
+                            </div>
 
                         </div>
+
                     </div>
-                    <div className="ms-auto flex gap-4">
-                        <Button variant='outline' >Change</Button>
-                        <Button variant='primary' disabled >Update</Button>
+
+
+                    {/* RIGHT ACTIONS */}
+
+                    <div className="xl:ms-auto flex gap-2">
+
+                        <Button
+                            variant="outline"
+                        >
+                            Change Avatar
+                        </Button>
+
+                        <Button
+                            variant="primary"
+                            disabled
+                        >
+                            Update Profile
+                        </Button>
+
                     </div>
-                </Container>
+
+                </div>
+
             </Container>
+            {/* profile */}
 
 
             <Container variant='primary' padding='lg' className='flex flex-col gap-4 self-start' radius='xl'>
@@ -94,7 +147,7 @@ function GeneralSettings() {
 
 
             <Container variant='primary' padding='lg' className='flex flex-col gap-4 self-start' radius='xl'>
-               <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3">
                     <div className="bg-green-100 p-2 rounded-lg">
                         <User className="text-green-600" size={24} />
                     </div>

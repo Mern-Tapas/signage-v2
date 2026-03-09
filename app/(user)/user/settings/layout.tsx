@@ -28,56 +28,117 @@ function layout({ children }: { children: React.ReactNode }) {
 
                 <div className="self-start gap-4 grid grid-cols-1">
 
-                    <Container variant="primary" padding="lg" className=" gap-4" radius="xl">
-                        <div className="flex flex-col items-center gap-4">
-                            <Avatar
-                                src="https://i.pinimg.com/736x/6f/a3/6a/6fa36aa2c367da06b2a4c8ae1cf9ee02.jpg"
-                                alt="User Avatar"
-                                size="lg"
-                                radius="lg"
-                                className="border-white"
-                            />
-                            <div>
-                                <Typography variant='h4' className="uppercase">Tapas Gharami</Typography>
-                                <Typography variant="caption" color="muted">cyb6261452510@gmail.com</Typography>
-                            </div>
-                            <div className="flex gap-2">
-                                <Container variant="outline" radius="sm" padding="sm" className="w-10 h-10 flex items-center justify-center" >
-                                    <Phone size={18} strokeWidth={1.8} />
-                                </Container>
-                                <Container variant="outline" radius="sm" padding="sm" className="w-10 h-10 flex items-center justify-center" >
-                                    <Mail size={18} strokeWidth={1.8} />
-                                </Container>
-                                <Container variant="outline" radius="sm" padding="sm" className="w-10 h-10 flex items-center justify-center" >
-                                    <Phone size={18} strokeWidth={1.8} />
-                                </Container>
-                            </div>
-                            <Container variant="secondary" radius="xl" padding="md" className="w-full">
-                                <table className="text-sm border-separate border-spacing-x-4 border-spacing-y-2 text-gray-600">
-                                    <tbody>
-                                        <tr>
-                                            <td className="">Name:</td>
-                                            <td className="">Tapas Gharami</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="">Age:</td>
-                                            <td className="">45</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="">DOB:</td>
-                                            <td className="">25 July 1998</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="">Place:</td>
-                                            <td className="">Indore</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </Container>
+              <Container
+  variant="primary"
+  padding="lg"
+  radius="xl"
+  className="relative overflow-hidden"
+>
 
-                        </div>
-                    </Container>
-                  
+  {/* gradient highlight */}
+
+  <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10"/>
+
+  <div className="flex flex-col items-center gap-5 relative">
+
+    {/* AVATAR */}
+
+    <Avatar
+      src="https://i.pinimg.com/736x/6f/a3/6a/6fa36aa2c367da06b2a4c8ae1cf9ee02.jpg"
+      alt="User Avatar"
+      size="lg"
+      radius="md"
+      className="border-2 border-white shadow-lg"
+    />
+
+    {/* USER INFO */}
+
+    <div className="text-center">
+
+      <Typography variant="h4" className="uppercase">
+        Tapas Gharami
+      </Typography>
+
+      <Typography variant="caption" color="muted">
+        cyb6261452510@gmail.com
+      </Typography>
+
+      <div className="text-xs text-gray-500 mt-1">
+        Admin • Last login 2h ago
+      </div>
+
+    </div>
+
+
+    {/* CONTACT ICONS */}
+
+    <div className="flex gap-3">
+
+      <Container
+        variant="outline"
+        radius="md"
+        padding="sm"
+        className="w-10 h-10 flex items-center justify-center hover:bg-gray-100 transition cursor-pointer"
+      >
+        <Phone size={18} strokeWidth={1.8}/>
+      </Container>
+
+      <Container
+        variant="outline"
+        radius="md"
+        padding="sm"
+        className="w-10 h-10 flex items-center justify-center hover:bg-gray-100 transition cursor-pointer"
+      >
+        <Mail size={18} strokeWidth={1.8}/>
+      </Container>
+
+      <Container
+        variant="outline"
+        radius="md"
+        padding="sm"
+        className="w-10 h-10 flex items-center justify-center hover:bg-gray-100 transition cursor-pointer"
+      >
+        <Phone size={18} strokeWidth={1.8}/>
+      </Container>
+
+    </div>
+
+
+    {/* PROFILE DETAILS */}
+
+    <Container
+      variant="secondary"
+      radius="xl"
+      padding="md"
+      className="w-full"
+    >
+
+      <div className="flex justify-between text-sm py-1">
+        <span className="text-gray-500">Name</span>
+        <span className="font-medium">Tapas Gharami</span>
+      </div>
+
+      <div className="flex justify-between text-sm py-1">
+        <span className="text-gray-500">Age</span>
+        <span className="font-medium">45</span>
+      </div>
+
+      <div className="flex justify-between text-sm py-1">
+        <span className="text-gray-500">DOB</span>
+        <span className="font-medium">25 July 1998</span>
+      </div>
+
+      <div className="flex justify-between text-sm py-1">
+        <span className="text-gray-500">Place</span>
+        <span className="font-medium">Indore</span>
+      </div>
+
+    </Container>
+
+  </div>
+
+</Container>
+
 
                 </div>
 
