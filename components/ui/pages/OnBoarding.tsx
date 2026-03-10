@@ -18,65 +18,123 @@ const STEP_CONFIG = [
   { label: "Account", icon: User },
   { label: "Display", icon: Monitor },
   { label: "Content", icon: Upload },
-  { label: "Team",    icon: Users },
+  { label: "Team", icon: Users },
 ]
 
 const INDUSTRIES = [
-  { id: "retail",     icon: Store,         label: "Retail"       },
-  { id: "hotel",      icon: Hotel,         label: "Hospitality"  },
-  { id: "corporate",  icon: Building2,     label: "Corporate"    },
-  { id: "education",  icon: GraduationCap, label: "Education"    },
-  { id: "food",       icon: Coffee,        label: "Food & Bev"   },
-  { id: "healthcare", icon: Users,         label: "Healthcare"   },
+  { id: "retail", icon: Store, label: "Retail" },
+  { id: "hotel", icon: Hotel, label: "Hospitality" },
+  { id: "corporate", icon: Building2, label: "Corporate" },
+  { id: "education", icon: GraduationCap, label: "Education" },
+  { id: "food", icon: Coffee, label: "Food & Bev" },
+  { id: "healthcare", icon: Users, label: "Healthcare" },
 ]
 
 const COUNTRIES = ["India", "UAE", "Singapore", "United Kingdom", "United States", "Australia", "Other"]
-const ROLES     = ["Owner / Founder", "Operations Manager", "IT Manager", "Marketing", "Other"]
+const ROLES = ["Owner / Founder", "Operations Manager", "IT Manager", "Marketing", "Other"]
 
 /* ══════════════════════════════════════════════
    STEP PROGRESS BAR  (matches inspiration UI)
 ══════════════════════════════════════════════ */
 function StepProgress({ current }: { current: Step }) {
   return (
-    <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "center", gap: 0, marginBottom: 40 }}>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "flex-start",
+        justifyContent: "center",
+        width: "100%",
+        maxWidth: 600,
+        margin: "0 auto 32px",
+      }}
+    >
       {STEP_CONFIG.map((s, i) => {
-        const done   = i < current
+        const done = i < current
         const active = i === current
-        const Icon   = s.icon
+        const Icon = s.icon
+
         return (
-          <div key={i} style={{ display: "flex", alignItems: "flex-start" }}>
+          <div
+            key={i}
+            style={{
+              display: "flex",
+              alignItems: "flex-start",
+              flex: 1,
+              minWidth: 0,
+            }}
+          >
             {/* Step node */}
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8, minWidth: 80 }}>
-              <div style={{
-                width: 48, height: 48, borderRadius: "50%",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                background: done || active ? "linear-gradient(135deg,#2563eb,#1d4ed8)" : "#f1f5f9",
-                boxShadow: active ? "0 0 0 5px rgba(37,99,235,0.15)" : done ? "0 4px 14px rgba(37,99,235,0.3)" : "none",
-                transition: "all 0.35s ease",
-              }}>
-                {done
-                  ? <Check size={20} color="#fff" strokeWidth={3} />
-                  : <Icon size={20} color={active ? "#fff" : "#94a3b8"} />
-                }
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: 6,
+                flexShrink: 0,
+              }}
+            >
+              <div
+                style={{
+                  width: 40,
+                  height: 40,
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  background:
+                    done || active
+                      ? "linear-gradient(135deg,#2563eb,#1d4ed8)"
+                      : "#f1f5f9",
+                  boxShadow: active
+                    ? "0 0 0 4px rgba(37,99,235,0.15)"
+                    : done
+                    ? "0 4px 12px rgba(37,99,235,0.3)"
+                    : "none",
+                  transition: "all 0.35s ease",
+                }}
+              >
+                {done ? (
+                  <Check size={18} color="#fff" strokeWidth={3} />
+                ) : (
+                  <Icon size={18} color={active ? "#fff" : "#94a3b8"} />
+                )}
               </div>
-              <span style={{
-                fontSize: 12, fontWeight: active ? 700 : 500,
-                color: active ? "#2563eb" : done ? "#374151" : "#9ca3af",
-                fontFamily: "'Sora', sans-serif",
-                textAlign: "center",
-              }}>
+
+              <span
+                style={{
+                  fontSize: 11,
+                  fontWeight: active ? 700 : 500,
+                  color: active
+                    ? "#2563eb"
+                    : done
+                    ? "#374151"
+                    : "#9ca3af",
+                  fontFamily: "'Sora', sans-serif",
+                  textAlign: "center",
+                  maxWidth: 70,
+                  lineHeight: 1.2,
+                }}
+              >
                 {s.label}
               </span>
             </div>
-            {/* Connector line */}
+
+            {/* Connector */}
             {i < STEP_CONFIG.length - 1 && (
-              <div style={{
-                height: 2, width: 64, marginTop: 23, flexShrink: 0,
-                background: i < current
-                  ? "linear-gradient(90deg,#2563eb,#1d4ed8)"
-                  : "#e2e8f0",
-                transition: "background 0.4s ease",
-              }} />
+              <div
+                style={{
+                  flex: 1,
+                  height: 2,
+                  marginTop: 20,
+                  marginLeft: 8,
+                  marginRight: 8,
+                  background:
+                    i < current
+                      ? "linear-gradient(90deg,#2563eb,#1d4ed8)"
+                      : "#e2e8f0",
+                  transition: "background 0.4s ease",
+                }}
+              />
             )}
           </div>
         )
@@ -208,10 +266,10 @@ function NavButtons({
    STEP 0 — COMPANY
 ══════════════════════════════════════════════ */
 function StepCompany({ onNext }: { onNext: () => void }) {
-  const [name,     setName]     = useState("")
-  const [email,    setEmail]    = useState("")
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
   const [industry, setIndustry] = useState("")
-  const [country,  setCountry]  = useState("")
+  const [country, setCountry] = useState("")
   const valid = name.trim() && email.trim() && industry && country
 
   return (
@@ -257,7 +315,7 @@ function StepCompany({ onNext }: { onNext: () => void }) {
         </div>
       </div>
 
-      <NavButtons step={0} onBack={() => {}} onNext={onNext} nextDisabled={!valid} />
+      <NavButtons step={0} onBack={() => { }} onNext={onNext} nextDisabled={!valid} />
     </StepCard>
   )
 }
@@ -269,8 +327,8 @@ function StepAccount({ onNext, onBack }: { onNext: () => void; onBack: () => voi
   const [fname, setFname] = useState("")
   const [lname, setLname] = useState("")
   const [phone, setPhone] = useState("")
-  const [role,  setRole]  = useState("")
-  const [pass,  setPass]  = useState("")
+  const [role, setRole] = useState("")
+  const [pass, setPass] = useState("")
   const [pass2, setPass2] = useState("")
   const passMatch = pass === pass2
   const valid = fname.trim() && lname.trim() && pass.length >= 8 && passMatch
@@ -314,8 +372,8 @@ function StepAccount({ onNext, onBack }: { onNext: () => void; onBack: () => voi
 ══════════════════════════════════════════════ */
 function StepDisplay({ onNext, onBack }: { onNext: () => void; onBack: () => void }) {
   const [screens, setScreens] = useState<{ name: string; loc: string }[]>([])
-  const [sName,  setSName]  = useState("")
-  const [sLoc,   setSLoc]   = useState("")
+  const [sName, setSName] = useState("")
+  const [sLoc, setSLoc] = useState("")
   const [adding, setAdding] = useState(false)
 
   const add = () => {
@@ -329,9 +387,9 @@ function StepDisplay({ onNext, onBack }: { onNext: () => void; onBack: () => voi
       {/* How-to steps */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 12, marginBottom: 20 }}>
         {[
-          { icon: Tv,      n: "1", title: "Connect screen",   desc: "Any TV or monitor" },
-          { icon: Wifi,    n: "2", title: "Install FOXMEDIA",  desc: "Free app on device" },
-          { icon: Monitor, n: "3", title: "Enter pair code",   desc: "Shown on your screen" },
+          { icon: Tv, n: "1", title: "Connect screen", desc: "Any TV or monitor" },
+          { icon: Wifi, n: "2", title: "Install FOXMEDIA", desc: "Free app on device" },
+          { icon: Monitor, n: "3", title: "Enter pair code", desc: "Shown on your screen" },
         ].map(({ icon: Icon, n, title, desc }) => (
           <div key={n} style={{ padding: "14px 12px", borderRadius: 12, background: "#f8faff", border: "1px solid #eff6ff", textAlign: "center" }}>
             <div style={{ width: 26, height: 26, borderRadius: 8, background: "linear-gradient(135deg,#2563eb,#1d4ed8)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 800, color: "#fff", margin: "0 auto 8px", boxShadow: "0 4px 10px rgba(37,99,235,0.3)" }}>{n}</div>
@@ -366,7 +424,7 @@ function StepDisplay({ onNext, onBack }: { onNext: () => void; onBack: () => voi
       {adding ? (
         <div style={{ display: "flex", flexDirection: "column", gap: 10, padding: 16, borderRadius: 12, border: "2px dashed #2563eb", background: "#f8faff", marginBottom: 4 }}>
           <Input value={sName} onChange={e => setSName(e.target.value)} placeholder="Screen name (e.g. Lobby Display)" icon={Monitor} />
-          <Input value={sLoc}  onChange={e => setSLoc(e.target.value)}  placeholder="Location (e.g. Mumbai HQ, Floor 1)" icon={MapPin} />
+          <Input value={sLoc} onChange={e => setSLoc(e.target.value)} placeholder="Location (e.g. Mumbai HQ, Floor 1)" icon={MapPin} />
           <div style={{ display: "flex", gap: 8 }}>
             <button onClick={add} style={{ flex: 1, padding: "10px", borderRadius: 10, background: "linear-gradient(135deg,#2563eb,#1d4ed8)", border: "none", color: "#fff", fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: "'Sora', sans-serif", boxShadow: "0 4px 12px rgba(37,99,235,0.3)" }}>
               Add Screen
@@ -412,10 +470,10 @@ function StepContent({ onNext, onBack }: { onNext: () => void; onBack: () => voi
         <p style={{ fontSize: 12, fontWeight: 600, color: "#9ca3af", marginBottom: 10, fontFamily: "'DM Sans', sans-serif", textTransform: "uppercase", letterSpacing: "0.05em" }}>Supported formats</p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 8 }}>
           {[
-            { emoji: "🖼️", label: "Images",   fmt: "JPG, PNG, GIF, WebP" },
-            { emoji: "🎬", label: "Videos",   fmt: "MP4, WebM"           },
-            { emoji: "📄", label: "PDFs",     fmt: "PDF documents"        },
-            { emoji: "🌐", label: "Web URLs", fmt: "Any live web page"    },
+            { emoji: "🖼️", label: "Images", fmt: "JPG, PNG, GIF, WebP" },
+            { emoji: "🎬", label: "Videos", fmt: "MP4, WebM" },
+            { emoji: "📄", label: "PDFs", fmt: "PDF documents" },
+            { emoji: "🌐", label: "Web URLs", fmt: "Any live web page" },
           ].map(ct => (
             <div key={ct.label} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", borderRadius: 12, background: "#f8faff", border: "1px solid #eff6ff" }}>
               <span style={{ fontSize: 20 }}>{ct.emoji}</span>
@@ -462,9 +520,9 @@ function StepContent({ onNext, onBack }: { onNext: () => void; onBack: () => voi
    STEP 4 — TEAM
 ══════════════════════════════════════════════ */
 function StepTeam({ onNext, onBack }: { onNext: () => void; onBack: () => void }) {
-  const [input,  setInput]  = useState("")
+  const [input, setInput] = useState("")
   const [emails, setEmails] = useState<string[]>([])
-  const [error,  setError]  = useState("")
+  const [error, setError] = useState("")
 
   const addEmail = () => {
     const e = input.trim().toLowerCase()
@@ -479,9 +537,9 @@ function StepTeam({ onNext, onBack }: { onNext: () => void; onBack: () => void }
       {/* Role pills */}
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 20 }}>
         {[
-          { role: "Admin",  desc: "Full access",    bg: "#eff6ff", color: "#2563eb", border: "#bfdbfe" },
+          { role: "Admin", desc: "Full access", bg: "#eff6ff", color: "#2563eb", border: "#bfdbfe" },
           { role: "Editor", desc: "Manage content", bg: "#f5f3ff", color: "#7c3aed", border: "#ddd6fe" },
-          { role: "Viewer", desc: "View only",      bg: "#f0fdf4", color: "#16a34a", border: "#bbf7d0" },
+          { role: "Viewer", desc: "View only", bg: "#f0fdf4", color: "#16a34a", border: "#bbf7d0" },
         ].map(r => (
           <div key={r.role} style={{ display: "flex", alignItems: "center", gap: 6, padding: "5px 12px", borderRadius: 50, background: r.bg, border: `1px solid ${r.border}` }}>
             <span style={{ fontSize: 12, fontWeight: 700, color: r.color, fontFamily: "'DM Sans', sans-serif" }}>{r.role}</span>
@@ -673,11 +731,11 @@ export default function OnboardingPage() {
         )}
 
         <div style={{ padding: done ? "36px 32px" : "0" }}>
-          {!done && step === 0 && <StepCompany  onNext={next} />}
-          {!done && step === 1 && <StepAccount  onNext={next} onBack={back} />}
-          {!done && step === 2 && <StepDisplay  onNext={next} onBack={back} />}
-          {!done && step === 3 && <StepContent  onNext={next} onBack={back} />}
-          {!done && step === 4 && <StepTeam     onNext={next} onBack={back} />}
+          {!done && step === 0 && <StepCompany onNext={next} />}
+          {!done && step === 1 && <StepAccount onNext={next} onBack={back} />}
+          {!done && step === 2 && <StepDisplay onNext={next} onBack={back} />}
+          {!done && step === 3 && <StepContent onNext={next} onBack={back} />}
+          {!done && step === 4 && <StepTeam onNext={next} onBack={back} />}
           {done && <DoneScreen />}
         </div>
       </div>
