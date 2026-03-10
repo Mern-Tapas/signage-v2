@@ -193,6 +193,82 @@ function GeneralSettings() {
 
             </Container>
 
+
+            <Container
+                variant='primary'
+                padding='lg'
+                className='flex flex-col gap-4 self-start'
+                radius='xl'
+            >
+
+                <div className="flex items-center gap-3">
+
+                    <div className="bg-blue-100 p-2 rounded-lg">
+                        <User className="text-blue-600" size={24} />
+                    </div>
+
+                    <div>
+                        <h2 className="text-lg font-semibold text-gray-900">
+                            Company Details
+                        </h2>
+
+                        <p className="text-sm text-gray-500">
+                            Information about your organization for billing and workspace
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <Container className='grid lg:grid-cols-2 gap-4'>
+
+                    <Input
+                        label="Company Name"
+                        placeholder="FOXMEDIA Pvt Ltd"
+                    />
+
+                    <Input
+                        label="GST Number"
+                        placeholder="Enter GST number"
+                    />
+
+                    <Input
+                        label="Company Email"
+                        placeholder="billing@company.com"
+                    />
+
+                    <Input
+                        label="Company Website"
+                        placeholder="https://company.com"
+                    />
+
+                    <Input
+                        label="City"
+                        placeholder="Indore"
+                    />
+
+                    <Input
+                        label="State"
+                        placeholder="Madhya Pradesh"
+                    />
+
+                    <Textarea
+                        label="Company Address"
+                        textareaSize="sm"
+                        resize="none"
+                    />
+
+                </Container>
+
+
+                <div className='flex justify-end'>
+                    <Button variant='primary'>
+                        Update Company
+                    </Button>
+                </div>
+
+            </Container>
+
         </Container>
 
     )

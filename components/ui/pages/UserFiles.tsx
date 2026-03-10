@@ -73,7 +73,7 @@ function UserFiles() {
                             <Button size='icon' className='block md:hidden' variant='primary' icon={<PlusIcon strokeWidth={1.2} />} />
 
                         </DialogTrigger>
-                        <DialogContent maxWidth='max-w-2xl' className='max-h-[600px] overflow-x-scroll fileUploader '  >
+                        <DialogContent maxWidth='max-w-2xl'  className='max-h-[600px] overflow-x-scroll fileUploader p-0'  >
 
 
                             <DialogBody  >
