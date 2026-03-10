@@ -135,10 +135,10 @@ function StatCard({ value, suffix, label, start }: StatCardProps) {
   const count = useCounter(value, 2000, start)
   return (
     <div style={{ textAlign: "center" }}>
-      <div style={{ fontSize: 48, fontWeight: 800, color: "#2563eb", fontFamily: "'Sora', sans-serif", lineHeight: 1 }}>
+      <div className="text-white" style={{ fontSize: 48, fontWeight: 800, color: "#bbd0ff", fontFamily: "'Sora', sans-serif", lineHeight: 1 }}>
         {count}{suffix}
       </div>
-      <div style={{ color: "#6b7280", marginTop: 8, fontSize: 15, fontFamily: "'DM Sans', sans-serif" }}>{label}</div>
+      <div style={{ color: "#f0f0f0", marginTop: 8, fontSize: 15, fontFamily: "'DM Sans', sans-serif" }}>{label}</div>
     </div>
   )
 }
